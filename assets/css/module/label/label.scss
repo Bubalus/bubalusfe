@@ -1,0 +1,139 @@
+// --------------------------------------------
+// BubalusFE - The front-end development framework
+//
+/* Labels - 一個文字標簽样式，用於提示消息數量等 */
+// --------------------------------------------
+
+// -------------------------
+// label 變量
+// -------------------------
+$label-success-bg:            $brand-success !default;
+$label-info-bg:               $brand-info !default;
+$label-warning-bg:            $brand-warning !default;
+$label-danger-bg:             $brand-danger !default;
+
+
+// -------------------------
+// label 樣式
+// -------------------------
+.label {
+  display: inline;
+  padding: .25em .6em;
+  font-size: 75%;
+  font-weight: 500;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-color: $gray-light;
+  border-radius: .25em;
+
+  // 懸浮樣式
+  &[href] {
+    &:hover,
+    &:focus {
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+      background-color: darken($gray-light, 10%);
+    }
+  }
+}
+
+// 危險標簽
+.label-danger {
+  background-color: $label-danger-bg;
+  &[href] {
+    &:hover,
+    &:focus {
+      background-color: darken($label-danger-bg, 10%);
+    }
+  }
+}
+//成功標簽
+.label-success {
+  background-color: $label-success-bg;
+  &[href] {
+    &:hover,
+    &:focus {
+      background-color: darken($label-success-bg, 10%);
+    }
+  }
+}
+// 警告標籤
+.label-warning {
+  background-color: $label-warning-bg;
+  &[href] {
+    &:hover,
+    &:focus {
+      background-color: darken($label-warning-bg, 10%);
+    }
+  }
+}
+// 詳情標簽
+.label-info {
+  background-color: $label-info-bg;
+  &[href] {
+    &:hover,
+    &:focus {
+      background-color: darken($label-info-bg, 10%);
+    }
+  }
+}
+
+// 狀態標簽
+.badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: $font-size-small;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: center;
+  background-color: $gray-light;
+  border-radius: 10px;
+
+  // 空標簽隱藏
+  &:empty {
+    display: none;
+  }
+}
+
+// 如果是鏈接,設置鼠標懸浮樣式
+a.badge {
+  &:hover,
+  &:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+// 按鈕裏的狀態標簽
+.btn {
+  .badge {
+    position: relative;
+    top: -1px;
+  }
+}
+.btn-mini {
+  .badge {
+    top: 0;
+  }
+}
+
+// 列表組和導航裏的狀態標簽
+a.list-group-item.active > .badge,
+.nav-pills > .active > a > .badge {
+  color: $link-color;
+  background-color: #fff;
+}
+.nav-pills > li > a > .badge {
+  margin-left: 3px;
+}
+
+/* END Labels */

@@ -1,0 +1,238 @@
+// --------------------------------------------
+// BubalusFE - The front-end development framework
+//
+/* Reset - 重設基本樣式 */
+// 最先引入这个文件以覆盖掉一些浏览器的预设样式
+// --------------------------------------------
+
+// 去掉一些元素默认的空白边
+// 关于通配符 * 的使用一直有争议，根据浏览器的渲染原理，使用通配符确实会严重影响性能
+// 但经测试，在现代浏览器中使用通配符对渲染性能的影响其实很有限，只不过为了IE这货考虑还是不用的好
+// ----------------------
+body,figure,dl,dd,h1,h2,h3,h4,h5,h6,p,
+fieldset,blockquote{
+	margin:0; 
+}
+
+// HTML5
+// ----------------------
+// 为IE重设 HTML5 的块级样式
+article, aside, details, figcaption, figure,
+footer, header, hgroup, nav, section {
+	display:block;
+}
+audio,canvas,video {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+audio:not([controls]) { // 无控件的 audio 元素不显示
+	display: none;
+	height: 0;
+}
+[hidden] { // 为IE7/8/9提供hidden属性支持，IE6 中可使用 .hidden 方法 @ common
+	display: none;
+}
+
+// 主要容器重设
+// ----------------------
+html {
+    height:100%;
+    background: #fff;
+    color: $text-color;
+    font-family: $font-family;
+    font-size: $font-size-base;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing:antialiased; // 开启 webkit 的反锯齿
+    -webkit-overflow-scrolling: touch; // Touch the Mobile Magic™
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    text-align:left;
+}
+div:target { outline:0 none; }
+
+// 链接
+// ----------------------
+a {
+	color:$link-color;
+	text-decoration:none;
+}
+a:active,
+a:hover { outline: none; }
+a:hover,
+a:focus {
+	color:$link-focus-color;
+  text-decoration: underline;
+}
+a:focus { // 统一聚焦时的外边线
+    outline: thin dotted;
+    @include tab-focus();
+}
+
+// 文本
+// ----------------------
+em      { font-style: italic; }
+
+cite    { font-style: normal; }
+
+small { // 统一小号字体的大小
+    font-size: $font-size-base;
+}
+b, strong { // 校正 Firefox 4+， Safari 5 和 Chrome 中粗体字的样式
+    font-weight: bold;
+}
+mark { // 校正 IE 中样式不呈现的问题
+    background: #ff0;
+    color: #000;
+}
+abbr[title] { // 校正 IE7/8/9， Safari 5 和 Chrome中样式不呈现的问题
+    border-bottom: 1px dotted;
+}
+
+// Abbreviations and acronyms
+abbr[title],
+// Added data-* attribute to help out our tooltip plugin, per https://github.com/twitter/bootstrap/issues/5257
+abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 1px dotted $gray-light;
+}
+abbr.initialism {
+  font-size: 90%;
+  text-transform: uppercase;
+}
+
+code, kbd, pre, samp { // 校正 Safari 5 和 Chrome 中奇怪的字体设置
+    font-family: $font-family-sans-serif;
+    font-size: 1em;
+}
+pre { // 增强所有浏览器中预格式化文本的可读性
+	margin:0; 
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+// 防止上下标文本对行高造成影响
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+// 表单
+// ----------------------
+fieldset {
+  border: 0;
+}
+legend {
+	padding:0;
+    border: 0;
+    white-space: normal;
+}
+button, input, select, textarea {
+	padding:0;
+	outline: 0 none;
+    vertical-align: baseline;
+    *vertical-align: middle;
+}
+button, input { // 更正 Firefox 4+ 用户代理样式表中在‘input’上设置行高时使用 !important 的问题
+	line-height: normal;
+}
+button[disabled],
+input[disabled] {
+    cursor: default;
+}
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; // 调整 IE 8/9 box sizing 被设置为 content-box 的问题
+}
+input[type="search"] {
+    -webkit-appearance: textfield; // 校正 Safari 5 和 Chrome 中 appearance 被设置为 searchfield 的问题
+  	@include box-sizing(border-box);
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration { // 移除 OS X 中 Safari 5 和 Chrome 内部的内边距以及搜索框的取消按钮
+    -webkit-appearance: none;
+}
+
+button,
+html input[type="button"], // 避免 Android 4.0.* 中的 WebKit bug ，该bug会破坏原生的 audio 和 video 控件
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; // 更正 iOS 中无法设置可点击的 input 的问题
+    cursor: pointer;
+    *overflow: visible;  // 防止 IE 在 input 左右莫名其妙的加入 padding
+}
+textarea {
+    overflow: auto; // 移除 IE 中默认的垂直滚动条
+    vertical-align: top; // 增强可读性
+}
+
+// 图片
+// ----------------------
+img { 
+  max-width: 100%; // Part 1: Set a maxium relative to the parent
+  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+	border:0 solid; 
+	vertical-align:middle;
+	-ms-interpolation-mode: bicubic; // IE下防止图像失真
+}
+img,figure { margin: 0; } // 更正 IE 8/9 和 Safari 5 中外边距不展示的问题
+// Rounded corners
+.img-rounded {
+  border-radius: 6px;
+}
+
+// Image thumbnails
+// See thumbnails.less for `.img-thumbnail`
+
+// Perfect circle
+.img-circle {
+  border-radius: 500px; // crank the border-radius so it works with most reasonably sized images
+}
+
+svg:not(:root) {  overflow: hidden; } // 更正 IE 9 中奇怪的溢出表现
+
+// 列表
+// ----------------------
+ul, ol {
+	padding:0;
+    list-style: none;
+    list-style-image: none;
+}
+// 引用
+// ----------------------
+q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content: ''; content:none }
+
+// Addresses
+address {
+  display: block;
+  margin-bottom: $line-height-computed;
+  font-style: normal;
+  line-height: $line-height-base;
+}
+// 分割綫
+// ----------------------
+hr {
+  margin: $line-height-computed 0;
+  border: 0;
+  border-top: 1px solid $hr-border;
+  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid rgba(255,255,255,.5);
+}
+
+// 表格
+// ----------------------
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+th,td{
+	padding:0;
+}
+
+/* END Reset */

@@ -1,0 +1,49 @@
+// --------------------------------------------
+// BubalusFE - The front-end development framework
+//
+/* Comment list - 一套帶頭像的評論列表样式 */
+// --------------------------------------------
+
+
+// 外部容器清除浮動
+.media,
+.media-body {
+  overflow: hidden;
+  zoom: 1;
+}
+
+// 條目之間設置一些間距
+.media,
+.media .media {
+  margin-top: 15px;
+}
+.media:first-child {
+  margin-top: 0;
+}
+
+// 媒體元素設置爲塊級
+.media-object {
+  display: block;
+}
+
+// 條目標題設置邊距
+.media-heading {
+  margin: 0 0 5px;
+}
+
+
+// 調整媒體元素的邊距
+// -------------------------
+
+.media > .pull-left {
+  margin-right: 10px;
+}
+.media > .pull-right {
+  margin-left: 10px;
+}
+
+// 列表
+.media-list {
+  margin-left: 0;
+  list-style: none;
+}

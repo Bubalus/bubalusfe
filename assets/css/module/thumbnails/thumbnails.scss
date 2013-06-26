@@ -1,0 +1,52 @@
+// --------------------------------------------
+// BubalusFE - The front-end development framework
+//
+/* Thumbnails - 一套縮圖样式 */
+// --------------------------------------------
+
+
+// -------------------------
+// Thumbnails 變量
+// -------------------------
+$thumbnail-caption-color:     $text-color !default;
+$thumbnail-bg:                $body-bg !default;
+$thumbnail-border:            #ddd !default;
+$thumbnail-border-radius:     $border-radius-base !default;
+
+// -------------------------
+// Thumbnails 樣式
+// -------------------------
+// 縮略的元素
+.thumbnail,
+.img-thumbnail {
+  padding: 4px;
+  line-height: $line-height-base;
+  background-color: $thumbnail-bg;
+  border: 1px solid $thumbnail-border;
+  border-radius: $thumbnail-border-radius;
+  @include transition(all .2s ease-in-out);
+}
+.thumbnail {
+  display: block;
+}
+.img-thumbnail {
+  display: inline-block;
+}
+
+// 爲鏈接設置鼠標懸浮樣式
+a.thumbnail:hover,
+a.thumbnail:focus {
+  border-color: $link-color;
+}
+
+// 圖片和註解
+.thumbnail > img {
+  display: block;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.thumbnail .caption {
+  padding: 9px;
+  color: $thumbnail-caption-color;
+}

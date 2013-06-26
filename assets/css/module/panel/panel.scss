@@ -1,0 +1,128 @@
+// --------------------------------------------
+// BubalusFE - The front-end development framework
+//
+/* Panels - 一套面板样式 */
+// --------------------------------------------
+
+// -------------------------
+// Panels 變量
+// -------------------------
+$panel-bg:                    #fff !default;
+$panel-border:                #ddd !default;
+$panel-border-radius:         $border-radius-base !default;
+$panel-heading-bg:            #f5f5f5 !default;
+$panel-footer-bg:             #f5f5f5 !default;
+
+$panel-primary-text:          #fff !default;
+$panel-primary-border:        $brand-primary !default;
+$panel-primary-heading-bg:    $brand-primary !default;
+
+$panel-success-text:          $state-success-text !default;
+$panel-success-border:        $state-success-border !default;
+$panel-success-heading-bg:    $state-success-bg !default;
+
+$panel-warning-text:          $state-warning-text !default;
+$panel-warning-border:        $state-warning-border !default;
+$panel-warning-heading-bg:    $state-warning-bg !default;
+
+$panel-danger-text:           $state-danger-text !default;
+$panel-danger-border:         $state-danger-border !default;
+$panel-danger-heading-bg:     $state-danger-bg !default;
+
+$panel-info-text:             $state-info-text !default;
+$panel-info-border:           $state-info-border !default;
+$panel-info-heading-bg:       $state-info-bg !default;
+
+
+// -------------------------
+// Panels 樣式
+// -------------------------
+
+.panel {
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: $panel-bg;
+  border: 1px solid $panel-border;
+  border-radius: $panel-border-radius;
+  @include box-shadow(0 1px 1px rgba(0,0,0,.05));
+}
+
+// 標題
+.panel-heading {
+  margin: -15px -15px 15px;
+  padding: 10px 15px;
+  font-size: ($font-size-base * 1.25);
+  font-weight: 500;
+  background-color: $panel-heading-bg;
+  border-bottom: 1px solid $panel-border;
+  border-top-left-radius:  ($panel-border-radius - 1);
+  border-top-right-radius: ($panel-border-radius - 1);
+}
+
+// 底部
+.panel-footer {
+  margin: 15px -15px -15px;
+  padding: 10px 15px;
+  background-color: $panel-footer-bg;
+  border-top: 1px solid $panel-border;
+  border-bottom-left-radius:  ($panel-border-radius - 1);
+  border-bottom-right-radius: ($panel-border-radius - 1);
+}
+
+// 主題
+.panel-primary {
+  border-color: $panel-primary-border;
+  .panel-heading {
+    color: $panel-primary-text;
+    background-color: $panel-primary-heading-bg;
+    border-color: $panel-primary-border;
+  }
+}
+.panel-success {
+  border-color: $panel-success-border;
+  .panel-heading {
+    color: $panel-success-text;
+    background-color: $panel-success-heading-bg;
+    border-color: $panel-success-border;
+  }
+}
+.panel-warning {
+  border-color: $panel-warning-border;
+  .panel-heading {
+    color: $panel-warning-text;
+    background-color: $panel-warning-heading-bg;
+    border-color: $panel-warning-border;
+  }
+}
+.panel-danger {
+  border-color: $panel-danger-border;
+  .panel-heading {
+    color: $panel-danger-text;
+    background-color: $panel-danger-heading-bg;
+    border-color: $panel-danger-border;
+  }
+}
+.panel-info {
+  border-color: $panel-info-border;
+  .panel-heading {
+    color: $panel-info-text;
+    background-color: $panel-info-heading-bg;
+    border-color: $panel-info-border;
+  }
+}
+
+// 面板組
+.list-group-flush {
+  margin: 15px -15px -15px;
+
+  .list-group-item {
+    border-width: 1px 0;
+
+    &:first-child {
+      @include border-top-radius(0);
+    }
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}

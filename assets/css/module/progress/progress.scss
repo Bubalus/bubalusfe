@@ -1,0 +1,133 @@
+// --------------------------------------------
+// BubalusFE - The front-end development framework
+//
+/* Progress bars - 一套進度條样式 */
+// --------------------------------------------
+
+// -------------------------
+// Progress bars 變量
+// -------------------------
+$progress-bg:                 #f5f5f5 !default;
+$progress-bar-bg:             $brand-primary !default;
+$progress-bar-success-bg:     $brand-success !default;
+$progress-bar-warning-bg:     $brand-warning !default;
+$progress-bar-danger-bg:      $brand-danger !default;
+$progress-bar-info-bg:        $brand-info !default;
+
+// -------------------------
+// Progress bars 樣式
+// -------------------------
+
+// 動畫 僅現代瀏覽器
+// -------------------------
+
+// Webkit
+@-webkit-keyframes progress-bar-stripes {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+
+// Firefox
+@-moz-keyframes progress-bar-stripes {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+
+// IE9
+@-ms-keyframes progress-bar-stripes {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+
+// Opera
+@-o-keyframes progress-bar-stripes {
+  from  { background-position: 0 0; }
+  to    { background-position: 40px 0; }
+}
+
+// Spec
+@keyframes progress-bar-stripes {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+
+
+
+// 進度條
+// -------------------------
+
+// 外容器
+.progress {
+  overflow: hidden;
+  height: $line-height-computed;
+  margin-bottom: $line-height-computed;
+  background-color: $progress-bg;
+  border-radius: $border-radius-base;
+  @include box-shadow(inset 0 1px 2px rgba(0,0,0,.1));
+}
+
+// 進度
+.progress-bar {
+  float: left;
+  width: 0%;
+  height: 100%;
+  font-size: $font-size-small;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+  background-color: $progress-bar-bg;
+  @include box-shadow(inset 0 -1px 0 rgba(0,0,0,.15));
+  @include transition(width .6s ease);
+}
+
+// 條紋樣式
+.progress-striped .progress-bar {
+  @include gradient-striped($progress-bar-bg);
+  @include background-size(40px 40px);
+}
+
+// 代入動畫
+.progress.active .progress-bar {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+     -moz-animation: progress-bar-stripes 2s linear infinite;
+      -ms-animation: progress-bar-stripes 2s linear infinite;
+       -o-animation: progress-bar-stripes 2s linear infinite;
+          animation: progress-bar-stripes 2s linear infinite;
+}
+
+
+
+// 主題
+// -------------------------
+
+// Danger (red)
+.progress-bar-danger {
+  background-color: $progress-bar-danger-bg;
+  .progress-striped & {
+    @include gradient-striped($progress-bar-danger-bg);
+  }
+}
+
+// Success (green)
+.progress-bar-success {
+  background-color: $progress-bar-success-bg;
+  .progress-striped & {
+    @include gradient-striped($progress-bar-success-bg);
+  }
+}
+
+// Warning (orange)
+.progress-bar-warning {
+  background-color: $progress-bar-warning-bg;
+  .progress-striped & {
+    @include gradient-striped($progress-bar-warning-bg);
+  }
+}
+
+// Info (teal)
+.progress-bar-info {
+  background-color: $progress-bar-info-bg;
+  .progress-striped & {
+    @include gradient-striped($progress-bar-info-bg);
+  }
+}

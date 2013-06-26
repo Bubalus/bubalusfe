@@ -1,0 +1,66 @@
+@charset "utf-8";
+// --------------------------------------------
+// BubalusFE - The front-end development framework
+//
+/* Socket - 样式表插座 */
+// 在此配置和引用各CSS模块
+// --------------------------------------------
+
+// 全局
+// ----------------------
+// 只启用核心模块
+
+// Reset
+// ----------------------
+// 是否兼容早期浏览器
+// 只开启基本重置
+
+// Layout
+// ----------------------
+// 是否提供无响应栅格
+// 是否提供栅格偏移
+// 是否提供栅格排序
+// 是否提供列高对齐
+
+// 引入预设
+@import "core/mixins";
+/* 核心內容
+----------------------------------*/
+@import "core/reset";
+@import "core/layout.scss";
+@import "core/common.scss";
+
+/* 擴展組件
+----------------------------------*/
+/* 麵包屑 */
+@import "module/breadcrumb/breadcrumb";
+/* 按鈕/按鈕組 */
+@import "module/button/button";
+/* 菜單 */
+@import "module/dropdown/dropdown";
+/* 表單 */
+@import "module/form/form";
+/* 雪碧圖標 */
+@import "module/icons/icons";
+/* 標簽 */
+@import "module/label/label";
+/* 花車 */
+@import "module/media/media";
+/* 導航 */
+@import "module/nav/nav";
+/* 分頁 */
+@import "module/page/page";
+/* 面板 */
+@import "module/panel/panel";
+/* 進度條 */
+@import "module/progress/progress";
+/* 縮略圖 */
+@import "module/thumbnails/thumbnails";
+
+/* 第三方樣式引用
+----------------------------------*/
+
+/* 我的样式表引用
+----------------------------------*/
+//@import url("user/demo.css");
+

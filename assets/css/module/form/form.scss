@@ -1,0 +1,455 @@
+// --------------------------------------------
+// BubalusFE - The front-end development framework
+//
+/* Forms - 一套表单样式 */
+// --------------------------------------------
+
+// -------------------------
+// Forms 變量
+// -------------------------
+
+$input-bg:                       #fff !default;
+$input-bg-disabled:              $gray-lighter !default;
+
+$input-border:                   #ccc !default;
+$input-border-radius:            $border-radius-base !default;
+
+$input-color-placeholder:        $gray-light !default;
+
+$input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + 2);
+$input-height-large:             (ceil($font-size-large * $line-height-base) + ($padding-large-vertical * 2) + 2);
+$input-height-small:             (ceil($font-size-small * $line-height-base) + ($padding-small-vertical * 2) + 2);
+
+//$form-actions-bg:                #f5f5f5 !default;
+
+
+// -------------------------
+// Forms 方法
+// -------------------------
+// Placeholder text
+@mixin placeholder($color: $input-color-placeholder) {
+  &:-moz-placeholder            { color: $color; } // Firefox 4-18
+  &::-moz-placeholder           { color: $color; } // Firefox 19+
+  &:-ms-input-placeholder       { color: $color; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
+}
+
+// Generate form validation states
+@mixin form-field-validation($text-color: #555, $border-color: #ccc, $background-color: #f5f5f5) {
+  // Color the label text
+  .control-label {
+    color: $text-color;
+  }
+  // Set the border and box shadow on specific inputs to match
+  .input-with-feedback {
+    padding-right: 32px; // to account for the feedback icon
+    border-color: $border-color;
+    @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075)); // Redeclare so transitions work
+    &:focus {
+      border-color: darken($border-color, 10%);
+      $shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten($border-color, 20%);
+      @include box-shadow($shadow);
+    }
+  }
+  // Set validation states also for addons
+  .input-group-addon {
+    color: $text-color;
+    border-color: $border-color;
+    background-color: $background-color;
+  }
+}
+
+// -------------------------
+// 表單樣式
+// -------------------------
+
+// 表单元素设置
+// ----------------------
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: $line-height-computed;
+  font-size: ($font-size-base * 1.5);
+  line-height: inherit;
+  color: $gray-dark;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+// 表单控件
+// ----------------------
+// 各控件类型的共有属性
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  display: block;
+  min-height: $input-height-base; // 同步对应按钮的高度
+  padding: $padding-base-vertical $padding-base-horizontal;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $gray;
+  vertical-align: middle;
+  background-color: $input-bg;
+  border: 1px solid $input-border;
+  border-radius: $input-border-radius;
+  @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+  @include transition((border-color ease-in-out .15s, box-shadow ease-in-out .15s));
+
+  &:focus {
+    border-color: rgba(82,168,236,.8);
+    outline: 0;
+    @include box-shadow((inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6)));
+  }
+
+    // Disabled and read-only inputs
+  // Note: HTML5 says that inputs under a fieldset > legend:first-child won't be
+  //   disabled if the fieldset is disabled. Due to implementation difficulty,
+  //   we don't honor that edge case; we style them as disabled anyway.
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    background-color: $input-bg-disabled;
+  }
+}
+
+// 重置控件宽度
+input,
+select,
+textarea {
+  width: 100%;
+}
+input[type="file"],
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+}
+
+// 重置文本域高度
+textarea {
+  height: auto;
+}
+
+// 调整 单选复选框 的位置
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9; // IE 8/9
+  line-height: normal;
+}
+
+// 调整 选单和文件输入框 的高度,和 input[type="text"] 统一
+select,
+input[type="file"] {
+  height: $input-height-base; // IE7 奇葩，需要设置font-size
+  line-height: $input-height-base;
+}
+select[multiple],
+select[size] {
+  height: auto;
+}
+// 修正 firefox 下选项字体奇葩问题
+select optgroup {
+  font-size: inherit;
+  font-style: inherit;
+  font-family: inherit;
+}
+
+// 控件聚焦时样式
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  @include tab-focus();
+}
+
+
+// Placeholder
+// ----------------------
+input,
+textarea {
+  @include placeholder();
+}
+
+
+// 多选与复选框
+// ----------------------
+.radio,
+.checkbox {
+  display: block;
+  min-height: $line-height-computed; // 防止在没有 lable 的情况下布局塌陷
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  vertical-align: middle;
+  label {
+    display: inline;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+  }
+}
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+  float: left;
+  margin-left: -20px;
+}
+.radio + .radio,
+.checkbox + .checkbox {
+  margin-top: -5px; 
+}
+
+/*
+// 同级选框对齐
+.controls > .radio:first-child,
+.controls > .checkbox:first-child {
+  padding-top: 5px; // has to be padding because margin collaspes
+}
+*/
+
+// 在同一行上的选框
+.radio-inline,
+.checkbox-inline {
+  display: inline-block;
+//  padding-top: 5px;
+  padding-left: 20px;
+  margin-bottom: 0;
+  vertical-align: middle;
+  font-weight: normal;
+  cursor: pointer;
+}
+.radio-inline + .radio-inline,
+.checkbox-inline + .checkbox-inline {
+  margin-top: 0;
+  margin-left: 10px;
+}
+
+
+
+// 控件的规格
+// -------------------------
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  &.input-large {
+    min-height: $input-height-large;
+    padding: $padding-large-vertical $padding-large-horizontal;
+    font-size: $font-size-large;
+    border-radius: $border-radius-large;
+  }
+  &.input-small {
+    min-height: $input-height-small;
+    padding: $padding-small-vertical $padding-small-horizontal;
+    font-size: $font-size-small;
+    border-radius: $border-radius-small;
+  }
+}
+
+// 表单项状态反馈
+// --------------------------
+
+// 警告
+.has-warning {
+  @include form-field-validation($state-warning-text, $state-warning-text, $state-warning-bg);
+}
+// 出错
+.has-error {
+  @include form-field-validation($state-danger-text, $state-danger-text, $state-danger-bg);
+}
+// 成功
+.has-success {
+  @include form-field-validation($state-success-text, $state-success-text, $state-success-bg);
+}
+
+
+// 帮助文本
+// --------------------------
+
+.help-block {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: lighten($text-color, 25%);
+}
+
+
+
+// 表单内栅格
+// --------------------------
+// 基本样式
+.input-group {
+  display: table;
+
+  // 为内栅格撤销 填充 与 悬浮
+  &.col {
+    float: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  input,
+  select {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+// input 附加件样式
+// --------------------------
+.input-group-addon,
+.input-group-btn,
+.input-group input {
+  display: table-cell;
+
+  &:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+}
+.input-group-addon,
+.input-group-btn {
+  width: 1%;
+  vertical-align: middle;
+}
+.input-group-addon {
+  @include box-sizing(border-box);
+  padding: $padding-base-vertical $padding-base-horizontal;
+  font-size: $font-size-base;
+  font-weight: normal;
+  line-height: $line-height-base;
+  text-align: center;
+  text-shadow: 0 1px 0 #fff;
+  background-color: $gray-lighter;
+  border: 1px solid #ccc;
+  border-radius: $border-radius-base;
+
+  &.input-small {
+    padding: $padding-small-vertical $padding-small-horizontal;
+    font-size: $font-size-small;
+    border-radius: $border-radius-small;
+  }
+  &.input-large {
+    padding: $padding-large-vertical $padding-large-horizontal;
+    font-size: $font-size-large;
+    border-radius: $border-radius-large;
+  }
+}
+
+// 根据不同应用重设圆角位置
+.input-group input:first-child,
+.input-group-addon:first-child,
+.input-group-btn:first-child > .btn,
+.input-group-btn:first-child > .dropdown-toggle,
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
+  @include border-right-radius(0);
+}
+.input-group-addon:first-child {
+  border-right: 0;
+}
+.input-group input:last-child,
+.input-group-addon:last-child,
+.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .dropdown-toggle,
+.input-group-btn:first-child > .btn:not(:first-child) {
+  @include border-left-radius(0);
+}
+.input-group-addon:last-child {
+  border-left: 0;
+}
+
+// 按钮型 input 附加件
+// --------------------------
+.input-group-btn {
+  position: relative;
+  white-space: nowrap;
+}
+.input-group-btn > .btn {
+  position: relative;
+  float: left;
+  + .btn {
+    margin-left: -1px;
+  }
+  // 层次调整
+  &:hover,
+  &:active {
+    z-index: 2;
+  }
+}
+
+
+// 行内表单
+// --------------------------
+@mixin form-inline {
+  input,
+  select,
+  textarea,
+  .radio,
+  .checkbox {
+    display: inline-block;
+  }
+  .radio,
+  .checkbox {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.form-inline { @include form-inline }
+
+// 水平表单
+// --------------------------
+
+.form-horizontal {
+  .row + .row {
+    margin-top: 15px;
+  }
+  .control-label {
+    padding-top: 6px;
+  }
+}
+
+@media (min-width: 768px) {
+  .form-horizontal .control-label {
+    text-align: right;
+  }
+}
+
+/* END Forms */

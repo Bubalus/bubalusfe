@@ -1,0 +1,248 @@
+// --------------------------------------------
+// BubalusFE - The front-end development framework
+//
+/* Dropdown - 一组下拉菜單样式 */
+// --------------------------------------------
+
+// -------------------------
+// Dropdowns 變量
+// -------------------------
+
+$dropdown-bg:                    #fff !default;
+$dropdown-border:                rgba(0,0,0,.15) !default;
+$dropdown-divider-top:           #e5e5e5 !default;
+$dropdown-divider-bottom:        #fff !default;
+
+$dropdown-link-active-color:     #fff !default;
+$dropdown-link-active-bg:        $component-active-bg !default;
+
+$dropdown-link-color:            $gray-dark !default;
+$dropdown-link-hover-color:      #fff !default;
+$dropdown-link-hover-bg:         $dropdown-link-active-bg !default;
+
+// Z-index master list
+// -------------------------
+// Used for a bird's eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+
+$zindex-dropdown:          1000 !default;
+
+
+// -------------------------
+// Dropdowns 樣式
+// -------------------------
+
+// 下拉按鈕的箭頭或圖示
+// --------------------
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top:   4px solid #000;
+  border-right: 4px solid transparent;
+  border-left:  4px solid transparent;
+  content: "";
+}
+
+// 下拉菜單 (ul)
+// ----------------------
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: $zindex-dropdown;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  background-color: $dropdown-bg;
+  // border: 1px solid #ccc; 
+  border: 1px solid $dropdown-border;
+  border-radius: $border-radius-base;
+  @include box-shadow(0 6px 12px rgba(0,0,0,.175));
+  @include background-clip(padding-box);
+
+  // 右對齊的下拉菜單
+  &.pull-right {
+    right: 0;
+    left: auto;
+  }
+
+  // 菜單中的分割綫
+  .divider {
+    @include nav-divider($dropdown-divider-top, $dropdown-divider-bottom);
+  }
+
+  // 菜單項
+  > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: $line-height-base;
+    color: $dropdown-link-color;
+    white-space: nowrap; // 防止菜單項換行
+  }
+}
+
+// 鼠標指針狀態
+// -----------
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+  text-decoration: none;
+  color: $dropdown-link-hover-color;
+  @include gradient-vertical($start-color: $dropdown-link-hover-bg, $end-color: darken($dropdown-link-hover-bg, 5%));
+}
+
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  color: $dropdown-link-active-color;
+  text-decoration: none;
+  outline: 0;
+  @include gradient-vertical($start-color: $dropdown-link-active-bg, $end-color: darken($dropdown-link-active-bg, 5%));
+}
+
+// 禁用狀態
+// --------------
+.dropdown-menu > .disabled > a,
+.dropdown-menu > .disabled > a:hover,
+.dropdown-menu > .disabled > a:focus {
+  color: $gray-light;
+}
+.dropdown-menu > .disabled > a:hover,
+.dropdown-menu > .disabled > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+  background-image: none;
+  @include reset-filter();
+  cursor: default;
+}
+
+// 展開下拉菜單
+// ---------------------------
+.open {
+  // 顯示菜單
+  > .dropdown-menu {
+    display: block;
+  }
+
+  // 去掉聚焦時的外邊綫
+  > a {
+    outline: 0;
+  }
+}
+
+
+// 移動設備優化
+// ---------------------------
+.dropdown-backdrop {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: $zindex-dropdown - 10;
+}
+
+// 右對齊的下拉菜單
+// ---------------------------
+.pull-right > .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+// 向上彈出的菜單
+// ------------------------------------------------------
+// J使用時需在 .dropdown 後面插入 .dropup
+.dropup,
+.navbar-fixed-bottom .dropdown {
+  // 改爲向上的箭頭
+  .caret {
+    border-top: 0;
+    border-bottom: 4px solid #000;
+    content: "";
+  }
+  // 調整菜單的定位到按鈕上面
+  .dropdown-menu {
+    top: auto;
+    bottom: 100%;
+    margin-bottom: 1px;
+  }
+}
+
+// 子菜單
+// ---------------------------
+.dropdown-submenu {
+  position: relative;
+}
+// 弄人菜單的子菜單
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  // border-top-left-radius: 0; 
+}
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}
+
+// 上拉菜單的子菜單
+.dropup .dropdown-submenu > .dropdown-menu {
+  top: auto;
+  bottom: 0;
+  margin-top: 0;
+  margin-bottom: -2px;
+  // border-bottom-left-radius: 0;
+}
+
+// 如果有子菜單則在菜單項後面顯示箭頭
+.dropdown-submenu > a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: darken($dropdown-bg, 20%);
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover > a:after {
+  border-left-color: $dropdown-link-hover-color;
+}
+
+// 左對齊的子菜單
+.dropdown-submenu.pull-left {
+  float: none;
+
+  // 子菜單定位
+  > .dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    // border-top-right-radius: 0;
+  }
+}
+
+// 其他適應性調整 
+// ---------------------------
+.dropdown .dropdown-menu .nav-header {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.typeahead {
+  z-index: 1051;
+}
+
+
+/* END Dropdown */
