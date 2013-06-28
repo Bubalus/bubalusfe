@@ -73,12 +73,12 @@ $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;
 
-$font-size-base:          87.5% !default;
-$font-size-large:         1.142857142857143 !default; // ~16px
-$font-size-small:         .8571428571428571 !default; // ~12px
-$font-size-mini:          .7142857142857143 !default; // ~10px
+$font-size-base:          14px !default;
+$font-size-large:         ceil($font-size-base * 1.25) !default; // ~18px
+$font-size-small:         ceil($font-size-base * 0.85) !default; // ~12px
+$font-size-mini:          ceil($font-size-base * 0.75) !default; // ~11px
 
-$line-height-base:        1.285714285714286 !default; // 18/14
+$line-height-base:        1.428571429 !default; // 20/14
 $line-height-computed:    floor($font-size-base * $line-height-base) !default; // ~20px
 
 $headings-font-family:    $font-family-base !default;
@@ -90,18 +90,18 @@ $headings-line-height:    1.1 !default;
 // -------------------------
 // Based on 14px font-size and 1.428 line-height (~20px to start)
 
-$padding-base-vertical:          .5714285714285714 !default; // 8
-$padding-base-horizontal:        .8571428571428571 !default; // 12
+$padding-base-vertical:          8px !default;
+$padding-base-horizontal:        12px !default;
 
-$padding-large-vertical:         1 !default; // 14
-$padding-large-horizontal:       1.142857142857143 !default; // 16
+$padding-large-vertical:         14px !default;
+$padding-large-horizontal:       16px !default;
 
-$padding-small-vertical:         .3571428571428571 !default; // 5
-$padding-small-horizontal:       .7142857142857143 !default; // 10
+$padding-small-vertical:         5px !default;
+$padding-small-horizontal:       10px !default;
 
-$border-radius-base:             .2857142857142857 !default; // 4
-$border-radius-large:            .5 !default; // 6
-$border-radius-small:            .2142857142857143 !default; // 3
+$border-radius-base:             4px !default;
+$border-radius-large:            6px !default;
+$border-radius-small:            3px !default;
 
 $component-active-bg:            $brand-primary !default;
 

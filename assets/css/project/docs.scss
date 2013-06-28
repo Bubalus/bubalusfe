@@ -1,0 +1,49 @@
+	.container{
+		width: 80em;
+	}
+
+	#layout {
+		.header, .footer, .nav, .main {
+			padding: 10px;
+		}
+		.container{
+			padding: 10px;
+			.header, .footer, .nav, .main {
+				padding: 18px 10px;
+			}
+		}
+		.dummyscreen {
+		    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+		    border: 1px #888 solid;
+		    border-radius: $border-radius-base;
+		    line-height: $line-height-base;
+		    text-align: center;
+		    zoom: 1;
+
+			.container {
+				width: 70%;
+				margin: 0 auto;
+				border: 1px dashed rgba(0, 0, 0, 0.25);
+			}
+			.header, .footer {
+				background: #ccc;
+				color: #fff;
+			}
+			.nav {
+				background: #bbb;
+				color: #fff;
+			}
+			.main {
+				background: #ddd;
+				color: #fff;
+				line-height: 2em;
+				//line-height: 8em;
+				section{
+					color: #888;
+					background:#eee;
+					.g-box{ background:#ddd; }
+					
+				}
+			}
+		}
+	}

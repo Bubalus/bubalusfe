@@ -91,7 +91,18 @@ h1, h2, h3, h4, h5, h6,
 
 // MISC
 // ----
+// Rounded corners
+.img-rounded {
+  border-radius: 6px;
+}
 
+// Image thumbnails
+// See thumbnails.less for `.img-thumbnail`
+
+// Perfect circle
+.img-circle {
+  border-radius: 500px; // crank the border-radius so it works with most reasonably sized images
+}
 
 
 

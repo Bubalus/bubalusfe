@@ -1,0 +1,18 @@
+@charset "utf-8";
+// --------------------------------------------
+// BubalusFE - The front-end development framework
+//
+/* Socket - 样式表插座 */
+// 在此配置和引用各CSS模块
+// --------------------------------------------
+
+@import "bubaluslayout/mixins";
+
+// ----------------------
+// project
+// ----------------------
+
+/* docs
+----------------------------------*/
+@import "project/docs";
+

@@ -23,37 +23,44 @@
 // 是否提供列高对齐
 
 // 引入预设
-@import "bubaluslayout/mixins";
+@import "core/mixins";
 /* 核心內容
 ----------------------------------*/
-@import "bubaluslayout/core/reset";
-@import "bubaluslayout/core/layout.scss";
-@import "bubaluslayout/core/common.scss";
+@import "core/reset";
+@import "core/layout.scss";
+@import "core/common.scss";
 
 /* 擴展組件
 ----------------------------------*/
 /* 麵包屑 */
-@import "bubaluslayout/module/breadcrumb/breadcrumb";
+@import "module/breadcrumb/breadcrumb";
 /* 按鈕/按鈕組 */
-@import "bubaluslayout/module/button/button";
+@import "module/button/button";
 /* 菜單 */
-@import "bubaluslayout/module/dropdown/dropdown";
+@import "module/dropdown/dropdown";
 /* 表單 */
-@import "bubaluslayout/module/form/form";
+@import "module/form/form";
 /* 雪碧圖標 */
-@import "bubaluslayout/module/icons/icons";
+@import "module/icons/icons";
 /* 標簽 */
-@import "bubaluslayout/module/label/label";
+@import "module/label/label";
 /* 花車 */
-@import "bubaluslayout/module/media/media";
+@import "module/media/media";
 /* 導航 */
-@import "bubaluslayout/module/nav/nav";
+@import "module/nav/nav";
 /* 分頁 */
-@import "bubaluslayout/module/page/page";
+@import "module/page/page";
 /* 面板 */
-@import "bubaluslayout/module/panel/panel";
+@import "module/panel/panel";
 /* 進度條 */
-@import "bubaluslayout/module/progress/progress";
+@import "module/progress/progress";
 /* 縮略圖 */
-@import "bubaluslayout/module/thumbnails/thumbnails";
+@import "module/thumbnails/thumbnails";
+
+/* 第三方樣式引用
+----------------------------------*/
+
+/* 我的样式表引用
+----------------------------------*/
+//@import url("user/demo.css");
 

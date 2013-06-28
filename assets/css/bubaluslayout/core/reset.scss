@@ -7,11 +7,12 @@
 
 // 去掉一些元素默认的空白边
 // 关于通配符 * 的使用一直有争议，根据浏览器的渲染原理，使用通配符确实会严重影响性能
-// 但经测试，在现代浏览器中使用通配符对渲染性能的影响其实很有限，只不过为了IE这货考虑还是不用的好
+// 但经测试，在现代浏览器中使用通配符对渲染性能的影响其实很有限
 // ----------------------
-body,figure,dl,dd,h1,h2,h3,h4,h5,h6,p,
-fieldset,blockquote{
+* {
+  @include box-sizing(border-box);
 	margin:0; 
+  padding:0;
 }
 
 // HTML5
@@ -38,16 +39,20 @@ audio:not([controls]) { // 无控件的 audio 元素不显示
 // ----------------------
 html {
     height:100%;
-    background: #fff;
-    color: $text-color;
-    font-family: $font-family;
-    font-size: $font-size-base;
+    font-size: 62.5%;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing:antialiased; // 开启 webkit 的反锯齿
     -webkit-overflow-scrolling: touch; // Touch the Mobile Magic™
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     text-align:left;
+}
+body {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $text-color;
+    background-color: $body-bg;
 }
 div:target { outline:0 none; }
 
@@ -102,11 +107,10 @@ abbr.initialism {
 }
 
 code, kbd, pre, samp { // 校正 Safari 5 和 Chrome 中奇怪的字体设置
-    font-family: $font-family-sans-serif;
+    font-family: $font-family;
     font-size: 1em;
 }
 pre { // 增强所有浏览器中预格式化文本的可读性
-	margin:0; 
     white-space: pre;
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -127,12 +131,13 @@ fieldset {
   border: 0;
 }
 legend {
-	padding:0;
     border: 0;
     white-space: normal;
 }
 button, input, select, textarea {
-	padding:0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
 	outline: 0 none;
     vertical-align: baseline;
     *vertical-align: middle;
@@ -179,26 +184,13 @@ img {
 	vertical-align:middle;
 	-ms-interpolation-mode: bicubic; // IE下防止图像失真
 }
-img,figure { margin: 0; } // 更正 IE 8/9 和 Safari 5 中外边距不展示的问题
-// Rounded corners
-.img-rounded {
-  border-radius: 6px;
-}
 
-// Image thumbnails
-// See thumbnails.less for `.img-thumbnail`
-
-// Perfect circle
-.img-circle {
-  border-radius: 500px; // crank the border-radius so it works with most reasonably sized images
-}
 
 svg:not(:root) {  overflow: hidden; } // 更正 IE 9 中奇怪的溢出表现
 
 // 列表
 // ----------------------
 ul, ol {
-	padding:0;
     list-style: none;
     list-style-image: none;
 }
@@ -230,9 +222,6 @@ hr {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-}
-th,td{
-	padding:0;
 }
 
 /* END Reset */

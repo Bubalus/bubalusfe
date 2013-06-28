@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/* Socket - 样式表插座 */
+/* docs
+----------------------------------*/
+.container {
+  width: 80em; }
+
+#layout .header, #layout .footer, #layout .nav, #layout .main {
+  padding: 10px; }
+#layout .container {
+  padding: 10px; }
+  #layout .container .header, #layout .container .footer, #layout .container .nav, #layout .container .main {
+    padding: 18px 10px; }
+#layout .dummyscreen {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  border: 1px #888 solid;
+  border-radius: 4px;
+  line-height: 1.42857;
+  text-align: center;
+  zoom: 1; }
+  #layout .dummyscreen .container {
+    width: 70%;
+    margin: 0 auto;
+    border: 1px dashed rgba(0, 0, 0, 0.25); }
+  #layout .dummyscreen .header, #layout .dummyscreen .footer {
+    background: #ccc;
+    color: #fff; }
+  #layout .dummyscreen .nav {
+    background: #bbb;
+    color: #fff; }
+  #layout .dummyscreen .main {
+    background: #ddd;
+    color: #fff;
+    line-height: 2em; }
+    #layout .dummyscreen .main section {
+      color: #888;
+      background: #eee; }
+      #layout .dummyscreen .main section .g-box {
+        background: #ddd; }
