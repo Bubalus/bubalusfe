@@ -2,9 +2,6 @@
 /* Socket - 样式表插座 */
 /* docs
 ----------------------------------*/
-.container {
-  width: 80em; }
-
 #layout .header, #layout .footer, #layout .nav, #layout .main {
   padding: 10px; }
 #layout .container {

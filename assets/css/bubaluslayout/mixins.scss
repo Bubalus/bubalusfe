@@ -314,6 +314,12 @@ $component-offset-horizontal: 180px !default;
   border: 0;
 }
 
+// Responsive images (ensure images don't scale beyond their parents)
+@mixin img-responsive {
+  display: block;
+  max-width: 100%; // Part 1: Set a maxium relative to the parent
+  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+}
 
 // CSS3 PROPERTIES
 // --------------------------------------------------

@@ -28,7 +28,7 @@
 		</nav>
 		<div id="main">
 			<div class="container">
-				<!-- 布局演示 -->
+				<!-- 概述 -->
 				<div class="docs-section" id="introduction">
 					<div class="page-header">
 		                <h1>概述 <small>BubalusFE 是一套 web前端開發框架。它提供了一套CSS框架和一組基於JQuery的常用javascript組件集，以及一套實踐范例。</small></h1>
@@ -78,7 +78,7 @@ BubalusFE
 		            <p>
 		            	下面是一個加載了 BubalusFE 組件的標準HTML5模板，稍加修改即可使用。
 		            </p>
-		            <textarea>
+		            <textarea name="" id="" cols="30" rows="10">
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -108,12 +108,13 @@ BubalusFE
 
 		            </textarea>
 		        </div>
+		        <!-- 佈局 -->
 				<div class="docs-section" id="layout">
 					<div class="page-header">
 		                <h1>佈局結構 <small>以簡單的標簽結構完成對頁面内容的靈活佈局</small></h1>
 		            </div>
 		            <div class="row">
-						<div class="col-6">
+						<div class="col-lg-6">
 							<div class="dummyscreen">
 								<div class="container">
 									<div class="header">Header</div>
@@ -130,7 +131,7 @@ BubalusFE
 								</div>
 							</div>
 						</div>
-						<div class="col-6">
+						<div class="col-lg-6">
 							<div class="dummyscreen">
 								<div class="header">
 									<div class="container">
@@ -162,7 +163,260 @@ BubalusFE
 					</div>
 				</div>
 				<!-- 柵格系統 -->
+				<div class="docs-section" id="grid">
+					<div class="page-header">
+		                <h1>柵格系統 <small>12列響應式柵格系統，可實現多種形式的響應式佈局</small></h1>
+		            </div>
+					<p>
+						
+					</p>
+					<table class="table table-bordered table-striped bs-table">
+				      <thead>
+				        <tr>
+				          <th></th>
+				          <th>
+				            微柵格
+				            <small>智能手機 (&lt;480px)</small>
+				          </th>
+				          <th>
+				            小型柵格
+				            <small>平板電腦 (&lt;768px)</small>
+				          </th>
+				          <th>
+				            標準柵格
+				            <small>PC桌面 (&gt;768px)</small>
+				          </th>
+				        </tr>
+				      </thead>
+				      <tbody>
+				        <tr>
+				          <th>柵格響應行爲</th>
+				          <td>始終保持佈局</td>
+				          <td colspan="2">窗口尺寸在小型柵格和標準柵格之間時，佈局可以自適應大小，<br>
+				          窗口尺寸小於小型柵格時取消佈局，每個柵格將獨佔一行</td>
+				        </tr>
+				        <tr>
+				          <th>柵格類前綴</th>
+				          <td><code>.col-</code></td>
+				          <td><code>.col-sm-</code></td>
+				          <td><code>.col-lg-</code></td>
+				        </tr>
+				        <tr>
+				          <th>列的數量</th>
+				          <td colspan="3">12列</td>
+				        </tr>
+				        <tr>
+				          <th>嵌套</th>
+				          <td colspan="3">支持</td>
+				        </tr>
+				        <tr>
+				          <th>偏移</th>
+				          <td class="text-muted">N/A</td>
+				          <td colspan="2">支持</td>
+				        </tr>
+				        <tr>
+				          <th>調整順序</th>
+				          <td class="text-muted">N/A</td>
+				          <td colspan="2">支持</td>
+				        </tr>
+				      </tbody>
+				    </table>
+					<h4>三個柵格行組成的柵格佈局</h4>
+					<div class="row">
+					  <div class="col-lg-4">.col-lg-4</div>
+					  <div class="col-lg-4">.col-lg-4</div>
+					  <div class="col-lg-4">.col-lg-4</div>
+					</div>
+					<div class="row">
+					  <div class="col-lg-3">.col-lg-3</div>
+					  <div class="col-lg-6">.col-lg-6</div>
+					  <div class="col-lg-3">.col-lg-3</div>
+					</div>
+					<div class="row">
+					  <div class="col-lg-8">.col-lg-8</div>
+					  <div class="col-lg-4">.col-lg-4</div>
+					</div>
+					<textarea name="" id="" cols="30" rows="10">
+<div class="row">
+  <div class="col-lg-4">.col-lg-4</div>
+  <div class="col-lg-4">.col-lg-4</div>
+  <div class="col-lg-4">.col-lg-4</div>
+</div>
+<div class="row">
+  <div class="col-lg-3">.col-lg-3</div>
+  <div class="col-lg-6">.col-lg-6</div>
+  <div class="col-lg-3">.col-lg-3</div>
+</div>
+<div class="row">
+  <div class="col-lg-8">.col-lg-8</div>
+  <div class="col-lg-4">.col-lg-4</div>
+</div>
+					</textarea>
 
+					<h4>柵格的嵌套</h4>
+					<div class="row">
+					  <div class="col-lg-8">
+					    .col-lg-8
+					    <div class="row">
+					      <div class="col-lg-6">.col-lg-6</div>
+					      <div class="col-lg-6">.col-lg-6</div>
+					    </div>
+					  </div>
+					  <div class="col-lg-4">.col-lg-4</div>
+					</div>
+					<textarea name="" id="" cols="30" rows="10">
+<div class="row">
+  <div class="col-lg-8">
+    .col-lg-8
+    <div class="row">
+      <div class="col-lg-6">.col-lg-6</div>
+      <div class="col-lg-6">.col-lg-6</div>
+    </div>
+  </div>
+  <div class="col-lg-4">.col-lg-4</div>
+</div>
+					</textarea>
+
+					<h4>兩種柵格結合使用，可以在各自分辨率下實現完全不同的佈局</h4>
+					<div class="row">
+					  <div class="col-12 col-lg-8">.col-12 .col-lg-8</div>
+					  <div class="col-6 col-lg-4">.col-6 .col-lg-4</div>
+					</div>
+					<div class="row">
+					  <div class="col-6 col-lg-4">.col-6 .col-lg-4</div>
+					  <div class="col-6 col-lg-4">.col-6 .col-lg-4</div>
+					  <div class="col-6 col-lg-4">.col-6 .col-lg-4</div>
+					</div>
+					<div class="row">
+					  <div class="col-6 col-lg-6">.col-6 .col-lg-6</div>
+					  <div class="col-6 col-lg-6">.col-6 .col-lg-6</div>
+					</div>
+					<textarea name="" id="" cols="30" rows="10">
+<div class="row">
+  <div class="col-12 col-lg-8">.col-12 .col-lg-8</div>
+  <div class="col-6 col-lg-4">.col-6 .col-lg-4</div>
+</div>
+<div class="row">
+  <div class="col-6 col-lg-4">.col-6 .col-lg-4</div>
+  <div class="col-6 col-lg-4">.col-6 .col-lg-4</div>
+  <div class="col-6 col-lg-4">.col-6 .col-lg-4</div>
+</div>
+<div class="row">
+  <div class="col-6 col-lg-6">.col-6 .col-lg-6</div>
+  <div class="col-6 col-lg-6">.col-6 .col-lg-6</div>
+</div>
+					</textarea>
+
+					<h4>再來看下三種佈局結合使用</h4>
+					<div class="row">
+					  <div class="col-12 col-sm-8 col-lg-8">.col-12 .col-lg-8</div>
+					  <div class="col-6 col-sm-4 col-lg-4">.col-6 .col-lg-4</div>
+					</div>
+					<div class="row">
+					  <div class="col-6 col-sm-4 col-lg-4">.col-6 .col-lg-4</div>
+					  <div class="col-6 col-sm-4 col-lg-4">.col-6 .col-lg-4</div>
+					  <div class="col-6 col-sm-4 col-lg-4">.col-6 .col-lg-4</div>
+					</div>
+					<div class="row">
+					  <div class="col-6 col-sm-6 col-lg-6">.col-6 .col-lg-6</div>
+					  <div class="col-6 col-sm-6 col-lg-6">.col-6 .col-lg-6</div>
+					</div>
+					<textarea name="" id="" cols="30" rows="10">
+<div class="row">
+  <div class="col-12 col-sm-8 col-lg-8">.col-12 .col-lg-8</div>
+  <div class="col-6 col-sm-4 col-lg-4">.col-6 .col-lg-4</div>
+</div>
+<div class="row">
+  <div class="col-6 col-sm-4 col-lg-4">.col-6 .col-lg-4</div>
+  <div class="col-6 col-sm-4 col-lg-4">.col-6 .col-lg-4</div>
+  <div class="col-6 col-sm-4 col-lg-4">.col-6 .col-lg-4</div>
+</div>
+<div class="row">
+  <div class="col-6 col-sm-6 col-lg-6">.col-6 .col-lg-6</div>
+  <div class="col-6 col-sm-6 col-lg-6">.col-6 .col-lg-6</div>
+</div>
+					</textarea>
+
+					<h4>柵格偏移的應用</h4>
+					<div class="row show-grid">
+						<div class="col-lg-4">4</div>
+						<div class="col-lg-4 col-offset-4">4 offset 4</div>
+					</div>
+					<div class="row show-grid">
+						<div class="col-lg-3 col-offset-3">3 offset 3</div>
+						<div class="col-lg-3 col-offset-3">3 offset 3</div>
+					</div>
+					<div class="row show-grid">
+						<div class="col-lg-6 col-offset-3">6 offset 3</div>
+					</div>
+				    <textarea name="" id="" cols="30" rows="10">
+<div class="row show-grid">
+	<div class="col-lg-4">4</div>
+	<div class="col-lg-4 col-offset-4">4 offset 4</div>
+</div>
+<div class="row show-grid">
+	<div class="col-lg-3 col-offset-3">3 offset 3</div>
+	<div class="col-lg-3 col-offset-3">3 offset 3</div>
+</div>
+<div class="row show-grid">
+	<div class="col-lg-6 col-offset-3">6 offset 3</div>
+</div>
+				    </textarea>
+
+					<h4>柵格順序調整</h4>
+					<div class="row show-grid">
+					  <div class="col-lg-9 col-push-3">9</div>
+					  <div class="col-lg-3 col-pull-9">3</div>
+					</div>
+				    <textarea name="" id="" cols="30" rows="10">
+<div class="row show-grid">
+  <div class="col-lg-9 col-push-3">9</div>
+  <div class="col-lg-3 col-pull-9">3</div>
+</div>
+				    </textarea>
+
+				    <h4>等高柵格</h4>
+				    <div class="row equalize">
+						<div class="col-lg-4">
+							<div class="col-box">
+								<h6>左側列</h6>
+								<ul>
+									<li>列表項 1</li>
+									<li>列表項 2</li>
+									<li>列表項 3</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-8">
+							<div class="col-box">
+								<h6>右側列</h6>
+								<p>
+									上条当麻是不幸的人。
+光是回顾大霸星祭这七天就知道了，谁都会明白。大霸星祭应该像是超能力者间对抗的体育祭的。但是，为什么从第一天起上条又是卷入了与魔术师的战斗之中、又是参与到是否能控制学院都市的竞赛中等等，发生了各种各样的意外情况。
+处理好那些事后又过了两天，不幸的事依然没有变化。一不留神，又是目击了小萌老师换衣服、又是硬碰硬地撞到刚刚恢复过来的运营委员吹寄制理、又是被茵蒂克丝啃、坐着轮椅时又被姫神秋沙的橡皮球击中、被御坂美琴硬拉着去跳交际舞时被空间移动到自己背后的白井黒子飞踢击中后头部等等，总觉得被修理得很惨。
+即使被任何不幸打击都绝不泄气，倒不如用笑容去面，反正，这位少年的特殊体质是“不幸”这件事是不会变的。
+再说一次，上条当麻是不幸的人。
+仅差几分钟地错过了超市的特别贱卖时间、便利店买来的漫画中间那几页硬是粘在一起这样的事就不用说了，抽奖卷刮出来的全部不中、冰棍棒和果汁的自动贩卖机上的液晶画面也绝对不会有显示。
+又再说多一次，上条当麻是不幸的人。
+								</p>
+							</div>
+						</div>
+					</div>
+				    <textarea name="" id="" cols="30" rows="10">
+<div class="row equalize">
+	<div class="col-lg-6">
+		<div class="col-box">
+			<!-- code -->
+		</div>
+	</div>
+	<div class="col-lg-6">
+		<div class="col-box">
+			<!-- code -->
+		</div>
+	</div>
+</div>
+				    </textarea>
+		        </div>
 
 
 

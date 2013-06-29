@@ -178,8 +178,6 @@ textarea {
 // 图片
 // ----------------------
 img { 
-  max-width: 100%; // Part 1: Set a maxium relative to the parent
-  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
 	border:0 solid; 
 	vertical-align:middle;
 	-ms-interpolation-mode: bicubic; // IE下防止图像失真

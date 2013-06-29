@@ -66,18 +66,31 @@ a.text-success:focus { color: darken($state-success-text, 10%); }
 .text-right          { text-align: right; }
 .text-center         { text-align: center; }
 
+.lead {
+  margin-bottom: $line-height-computed;
+  font-size: ($font-size-base * 1.5);
+  font-weight: 200;
+  line-height: 1.4;
+}
+
 
 // Headings
 // -------------------------
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
   small {
     font-weight: normal;
     line-height: 1;
     color: $gray-light;
   }
 }
+h1 small, .h1 small { font-size: ceil($font-size-base * 1.70); } // ~24px
+h2 small, .h2 small { font-size: ceil($font-size-base * 1.25); } // ~18px
+h3 small, .h3 small,
+h4 small, .h4 small { font-size: $font-size-base; }
 
 
 // Page header
@@ -87,6 +100,11 @@ h1, h2, h3, h4, h5, h6,
   padding-bottom: (($line-height-computed / 2) - 1);
   margin: ($line-height-computed * 2) 0 $line-height-computed;
   border-bottom: 1px solid $gray-lighter;
+}
+
+
+.img-responsive {
+  @include img-responsive;
 }
 
 // MISC
@@ -213,8 +231,8 @@ blockquote {
 // Hide from screenreaders and browsers
 // Credit: HTML5 Boilerplate
 .hidden {
-  display: none;
-  visibility: hidden;
+  display: none !important;
+  visibility: hidden !important;
 }
 
 // Visibility utilities

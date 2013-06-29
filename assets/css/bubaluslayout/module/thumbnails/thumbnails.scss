@@ -26,6 +26,10 @@ $thumbnail-border-radius:     $border-radius-base !default;
   border-radius: $thumbnail-border-radius;
   @include transition(all .2s ease-in-out);
 }
+.thumbnail > img,
+.img-thumbnail {
+  @include img-responsive();
+}
 .thumbnail {
   display: block;
 }
@@ -41,8 +45,6 @@ a.thumbnail:focus {
 
 // 圖片和註解
 .thumbnail > img {
-  display: block;
-  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }

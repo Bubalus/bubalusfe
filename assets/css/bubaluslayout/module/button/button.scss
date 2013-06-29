@@ -57,6 +57,7 @@ $btn-info-border:                $btn-info-bg !default;
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
+    &,
     &:hover,
     &:focus,
     &:active,

@@ -60,8 +60,6 @@ $grid-float-breakpoint:     $screen-tablet !default;
 // 栅格公用样式
 @mixin make-column($columns) {
   position: relative;
-  float: left;
-  width: 100%; // 为移动设备优化，列式栅格将堆叠显示
   min-height: 1px; // 防止没有内容时列塌陷而造成错位
   // 通过设置填充来产生列与列之间的间距，内容不会紧挨在一起
   padding-left:  ($grid-gutter-width / 2);
@@ -69,6 +67,7 @@ $grid-float-breakpoint:     $screen-tablet !default;
 
   // 计算到达相应点后的列宽
   @media (min-width: $grid-float-breakpoint) {
+    float: left;
     width: percentage(($columns / $grid-columns));
   }
 }
@@ -154,20 +153,6 @@ header, footer, nav, #main {
 // 为一组 列式栅格 创建一个行容器,并清除列栅格的浮动
 .row {
   @include make-row();
-}
-
-// 平衡柵格高度
-.equalize { overflow:hidden; }
-
-.equalize > [class*="col"] {
-  display:table-cell;
-  float:none;
-  margin:0;
-  vertical-align:top;
-}
-.equalize > [class*="col"] > [class*="col-box"] {
-  padding-bottom: 10000px;
-  margin-bottom: -10000px
 }
 
 // 小列和中等列
@@ -259,6 +244,21 @@ header, footer, nav, #main {
   .container {
     max-width: $container-large-desktop;
   }
+}
+
+
+// 平衡柵格高度
+.equalize { overflow:hidden; }
+
+.equalize > [class*="col"] {
+  display:table-cell;
+  float:none;
+  margin:0;
+  vertical-align:top;
+}
+.equalize > [class*="col"] > [class*="col-box"] {
+  padding-bottom: 10000px;
+  margin-bottom: -10000px
 }
 
 /* END Layout */

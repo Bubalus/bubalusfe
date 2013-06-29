@@ -318,6 +318,7 @@ input[type="color"] {
 // 基本样式
 .input-group {
   display: table;
+  border-collapse: separate; // prevent input groups from inheriting border styles from table cells when placed within a table
 
   // 为内栅格撤销 填充 与 悬浮
   &.col {
