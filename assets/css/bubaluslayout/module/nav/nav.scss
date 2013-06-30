@@ -400,6 +400,20 @@ $list-group-active-border:    $list-group-active-bg !default;
   margin-bottom: 0;
 }
 
+.navbar-fixed-left,
+.navbar-fixed-right {
+  position: fixed;
+  top: 50px;
+  z-index: $zindex-navbar-fixed;
+  border-radius: 0;
+}
+.navbar-fixed-left {
+  left: 0;
+}
+.navbar-fixed-right {
+  right: 0;
+}
+
 
 // 導航欄的相關組件
 // --------------------------------------------------

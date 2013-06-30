@@ -2,6 +2,80 @@
 /* Socket - 样式表插座 */
 /* docs
 ----------------------------------*/
+body {
+  position: relative; }
+
+.docs-nav {
+  top: 100px; }
+
+.docs-nav .navbar-brand {
+  color: #fff; }
+
+.docs-nav .navbar-nav > li > a {
+  color: #e6cac8; }
+
+.docs-nav .navbar-nav > li > a:hover {
+  color: #fff; }
+
+.docs-nav .navbar-nav > .active > a,
+.docs-nav .navbar-nav > .active > a:hover {
+  color: #fff;
+  background-color: #993c3a; }
+
+.docs-nav .navbar-toggle {
+  border-color: #b94a48; }
+
+.docs-nav .navbar-toggle:hover {
+  background-color: #993c3a;
+  border-color: #993c3a; }
+
+/* Homepage masthead
+-------------------------------------------------- */
+.masthead {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 80px 15px;
+  text-align: center; }
+
+.masthead h1 {
+  font-size: 140px;
+  line-height: 1.2; }
+
+.masthead .social {
+  margin-top: 80px; }
+
+/* Download button */
+.masthead .btn {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 18px 24px;
+  font-size: 21px;
+  color: #b94a48;
+  /* redeclare to override the `.jumbotron a` */
+  background-color: #fff;
+  border-color: #e5e5e5; }
+
+.masthead .btn:hover,
+.masthead .btn:active {
+  color: #fff;
+  /* redeclare to override the `.jumbotron a` */
+  background-color: #b94a48;
+  border-color: #b94a48; }
+
+/* Textual links */
+.masthead-links {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 0;
+  list-style: none; }
+
+.masthead-links li {
+  display: inline;
+  color: #999; }
+
+.masthead-links li + li {
+  margin-left: 20px; }
+
 #layout .header, #layout .footer, #layout .nav, #layout .main {
   padding: 10px; }
 #layout .container {
@@ -34,3 +108,14 @@
       background: #eee; }
       #layout .dummyscreen .main section .g-box {
         background: #ddd; }
+
+#grid .row {
+  margin: 0 15px 20px 15px; }
+  #grid .row .row {
+    margin-right: -15px;
+    margin-left: -15px; }
+#grid [class*="col-lg-"] {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: rgba(185, 74, 72, 0.15);
+  border: 1px solid rgba(185, 74, 72, 0.2); }

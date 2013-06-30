@@ -72,7 +72,7 @@ cite {
   font-style: normal; }
 
 small {
-  font-size: 14px; }
+  font-size: 12px; }
 
 b, strong {
   font-weight: bold; }
@@ -83,15 +83,6 @@ mark {
 
 abbr[title] {
   border-bottom: 1px dotted; }
-
-abbr[title],
-abbr[data-original-title] {
-  cursor: help;
-  border-bottom: 1px dotted #999999; }
-
-abbr.initialism {
-  font-size: 90%;
-  text-transform: uppercase; }
 
 code, kbd, pre, samp {
   font-family: "微软雅黑", "宋体";
@@ -163,8 +154,6 @@ textarea {
   vertical-align: top; }
 
 img {
-  max-width: 100%;
-  height: auto;
   border: 0 solid;
   vertical-align: middle;
   -ms-interpolation-mode: bicubic; }
@@ -285,19 +274,6 @@ header, footer, nav, #main {
   .row .row {
     margin-left: -10px;
     margin-right: -10px; }
-
-.equalize {
-  overflow: hidden; }
-
-.equalize > [class*="col"] {
-  display: table-cell;
-  float: none;
-  margin: 0;
-  vertical-align: top; }
-
-.equalize > [class*="col"] > [class*="col-box"] {
-  padding-bottom: 10000px;
-  margin-bottom: -10000px; }
 
 .col-1,
 .col-2,
@@ -557,6 +533,19 @@ header, footer, nav, #main {
 @media (min-width: 1200px) {
   .container {
     max-width: 1170px; } }
+.equalize {
+  overflow: hidden; }
+
+.equalize > [class*="col"] {
+  display: table-cell;
+  float: none;
+  margin: 0;
+  vertical-align: top; }
+
+.equalize > [class*="col"] > [class*="col-box"] {
+  padding-bottom: 10000px;
+  margin-bottom: -10000px; }
+
 /* END Layout */
 /* Common - 公共樣式 */
 .clear {
@@ -602,89 +591,16 @@ header, footer, nav, #main {
 .affix {
   position: fixed; }
 
-.text-muted {
-  color: #999999; }
-
-a.text-muted:hover,
-a.text-muted:focus {
-  color: gray; }
-
-.text-warning {
-  color: #c09853; }
-
-a.text-warning:hover,
-a.text-warning:focus {
-  color: #a47e3c; }
-
-.text-danger {
-  color: #b94a48; }
-
-a.text-danger:hover,
-a.text-danger:focus {
-  color: #953b39; }
-
-.text-success {
-  color: #468847; }
-
-a.text-success:hover,
-a.text-success:focus {
-  color: #356635; }
-
-.text-left {
-  text-align: left; }
-
-.text-right {
-  text-align: right; }
-
-.text-center {
-  text-align: center; }
-
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
-.h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
-  font-weight: normal;
-  line-height: 1;
-  color: #999999; }
-
-.page-header {
-  padding-bottom: 9px;
-  margin: 40px 0 20px;
-  border-bottom: 1px solid #eeeeee; }
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto; }
 
 .img-rounded {
   border-radius: 6px; }
 
 .img-circle {
   border-radius: 500px; }
-
-blockquote {
-  padding: 10px 20px;
-  margin: 0 0 20px;
-  border-left: 5px solid #eeeeee; }
-  blockquote p {
-    font-size: 17.5px;
-    font-weight: 300;
-    line-height: 1.25; }
-  blockquote p:last-child {
-    margin-bottom: 0; }
-  blockquote small {
-    display: block;
-    line-height: 1.42857;
-    color: #999999; }
-    blockquote small:before {
-      content: '\2014 \00A0'; }
-  blockquote.pull-right {
-    float: right;
-    padding-right: 15px;
-    padding-left: 0;
-    border-right: 5px solid #eeeeee;
-    border-left: 0; }
-    blockquote.pull-right p,
-    blockquote.pull-right small {
-      text-align: right; }
-    blockquote.pull-right small:before {
-      content: ''; }
-    blockquote.pull-right small:after {
-      content: '\00A0 \2014'; }
 
 .well {
   min-height: 20px;
@@ -714,8 +630,8 @@ blockquote {
   @-ms-viewport {
     width: 320px; } }
 .hidden {
-  display: none;
-  visibility: hidden; }
+  display: none !important;
+  visibility: hidden !important; }
 
 .visible-sm {
   display: block !important; }
@@ -920,7 +836,7 @@ td.hidden-lg {
   .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active {
     background-color: #3a3c3c;
     border-color: #2e2f2f; }
-  .btn-default.disabled:hover, .btn-default.disabled:focus, .btn-default.disabled:active, .btn-default.disabled.active, .btn-default[disabled]:hover, .btn-default[disabled]:focus, .btn-default[disabled]:active, .btn-default[disabled].active, fieldset[disabled] .btn-default:hover, fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-default:active, fieldset[disabled] .btn-default.active {
+  .btn-default.disabled, .btn-default.disabled:hover, .btn-default.disabled:focus, .btn-default.disabled:active, .btn-default.disabled.active, .btn-default[disabled], .btn-default[disabled]:hover, .btn-default[disabled]:focus, .btn-default[disabled]:active, .btn-default[disabled].active, fieldset[disabled] .btn-default, fieldset[disabled] .btn-default:hover, fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-default:active, fieldset[disabled] .btn-default.active {
     background-color: #474949;
     border-color: #474949; }
 
@@ -931,7 +847,7 @@ td.hidden-lg {
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
     background-color: #357ebd;
     border-color: #3071a9; }
-  .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active {
+  .btn-primary.disabled, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active {
     background-color: #428bca;
     border-color: #428bca; }
 
@@ -942,7 +858,7 @@ td.hidden-lg {
   .btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active {
     background-color: #eea236;
     border-color: #ec971f; }
-  .btn-warning.disabled:hover, .btn-warning.disabled:focus, .btn-warning.disabled:active, .btn-warning.disabled.active, .btn-warning[disabled]:hover, .btn-warning[disabled]:focus, .btn-warning[disabled]:active, .btn-warning[disabled].active, fieldset[disabled] .btn-warning:hover, fieldset[disabled] .btn-warning:focus, fieldset[disabled] .btn-warning:active, fieldset[disabled] .btn-warning.active {
+  .btn-warning.disabled, .btn-warning.disabled:hover, .btn-warning.disabled:focus, .btn-warning.disabled:active, .btn-warning.disabled.active, .btn-warning[disabled], .btn-warning[disabled]:hover, .btn-warning[disabled]:focus, .btn-warning[disabled]:active, .btn-warning[disabled].active, fieldset[disabled] .btn-warning, fieldset[disabled] .btn-warning:hover, fieldset[disabled] .btn-warning:focus, fieldset[disabled] .btn-warning:active, fieldset[disabled] .btn-warning.active {
     background-color: #f0ad4e;
     border-color: #f0ad4e; }
 
@@ -953,7 +869,7 @@ td.hidden-lg {
   .btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active {
     background-color: #d43f3a;
     border-color: #c9302c; }
-  .btn-danger.disabled:hover, .btn-danger.disabled:focus, .btn-danger.disabled:active, .btn-danger.disabled.active, .btn-danger[disabled]:hover, .btn-danger[disabled]:focus, .btn-danger[disabled]:active, .btn-danger[disabled].active, fieldset[disabled] .btn-danger:hover, fieldset[disabled] .btn-danger:focus, fieldset[disabled] .btn-danger:active, fieldset[disabled] .btn-danger.active {
+  .btn-danger.disabled, .btn-danger.disabled:hover, .btn-danger.disabled:focus, .btn-danger.disabled:active, .btn-danger.disabled.active, .btn-danger[disabled], .btn-danger[disabled]:hover, .btn-danger[disabled]:focus, .btn-danger[disabled]:active, .btn-danger[disabled].active, fieldset[disabled] .btn-danger, fieldset[disabled] .btn-danger:hover, fieldset[disabled] .btn-danger:focus, fieldset[disabled] .btn-danger:active, fieldset[disabled] .btn-danger.active {
     background-color: #d9534f;
     border-color: #d9534f; }
 
@@ -964,7 +880,7 @@ td.hidden-lg {
   .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active {
     background-color: #4cae4c;
     border-color: #449d44; }
-  .btn-success.disabled:hover, .btn-success.disabled:focus, .btn-success.disabled:active, .btn-success.disabled.active, .btn-success[disabled]:hover, .btn-success[disabled]:focus, .btn-success[disabled]:active, .btn-success[disabled].active, fieldset[disabled] .btn-success:hover, fieldset[disabled] .btn-success:focus, fieldset[disabled] .btn-success:active, fieldset[disabled] .btn-success.active {
+  .btn-success.disabled, .btn-success.disabled:hover, .btn-success.disabled:focus, .btn-success.disabled:active, .btn-success.disabled.active, .btn-success[disabled], .btn-success[disabled]:hover, .btn-success[disabled]:focus, .btn-success[disabled]:active, .btn-success[disabled].active, fieldset[disabled] .btn-success, fieldset[disabled] .btn-success:hover, fieldset[disabled] .btn-success:focus, fieldset[disabled] .btn-success:active, fieldset[disabled] .btn-success.active {
     background-color: #5cb85c;
     border-color: #5cb85c; }
 
@@ -975,7 +891,7 @@ td.hidden-lg {
   .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active {
     background-color: #46b8da;
     border-color: #31b0d5; }
-  .btn-info.disabled:hover, .btn-info.disabled:focus, .btn-info.disabled:active, .btn-info.disabled.active, .btn-info[disabled]:hover, .btn-info[disabled]:focus, .btn-info[disabled]:active, .btn-info[disabled].active, fieldset[disabled] .btn-info:hover, fieldset[disabled] .btn-info:focus, fieldset[disabled] .btn-info:active, fieldset[disabled] .btn-info.active {
+  .btn-info.disabled, .btn-info.disabled:hover, .btn-info.disabled:focus, .btn-info.disabled:active, .btn-info.disabled.active, .btn-info[disabled], .btn-info[disabled]:hover, .btn-info[disabled]:focus, .btn-info[disabled]:active, .btn-info[disabled].active, fieldset[disabled] .btn-info, fieldset[disabled] .btn-info:hover, fieldset[disabled] .btn-info:focus, fieldset[disabled] .btn-info:active, fieldset[disabled] .btn-info.active {
     background-color: #5bc0de;
     border-color: #5bc0de; }
 
@@ -1214,9 +1130,7 @@ fieldset[disabled] .btn-link {
     white-space: nowrap; }
 
 .dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus,
-.dropdown-submenu:hover > a,
-.dropdown-submenu:focus > a {
+.dropdown-menu > li > a:focus {
   text-decoration: none;
   color: white;
   background-color: #357ebd;
@@ -1281,46 +1195,6 @@ fieldset[disabled] .btn-link {
   top: auto;
   bottom: 100%;
   margin-bottom: 1px; }
-
-.dropdown-submenu {
-  position: relative; }
-
-.dropdown-submenu > .dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px; }
-
-.dropdown-submenu:hover > .dropdown-menu {
-  display: block; }
-
-.dropup .dropdown-submenu > .dropdown-menu {
-  top: auto;
-  bottom: 0;
-  margin-top: 0;
-  margin-bottom: -2px; }
-
-.dropdown-submenu > a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px; }
-
-.dropdown-submenu:hover > a:after {
-  border-left-color: white; }
-
-.dropdown-submenu.pull-left {
-  float: none; }
-  .dropdown-submenu.pull-left > .dropdown-menu {
-    left: -100%;
-    margin-left: 10px; }
 
 .dropdown .dropdown-menu .nav-header {
   padding-left: 20px;
@@ -1642,7 +1516,8 @@ input[type="color"].input-small {
   color: #737373; }
 
 .input-group {
-  display: table; }
+  display: table;
+  border-collapse: separate; }
   .input-group.col {
     float: none;
     padding-left: 0;
@@ -1747,8 +1622,8 @@ input[type="color"].input-small {
 /* Icons - 一套基於 glyphicon 雪碧圖標样式 */
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: font-url("bubalus/glyphiconshalflings-regular.eot");
-  src: font-url("bubalus/glyphiconshalflings-regular.eot?#iefix") format("embedded-opentype"), font-url("bubalus/glyphiconshalflings-regular.woff") format("woff"), font-url("bubalus/glyphiconshalflings-regular.ttf") format("truetype"), font-url("bubalus/glyphiconshalflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
+  src: font-url("assets/images/bubaluslayout/glyphiconshalflings-regular.eot");
+  src: font-url("assets/images/bubaluslayout/glyphiconshalflings-regular.eot?#iefix") format("embedded-opentype"), font-url("assets/images/bubaluslayout/glyphiconshalflings-regular.woff") format("woff"), font-url("assets/images/bubaluslayout/glyphiconshalflings-regular.ttf") format("truetype"), font-url("assets/images/bubaluslayout/glyphiconshalflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
 
 .glyphicon:before {
   font-family: 'Glyphicons Halflings';
@@ -2564,6 +2439,19 @@ a.list-group-item.active > .badge,
   bottom: 0;
   margin-bottom: 0; }
 
+.navbar-fixed-left,
+.navbar-fixed-right {
+  position: fixed;
+  top: 50px;
+  z-index: 1030;
+  border-radius: 0; }
+
+.navbar-fixed-left {
+  left: 0; }
+
+.navbar-fixed-right {
+  right: 0; }
+
 .navbar-brand {
   display: block;
   max-width: 200px;
@@ -3120,6 +3008,12 @@ a.list-group-item.active {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; }
 
+.thumbnail > img,
+.img-thumbnail {
+  display: block;
+  max-width: 100%;
+  height: auto; }
+
 .thumbnail {
   display: block; }
 
@@ -3131,11 +3025,158 @@ a.thumbnail:focus {
   border-color: #428bca; }
 
 .thumbnail > img {
-  display: block;
-  max-width: 100%;
   margin-left: auto;
   margin-right: auto; }
 
 .thumbnail .caption {
   padding: 9px;
   color: #333333; }
+
+/* 文本樣式 */
+/* Typography - 排版樣式 */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700; }
+  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
+  .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
+    font-weight: normal;
+    line-height: 1;
+    color: #999999; }
+
+h1 small, .h1 small,
+h2 small, .h2 small {
+  font-size: 18px; }
+
+h3 small, .h3 small,
+h4 small, .h4 small {
+  font-size: 14px; }
+
+.page-header {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid #eeeeee; }
+
+.text-muted {
+  color: #999999; }
+
+a.text-muted:hover,
+a.text-muted:focus {
+  color: gray; }
+
+.text-warning {
+  color: #c09853; }
+
+a.text-warning:hover,
+a.text-warning:focus {
+  color: #a47e3c; }
+
+.text-danger {
+  color: #b94a48; }
+
+a.text-danger:hover,
+a.text-danger:focus {
+  color: #953b39; }
+
+.text-success {
+  color: #468847; }
+
+a.text-success:hover,
+a.text-success:focus {
+  color: #356635; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.text-center {
+  text-align: center; }
+
+.lead {
+  margin-bottom: 20px;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 1.4; }
+
+abbr[title],
+abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 1px dotted #999999; }
+
+abbr.initialism {
+  font-size: 90%;
+  text-transform: uppercase; }
+
+code,
+pre {
+  padding: 0 3px 2px;
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+  font-size: 12px;
+  color: #333333;
+  border-radius: 4px; }
+
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  white-space: nowrap; }
+
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px; }
+  pre.prettyprint {
+    margin-bottom: 20px; }
+  pre code {
+    padding: 0;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border: 0; }
+
+.pre-scrollable {
+  max-height: 340px;
+  overflow-y: scroll; }
+
+blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  border-left: 5px solid #eeeeee; }
+  blockquote p {
+    font-size: 17.5px;
+    font-weight: 300;
+    line-height: 1.25; }
+  blockquote p:last-child {
+    margin-bottom: 0; }
+  blockquote small {
+    display: block;
+    line-height: 1.42857;
+    color: #999999; }
+    blockquote small:before {
+      content: '\2014 \00A0'; }
+  blockquote.pull-right {
+    float: right;
+    padding-right: 15px;
+    padding-left: 0;
+    border-right: 5px solid #eeeeee;
+    border-left: 0; }
+    blockquote.pull-right p,
+    blockquote.pull-right small {
+      text-align: right; }
+    blockquote.pull-right small:before {
+      content: ''; }
+    blockquote.pull-right small:after {
+      content: '\00A0 \2014'; }
+
+/* END Typography */

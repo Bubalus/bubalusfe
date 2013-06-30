@@ -5,7 +5,7 @@
 // 最先引入这个文件以覆盖掉一些浏览器的预设样式
 // --------------------------------------------
 
-// 去掉一些元素默认的空白边
+// 去掉一些元素默认的空白边，並將盒模型定義爲 border-box（IE7尷尬，好在用的人不多了，但仍需注意）
 // 关于通配符 * 的使用一直有争议，根据浏览器的渲染原理，使用通配符确实会严重影响性能
 // 但经测试，在现代浏览器中使用通配符对渲染性能的影响其实很有限
 // ----------------------
@@ -81,7 +81,7 @@ em      { font-style: italic; }
 cite    { font-style: normal; }
 
 small { // 统一小号字体的大小
-    font-size: $font-size-base;
+    font-size: $font-size-small;
 }
 b, strong { // 校正 Firefox 4+， Safari 5 和 Chrome 中粗体字的样式
     font-weight: bold;
@@ -92,18 +92,6 @@ mark { // 校正 IE 中样式不呈现的问题
 }
 abbr[title] { // 校正 IE7/8/9， Safari 5 和 Chrome中样式不呈现的问题
     border-bottom: 1px dotted;
-}
-
-// Abbreviations and acronyms
-abbr[title],
-// Added data-* attribute to help out our tooltip plugin, per https://github.com/twitter/bootstrap/issues/5257
-abbr[data-original-title] {
-  cursor: help;
-  border-bottom: 1px dotted $gray-light;
-}
-abbr.initialism {
-  font-size: 90%;
-  text-transform: uppercase;
 }
 
 code, kbd, pre, samp { // 校正 Safari 5 和 Chrome 中奇怪的字体设置
