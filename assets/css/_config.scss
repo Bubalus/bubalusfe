@@ -1,0 +1,39 @@
+// --------------------------------------------
+// BubalusFE - The front-end development framework
+//
+/* Config - 样式表配置文件 */
+// 在此對 BubalusLayout 進行設置
+// --------------------------------------------
+
+// 全局設置
+// ----------------------
+// 只启用核心模块
+$only-core: 			false !default;
+// 是否對IE6-7提供（有限的）支持
+$ie6-7-support: 		true !default;
+// 是否對IE6-8提供CSS3濾鏡兼容
+$ie6-8-filter:          true !default; 
+// 是否啓用打印樣式
+$print-support:         true !default;
+
+// Reset 設置
+// ----------------------
+// 只开启基本重置
+$only-base-reset: 		false !default;
+
+// Layout 設置
+// ----------------------
+// 是否提供響應式布局
+$responsive-support: 	true !default;
+
+// 排版設置
+// ----------------------
+$font-size-base:        14px !default;
+$line-height-base:      1.428571429 !default; // 約20px
+
+// 引入全局變量和方法
+// ----------------------
+@import "config/variables";
+@import "config/mixins";
+
+/* END Config */

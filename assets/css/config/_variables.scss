@@ -1,0 +1,203 @@
+// --------------------------------------------
+// BubalusFE - The front-end development framework
+//
+/* Variables - 全局變量 */
+// --------------------------------------------
+
+// --------------------------------------------
+// 基本變量    ////////////////////////////////
+// --------------------------------------------
+
+// 灰色
+// ----------------------
+
+$gray-darker:            lighten(#000, 13.5%) !default; // #222
+$gray-dark:              lighten(#000, 20%) !default;   // #333
+$gray:                   lighten(#000, 33.5%) !default; // #555
+$gray-light:             lighten(#000, 60%) !default;   // #999
+$gray-lighter:           lighten(#000, 93.5%) !default; // #eee
+
+// 内涵色
+// ----------------------
+$brand-primary:         #428bca !default;
+$brand-success:         #5cb85c !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
+$brand-info:            #5bc0de !default;
+
+// 頁面背景色
+// ----------------------
+$html-bg:               #fff !default;
+$body-bg:               #fff !default;
+
+// 字色
+// ----------------------
+$text-color:            $gray-dark !default;
+
+// 鏈接字色
+$link-color:            $brand-primary !default;
+$link-hover-color:      darken($link-color, 15%) !default;
+$link-focus-color:      darken($link-color, 10%) !default;
+
+// 排版相關
+// -------------------------
+// 字體
+$font-family:             "Microsoft Yahei","SimSun";
+$font-family-hei：        "Microsoft Yahei","SimHei";
+$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-base:        $font-family !default;
+
+// 字號
+$font-size-large:         ceil($font-size-base * 1.25) !default; // ~18px
+$font-size-small:         ceil($font-size-base * 0.85) !default; // ~12px
+$font-size-mini:          ceil($font-size-base * 0.75) !default; // ~11px
+
+// 行高
+$line-height-computed:    floor($font-size-base * $line-height-base) !default; // ~20px
+
+// 標題
+$headings-font-family:    $font-family-base !default;
+$headings-font-weight:    700 !default;
+$headings-line-height:    1.1 !default;
+
+// --------------------------------------------
+// 組件相關    ////////////////////////////////
+// --------------------------------------------
+// 填充
+$padding-base-vertical:          8px !default;
+$padding-base-horizontal:        12px !default;
+
+$padding-large-vertical:         14px !default;
+$padding-large-horizontal:       16px !default;
+
+$padding-small-vertical:         5px !default;
+$padding-small-horizontal:       10px !default;
+
+// 圓角
+$border-radius-base:             4px !default;
+$border-radius-large:            6px !default;
+$border-radius-small:            3px !default;
+
+// 組件背景
+$component-active-bg:            $brand-primary !default;
+
+// Z-index
+$zindex-popover:           1010 !default;
+$zindex-tooltip:           1030 !default;
+$zindex-modal-background:  1040 !default;
+$zindex-modal:             1050 !default;
+
+
+// 表格組件
+// -------------------------
+$table-bg:                           transparent !default; // overall background-color
+$table-bg-accent:                    #f9f9f9 !default; // for striping
+$table-bg-hover:                     #f5f5f5 !default; // for hover
+
+$table-border-color:                 #ddd !default; // table and cell border
+
+
+// Jumbotron 大屏幕組件
+// -------------------------
+
+$jumbotron-bg:                   $gray-lighter !default;
+$jumbotron-heading-color:        inherit !default;
+$jumbotron-lead-color:           inherit !default;
+
+
+// Form 狀態 和 alerts
+// -------------------------
+$state-warning-text:             #c09853 !default;
+$state-warning-bg:               #fcf8e3 !default;
+$state-warning-border:           darken(adjust-hue($state-warning-bg, -10%), 3%) !default;
+
+$state-danger-text:              #b94a48 !default;
+$state-danger-bg:                #f2dede !default;
+$state-danger-border:            darken(adjust-hue($state-danger-bg, -10%), 3%) !default;
+
+$state-success-text:             #468847 !default;
+$state-success-bg:               #dff0d8 !default;
+$state-success-border:           darken(adjust-hue($state-success-bg, -10%), 5%) !default;
+
+$state-info-text:                #3a87ad !default;
+$state-info-bg:                  #d9edf7 !default;
+$state-info-border:              darken(adjust-hue($state-info-bg, -10%), 7%) !default;
+
+// Alerts
+// -------------------------
+$alert-bg:                    $state-warning-bg !default;
+$alert-text:                  $state-warning-text !default;
+$alert-border:                $state-warning-border !default;
+$alert-border-radius:         $border-radius-base !default;
+
+$alert-success-bg:            $state-success-bg !default;
+$alert-success-text:          $state-success-text !default;
+$alert-success-border:        $state-success-border !default;
+
+$alert-danger-bg:             $state-danger-bg !default;
+$alert-danger-text:           $state-danger-text !default;
+$alert-danger-border:         $state-danger-border !default;
+
+$alert-info-bg:               $state-info-bg !default;
+$alert-info-text:             $state-info-text !default;
+$alert-info-border:           $state-info-border !default;
+
+
+// Tooltips 和 popovers
+// -------------------------
+$tooltip-color:               #fff !default;
+$tooltip-bg:                  rgba(0,0,0,.9) !default;
+$tooltip-arrow-width:         5px !default;
+$tooltip-arrow-color:         $tooltip-bg !default;
+
+$popover-bg:                  #fff !default;
+$popover-arrow-width:         10px !default;
+$popover-arrow-color:         #fff !default;
+$popover-title-bg:            darken($popover-bg, 3%) !default;
+
+$popover-arrow-outer-width:   ($popover-arrow-width + 1) !default;
+$popover-arrow-outer-color:   rgba(0,0,0,.25) !default;
+
+// Wells 組件
+// -------------------------
+$well-bg:                     #f5f5f5 !default;
+
+
+
+// --------------------------------------------
+// 響應點    //////////////////////////////////
+// --------------------------------------------
+
+// 針對手機
+$screen-tiny:                480px !default;
+$screen-phone:               $screen-tiny !default;
+
+// 針對平板電腦
+$screen-small:               768px !default;
+$screen-tablet:              $screen-small !default;
+
+$screen-small-max:           ($screen-medium - 1) !default;
+$screen-tablet-max:          $screen-small-max !default;
+
+// 針對普通顯示器
+$screen-medium:              992px !default;
+$screen-desktop:             $screen-medium !default;
+
+// 針對寬屏顯示器
+$screen-large:               1200px !default;
+$screen-large-desktop:       $screen-large !default;
+
+
+// --------------------------------------------
+// 雜項    ////////////////////////////////////
+// --------------------------------------------
+
+// 分割綫顔色
+$hr-border:                   $gray-lighter !default;
+
+// 側邊欄寬度
+$component-offset-horizontal: 180px !default;
+
+
+
+/* END Variables */

@@ -1,258 +1,15 @@
+// --------------------------------------------
+// BubalusFE - The front-end development framework
 //
-// Variables
-// --------------------------------------------------
-
-
-// Media queries breakpoints
-// --------------------------------------------------
-
-// Tiny screen / phone
-$screen-tiny:                480px !default;
-$screen-phone:               $screen-tiny !default;
-
-// Small screen / tablet
-$screen-small:               768px !default;
-$screen-tablet:              $screen-small !default;
-
-// Medium screen / desktop
-$screen-medium:              992px !default;
-$screen-desktop:             $screen-medium !default;
-
-// So media queries don't overlap when required, provide a maximum
-$screen-small-max:           ($screen-medium - 1) !default;
-$screen-tablet-max:          $screen-small-max !default;
-
-// Large screen / wide desktop
-$screen-large:               1200px !default;
-$screen-large-desktop:       $screen-large !default;
-
-
-
-
-// Global values
-// --------------------------------------------------
-
-
-// Grays
-// -------------------------
-
-$gray-darker:            lighten(#000, 13.5%) !default; // #222
-$gray-dark:              lighten(#000, 20%) !default;   // #333
-$gray:                   lighten(#000, 33.5%) !default; // #555
-$gray-light:             lighten(#000, 60%) !default;   // #999
-$gray-lighter:           lighten(#000, 93.5%) !default; // #eee
-
-// Brand colors
-// -------------------------
-
-$brand-primary:         #428bca !default;
-$brand-success:         #5cb85c !default;
-$brand-warning:         #f0ad4e !default;
-$brand-danger:          #d9534f !default;
-$brand-info:            #5bc0de !default;
-
-// Scaffolding
-// -------------------------
-
-$body-bg:               #fff !default;
-$text-color:            $gray-dark !default;
-
-// Links
-// -------------------------
-
-$link-color:            $brand-primary !default;
-$link-hover-color:      darken($link-color, 15%) !default;
-$link-focus-color:      darken($link-color, 10%) !default;
-
-// Typography
-// -------------------------
-
-$font-family:             "微软雅黑","宋体";
-$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
-$font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace !default;
-$font-family-base:        $font-family-sans-serif !default;
-
-$font-size-base:          14px !default;
-$font-size-large:         ceil($font-size-base * 1.25) !default; // ~18px
-$font-size-small:         ceil($font-size-base * 0.85) !default; // ~12px
-$font-size-mini:          ceil($font-size-base * 0.75) !default; // ~11px
-
-$line-height-base:        1.428571429 !default; // 20/14
-$line-height-computed:    floor($font-size-base * $line-height-base) !default; // ~20px
-
-$headings-font-family:    $font-family-base !default;
-$headings-font-weight:    700 !default;
-$headings-line-height:    1.1 !default;
-
-
-// Components
-// -------------------------
-// Based on 14px font-size and 1.428 line-height (~20px to start)
-
-$padding-base-vertical:          8px !default;
-$padding-base-horizontal:        12px !default;
-
-$padding-large-vertical:         14px !default;
-$padding-large-horizontal:       16px !default;
-
-$padding-small-vertical:         5px !default;
-$padding-small-horizontal:       10px !default;
-
-$border-radius-base:             4px !default;
-$border-radius-large:            6px !default;
-$border-radius-small:            3px !default;
-
-$component-active-bg:            $brand-primary !default;
-
-
-// Tables
-// -------------------------
-
-$table-bg:                           transparent !default; // overall background-color
-$table-bg-accent:                    #f9f9f9 !default; // for striping
-$table-bg-hover:                     #f5f5f5 !default; // for hover
-
-$table-border-color:                 #ddd !default; // table and cell border
-
-
-
-
-
-
-
-// COMPONENT VARIABLES
-// --------------------------------------------------
-
-
-// Z-index master list
-// -------------------------
-// Used for a bird's eye view of components dependent on the z-axis
-// Try to avoid customizing these :)
-
-$zindex-popover:           1010 !default;
-$zindex-tooltip:           1030 !default;
-$zindex-modal-background:  1040 !default;
-$zindex-modal:             1050 !default;
-
-
-
-
-
-
-
-
-// Jumbotron
-// -------------------------
-
-$jumbotron-bg:                   $gray-lighter !default;
-$jumbotron-heading-color:        inherit !default;
-$jumbotron-lead-color:           inherit !default;
-
-
-// Form states and alerts
-// -------------------------
-
-$state-warning-text:             #c09853 !default;
-$state-warning-bg:               #fcf8e3 !default;
-$state-warning-border:           darken(adjust-hue($state-warning-bg, -10%), 3%) !default;
-
-$state-danger-text:              #b94a48 !default;
-$state-danger-bg:                #f2dede !default;
-$state-danger-border:            darken(adjust-hue($state-danger-bg, -10%), 3%) !default;
-
-$state-success-text:             #468847 !default;
-$state-success-bg:               #dff0d8 !default;
-$state-success-border:           darken(adjust-hue($state-success-bg, -10%), 5%) !default;
-
-$state-info-text:                #3a87ad !default;
-$state-info-bg:                  #d9edf7 !default;
-$state-info-border:              darken(adjust-hue($state-info-bg, -10%), 7%) !default;
-
-
-// Tooltips and popovers
-// -------------------------
-$tooltip-color:               #fff !default;
-$tooltip-bg:                  rgba(0,0,0,.9) !default;
-$tooltip-arrow-width:         5px !default;
-$tooltip-arrow-color:         $tooltip-bg !default;
-
-$popover-bg:                  #fff !default;
-$popover-arrow-width:         10px !default;
-$popover-arrow-color:         #fff !default;
-$popover-title-bg:            darken($popover-bg, 3%) !default;
-
-// Special enhancement for popovers
-$popover-arrow-outer-width:   ($popover-arrow-width + 1) !default;
-$popover-arrow-outer-color:   rgba(0,0,0,.25) !default;
-
-
-
-
-// Modals
-// -------------------------
-$modal-inner-padding:         20px !default;
-
-$modal-title-padding:         15px !default;
-$modal-title-line-height:     $line-height-base !default;
-
-// Alerts
-// -------------------------
-$alert-bg:                    $state-warning-bg !default;
-$alert-text:                  $state-warning-text !default;
-$alert-border:                $state-warning-border !default;
-$alert-border-radius:         $border-radius-base !default;
-
-$alert-success-bg:            $state-success-bg !default;
-$alert-success-text:          $state-success-text !default;
-$alert-success-border:        $state-success-border !default;
-
-$alert-danger-bg:             $state-danger-bg !default;
-$alert-danger-text:           $state-danger-text !default;
-$alert-danger-border:         $state-danger-border !default;
-
-$alert-info-bg:               $state-info-bg !default;
-$alert-info-text:             $state-info-text !default;
-$alert-info-border:           $state-info-border !default;
-
-
-
-
-
-// Wells
-// -------------------------
-$well-bg:                     #f5f5f5 !default;
-
-
-// Miscellaneous
-// -------------------------
-
-// Hr border color
-$hr-border:                   $gray-lighter !default;
-
-// Horizontal forms & lists
-$component-offset-horizontal: 180px !default;
-
-
-
-//
-// Mixins
-// --------------------------------------------------
-
-
-// Utilities
-// -------------------------
-
-// clear
-// Source: http://nicolasgallagher.com/micro-clear-hack/
-//
-// For modern browsers
-// 1. The space content is one way to avoid an Opera bug when the
-//    contenteditable attribute is included anywhere else in the document.
-//    Otherwise it causes space to appear at the top and bottom of elements
-//    that are clearfixed.
-// 2. The use of `table` rather than `block` is only necessary if using
-//    `:before` to contain the top-margins of child elements.
+/* Mixins - 全局方法 */
+// --------------------------------------------
+
+// --------------------------------------------
+// 基本方法  //////////////////////////////////
+// --------------------------------------------
+
+// 清除浮動
+// ----------------------
 @mixin clear {
   &:before {
     content:"";
@@ -271,41 +28,44 @@ $component-offset-horizontal: 180px !default;
   *zoom: 1;
 }
 
-// Webkit-style focus
+// Webkit 聚焦樣式
+// ----------------------
 @mixin tab-focus() {
-  // Default
+  // 默認是這樣的
   outline: thin dotted #333;
-  // Webkit
+  // 在 Webkit 中
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 
-// Center-align a block level element
+// 使一個元素以塊級形式居中對齊
+// ----------------------
 @mixin center-block() {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-// Sizing shortcuts
+// 尺寸設置
+// ----------------------
 @mixin size($width, $height) {
   width: $width;
   height: $height;
 }
-@mixin square($size) {
+@mixin square($size) { // 正方形
   @include size($size, $size);
 }
 
-// Text overflow
-// Requires inline-block or block for proper styling
+// 文本溢出處理（截字）
+// ----------------------
 @mixin text-overflow() {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-// CSS image replacement
-// Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+// 圖片替換文本
+// ----------------------
 @mixin hide-text() {
   font: 0/0 a;
   color: transparent;
@@ -314,17 +74,21 @@ $component-offset-horizontal: 180px !default;
   border: 0;
 }
 
-// Responsive images (ensure images don't scale beyond their parents)
+// 響應式圖片 （圖片根據父容器尺寸縮放）
+// ----------------------
 @mixin img-responsive {
   display: inline-block;
-  max-width: 100%; // Part 1: Set a maxium relative to the parent
-  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+  max-width: 100%;
+  height: auto;
 }
 
-// CSS3 PROPERTIES
-// --------------------------------------------------
 
-// Single side border-radius
+// --------------------------------------------
+// CSS3       /////////////////////////////////
+// --------------------------------------------
+
+// 單邊圓角
+// ----------------------
 @mixin border-top-radius($radius) {
   border-top-right-radius: $radius;
    border-top-left-radius: $radius;
@@ -342,13 +106,15 @@ $component-offset-horizontal: 180px !default;
      border-top-left-radius: $radius;
 }
 
-// Drop shadows
+// 陰影
+// ----------------------
 @mixin box-shadow($shadow) {
   -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
           box-shadow: $shadow;
 }
 
-// Transitions
+// 過渡效果
+// ----------------------
 @mixin transition($transition) {
   -webkit-transition: $transition;
      -moz-transition: $transition;
@@ -368,7 +134,8 @@ $component-offset-horizontal: 180px !default;
           transition-duration: $transition-duration;
 }
 
-// Transformations
+// 轉換
+// ----------------------
 @mixin rotate($degrees) {
   -webkit-transform: rotate($degrees);
      -moz-transform: rotate($degrees);
@@ -393,7 +160,7 @@ $component-offset-horizontal: 180px !default;
 @mixin skew($x, $y) {
   -webkit-transform: skew($x, $y);
      -moz-transform: skew($x, $y);
-      -ms-transform: skewX($x) skewY($y); // See https://github.com/twitter/bootstrap/issues/4885
+      -ms-transform: skewX($x) skewY($y);
        -o-transform: skew($x, $y);
           transform: skew($x, $y);
 }
@@ -404,24 +171,16 @@ $component-offset-horizontal: 180px !default;
           transform: translate3d($x, $y, $z);
 }
 
-// Backface visibility
-// Prevent browsers from flickering when using CSS 3D transforms.
-// Default value is `visible`, but can be changed to `hidden
-// See git pull https://github.com/dannykeane/bootstrap.git backface-visibility for examples
-@mixin backface-visibility($visibility){
-	-webkit-backface-visibility: $visibility;
-	   -moz-backface-visibility: $visibility;
-	        backface-visibility: $visibility;
-}
-
-// Background clipping
+// 背景剪裁
+// ----------------------
 @mixin background-clip($clip) {
   -webkit-background-clip: $clip;
      -moz-background-clip: $clip;
           background-clip: $clip;
 }
 
-// Background sizing
+// 背景尺寸
+// ----------------------
 @mixin background-size($size) {
   -webkit-background-size: $size;
      -moz-background-size: $size;
@@ -429,15 +188,16 @@ $component-offset-horizontal: 180px !default;
           background-size: $size;
 }
 
-// Box sizing
+// 盒模型定義
+// ----------------------
 @mixin box-sizing($boxmodel) {
   -webkit-box-sizing: $boxmodel;
      -moz-box-sizing: $boxmodel;
           box-sizing: $boxmodel;
 }
 
-// User select
-// For selecting text on the page
+// 控制選中内容
+// ----------------------
 @mixin user-select($select) {
   -webkit-user-select: $select;
      -moz-user-select: $select;
@@ -446,23 +206,29 @@ $component-offset-horizontal: 180px !default;
           user-select: $select;
 }
 
-// Resize anything
+// 使元素可調整大小
+// ----------------------
 @mixin resizable($direction) {
-  resize: $direction; // Options: horizontal, vertical, both
-  overflow: auto; // Safari fix
+  resize: $direction;
+  overflow: auto;
 }
 
-// CSS3 Content Columns
-@mixin content-columns($column-count, $column-gap: $grid-gutter-width) {
+// 將元素中的内容分列顯示，設置列數、填充和間距
+// ----------------------
+@mixin content-columns($column-count, $column-gap: $grid-gutter-width, $column-rule) {
   -webkit-column-count: $column-count;
      -moz-column-count: $column-count;
           column-count: $column-count;
   -webkit-column-gap: $column-gap;
      -moz-column-gap: $column-gap;
           column-gap: $column-gap;
+  -webkit-column-rule: $column-rule;
+     -moz-column-rule: $column-rule;
+          column-rule: $column-rule;
 }
 
-// Optional hyphenation
+// 設置内容的拆分方式以改善段落佈局
+// ----------------------
 @mixin hyphens($mode: auto) {
   word-wrap: break-word;
   -webkit-hyphens: $mode;
@@ -472,26 +238,19 @@ $component-offset-horizontal: 180px !default;
           hyphens: $mode;
 }
 
-// Opacity
+// 透明度
+// ----------------------
 @mixin opacity($opacity) {
   opacity: $opacity;
-  // IE8 filter
+  // IE 濾鏡
   $opacity-ie: ($opacity * 100);
   filter: alpha(opacity=#{opacity-ie})
 }
 
 
-
-// BACKGROUNDS
-// --------------------------------------------------
-
-// GRADIENTS
-// --------------------------------------------------
-
-// Horizontal gradient, from left to right
-//
-// Creates two color stops, start and end, by specifying a color and position for each color stop.
-// Color stops are not available in IE9 and below.
+// 漸變
+// ----------------------
+// 從左到右的水平漸變
 @mixin gradient-horizontal($start-color: #555, $start-percent: 0%, $end-color: #333, $end-percent: 100%) {
   background-color: $end-color;
   background-image: -webkit-gradient(linear, $start-percent top, $end-percent top, from($start-color), to($end-color)); // Safari 4+, Chrome 2+
@@ -501,10 +260,8 @@ $component-offset-horizontal: 180px !default;
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
 }
-// Vertical gradient, from top to bottom
-//
-// Creates two color stops, start and end, by specifying a color and position for each color stop.
-// Color stops are not available in IE9 and below.
+
+// 從上到下的垂直漸變
 @mixin gradient-vertical($start-color: #555, $start-percent: 0%, $end-color: #333, $end-percent: 100%) {
   background-color: $end-color;
   background-image: -webkit-gradient(linear, left $start-percent, left $end-percent, from($start-color), to($end-color)); // Safari 4+, Chrome 2+
@@ -515,6 +272,7 @@ $component-offset-horizontal: 180px !default;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
 }
 
+// 定向漸變
 @mixin gradient-directional($start-color: #555, $end-color: #333, $deg: 45deg) {
   background-color: $end-color;
   background-repeat: repeat-x;
@@ -522,6 +280,8 @@ $component-offset-horizontal: 180px !default;
   background-image: -moz-linear-gradient($deg, $start-color, $end-color); // FF 3.6+
   background-image: linear-gradient($deg, $start-color, $end-color); // Standard, IE10
 }
+
+// 水平的三色漸變
 @mixin gradient-horizontal-three-colors($start-color: #00b3ee, $mid-color: #7a43b6, $color-stop: 50%, $end-color: #c3325f) {
   background-color: mix($mid-color, $end-color, 80%);
   background-image: -webkit-gradient(left, linear, 0 0, 0 100%, from($start-color), color-stop($color-stop, $mid-color), to($end-color));
@@ -532,6 +292,7 @@ $component-offset-horizontal: 180px !default;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down, gets no color-stop at all for proper fallback
 }
 
+// 垂直的三色漸變
 @mixin gradient-vertical-three-colors($start-color: #00b3ee, $mid-color: #7a43b6, $color-stop: 50%, $end-color: #c3325f) {
   background-color: mix($mid-color, $end-color, 80%);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from($start-color), color-stop($color-stop, $mid-color), to($end-color));
@@ -541,6 +302,8 @@ $component-offset-horizontal: 180px !default;
   background-repeat: no-repeat;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down, gets no color-stop at all for proper fallback
 }
+
+// 徑向漸變
 @mixin gradient-radial($inner-color: #555, $outer-color: #333) {
   background-color: $outer-color;
   background-image: -webkit-gradient(radial, center center, 0, center center, 460, from($inner-color), to($outer-color));
@@ -549,6 +312,8 @@ $component-offset-horizontal: 180px !default;
   background-image: radial-gradient(circle, $inner-color, $outer-color);
   background-repeat: no-repeat;
 }
+
+// 條紋漸變
 @mixin gradient-striped($color: #555, $angle: 45deg) {
   background-color: $color;
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, rgba(255,255,255,.15)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(255,255,255,.15)), color-stop(.75, rgba(255,255,255,.15)), color-stop(.75, transparent), to(transparent));
@@ -557,19 +322,15 @@ $component-offset-horizontal: 180px !default;
   background-image: linear-gradient($angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
 }
 
-// Reset filters for IE
-//
-// When you need to remove a gradient background, don't forget to use this to reset
-// the IE filter for IE9 and below.
+// 清除IE濾鏡
+// ----------------------
 @mixin reset-filter() {
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 
 
-// RETINA IMAGE SUPPORT
-// --------------------------------------------------
-
-// Short retina mixin for setting background-image and -size
+// RETINA 圖像支持
+// ----------------------
 @mixin retina-image($file-1x, $file-2x, $width-1x, $height-1x) {
   background-image: url("#{file-1x}");
 
@@ -585,20 +346,22 @@ $component-offset-horizontal: 180px !default;
   }
 }
 
-// Horizontal dividers
-// -------------------------
-// Dividers (basically an hr) within dropdowns and nav lists
+// --------------------------------------------
+// 其他       /////////////////////////////////
+// --------------------------------------------
+
+// 水平分割綫，可用於下拉菜單或導航
+// ----------------------
 @mixin nav-divider($top: #e5e5e5, $bottom: #fff) {
-  height: 2px; // 1px for background, one for border
+  height: 2px;
   margin: (($line-height-computed / 2) - 1) 0;
   overflow: hidden;
   background-color: $top;
   border-bottom: 1px solid $bottom;
 }
 
-// Responsive utilities
-// -------------------------
-// More easily include all the states for responsive-utilities.less.
+// 響應式相關
+// ----------------------
 @mixin responsive-visibility($selector) {
   #{$selector} {
     display: block !important;
@@ -617,3 +380,5 @@ $component-offset-horizontal: 180px !default;
   td#{$selector} { display: none !important; }
 }
 
+
+/* END Mixins */
