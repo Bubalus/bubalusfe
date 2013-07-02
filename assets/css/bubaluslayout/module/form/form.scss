@@ -37,6 +37,7 @@ $input-height-small:             (ceil($font-size-small * $line-height-base) + (
 // Generate form validation states
 @mixin form-field-validation($text-color: #555, $border-color: #ccc, $background-color: #f5f5f5) {
   // Color the label text
+  help-block,
   .control-label {
     color: $text-color;
   }
@@ -185,7 +186,15 @@ input[type="radio"]:focus,
 input[type="checkbox"]:focus {
   @include tab-focus();
 }
-
+// Fix for Chrome number input
+// Setting certain font-sizes causes the `I` bar to appear on hover of the bottom increment button.
+// See https://github.com/twitter/bootstrap/issues/8350 for more.
+input[type="number"] {
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button  {
+    height: auto;
+  }
+}
 
 // Placeholder
 // ----------------------

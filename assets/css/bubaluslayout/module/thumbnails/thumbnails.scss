@@ -26,15 +26,13 @@ $thumbnail-border-radius:     $border-radius-base !default;
   border-radius: $thumbnail-border-radius;
   @include transition(all .2s ease-in-out);
 }
-.thumbnail > img,
-.img-thumbnail {
-  @include img-responsive();
-}
+
 .thumbnail {
   display: block;
 }
+.thumbnail > img,
 .img-thumbnail {
-  display: inline-block;
+  @include img-responsive();
 }
 
 // 爲鏈接設置鼠標懸浮樣式

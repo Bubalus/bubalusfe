@@ -316,7 +316,7 @@ $component-offset-horizontal: 180px !default;
 
 // Responsive images (ensure images don't scale beyond their parents)
 @mixin img-responsive {
-  display: block;
+  display: inline-block;
   max-width: 100%; // Part 1: Set a maxium relative to the parent
   height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
 }
@@ -608,3 +608,12 @@ $component-offset-horizontal: 180px !default;
   th#{$selector},
   td#{$selector} { display: table-cell !important; }
 }
+@mixin responsive-invisibility($selector) {
+  #{$selector} {
+    display: none !important;
+  }
+  tr#{$selector} { display: none !important; }
+  th#{$selector},
+  td#{$selector} { display: none !important; }
+}
+
