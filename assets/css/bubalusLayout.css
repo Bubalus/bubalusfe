@@ -1,6 +1,12 @@
 @charset "UTF-8";
 /* Socket - 样式表插座 */
-/* 核心內容
+/* Config - 样式表配置文件 */
+/* Variables - 全局變量 */
+/* END Variables */
+/* Mixins - 全局方法 */
+/* END Mixins */
+/* END Config */
+/* 載入 BubalusLayout 核心
 ----------------------------------*/
 /* Reset - 重設基本樣式 */
 * {
@@ -37,7 +43,7 @@ html {
   text-align: left; }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Microsoft Yahei", "SimSun";
   font-size: 14px;
   line-height: 1.42857;
   color: #333333;
@@ -85,7 +91,7 @@ abbr[title] {
   border-bottom: 1px dotted; }
 
 code, kbd, pre, samp {
-  font-family: "微软雅黑", "宋体";
+  font-family: "Microsoft Yahei", "SimSun";
   font-size: 1em; }
 
 pre {
@@ -592,7 +598,7 @@ header, footer, nav, #main {
   position: fixed; }
 
 .img-responsive {
-  display: block;
+  display: inline-block;
   max-width: 100%;
   height: auto; }
 
@@ -646,14 +652,32 @@ td.visible-sm {
 .visible-md {
   display: none !important; }
 
+tr.visible-md {
+  display: none !important; }
+
+th.visible-md,
+td.visible-md {
+  display: none !important; }
+
 .visible-lg {
+  display: none !important; }
+
+tr.visible-lg {
+  display: none !important; }
+
+th.visible-lg,
+td.visible-lg {
   display: none !important; }
 
 .hidden-sm {
   display: none !important; }
 
-.hidden-md {
-  display: block !important; }
+tr.hidden-sm {
+  display: none !important; }
+
+th.hidden-sm,
+td.hidden-sm {
+  display: none !important; }
 
 .hidden-md {
   display: block !important; }
@@ -679,6 +703,13 @@ td.hidden-lg {
   .visible-sm {
     display: none !important; }
 
+  tr.visible-sm {
+    display: none !important; }
+
+  th.visible-sm,
+  td.visible-sm {
+    display: none !important; }
+
   .visible-md {
     display: block !important; }
 
@@ -690,6 +721,13 @@ td.hidden-lg {
     display: table-cell !important; }
 
   .visible-lg {
+    display: none !important; }
+
+  tr.visible-lg {
+    display: none !important; }
+
+  th.visible-lg,
+  td.visible-lg {
     display: none !important; }
 
   .hidden-sm {
@@ -705,6 +743,13 @@ td.hidden-lg {
   .hidden-md {
     display: none !important; }
 
+  tr.hidden-md {
+    display: none !important; }
+
+  th.hidden-md,
+  td.hidden-md {
+    display: none !important; }
+
   .hidden-lg {
     display: block !important; }
 
@@ -718,7 +763,21 @@ td.hidden-lg {
   .visible-sm {
     display: none !important; }
 
+  tr.visible-sm {
+    display: none !important; }
+
+  th.visible-sm,
+  td.visible-sm {
+    display: none !important; }
+
   .visible-md {
+    display: none !important; }
+
+  tr.visible-md {
+    display: none !important; }
+
+  th.visible-md,
+  td.visible-md {
     display: none !important; }
 
   .visible-lg {
@@ -752,8 +811,22 @@ td.hidden-lg {
     display: table-cell !important; }
 
   .hidden-lg {
+    display: none !important; }
+
+  tr.hidden-lg {
+    display: none !important; }
+
+  th.hidden-lg,
+  td.hidden-lg {
     display: none !important; } }
 .visible-print {
+  display: none !important; }
+
+tr.visible-print {
+  display: none !important; }
+
+th.visible-print,
+td.visible-print {
   display: none !important; }
 
 @media print {
@@ -768,6 +841,13 @@ td.hidden-lg {
     display: table-cell !important; }
 
   .hidden-print {
+    display: none !important; }
+
+  tr.hidden-print {
+    display: none !important; }
+
+  th.hidden-print,
+  td.hidden-print {
     display: none !important; } }
 /* END Common */
 /* 擴展組件
@@ -1034,10 +1114,6 @@ fieldset[disabled] .btn-link {
 .btn-group > .btn + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px; }
-
-.btn-group > .btn-mini + .dropdown-toggle {
-  padding-left: 5px;
-  padding-right: 5px; }
 
 .btn-group > .btn-large + .dropdown-toggle {
   padding-left: 12px;
@@ -1367,6 +1443,9 @@ input[type="checkbox"]:focus {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px; }
 
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+  height: auto; }
+
 input:-moz-placeholder,
 textarea:-moz-placeholder {
   color: #999999; }
@@ -1461,6 +1540,7 @@ input[type="color"].input-small {
   font-size: 12px;
   border-radius: 3px; }
 
+.has-warning help-block,
 .has-warning .control-label {
   color: #c09853; }
 .has-warning .input-with-feedback {
@@ -1477,6 +1557,7 @@ input[type="color"].input-small {
   border-color: #c09853;
   background-color: #fcf8e3; }
 
+.has-error help-block,
 .has-error .control-label {
   color: #b94a48; }
 .has-error .input-with-feedback {
@@ -1493,6 +1574,7 @@ input[type="color"].input-small {
   border-color: #b94a48;
   background-color: #f2dede; }
 
+.has-success help-block,
 .has-success .control-label {
   color: #468847; }
 .has-success .input-with-feedback {
@@ -2178,9 +2260,6 @@ a.badge:hover, a.badge:focus {
   position: relative;
   top: -1px; }
 
-.btn-mini .badge {
-  top: 0; }
-
 a.list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
   color: #428bca;
@@ -2217,7 +2296,7 @@ a.list-group-item.active > .badge,
   margin-left: 10px; }
 
 .media-list {
-  margin-left: 0;
+  padding-left: 0;
   list-style: none; }
 
 /* 導航 */
@@ -2636,15 +2715,16 @@ a.list-group-item.active > .badge,
   padding: 10px 30px 10px 15px;
   margin-bottom: -1px;
   border: 1px solid #dddddd; }
-
-.list-group-item:first-child {
-  border-top-right-radius: 4px;
-  border-top-left-radius: 4px; }
-
-.list-group-item:last-child {
-  margin-bottom: 0;
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px; }
+  .list-group-item:first-child {
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px; }
+  .list-group-item:last-child {
+    margin-bottom: 0;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px; }
+  .list-group-item > .badge {
+    float: right;
+    margin-right: -15px; }
 
 .list-group-item-heading {
   margin-top: 0;
@@ -2658,12 +2738,9 @@ a.list-group-item .list-group-item-heading {
   color: #333; }
 a.list-group-item .list-group-item-text {
   color: #555; }
-
-a.list-group-item:hover,
-a.list-group-item:focus {
+a.list-group-item:hover, a.list-group-item:focus {
   text-decoration: none;
   background-color: whitesmoke; }
-
 a.list-group-item.active {
   z-index: 2;
   color: white;
@@ -2674,19 +2751,12 @@ a.list-group-item.active {
   a.list-group-item.active .list-group-item-text {
     color: #e1edf7; }
 
-.list-group-item > .badge,
-.list-group-item > .glyphicon-chevron-right {
-  float: right;
-  margin-right: -15px; }
-
-.list-group-item > .glyphicon + .badge {
-  margin-right: 5px; }
-
 /* END Navs */
 /* 分頁 */
 /* Pagination - 一套分頁样式 */
 .pagination {
   display: inline-block;
+  padding-left: 0;
   margin: 20px 0;
   border-radius: 4px; }
 
@@ -2760,6 +2830,7 @@ a.list-group-item.active {
   border-top-right-radius: 3px; }
 
 .pager {
+  padding-left: 0;
   margin: 20px 0;
   list-style: none;
   text-align: center;
@@ -3008,17 +3079,14 @@ a.list-group-item.active {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; }
 
-.thumbnail > img,
-.img-thumbnail {
-  display: block;
-  max-width: 100%;
-  height: auto; }
-
 .thumbnail {
   display: block; }
 
+.thumbnail > img,
 .img-thumbnail {
-  display: inline-block; }
+  display: inline-block;
+  max-width: 100%;
+  height: auto; }
 
 a.thumbnail:hover,
 a.thumbnail:focus {
@@ -3036,7 +3104,7 @@ a.thumbnail:focus {
 /* Typography - 排版樣式 */
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Microsoft Yahei", "SimSun";
   font-weight: 700; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
   .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
@@ -3180,3 +3248,203 @@ blockquote {
       content: '\00A0 \2014'; }
 
 /* END Typography */
+/* 載入第三方樣式
+----------------------------------*/
+/* 載入項目樣式
+----------------------------------*/
+body {
+  position: relative; }
+
+.docs-nav {
+  width: 60%;
+  margin: 0 auto; }
+
+.docs-nav .navbar-brand {
+  color: #fff; }
+
+.docs-nav .navbar-nav > li > a {
+  color: #e6cac8; }
+
+.docs-nav .navbar-nav > li > a:hover {
+  color: #fff; }
+
+.docs-nav .navbar-nav > .active > a,
+.docs-nav .navbar-nav > .active > a:hover {
+  color: #fff;
+  background-color: #993c3a; }
+
+.docs-nav .navbar-toggle {
+  border-color: #b94a48; }
+
+.docs-nav .navbar-toggle:hover {
+  background-color: #993c3a;
+  border-color: #993c3a; }
+
+/* Homepage masthead
+-------------------------------------------------- */
+.masthead {
+  position: relative;
+  padding: 80px 15px 30px 15px;
+  text-align: center; }
+
+.masthead h1 {
+  font-size: 120px;
+  line-height: 1.2; }
+
+.masthead .social {
+  margin-top: 80px; }
+
+/* Download button */
+.masthead .btn {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 18px 24px;
+  font-size: 21px;
+  color: #b94a48;
+  /* redeclare to override the `.jumbotron a` */
+  background-color: #fff;
+  border-color: #e5e5e5; }
+
+.masthead .btn:hover,
+.masthead .btn:active {
+  color: #fff;
+  /* redeclare to override the `.jumbotron a` */
+  background-color: #b94a48;
+  border-color: #b94a48; }
+
+/* Textual links */
+.masthead-links {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 0;
+  list-style: none; }
+
+.masthead-links li {
+  display: inline;
+  color: #999; }
+
+.masthead-links li + li {
+  margin-left: 20px; }
+
+/* Base class */
+.example-box {
+  position: relative;
+  padding: 39px 14px 14px;
+  margin-bottom: -1px;
+  border: 1px solid #ddd;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px; }
+
+/* Echo out a label for the example */
+.example-box:after {
+  content: "Example";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #9da0a4;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-top-left-radius: 4px;
+  border-bottom-right-radius: 4px; }
+
+/* Tweak display of the examples */
+.example-box + .prettyprint,
+.example-box + .highlight {
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; }
+
+/* Tweak content of examples for optimum awesome */
+.example-box > p:last-child,
+.example-box > ul:last-child,
+.example-box > ol:last-child,
+.example-box > blockquote:last-child,
+.example-box > input:last-child,
+.example-box > select:last-child,
+.example-box > textarea:last-child,
+.example-box > .table:last-child,
+.example-box > .navbar:last-child
+.example-box > .jumbotron:last-child,
+.example-box > .alert:last-child,
+.example-box > .panel:last-child,
+.example-box > .list-group:last-child,
+.example-box > .well:last-child {
+  margin-bottom: 0; }
+
+.example-box > .close {
+  float: none; }
+
+.highlight {
+  padding: 9px 14px;
+  margin-bottom: 14px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  border-radius: 4px; }
+
+.highlight pre {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: transparent;
+  border: 0;
+  white-space: nowrap; }
+
+.highlight pre code {
+  font-size: inherit;
+  color: #333;
+  /* Effectively the base text color */ }
+
+.highlight pre .lineno {
+  display: inline-block;
+  width: 22px;
+  padding-right: 5px;
+  margin-right: 10px;
+  text-align: right;
+  color: #bebec5; }
+
+#layout .header, #layout .footer, #layout .nav, #layout .main {
+  padding: 10px; }
+#layout .container {
+  padding: 10px; }
+  #layout .container .header, #layout .container .footer, #layout .container .nav, #layout .container .main {
+    padding: 18px 10px; }
+#layout .dummyscreen {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  border: 1px #888 solid;
+  border-radius: 4px;
+  line-height: 1.42857;
+  text-align: center;
+  zoom: 1; }
+  #layout .dummyscreen .container {
+    width: 70%;
+    margin: 0 auto;
+    border: 1px dashed rgba(0, 0, 0, 0.25); }
+  #layout .dummyscreen .header, #layout .dummyscreen .footer {
+    background: #ccc;
+    color: #fff; }
+  #layout .dummyscreen .nav {
+    background: #bbb;
+    color: #fff; }
+  #layout .dummyscreen .main {
+    background: #ddd;
+    color: #fff;
+    line-height: 2em; }
+    #layout .dummyscreen .main section {
+      color: #888;
+      background: #eee; }
+      #layout .dummyscreen .main section .g-box {
+        background: #ddd; }
+
+#grid .row {
+  margin: 0 15px 20px 15px; }
+  #grid .row .row {
+    margin-right: -15px;
+    margin-left: -15px; }
+#grid [class*="col-lg-"] {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: rgba(185, 74, 72, 0.15);
+  border: 1px solid rgba(185, 74, 72, 0.2); }

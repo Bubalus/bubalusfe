@@ -28,8 +28,8 @@ $responsive-support: 	true !default;
 
 // 排版設置
 // ----------------------
+// 基礎字號，將以此推演出其他屬性尺寸
 $font-size-base:        14px !default;
-$line-height-base:      1.428571429 !default; // 約20px
 
 // 引入全局變量和方法
 // ----------------------

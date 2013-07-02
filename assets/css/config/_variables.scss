@@ -43,8 +43,10 @@ $link-focus-color:      darken($link-color, 10%) !default;
 // -------------------------
 // 字體
 $font-family:             "Microsoft Yahei","SimSun";
-$font-family-hei：        "Microsoft Yahei","SimHei";
+$font-family-hei:         "Microsoft Yahei","SimHei";
 $font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+$font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family !default;
 
 // 字號
@@ -53,6 +55,7 @@ $font-size-small:         ceil($font-size-base * 0.85) !default; // ~12px
 $font-size-mini:          ceil($font-size-base * 0.75) !default; // ~11px
 
 // 行高
+$line-height-base:      1.428571429 !default; // ~20px
 $line-height-computed:    floor($font-size-base * $line-height-base) !default; // ~20px
 
 // 標題
@@ -176,12 +179,12 @@ $screen-phone:               $screen-tiny !default;
 $screen-small:               768px !default;
 $screen-tablet:              $screen-small !default;
 
-$screen-small-max:           ($screen-medium - 1) !default;
-$screen-tablet-max:          $screen-small-max !default;
-
 // 針對普通顯示器
 $screen-medium:              992px !default;
 $screen-desktop:             $screen-medium !default;
+
+$screen-small-max:           ($screen-medium - 1) !default;
+$screen-tablet-max:          $screen-small-max !default;
 
 // 針對寬屏顯示器
 $screen-large:               1200px !default;

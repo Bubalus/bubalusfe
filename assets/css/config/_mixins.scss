@@ -215,16 +215,13 @@
 
 // 將元素中的内容分列顯示，設置列數、填充和間距
 // ----------------------
-@mixin content-columns($column-count, $column-gap: $grid-gutter-width, $column-rule) {
+@mixin content-columns($column-count, $column-gap: $grid-gutter-width) {
   -webkit-column-count: $column-count;
      -moz-column-count: $column-count;
           column-count: $column-count;
   -webkit-column-gap: $column-gap;
      -moz-column-gap: $column-gap;
           column-gap: $column-gap;
-  -webkit-column-rule: $column-rule;
-     -moz-column-rule: $column-rule;
-          column-rule: $column-rule;
 }
 
 // 設置内容的拆分方式以改善段落佈局
