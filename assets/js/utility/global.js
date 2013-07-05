@@ -1,6 +1,9 @@
-/*
- * 全局公共方法
-*/
+// --------------------------------------------
+// BubalusFE - The front-end development framework
+//
+/* Global.js - 全局 Javascript */
+// 一些常用的 JS 方法和全局事件
+// --------------------------------------------
 Utility = {
 	// Cookie 讀寫
 	cookieGet : function (name) {
