@@ -116,14 +116,16 @@ $list-group-active-border:    $list-group-active-bg !default;
     // 禁用狀態設置
     &.disabled > a {
       color: $gray-light;
+
+      &:hover,
+      &:focus {
+        color: $gray-light;
+        text-decoration: none;
+        background-color: transparent;
+        cursor: default;
+      }
     }
-    &.disabled > a:hover,
-    &.disabled > a:focus {
-      color: $gray-light;
-      text-decoration: none;
-      background-color: transparent;
-      cursor: default;
-    }
+
 
     + .nav-header {
       margin-top: 9px;
@@ -131,15 +133,17 @@ $list-group-active-border:    $list-group-active-bg !default;
   }
 
   // 展開下拉菜單
-  &.open > a,
-  &.open > a:hover,
-  &.open > a:focus {
-    color: #fff;
-    background-color: $link-color;
-    border-color: $link-color;
-    .caret {
-      border-top-color: #fff;
-      border-bottom-color: #fff;
+  &.open > a {
+    &,
+    &:hover,
+    &:focus {
+      color: #fff;
+      background-color: $link-color;
+      border-color: $link-color;
+      .caret {
+        border-top-color: #fff;
+        border-bottom-color: #fff;
+      }
     }
   }
 
@@ -240,11 +244,13 @@ $list-group-active-border:    $list-group-active-bg !default;
       }
     }
 
-    &.active > a,
-    &.active > a:hover,
-    &.active > a:focus {
-      color: #fff;
-      background-color: $component-active-bg;
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: #fff;
+        background-color: $component-active-bg;
+      }
     }
   }
 }
@@ -294,9 +300,11 @@ $list-group-active-border:    $list-group-active-bg !default;
 .pill-content > .pill-pane {
   display: none;
 }
-.tab-content > .active,
-.pill-content > .active {
-  display: block;
+.tab-content,
+.pill-content {
+  > .active {
+    display: block;
+  }
 }
 
 

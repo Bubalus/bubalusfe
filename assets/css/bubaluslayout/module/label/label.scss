@@ -43,43 +43,19 @@ $label-danger-bg:             $brand-danger !default;
 
 // 危險標簽
 .label-danger {
-  background-color: $label-danger-bg;
-  &[href] {
-    &:hover,
-    &:focus {
-      background-color: darken($label-danger-bg, 10%);
-    }
-  }
+  @include label-variant($label-danger-bg);
 }
 //成功標簽
 .label-success {
-  background-color: $label-success-bg;
-  &[href] {
-    &:hover,
-    &:focus {
-      background-color: darken($label-success-bg, 10%);
-    }
-  }
+  @include label-variant($label-success-bg);
 }
 // 警告標籤
 .label-warning {
-  background-color: $label-warning-bg;
-  &[href] {
-    &:hover,
-    &:focus {
-      background-color: darken($label-warning-bg, 10%);
-    }
-  }
+  @include label-variant($label-warning-bg);
 }
 // 詳情標簽
 .label-info {
-  background-color: $label-info-bg;
-  &[href] {
-    &:hover,
-    &:focus {
-      background-color: darken($label-info-bg, 10%);
-    }
-  }
+  @include label-variant($label-info-bg);
 }
 
 // 狀態標簽

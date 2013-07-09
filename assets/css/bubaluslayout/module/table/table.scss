@@ -21,7 +21,8 @@ th {
   margin-bottom: $line-height-computed;
   // Cells
   thead,
-  tbody {
+  tbody,
+  tfoot {
     > tr {
       > th,
       > td {
@@ -64,7 +65,8 @@ th {
 
 .table-condensed {
   thead,
-  tbody {
+  tbody,
+  tfoot {
     > tr {
       > th,
       > td {
@@ -86,7 +88,8 @@ th {
   border-radius: $border-radius-base;
 
   > thead,
-  > tbody {
+  > tbody,
+  > tfoot {
     > tr {
       > th,
       > td {

@@ -1,277 +1,320 @@
-/* ==========================================================
- * sco.tooltip.js
- * http://github.com/terebentina/sco.js
- * ==========================================================
- * Copyright 2013 Dan Caragea.
+/**
+ * jquery.simpletip 1.3.1. A simple tooltip plugin
+ * 
+ * Copyright (c) 2009 Craig Thompson
+ * http://craigsworks.com
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * Licensed under GPLv3
+ * http://www.opensource.org/licenses/gpl-3.0.html
  *
- * http://apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * ========================================================== */
+ * Launch  : February 2009
+ * Version : 1.3.1
+ * Released: February 5, 2009 - 11:04am
+ */
+(function($){
 
-/*jshint laxcomma:true, sub:true, browser:true, jquery:true, smarttabs:true, eqeqeq:false */
-
-;(function($, undefined) {
-	"use strict";
-
-	var pluginName = 'scojs_tooltip';
-
-	function Tooltip($trigger, options) {
-		this.options = $.extend({}, $.fn[pluginName].defaults, options);
-		this.$trigger = this.$target = $trigger;
-		this.leaveTimeout = null;
-
-		this.$tooltip = $('<div class="tooltip"><span></span><div class="pointer"></div></div>').appendTo(this.options.appendTo).hide();
-		if (this.options.contentElem !== undefined && this.options.contentElem !== null) {
-			this.options.content = $(this.options.contentElem).html();
-		} else if (this.options.contentAttr !== undefined && this.options.contentAttr !== null) {
-			this.options.content = this.$trigger.attr(this.options.contentAttr);
-		}
-		if (this.$trigger && this.$trigger.attr('title')) {
-			this.$trigger.data('originalTitle', this.$trigger.attr('title'));
-		}
-		this.$tooltip.find('span').html(this.options.content);
-		if (this.options.cssclass != '') {
-			this.$tooltip.addClass(this.options.cssclass);
-		}
-		if (this.options.target !== undefined) {
-			this.$target = $(this.options.target);
-		}
-		if (this.options.hoverable) {
-			var self = this;
-			this.$tooltip.on('mouseenter.' + pluginName, $.proxy(this.do_mouseenter, self))
-						 .on('mouseleave.' + pluginName, $.proxy(this.do_mouseleave, self))
-						 .on('close.' + pluginName, $.proxy(this.hide, self));
-		}
-	}
-
-
-	$.extend(Tooltip.prototype, {
-		show: function(allowMirror) {
-			if (allowMirror === undefined) {
-				allowMirror = true;
-			}
-			this.$tooltip.removeClass('pos_w pos_e pos_n pos_s pos_nw pos_ne pos_se pos_sw pos_center').addClass('pos_' + this.options.position);
-			var  targetBox = this.$target.offset()
-				,tooltipBox = {left: 0, top: 0, width: Math.floor(this.$tooltip.outerWidth()), height: Math.floor(this.$tooltip.outerHeight())}
-				,pointerBox = {left: 0, top: 0, width: Math.floor(this.$tooltip.find('.pointer').outerWidth()), height: Math.floor(this.$tooltip.find('.pointer').outerHeight())}
-				,docBox = {left: $(document).scrollLeft(), top: $(document).scrollTop(), width: $(window).width(), height: $(window).height()}
-				;
-			targetBox.left = Math.floor(targetBox.left);
-			targetBox.top = Math.floor(targetBox.top);
-			targetBox.width = Math.floor(this.$target.outerWidth());
-			targetBox.height = Math.floor(this.$target.outerHeight());
-
-			if (this.options.position === 'w') {
-				tooltipBox.left = targetBox.left - tooltipBox.width - pointerBox.width;
-				tooltipBox.top = targetBox.top + Math.floor((targetBox.height - tooltipBox.height) / 2);
-				pointerBox.left = tooltipBox.width;
-				pointerBox.top = Math.floor(targetBox.height / 2);
-			} else if (this.options.position === 'e') {
-				tooltipBox.left = targetBox.left + targetBox.width + pointerBox.width;
-				tooltipBox.top = targetBox.top + Math.floor((targetBox.height - tooltipBox.height) / 2);
-				pointerBox.left = -pointerBox.width;
-				pointerBox.top = Math.floor(tooltipBox.height / 2);
-			} else if (this.options.position === 'n') {
-				tooltipBox.left = targetBox.left - Math.floor((tooltipBox.width - targetBox.width) / 2);
-				tooltipBox.top = targetBox.top - tooltipBox.height - pointerBox.height;
-				pointerBox.left = Math.floor(tooltipBox.width / 2);
-				pointerBox.top = tooltipBox.height;
-			} else if (this.options.position === 's') {
-				tooltipBox.left = targetBox.left - Math.floor((tooltipBox.width - targetBox.width) / 2);
-				tooltipBox.top = targetBox.top + targetBox.height + pointerBox.height;
-				pointerBox.left = Math.floor(tooltipBox.width / 2);
-				pointerBox.top = -pointerBox.height;
-			} else if (this.options.position === 'nw') {
-				tooltipBox.left = targetBox.left - tooltipBox.width + pointerBox.width;	// +pointerBox.width because pointer is under
-				tooltipBox.top = targetBox.top - tooltipBox.height - pointerBox.height;
-				pointerBox.left = tooltipBox.width - pointerBox.width;
-				pointerBox.top = tooltipBox.height;
-			} else if (this.options.position === 'ne') {
-				tooltipBox.left = targetBox.left + targetBox.width - pointerBox.width;
-				tooltipBox.top = targetBox.top - tooltipBox.height - pointerBox.height;
-				pointerBox.left = 1;
-				pointerBox.top = tooltipBox.height;
-			} else if (this.options.position === 'se') {
-				tooltipBox.left = targetBox.left + targetBox.width - pointerBox.width;
-				tooltipBox.top = targetBox.top + targetBox.height + pointerBox.height;
-				pointerBox.left = 1;
-				pointerBox.top = -pointerBox.height;
-			} else if (this.options.position === 'sw') {
-				tooltipBox.left = targetBox.left - tooltipBox.width + pointerBox.width;
-				tooltipBox.top = targetBox.top + targetBox.height + pointerBox.height;
-				pointerBox.left = tooltipBox.width - pointerBox.width;
-				pointerBox.top = -pointerBox.height;
-			} else if (this.options.position === 'center') {
-				tooltipBox.left = targetBox.left + Math.floor((targetBox.width - tooltipBox.width) / 2);
-				tooltipBox.top = targetBox.top + Math.floor((targetBox.height - tooltipBox.height) / 2);
-				allowMirror = false;
-				this.$tooltip.find('.pointer').hide();
-			}
-
-			// if the tooltip is out of bounds we first mirror its position
-			if (allowMirror) {
-				var  newpos = this.options.position
-					,do_mirror = false;
-				if (tooltipBox.left < docBox.left) {
-					newpos = newpos.replace('w', 'e');
-					do_mirror = true;
-				} else if (tooltipBox.left + tooltipBox.width > docBox.left + docBox.width) {
-					newpos = newpos.replace('e', 'w');
-					do_mirror = true;
-				}
-				if (tooltipBox.top < docBox.top) {
-					newpos = newpos.replace('n', 's');
-					do_mirror = true;
-				} else if (tooltipBox.top + tooltipBox.height > docBox.top + docBox.height) {
-					newpos = newpos.replace('s', 'n');
-					do_mirror = true;
-				}
-				if (do_mirror) {
-					this.options.position = newpos;
-					this.show(false);
-					return this;
-				}
-			}
-
-			// if we're here, it's definitely after the mirroring or the position is center
-			// this part is for slightly moving the tooltip if it's still out of bounds
-			var pointer_left = null,
-				pointer_top = null;
-			if (tooltipBox.left < docBox.left) {
-				pointer_left = tooltipBox.left - docBox.left - pointerBox.width / 2;
-				tooltipBox.left = docBox.left;
-			} else if (tooltipBox.left + tooltipBox.width > docBox.left + docBox.width) {
-				pointer_left = tooltipBox.left - docBox.left - docBox.width + tooltipBox.width - pointerBox.width / 2;
-				tooltipBox.left = docBox.left + docBox.width - tooltipBox.width;
-			}
-			if (tooltipBox.top < docBox.top) {
-				pointer_top = tooltipBox.top - docBox.top - pointerBox.height / 2;
-				tooltipBox.top = docBox.top;
-			} else if (tooltipBox.top + tooltipBox.height > docBox.top + docBox.height) {
-				pointer_top = tooltipBox.top - docBox.top - docBox.height + tooltipBox.height - pointerBox.height / 2;
-				tooltipBox.top = docBox.top + docBox.height - tooltipBox.height;
-			}
-
-			this.$tooltip.css({left: tooltipBox.left, top: tooltipBox.top});
-			if (pointer_left !== null) {
-				this.$tooltip.find('.pointer').css('margin-left', pointer_left);
-			}
-			if (pointer_top !== null) {
-				this.$tooltip.find('.pointer').css('margin-top', '+=' + pointer_top);
-			}
-
-			this.$trigger.removeAttr('title');
-			this.$tooltip.show();
-			return this;
-		}
-
-		,hide: function() {
-			if (this.$trigger.data('originalTitle')) {
-				this.$trigger.attr('title', this.$trigger.data('originalTitle'));
-			}
-			if (typeof this.options.on_close == 'function') {
-				this.options.on_close.call(this);
-			}
-			this.$tooltip.hide();
-		}
-
-		,do_mouseenter: function() {
-			if (this.leaveTimeout !== null) {
-				clearTimeout(this.leaveTimeout);
-				this.leaveTimeout = null;
-			}
-			this.show();
-		}
-
-		,do_mouseleave: function() {
-			var self = this;
-			if (this.leaveTimeout !== null) {
-				clearTimeout(this.leaveTimeout);
-				this.leaveTimeout = null;
-			}
-			if (this.options.autoclose) {
-				this.leaveTimeout = setTimeout(function() {
-					clearTimeout(self.leaveTimeout);
-					self.leaveTimeout = null;
-					self.hide();
-				}, this.options.delay);
-			}
-		}
-	});
-
-	$.fn[pluginName] = function(options) {
-		var  method = null
-			,first_run = false
-			;
-		if (typeof options == 'string') {
-			method = options;
-		}
-		return this.each(function() {
-			var obj;
-			if (!(obj = $.data(this, pluginName))) {
-				var  $this = $(this)
-					,data = $this.data()
-					,opts
-					;
-				first_run = true;
-				if (typeof options === 'object') {
-					opts = $.extend({}, options, data);
-				} else {
-					opts = data;
-				}
-				obj = new Tooltip($this, opts);
-				$.data(this, pluginName, obj);
-			}
-			if (method) {
-				obj[method]();
-			} else if (first_run) {
-				$(this).on('mouseenter.' + pluginName, function() {
-					obj.do_mouseenter();
-				}).on('mouseleave.' + pluginName, function() {
-					obj.do_mouseleave();
-				});
-			} else {
-				obj.show();
-			}
-		});
-	};
-
-
-	$[pluginName] = function(elem, options) {
-		if (typeof elem === 'string') {
-			elem = $(elem);
-		}
-		return new Tooltip(elem, options);
-	};
-
-
-	$.fn[pluginName].defaults = {
-		 contentElem: null
-		,contentAttr: null
-		,content: ''
-		,hoverable: true		// should mouse over tooltip hold the tooltip or not?
-		,delay: 200
-		,cssclass: ''
-		,position: 'n'			// n,s,e,w,ne,nw,se,sw,center
-		,autoclose: true
-		,appendTo: 'body'	// where should the tooltips be appended to (default to document.body). Added for unit tests, not really needed in real life.
-	};
-
-	$(document).on('mouseenter.' + pluginName, '[data-trigger="tooltip"]', function() {
-		$(this)[pluginName]('do_mouseenter');
-	}).on('mouseleave.' + pluginName, '[data-trigger="tooltip"]', function() {
-		$(this)[pluginName]('do_mouseleave');
-	});
-	$(document).off('click.' + pluginName, '[data-dismiss="tooltip"]').on('click.' + pluginName, '[data-dismiss="tooltip"]', function(e) {
-		$(this).closest('.tooltip').trigger('close');
-	});
-})(jQuery);
+   function Simpletip(elem, conf)
+   {
+      var self = this;
+      elem = jQuery(elem);
+      
+      var tooltip = jQuery(document.createElement('div'))
+                     .addClass(conf.baseClass)
+                     .addClass( (conf.fixed) ? conf.fixedClass : '' )
+                     .addClass( (conf.persistent) ? conf.persistentClass : '' )
+                     .html(conf.content)
+                     .appendTo(elem);
+      
+      if(!conf.hidden) tooltip.show();
+      else tooltip.hide();
+      
+      if(!conf.persistent)
+      {
+         elem.hover(
+            function(event){ self.show(event) },
+            function(){ self.hide() }
+         );
+         
+         if(!conf.fixed)
+         {
+            elem.mousemove( function(event){ 
+               if(tooltip.css('display') !== 'none') self.updatePos(event); 
+            });
+         };
+      }
+      else
+      {
+         elem.click(function(event)
+         {
+            if(event.target === elem.get(0))
+            {
+               if(tooltip.css('display') !== 'none')
+                  self.hide();
+               else
+                  self.show();
+            };
+         });
+         
+         jQuery(window).mousedown(function(event)
+         { 
+            if(tooltip.css('display') !== 'none')
+            {
+               var check = (conf.focus) ? jQuery(event.target).parents('.tooltip').andSelf().filter(function(){ return this === tooltip.get(0) }).length : 0;
+               if(check === 0) self.hide();
+            };
+         });
+      };
+      
+      
+      jQuery.extend(self,
+      {
+         getVersion: function()
+         {
+            return [1, 2, 0];
+         },
+         
+         getParent: function()
+         {
+            return elem;
+         },
+         
+         getTooltip: function()
+         {
+            return tooltip;
+         },
+         
+         getPos: function()
+         {
+            return tooltip.offset();
+         },
+         
+         setPos: function(posX, posY)
+         {
+            var elemPos = elem.offset();
+            
+            if(typeof posX == 'string') posX = parseInt(posX) + elemPos.left;
+            if(typeof posY == 'string') posY = parseInt(posY) + elemPos.top;
+            
+            tooltip.css({ left: posX, top: posY });
+            
+            return self;
+         },
+         
+         show: function(event)
+         {
+            conf.onBeforeShow.call(self);
+            
+            self.updatePos( (conf.fixed) ? null : event );
+            
+            switch(conf.showEffect)
+            {
+               case 'fade': 
+                  tooltip.fadeIn(conf.showTime); break;
+               case 'slide': 
+                  tooltip.slideDown(conf.showTime, self.updatePos); break;
+               case 'custom':
+                  conf.showCustom.call(tooltip, conf.showTime); break;
+               default:
+               case 'none':
+                  tooltip.show(); break;
+            };
+            
+            tooltip.addClass(conf.activeClass);
+            
+            conf.onShow.call(self);
+            
+            return self;
+         },
+         
+         hide: function()
+         {
+            conf.onBeforeHide.call(self);
+            
+            switch(conf.hideEffect)
+            {
+               case 'fade': 
+                  tooltip.fadeOut(conf.hideTime); break;
+               case 'slide': 
+                  tooltip.slideUp(conf.hideTime); break;
+               case 'custom':
+                  conf.hideCustom.call(tooltip, conf.hideTime); break;
+               default:
+               case 'none':
+                  tooltip.hide(); break;
+            };
+            
+            tooltip.removeClass(conf.activeClass);
+            
+            conf.onHide.call(self);
+            
+            return self;
+         },
+         
+         update: function(content)
+         {
+            tooltip.html(content);
+            conf.content = content;
+            
+            return self;
+         },
+         
+         load: function(uri, data)
+         {
+            conf.beforeContentLoad.call(self);
+            
+            tooltip.load(uri, data, function(){ conf.onContentLoad.call(self); });
+            
+            return self;
+         },
+         
+         boundryCheck: function(posX, posY)
+         {
+            var newX = posX + tooltip.outerWidth();
+            var newY = posY + tooltip.outerHeight();
+            
+            var windowWidth = jQuery(window).width() + jQuery(window).scrollLeft();
+            var windowHeight = jQuery(window).height() + jQuery(window).scrollTop();
+            
+            return [(newX >= windowWidth), (newY >= windowHeight)];
+         },
+         
+         updatePos: function(event)
+         {
+            var tooltipWidth = tooltip.outerWidth();
+            var tooltipHeight = tooltip.outerHeight();
+            
+            if(!event && conf.fixed)
+            {
+               if(conf.position.constructor == Array)
+               {
+                  posX = parseInt(conf.position[0]);
+                  posY = parseInt(conf.position[1]);
+               }
+               else if(jQuery(conf.position).attr('nodeType') === 1)
+               {
+                  var offset = jQuery(conf.position).offset();
+                  posX = offset.left;
+                  posY = offset.top;
+               }
+               else
+               {
+                  var elemPos = elem.offset();
+                  var elemWidth = elem.outerWidth();
+                  var elemHeight = elem.outerHeight();
+                  
+                  switch(conf.position)
+                  {
+                     case 'top':
+                        var posX = elemPos.left - (tooltipWidth / 2) + (elemWidth / 2);
+                        var posY = elemPos.top - tooltipHeight;
+                        break;
+                        
+                     case 'bottom':
+                        var posX = elemPos.left - (tooltipWidth / 2) + (elemWidth / 2);
+                        var posY = elemPos.top + elemHeight;
+                        break;
+                     
+                     case 'left':
+                        var posX = elemPos.left - tooltipWidth;
+                        var posY = elemPos.top - (tooltipHeight / 2) + (elemHeight / 2);
+                        break;
+                        
+                     case 'right':
+                        var posX = elemPos.left + elemWidth;
+                        var posY = elemPos.top - (tooltipHeight / 2) + (elemHeight / 2);
+                        break;
+                     
+                     default:
+                     case 'default':
+                        var posX = (elemWidth / 2) + elemPos.left + 20;
+                        var posY = elemPos.top;
+                        break;
+                  };
+               };
+            }
+            else
+            {
+               var posX = event.pageX;
+               var posY = event.pageY;
+            };
+            
+            if(typeof conf.position != 'object')
+            {
+               posX = posX + conf.offset[0];
+               posY = posY + conf.offset[1]; 
+               
+               if(conf.boundryCheck)
+               {
+                  var overflow = self.boundryCheck(posX, posY);
+                                    
+                  if(overflow[0]) posX = posX - (tooltipWidth / 2) - (2 * conf.offset[0]);
+                  if(overflow[1]) posY = posY - (tooltipHeight / 2) - (2 * conf.offset[1]);
+               }
+            }
+            else
+            {
+               if(typeof conf.position[0] == "string") posX = String(posX);
+               if(typeof conf.position[1] == "string") posY = String(posY);
+            };
+            
+            self.setPos(posX, posY);
+            
+            return self;
+         }
+      });
+   };
+   
+   jQuery.fn.simpletip = function(conf)
+   { 
+      // Check if a simpletip is already present
+      var api = jQuery(this).eq(typeof conf == 'number' ? conf : 0).data("simpletip");
+      if(api) return api;
+      
+      // Default configuration
+      var defaultConf = {
+         // Basics
+         content: 'A simple tooltip',
+         persistent: false,
+         focus: false,
+         hidden: true,
+         
+         // Positioning
+         position: 'default',
+         offset: [0, 0],
+         boundryCheck: true,
+         fixed: true,
+         
+         // Effects
+         showEffect: 'fade',
+         showTime: 150,
+         showCustom: null,
+         hideEffect: 'fade',
+         hideTime: 150,
+         hideCustom: null,
+         
+         // Selectors and classes
+         baseClass: 'tooltip',
+         activeClass: 'active',
+         fixedClass: 'fixed',
+         persistentClass: 'persistent',
+         focusClass: 'focus',
+         
+         // Callbacks
+         onBeforeShow: function(){},
+         onShow: function(){},
+         onBeforeHide: function(){},
+         onHide: function(){},
+         beforeContentLoad: function(){},
+         onContentLoad: function(){}
+      };
+      jQuery.extend(defaultConf, conf);
+      
+      this.each(function()
+      {
+         var el = new Simpletip(jQuery(this), defaultConf);
+         jQuery(this).data("simpletip", el);  
+      });
+      
+      return this; 
+   };
+})();
