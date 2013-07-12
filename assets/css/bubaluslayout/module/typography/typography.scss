@@ -73,6 +73,35 @@ abbr.initialism {
   text-transform: uppercase;
 }
 
+//
+// Jumbotron
+// --------------------------------------------------
+
+
+.jumbotron {
+  padding: 30px;
+  margin-bottom: 30px;
+  font-size: ($font-size-base * 1.5);
+  font-weight: 200;
+  line-height: ($line-height-base * 1.5);
+  color: $jumbotron-lead-color;
+  background-color: $jumbotron-bg;
+  h1 {
+    line-height: 1;
+    color: $jumbotron-heading-color;
+  }
+  p {
+    line-height: 1.4;
+  }
+
+  @media screen and (min-width: $screen-tablet) {
+    padding: 50px 60px;
+    border-radius: $border-radius-large; // Only round corners at higher resolutions
+    h1 {
+      font-size: ($font-size-base * 4.5);
+    }
+  }
+}
 
 //
 // Code (inline and blocK)
@@ -82,11 +111,7 @@ abbr.initialism {
 // Inline and block code styles
 code,
 pre {
-  padding: 0 3px 2px;
   font-family: $font-family-monospace;
-  font-size: ($font-size-base - 2);
-  color: $gray-dark;
-  border-radius: 4px;
 }
 
 // Inline code
@@ -96,6 +121,7 @@ code {
   color: #c7254e;
   background-color: #f9f2f4;
   white-space: nowrap;
+  border-radius: 4px;
 }
 
 // Blocks of code
@@ -107,6 +133,7 @@ pre {
   line-height: $line-height-base;
   word-break: break-all;
   word-wrap: break-word;
+  color: $gray-dark;
   background-color: #f5f5f5;
   border: 1px solid #ccc; // IE8 fallback
   border: 1px solid rgba(0,0,0,.15);

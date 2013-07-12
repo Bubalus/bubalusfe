@@ -90,11 +90,9 @@ a.badge {
 }
 
 // 按鈕裏的狀態標簽
-.btn {
-  .badge {
-    position: relative;
-    top: -1px;
-  }
+.btn .badge {
+  position: relative;
+  top: -1px;
 }
 
 

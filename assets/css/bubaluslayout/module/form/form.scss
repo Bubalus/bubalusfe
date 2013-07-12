@@ -457,7 +457,7 @@ input[type="color"] {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $screen-tablet) {
   .form-horizontal .control-label {
     text-align: right;
   }
