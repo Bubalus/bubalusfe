@@ -1,0 +1,121 @@
+// --------------------------------------------
+// BubalusFE - The front-end development framework
+//
+/* alertTip - 弹出通知 */
+// --------------------------------------------
+
+// -------------------------
+// alertTip 變量
+// -------------------------
+$alert-bg:                    $state-warning-bg !default;
+$alert-text:                  $state-warning-text !default;
+$alert-border:                $state-warning-border !default;
+$alert-border-radius:         $border-radius-base !default;
+
+$alert-success-bg:            $state-success-bg !default;
+$alert-success-text:          $state-success-text !default;
+$alert-success-border:        $state-success-border !default;
+
+$alert-danger-bg:             $state-danger-bg !default;
+$alert-danger-text:           $state-danger-text !default;
+$alert-danger-border:         $state-danger-border !default;
+
+$alert-info-bg:               $state-info-bg !default;
+$alert-info-text:             $state-info-text !default;
+$alert-info-border:           $state-info-border !default;
+
+// 基本樣式
+// -------------------------
+
+//外容器
+.alertTip-box {
+  position:     fixed;
+  z-index:      9999;
+  color:        #fff;
+  font-size:      12px;
+
+// 提示
+  .alertTip {
+    display:        none;
+    padding: 10px 35px 10px 15px;
+    margin-bottom: $line-height-computed;
+    color: $alert-text;
+    background-color: $alert-bg;
+    border: 1px solid $alert-border;
+    border-radius: $alert-border-radius;
+    min-height:       40px;
+    @include opacity(.85);
+
+    // 提示標題
+    h4 {
+      margin-top: 0;
+      color: inherit;
+    }
+    
+    hr {
+      border-top-color: darken($alert-border, 5%);
+    }
+    //内部鏈接
+    .alert-link {
+      font-weight: 500;
+      color: darken($alert-text, 10%);
+    }
+
+    // 関閉按鈕
+    .close {
+      position: relative;
+      top: -2px;
+      right: -21px;
+      color: inherit;
+    }
+  }
+  .closer{
+    display:        none;
+    background-color:     #000;
+    border-radius: $alert-border-radius;
+    padding: 10px 35px 10px 15px;
+    margin-bottom: $line-height-computed;
+    text-align:       center;
+    cursor:         pointer;
+    @include opacity(.85);
+
+  }
+}
+
+// 提示風格
+// -------------------------
+
+.alert-success {
+  @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
+}
+.alert-danger {
+  @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
+}
+.alert-info {
+  @include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
+}
+
+// 预设的定位
+.top-left {
+  left:         0px;
+  top:        0px;
+}
+.top-right {
+  right:        0px;
+  top:        0px;
+}
+.bottom-left {
+  left:         0px;
+  bottom:       0px;
+}
+.bottom-right {
+  right:        0px;
+  bottom:       0px;
+}
+
+/** Hide alertTip when printing **/
+@media print {
+  .alertTip-box {
+    display:      none;
+  }
+}

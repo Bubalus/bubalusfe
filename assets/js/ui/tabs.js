@@ -1,55 +1,46 @@
-/*
- * jQuery EasyTabs plugin 3.2.0
- *
- * Copyright (c) 2010-2011 Steve Schwartz (JangoSteve)
- *
- * Dual licensed under the MIT and GPL licenses:
- *   http://www.opensource.org/licenses/mit-license.php
- *   http://www.gnu.org/licenses/gpl.html
- *
- * Date: Thu May 09 17:30:00 2013 -0500
- */
-( function($) {
+// --------------------------------------------
+// BubalusFE - The front-end development framework
+//
+/* Tabs.js - 標籤頁 */
+// --------------------------------------------
 
-  $.easytabs = function(container, options) {
++function($) {
 
-        // Attach to plugin anything that should be available via
-        // the $container.data('easytabs') object
+  $.tabs = function(container, options) {
+
     var plugin = this,
         $container = $(container),
 
         defaults = {
-          animate: true,
-          panelActiveClass: "active",
-          tabActiveClass: "active",
-          defaultTab: "li:first-child",
-          animationSpeed: "normal",
-          tabs: "> ul > li",
-          updateHash: true,
-          cycle: false,
-          collapsible: false,
-          collapsedClass: "collapsed",
-          collapsedByDefault: true,
-          uiTabs: false,
-          transitionIn: 'fadeIn',
-          transitionOut: 'fadeOut',
+          animate: true, // 是否开启标签切换动画
+          panelActiveClass: "active",  // 当前激活内容区类名
+          tabActiveClass: "active", // 当前激活 tab 类名
+          defaultTab: "li:first-child", // 默认激活 tab
+          animationSpeed: "normal", // 动画速度 slow | normal | fast | 毫秒
+          tabs: "> ul > li",  // 指定 tab 在结构中的位置 相对于tabs容器
+          updateHash: true,  // 是否更新 url 的 hash 值
+          cycle: false, // 是否自动播放 false | 毫秒
+          collapsible: false, // 双击 tab 可折叠内容区
+          collapsedClass: "collapsed", // 折叠时添加的類名
+          collapsedByDefault: true, // 默认是折叠的
+          transitionIn: 'fadeIn', // 切入時過渡效果 fadeIn | slideDown
+          transitionOut: 'fadeOut', // 切出時過渡效果 fadeOut | slideUp
           transitionInEasing: 'swing',
           transitionOutEasing: 'swing',
-          transitionCollapse: 'slideUp',
-          transitionUncollapse: 'slideDown',
+          transitionCollapse: 'slideUp', // 折叠時過渡效果
+          transitionUncollapse: 'slideDown', // 取消折疊時過渡效果
           transitionCollapseEasing: 'swing',
           transitionUncollapseEasing: 'swing',
-          containerClass: "",
-          tabsClass: "",
-          tabClass: "",
-          panelClass: "",
-          cache: true,
-          event: 'click',
+          containerClass: "", // 指定内容容器類名
+          tabsClass: "", // 指定 tabs 的容器類名
+          tabClass: "", // 指定單個 tab 的容器類名
+          panelClass: "", // 指定單個内容容器類名
+          cache: true, // 緩存 ajax 内容
+          event: 'click', // 響應事件
           panelContext: $container
         },
 
-        // Internal instance variables
-        // (not available via easytabs object)
+        // 内部實例變量
         $defaultTab,
         $defaultTabLink,
         transitions,
@@ -61,44 +52,29 @@
           slow: 600
         },
 
-        // Shorthand variable so that we don't need to call
-        // plugin.settings throughout the plugin code
         settings;
 
-    // =============================================================
-    // Functions available via easytabs object
-    // =============================================================
 
+    // 初始化
     plugin.init = function() {
 
       plugin.settings = settings = $.extend({}, defaults, options);
-      settings.bind_str = settings.event+".easytabs";
+      settings.bind_str = settings.event+".tabs";
 
-      // Add jQuery UI's crazy class names to markup,
-      // so that markup will match theme CSS
-      if ( settings.uiTabs ) {
-        settings.tabActiveClass = 'ui-tabs-selected';
-        settings.containerClass = 'ui-tabs ui-widget ui-widget-content ui-corner-all';
-        settings.tabsClass = 'ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all';
-        settings.tabClass = 'ui-state-default ui-corner-top';
-        settings.panelClass = 'ui-tabs-panel ui-widget-content ui-corner-bottom';
-      }
-
-      // If collapsible is true and defaultTab specified, assume user wants defaultTab showing (not collapsed)
+      // 如果折疊開啓，并指定了默認的tab，那不折疊
       if ( settings.collapsible && options.defaultTab !== undefined && options.collpasedByDefault === undefined ) {
         settings.collapsedByDefault = false;
       }
 
-      // Convert 'normal', 'fast', and 'slow' animation speed settings to their respective speed in milliseconds
+      // 將 normal fast slow 轉換爲以毫秒爲單位的速度值
       if ( typeof(settings.animationSpeed) === 'string' ) {
         settings.animationSpeed = animationSpeeds[settings.animationSpeed];
       }
 
       $('a.anchor').remove().prependTo('body');
 
-      // Store easytabs object on container so we can easily set
-      // properties throughout
-      $container.data('easytabs', {});
+      // 存儲 tabs 中的對象以便對其屬性進行設置
+      $container.data('tabs', {});
 
       plugin.setTransitions();
 
@@ -114,13 +90,11 @@
 
       initCycle();
 
-      // Append data-easytabs HTML attribute to make easy to query for
-      // easytabs instances via CSS pseudo-selector
-      $container.attr('data-easytabs', true);
+      // 設置 data 屬性，方便選擇器選擇
+      $container.attr('data-tabs', true);
     };
 
-    // Set transitions for switching between tabs based on options.
-    // Could be used to update transitions if settings are changes.
+    // 設置過渡效果，可用于更新過渡效果
     plugin.setTransitions = function() {
       transitions = ( settings.animate ) ? {
           show: settings.transitionIn,
@@ -140,34 +114,26 @@
         };
     };
 
-    // Find and instantiate tabs and panels.
-    // Could be used to reset tab and panel collection if markup is
-    // modified.
+    // 查找和實例化 tabs，可用于重置 tabs
     plugin.getTabs = function() {
       var $matchingPanel;
 
-      // Find the initial set of elements matching the setting.tabs
-      // CSS selector within the container
+      // 在容器内查找最初一組匹配 settings.tabs 的元素
       plugin.tabs = $container.find(settings.tabs),
 
-      // Instantiate panels as empty jquery object
+      // 將面板設為一個空的JQuery對象
       plugin.panels = $(),
 
       plugin.tabs.each(function(){
         var $tab = $(this),
             $a = $tab.children('a'),
-
-            // targetId is the ID of the panel, which is either the
-            // `href` attribute for non-ajax tabs, or in the
-            // `data-target` attribute for ajax tabs since the `href` is
-            // the ajax URL
             targetId = $tab.children('a').data('target');
 
-        $tab.data('easytabs', {});
+        $tab.data('tabs', {});
 
-        // If the tab has a `data-target` attribute, and is thus an ajax tab
+        // 如果 tabs 有 data-target 屬性，那他就是個 ajax tabs
         if ( targetId !== undefined && targetId !== null ) {
-          $tab.data('easytabs').ajax = $a.attr('href');
+          $tab.data('tabs').ajax = $a.attr('href');
         } else {
           targetId = $a.attr('href');
         }
@@ -175,75 +141,73 @@
 
         $matchingPanel = settings.panelContext.find("#" + targetId);
 
-        // If tab has a matching panel, add it to panels
+        // 如果 tab 有匹配的面板
         if ( $matchingPanel.length ) {
 
-          // Store panel height before hiding
-          $matchingPanel.data('easytabs', {
+          $matchingPanel.data('tabs', {
             position: $matchingPanel.css('position'),
             visibility: $matchingPanel.css('visibility')
           });
 
-          // Don't hide panel if it's active (allows `getTabs` to be called manually to re-instantiate tab collection)
           $matchingPanel.not(settings.panelActiveClass).hide();
 
           plugin.panels = plugin.panels.add($matchingPanel);
 
-          $tab.data('easytabs').panel = $matchingPanel;
+          $tab.data('tabs').panel = $matchingPanel;
 
-        // Otherwise, remove tab from tabs collection
+        // 否則，刪掉這個tab
         } else {
           plugin.tabs = plugin.tabs.not($tab);
           if ('console' in window) {
-            console.warn('Warning: tab without matching panel for selector \'#' + targetId +'\' removed from set');
+            console.warn('警告: tab 沒有匹配面板的選擇器 \'#' + targetId +'\' ');
           }
         }
       });
     };
 
-    // Select tab and fire callback
+    // 選中 tab 和相關回調
     plugin.selectTab = function($clicked, callback) {
       var url = window.location,
           hash = url.hash.match(/^[^\?]*/)[0],
-          $targetPanel = $clicked.parent().data('easytabs').panel,
-          ajaxUrl = $clicked.parent().data('easytabs').ajax;
+          $targetPanel = $clicked.parent().data('tabs').panel,
+          ajaxUrl = $clicked.parent().data('tabs').ajax;
 
-      // Tab is collapsible and active => toggle collapsed state
+      // tab 是可折叠的並且是激活狀態 || 切換到折疊狀態
       if( settings.collapsible && ! skipUpdateToHash && ($clicked.hasClass(settings.tabActiveClass) || $clicked.hasClass(settings.collapsedClass)) ) {
         plugin.toggleTabCollapse($clicked, $targetPanel, ajaxUrl, callback);
 
-      // Tab is not active and panel is not active => select tab
+      // tab 和面板皆未激活 || 選中 tab
       } else if( ! $clicked.hasClass(settings.tabActiveClass) || ! $targetPanel.hasClass(settings.panelActiveClass) ){
         activateTab($clicked, $targetPanel, ajaxUrl, callback);
 
-      // Cache is disabled => reload (e.g reload an ajax tab).
+      // 緩存被禁用 || 重載
       } else if ( ! settings.cache ){
         activateTab($clicked, $targetPanel, ajaxUrl, callback);
       }
 
     };
 
-    // Toggle tab collapsed state and fire callback
+    // 切換 tab 折叠狀態和相關回調
     plugin.toggleTabCollapse = function($clicked, $targetPanel, ajaxUrl, callback) {
       plugin.panels.stop(true,true);
 
-      if( fire($container,"easytabs:before", [$clicked, $targetPanel, settings]) ){
+      if( fire($container,"tabs:before", [$clicked, $targetPanel, settings]) ){
         plugin.tabs.filter("." + settings.tabActiveClass).removeClass(settings.tabActiveClass).children().removeClass(settings.tabActiveClass);
 
-        // If panel is collapsed, uncollapse it
+        // 如果面板處於折叠狀態，取消折叠
         if( $clicked.hasClass(settings.collapsedClass) ){
 
-          // If ajax panel and not already cached
-          if( ajaxUrl && (!settings.cache || !$clicked.parent().data('easytabs').cached) ) {
-            $container.trigger('easytabs:ajax:beforeSend', [$clicked, $targetPanel]);
+          // 如果 ajax 面板沒有被緩存
+          if( ajaxUrl && (!settings.cache || !$clicked.parent().data('tabs').cached) ) {
+            $container.trigger('tabs:ajax:beforeSend', [$clicked, $targetPanel]);
 
             $targetPanel.load(ajaxUrl, function(response, status, xhr){
-              $clicked.parent().data('easytabs').cached = true;
-              $container.trigger('easytabs:ajax:complete', [$clicked, $targetPanel, response, status, xhr]);
+              $clicked.parent().data('tabs').cached = true;
+              $container.trigger('tabs:ajax:complete', [$clicked, $targetPanel, response, status, xhr]);
             });
           }
 
-          // Update CSS classes of tab and panel
+          // 更新 tab 和面板的類
           $clicked.parent()
             .removeClass(settings.collapsedClass)
             .addClass(settings.tabActiveClass)
@@ -254,14 +218,14 @@
           $targetPanel
             .addClass(settings.panelActiveClass)
             [transitions.uncollapse](transitions.speed, settings.transitionUncollapseEasing, function(){
-              $container.trigger('easytabs:midTransition', [$clicked, $targetPanel, settings]);
+              $container.trigger('tabs:midTransition', [$clicked, $targetPanel, settings]);
               if(typeof callback == 'function') callback();
             });
 
-        // Otherwise, collapse it
+        // 否則，折疊
         } else {
 
-          // Update CSS classes of tab and panel
+          // 更新 tab 和面板的類
           $clicked.addClass(settings.collapsedClass)
             .parent()
               .addClass(settings.collapsedClass);
@@ -269,7 +233,7 @@
           $targetPanel
             .removeClass(settings.panelActiveClass)
             [transitions.collapse](transitions.speed, settings.transitionCollapseEasing, function(){
-              $container.trigger("easytabs:midTransition", [$clicked, $targetPanel, settings]);
+              $container.trigger("tabs:midTransition", [$clicked, $targetPanel, settings]);
               if(typeof callback == 'function') callback();
             });
         }
@@ -277,23 +241,22 @@
     };
 
 
-    // Find tab with target panel matching value
+    // 匹配 tab
     plugin.matchTab = function(hash) {
       return plugin.tabs.find("[href='" + hash + "'],[data-target='" + hash + "']").first();
     };
 
-    // Find panel with `id` matching value
+    // 匹配面板
     plugin.matchInPanel = function(hash) {
       return ( hash && plugin.validId(hash) ? plugin.panels.filter(':has(' + hash + ')').first() : [] );
     };
 
-    // Make sure hash is a valid id value (admittedly strict in that HTML5 allows almost anything without a space)
-    // but jQuery has issues with such id values anyway, so we can afford to be strict here.
+    // 確保哈希值是一個正確的ID值
     plugin.validId = function(id) {
       return id.substr(1).match(/^[A-Za-z]+[A-Za-z0-9\-_:\.].$/);
     };
 
-    // Select matching tab when URL hash changes
+    // 選擇匹配的 tab 時改變哈希
     plugin.selectTabFromHashChange = function() {
       var hash = window.location.hash.match(/^[^\?]*/)[0],
           $tab = plugin.matchTab(hash),
@@ -301,7 +264,7 @@
 
       if ( settings.updateHash ) {
 
-        // If hash directly matches tab
+        // 如果哈希匹配 tab
         if( $tab.length ){
           skipUpdateToHash = true;
           plugin.selectTab( $tab );
@@ -309,18 +272,17 @@
         } else {
           $panel = plugin.matchInPanel(hash);
 
-          // If panel contains element matching hash
+          // 如果面板中的元素匹配哈希
           if ( $panel.length ) {
             hash = '#' + $panel.attr('id');
             $tab = plugin.matchTab(hash);
             skipUpdateToHash = true;
             plugin.selectTab( $tab );
 
-          // If default tab is not active...
+          // 如果默認的 tab 不是激活的
           } else if ( ! $defaultTab.hasClass(settings.tabActiveClass) && ! settings.cycle ) {
 
-            // ...and hash is blank or matches a parent of the tab container or
-            // if the last tab (before the hash updated) was one of the other tabs in this container.
+            // 如果哈希是空的，或匹配父級的 tab 容器，再或如果更新哈希前最后一個 tab 是在這個容器中其他的 tab 之一
             if ( hash === '' || plugin.matchTab(lastHash).length || $container.closest(hash).length ) {
               skipUpdateToHash = true;
               plugin.selectTab( $defaultTabLink );
@@ -330,7 +292,7 @@
       }
     };
 
-    // Cycle through tabs
+    // tabs 的自動播放
     plugin.cycleTabs = function(tabNumber){
       if(settings.cycle){
         tabNumber = tabNumber % plugin.tabs.length;
@@ -342,24 +304,24 @@
       }
     };
 
-    // Convenient public methods
+    // 選擇器快捷方式
     plugin.publicMethods = {
       select: function(tabSelector){
         var $tab;
 
-        // Find tab container that matches selector (like 'li#tab-one' which contains tab link)
+        // 查找 tab 容器匹配的選擇器  如 li#tab-one 其中包含 tab 鏈接
         if ( ($tab = plugin.tabs.filter(tabSelector)).length === 0 ) {
 
-          // Find direct tab link that matches href (like 'a[href="#panel-1"]')
+          // 查找 tab 鏈接匹配的 href 如 a[href="#panel-1"]
           if ( ($tab = plugin.tabs.find("a[href='" + tabSelector + "']")).length === 0 ) {
 
-            // Find direct tab link that matches selector (like 'a#tab-1')
+            // 查找 tab 鏈接 匹配的選擇器 如 a#tab-1
             if ( ($tab = plugin.tabs.find("a" + tabSelector)).length === 0 ) {
 
-              // Find direct tab link that matches data-target (lik 'a[data-target="#panel-1"]')
+              // 查找 tab 鏈接 匹配的 data-target 如 a[data-target="#panel-1"]
               if ( ($tab = plugin.tabs.find("[data-target='" + tabSelector + "']")).length === 0 ) {
 
-                // Find direct tab link that ends in the matching href (like 'a[href$="#panel-1"]', which would also match http://example.com/currentpage/#panel-1)
+                // 查找 tab 鏈接 匹配的 href 末端 如 a[href$="#panel-1"] 這將匹配 http://example.com/#panel-1)
                 if ( ($tab = plugin.tabs.find("a[href$='" + tabSelector + "']")).length === 0 ) {
 
                   $.error('Tab \'' + tabSelector + '\' does not exist in tab set');
@@ -368,7 +330,7 @@
             }
           }
         } else {
-          // Select the child tab link, since the first option finds the tab container (like <li>)
+          // 選擇子代 tab 鏈接
           $tab = $tab.children("a").first();
         }
         plugin.selectTab($tab);
@@ -376,17 +338,17 @@
     };
 
     // =============================================================
-    // Private functions
+    // 私有函數
     // =============================================================
 
-    // Triggers an event on an element and returns the event result
+    // 觸發元素上的事件，并返回結果
     var fire = function(obj, name, data) {
       var event = $.Event(name);
       obj.trigger(event, data);
       return event.result !== false;
     }
 
-    // Add CSS classes to markup (if specified), called by init
+    // 添加 CSS 類到標簽，被初始化調用
     var addClasses = function() {
       $container.addClass(settings.containerClass);
       plugin.tabs.parent().addClass(settings.tabsClass);
@@ -394,14 +356,13 @@
       plugin.panels.addClass(settings.panelClass);
     };
 
-    // Set the default tab, whether from hash (bookmarked) or option,
-    // called by init
+    // 設置默認選項卡，被初始化調用
     var setDefaultTab = function(){
       var hash = window.location.hash.match(/^[^\?]*/)[0],
           $selectedTab = plugin.matchTab(hash).parent(),
           $panel;
 
-      // If hash directly matches one of the tabs, active on page-load
+      // 如果哈希直接匹配某標簽，激活之
       if( $selectedTab.length === 1 ){
         $defaultTab = $selectedTab;
         settings.cycle = false;
@@ -409,13 +370,12 @@
       } else {
         $panel = plugin.matchInPanel(hash);
 
-        // If one of the panels contains the element matching the hash,
-        // make it active on page-load
+        // 如果一個面板中的元素匹配哈希，激活之
         if ( $panel.length ) {
           hash = '#' + $panel.attr('id');
           $defaultTab = plugin.matchTab(hash).parent();
 
-        // Otherwise, make the default tab the one that's active on page-load
+        // 否則激活默認 tab
         } else {
           $defaultTab = plugin.tabs.parent().find(settings.defaultTab);
           if ( $defaultTab.length === 0 ) {
@@ -429,7 +389,7 @@
       activateDefaultTab($selectedTab);
     };
 
-    // Activate defaultTab (or collapse by default), called by setDefaultTab
+    // 激活默認 tab 或 默認折疊，被 setDefaultTab 調用
     var activateDefaultTab = function($selectedTab) {
       var defaultPanel,
           defaultAjaxUrl;
@@ -442,18 +402,18 @@
 
       } else {
 
-        defaultPanel = $( $defaultTab.data('easytabs').panel );
-        defaultAjaxUrl = $defaultTab.data('easytabs').ajax;
+        defaultPanel = $( $defaultTab.data('tabs').panel );
+        defaultAjaxUrl = $defaultTab.data('tabs').ajax;
 
-        if ( defaultAjaxUrl && (!settings.cache || !$defaultTab.data('easytabs').cached) ) {
-          $container.trigger('easytabs:ajax:beforeSend', [$defaultTabLink, defaultPanel]);
+        if ( defaultAjaxUrl && (!settings.cache || !$defaultTab.data('tabs').cached) ) {
+          $container.trigger('tabs:ajax:beforeSend', [$defaultTabLink, defaultPanel]);
           defaultPanel.load(defaultAjaxUrl, function(response, status, xhr){
-            $defaultTab.data('easytabs').cached = true;
-            $container.trigger('easytabs:ajax:complete', [$defaultTabLink, defaultPanel, response, status, xhr]);
+            $defaultTab.data('tabs').cached = true;
+            $container.trigger('tabs:ajax:complete', [$defaultTabLink, defaultPanel, response, status, xhr]);
           });
         }
 
-        $defaultTab.data('easytabs').panel
+        $defaultTab.data('tabs').panel
           .show()
           .addClass(settings.panelActiveClass);
 
@@ -463,46 +423,43 @@
             .addClass(settings.tabActiveClass);
       }
 
-      // Fire event when the plugin is initialised
-      $container.trigger("easytabs:initialised", [$defaultTabLink, defaultPanel]);
+      // 激發事件時，初始化插件
+      $container.trigger("tabs:initialised", [$defaultTabLink, defaultPanel]);
     };
 
-    // Bind tab-select funtionality to namespaced click event, called by
-    // init
+    // 綁定 tab-select 函數的點擊事件
     var bindToTabClicks = function() {
       plugin.tabs.children("a").bind(settings.bind_str, function(e) {
 
-        // Stop cycling when a tab is clicked
+        // 單擊一個 tab 的時候停止自動播放
         settings.cycle = false;
 
-        // Hash will be updated when tab is clicked,
-        // don't cause tab to re-select when hash-change event is fired
+        // tab 點擊時更新哈希
         skipUpdateToHash = false;
 
-        // Select the panel for the clicked tab
+        // 點擊 tab 選擇面板
         plugin.selectTab( $(this) );
 
-        // Don't follow the link to the anchor
+        // 不要跟隨鏈接的錨
         e.preventDefault ? e.preventDefault() : e.returnValue = false;
       });
     };
 
-    // Activate a given tab/panel, called from plugin.selectTab:
+    // 激活特定 tab 或面板，被 plugin.selectTab 調用
     //
-    //   * fire `easytabs:before` hook
-    //   * get ajax if new tab is an uncached ajax tab
-    //   * animate out previously-active panel
-    //   * fire `easytabs:midTransition` hook
-    //   * update URL hash
-    //   * animate in newly-active panel
-    //   * update CSS classes for inactive and active tabs/panels
+    //   * 激發 tabs:before 鈎子
+    //   * 如果新 tab 是一個未緩存的 ajax tab，開始獲取
+    //   * 動畫淡出先前激活的面板
+    //   * 激發 tabs:midTransition 鈎子
+    //   * 更新 URL 哈希
+    //   * 動畫淡入新激活的面板
+    //   * 更新 tab 和面板的 CSS 類
     //
-    // TODO: This could probably be broken out into many more modular
-    // functions
+    // TODO: 應該可以被細分成更多模塊
     var activateTab = function($clicked, $targetPanel, ajaxUrl, callback) {
       plugin.panels.stop(true,true);
 
-      if( fire($container,"easytabs:before", [$clicked, $targetPanel, settings]) ){
+      if( fire($container,"tabs:before", [$clicked, $targetPanel, settings]) ){
         var $visiblePanel = plugin.panels.filter(":visible"),
             $panelContainer = $targetPanel.parent(),
             targetHeight,
@@ -517,17 +474,14 @@
           heightDifference = targetHeight - visibleHeight;
         }
 
-        // Set lastHash to help indicate if defaultTab should be
-        // activated across multiple tab instances.
         lastHash = hash;
 
-        // TODO: Move this function elsewhere
+        // TODO: 移動這函數到別處
         showPanel = function() {
-          // At this point, the previous panel is hidden, and the new one will be selected
-          $container.trigger("easytabs:midTransition", [$clicked, $targetPanel, settings]);
+          // 此時以前的面板是隱藏的，新的面板將被選中
+          $container.trigger("tabs:midTransition", [$clicked, $targetPanel, settings]);
 
-          // Gracefully animate between panels of differing heights, start height change animation *after* panel change if panel needs to contract,
-          // so that there is no chance of making the visible panel overflowing the height of the target panel
+          // 切入時兩個面板高度不一時動畫切換
           if (settings.animate && settings.transitionIn == 'fadeIn') {
             if (heightDifference < 0)
               $panelContainer.animate({
@@ -537,7 +491,7 @@
 
           if ( settings.updateHash && ! skipUpdateToHash ) {
             //window.location = url.toString().replace((url.pathname + hash), (url.pathname + $clicked.attr("href")));
-            // Not sure why this behaves so differently, but it's more straight forward and seems to have less side-effects
+            // 不知爲何表現差距很大，不過這樣很直接了當，副作用也少
             window.location.hash = '#' + $targetPanel.attr('id');
           } else {
             skipUpdateToHash = false;
@@ -545,37 +499,36 @@
 
           $targetPanel
             [transitions.show](transitions.speed, settings.transitionInEasing, function(){
-              $panelContainer.css({height: '', 'min-height': ''}); // After the transition, unset the height
-              $container.trigger("easytabs:after", [$clicked, $targetPanel, settings]);
-              // callback only gets called if selectTab actually does something, since it's inside the if block
+              $panelContainer.css({height: '', 'min-height': ''}); // 過渡之後取消高度設置
+              $container.trigger("tabs:after", [$clicked, $targetPanel, settings]);
+
               if(typeof callback == 'function'){
                 callback();
               }
           });
         };
 
-        if ( ajaxUrl && (!settings.cache || !$clicked.parent().data('easytabs').cached) ) {
-          $container.trigger('easytabs:ajax:beforeSend', [$clicked, $targetPanel]);
+        if ( ajaxUrl && (!settings.cache || !$clicked.parent().data('tabs').cached) ) {
+          $container.trigger('tabs:ajax:beforeSend', [$clicked, $targetPanel]);
           $targetPanel.load(ajaxUrl, function(response, status, xhr){
-            $clicked.parent().data('easytabs').cached = true;
-            $container.trigger('easytabs:ajax:complete', [$clicked, $targetPanel, response, status, xhr]);
+            $clicked.parent().data('tabs').cached = true;
+            $container.trigger('tabs:ajax:complete', [$clicked, $targetPanel, response, status, xhr]);
           });
         }
 
-        // Gracefully animate between panels of differing heights, start height change animation *before* panel change if panel needs to expand,
-        // so that there is no chance of making the target panel overflowing the height of the visible panel
+        // 切出時兩個面板高度不一時動畫切換
         if( settings.animate && settings.transitionOut == 'fadeOut' ) {
           if( heightDifference > 0 ) {
             $panelContainer.animate({
               height: ( $panelContainer.height() + heightDifference )
             }, transitions.halfSpeed );
           } else {
-            // Prevent height jumping before height transition is triggered at midTransition
+            // 防止提前觸發 midTransition
             $panelContainer.css({ 'min-height': $panelContainer.height() });
           }
         }
 
-        // Change the active tab *first* to provide immediate feedback when the user clicks
+        // 當用戶點擊活動的 tab 時提供即時的反饋
         plugin.tabs.filter("." + settings.tabActiveClass).removeClass(settings.tabActiveClass).children().removeClass(settings.tabActiveClass);
         plugin.tabs.filter("." + settings.collapsedClass).removeClass(settings.collapsedClass).children().removeClass(settings.collapsedClass);
         $clicked.parent().addClass(settings.tabActiveClass).children().addClass(settings.tabActiveClass);
@@ -593,24 +546,17 @@
       }
     };
 
-    // Get heights of panels to enable animation between panels of
-    // differing heights, called by activateTab
+    // 獲取面板的高度，動畫處理不同高度的面板，activateTab 調用
     var getHeightForHidden = function($targetPanel){
 
-      if ( $targetPanel.data('easytabs') && $targetPanel.data('easytabs').lastHeight ) {
-        return $targetPanel.data('easytabs').lastHeight;
+      if ( $targetPanel.data('tabs') && $targetPanel.data('tabs').lastHeight ) {
+        return $targetPanel.data('tabs').lastHeight;
       }
 
-      // this is the only property easytabs changes, so we need to grab its value on each tab change
       var display = $targetPanel.css('display'),
           outerCloak,
           height;
 
-      // Workaround with wrapping height, because firefox returns wrong
-      // height if element itself has absolute positioning.
-      // but try/catch block needed for IE7 and IE8 because they throw
-      // an "Unspecified error" when trying to create an element
-      // with the css position set.
       try {
         outerCloak = $('<div></div>', {'position': 'absolute', 'visibility': 'hidden', 'overflow': 'hidden'});
       } catch (e) {
@@ -623,51 +569,49 @@
 
       $targetPanel.unwrap();
 
-      // Return element to previous state
+      // 元素返回到以前的狀態
       $targetPanel.css({
-        position: $targetPanel.data('easytabs').position,
-        visibility: $targetPanel.data('easytabs').visibility,
+        position: $targetPanel.data('tabs').position,
+        visibility: $targetPanel.data('tabs').visibility,
         display: display
       });
 
-      // Cache height
-      $targetPanel.data('easytabs').lastHeight = height;
+      // 緩存高度
+      $targetPanel.data('tabs').lastHeight = height;
 
       return height;
     };
 
-    // Since the height of the visible panel may have been manipulated due to interaction,
-    // we want to re-cache the visible height on each tab change, called
-    // by activateTab
+    // 因爲可見的面板高度可能已經被改動了，所以要重新緩存每個可見面板的高度
+    // activateTab 調用
     var setAndReturnHeight = function($visiblePanel) {
       var height = $visiblePanel.outerHeight();
 
-      if( $visiblePanel.data('easytabs') ) {
-        $visiblePanel.data('easytabs').lastHeight = height;
+      if( $visiblePanel.data('tabs') ) {
+        $visiblePanel.data('tabs').lastHeight = height;
       } else {
-        $visiblePanel.data('easytabs', {lastHeight: height});
+        $visiblePanel.data('tabs', {lastHeight: height});
       }
       return height;
     };
 
-    // Setup hash-change callback for forward- and back-button
-    // functionality, called by init
+    // 爲前進後退功能安裝哈希改變的回調，初始化調用
     var initHashChange = function(){
 
-      // enabling back-button with jquery.hashchange plugin
+      // 對 jquery.hashchange 啓用後退按鈕
       // http://benalman.com/projects/jquery-hashchange-plugin/
       if(typeof $(window).hashchange === 'function'){
         $(window).hashchange( function(){
           plugin.selectTabFromHashChange();
         });
-      } else if ($.address && typeof $.address.change === 'function') { // back-button with jquery.address plugin http://www.asual.com/jquery/address/docs/
+      } else if ($.address && typeof $.address.change === 'function') { // jquery.address 的後退按鈕 http://www.asual.com/jquery/address/docs/
         $.address.change( function(){
           plugin.selectTabFromHashChange();
         });
       }
     };
 
-    // Begin cycling if set in options, called by init
+    // 開始自動播放，初始化調用
     var initCycle = function(){
       var tabNumber;
       if (settings.cycle) {
@@ -681,24 +625,23 @@
 
   };
 
-  $.fn.easytabs = function(options) {
+  $.fn.tabs = function(options) {
     var args = arguments;
 
     return this.each(function() {
       var $this = $(this),
-          plugin = $this.data('easytabs');
+          plugin = $this.data('tabs');
 
-      // Initialization was called with $(el).easytabs( { options } );
       if (undefined === plugin) {
-        plugin = new $.easytabs(this, options);
-        $this.data('easytabs', plugin);
+        plugin = new $.tabs(this, options);
+        $this.data('tabs', plugin);
       }
 
-      // User called public method
+      // 用戶調用的公共方法
       if ( plugin.publicMethods[options] ){
         return plugin.publicMethods[options](Array.prototype.slice.call( args, 1 ));
       }
     });
   };
 
-})(jQuery);
+}(jQuery);

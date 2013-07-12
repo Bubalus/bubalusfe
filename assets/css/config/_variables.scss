@@ -126,25 +126,6 @@ $state-info-text:                #3a87ad !default;
 $state-info-bg:                  #d9edf7 !default;
 $state-info-border:              darken(adjust-hue($state-info-bg, -10%), 7%) !default;
 
-// Alerts
-// -------------------------
-$alert-bg:                    $state-warning-bg !default;
-$alert-text:                  $state-warning-text !default;
-$alert-border:                $state-warning-border !default;
-$alert-border-radius:         $border-radius-base !default;
-
-$alert-success-bg:            $state-success-bg !default;
-$alert-success-text:          $state-success-text !default;
-$alert-success-border:        $state-success-border !default;
-
-$alert-danger-bg:             $state-danger-bg !default;
-$alert-danger-text:           $state-danger-text !default;
-$alert-danger-border:         $state-danger-border !default;
-
-$alert-info-bg:               $state-info-bg !default;
-$alert-info-text:             $state-info-text !default;
-$alert-info-border:           $state-info-border !default;
-
 
 // Tooltips 和 popovers
 // -------------------------

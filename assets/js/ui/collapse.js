@@ -19,7 +19,7 @@
 
 /*jshint laxcomma:true, sub:true, browser:true, jquery:true, devel:true, eqeqeq:false */
 
-;(function($, undefined) {
++function($) {
 	"use strict";
 
 	var pluginName = 'scojs_collapse';
@@ -106,4 +106,4 @@
 			return false;
 		}
 	});
-})(jQuery);
+}(jQuery);
