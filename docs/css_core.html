@@ -12,11 +12,11 @@
 		<link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
 		<link rel="stylesheet" href="../assets/css/bubaluslayout.css">
 		<!--[if lte IE 7]>
-		<link rel="stylesheet" href="assets/css/core/iehacks.css" type="text/css"/>
+		<link rel="stylesheet" href="../assets/css/core/iehacks.css" type="text/css"/>
 		<![endif]-->
 		<script src="../assets/js/head.js"></script>
 		<!--[if lt IE 9]>
-		<script src="assets/js/html5shiv.js"></script>
+		<script src="../assets/js/html5shiv.js"></script>
 		<![endif]-->
 	</head>
 	<body>
@@ -27,16 +27,16 @@
 		  <div class="container">
 		      <ul class="nav list-group">
 		        <li>
-		          <a href="docs/introduction.html">概述</a>
+		          <a href="introduction.html">概述</a>
 		        </li>
 		        <li>
-		          <a href="docs/css_core.html">核心 CSS</a>
+		          <a href="css_core.html">核心 CSS</a>
 		        </li>
 		        <li>
-		          <a href="docs/css_components.html">CSS 组件</a>
+		          <a href="css_components.html">CSS 组件</a>
 		        </li>
 		        <li>
-		          <a href="docs/js_components.html">JavaScript 组件</a>
+		          <a href="js_components.html">JavaScript 组件</a>
 		        </li>
 		      </ul>
 		  </div>
@@ -44,128 +44,6 @@
 		</nav>
 		<div id="main">
 			<div class="container">
-
-		        <!-- 排版 -->
-		        <div class="docs-section" id="layout">
-					<div class="page-header">
-		                <h1>排版 <small>一些内置和附加的排版類</small></h1>
-		            </div>
-					<p>
-		            	BubalusFE 設置了全局默認文字大小爲14px，行高約為20px，並為大部分標簽重設了排版樣式以使其能在多種瀏覽器中以統一的方式呈現。
-		            </p>
-		            <!--  -->
-					<h3 id="css-components">
-						小號文本
-						<small><code>&lt;small&gt;</code> 標簽，提供了比標準字體大小還要稍小一些的字號，約為12px。</small>
-					</h3>
-		            <div class="example-box">
-	                  <p><small>This line of text is meant to be treated as fine print.</small></p>
-	                </div>
-	                <div class="highlight">
-	                	<pre><code>&lt;small&gt;This line of text is meant to be treated as fine print.&lt;/small&gt;</code></pre>
-	                </div>
-					<!--  -->
-					<h3 id="css-components">
-						粗體文本
-						<small><code>&lt;strong&gt;</code> 標簽，爲粗體字，相當於<code>font-weight:700</code>。</small>
-					</h3>
-					<div class="example-box">
-				      <p>The following snippet of text is <strong>rendered as bold text</strong>.</p>
-				    </div>
-				    <div class="highlight">
-				    	<pre><code>&lt;strong&gt;rendered as bold text&lt;/strong&gt;</code></pre>
-				    </div>
-				    <!--  -->
-					<h3 id="css-components">
-						文本對齊
-						<small>使用 <code>.text-left</code> <code>.text-center</code> <code>.text-right</code> 來實現文字的左、中、右對齊。</small>
-					</h3>
-					<div class="example-box">
-				      <p class="text-left">Left aligned text.</p>
-				      <p class="text-center">Center aligned text.</p>
-				      <p class="text-right">Right aligned text.</p>
-				    </div>
-				    <div class="highlight">
-					    <pre><code>&lt;p class="text-left"&gt;Left aligned text.&lt;/p&gt;
-&lt;p class="text-center"&gt;Center aligned text.&lt;/p&gt;
-&lt;p class="text-right"&gt;Right aligned text.&lt;/p&gt;</code></pre>
-				    </div>
-				    <!--  -->
-					<h3 id="css-components">
-						字色
-						<small>一系列帶有提示性含義的文字顔色。</small>
-					</h3>
-					<div class="example-box">
-				      <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
-				      <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
-				      <p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
-				      <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
-				    </div>
-				    <div class="highlight">
-						<pre><code>&lt;p class="text-muted"&gt;...&lt;/p&gt;
-&lt;p class="text-warning"&gt;...&lt;/p&gt;
-&lt;p class="text-danger"&gt;...&lt;/p&gt;
-&lt;p class="text-success"&gt;...&lt;/p&gt;</code></pre>
-					</div>
-					<!--  -->
-					<h3 id="css-components">
-						縮寫
-						<small>爲 <code>&lt;abbr&gt;</code> 標簽加入『幫助』光標和下虛綫效果</small>
-					</h3>
-					<div class="example-box">
-				      <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
-				    </div>
-				    <div class="highlight">
-				    	<pre><code>&lt;abbr title="attribute"&gt;attr&lt;/abbr&gt;</code></pre>
-				    </div>
-				    <!--  -->
-					<h3 id="css-components">
-						引用
-						<small>使用 <code>&lt;blockquote&gt;</code> 標簽在文檔中引用別處的資源</small>
-					</h3>
-					<div class="example-box">
-				      <blockquote>
-				        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-				      </blockquote>
-				    </div>
-				    <div class="highlight">
-				    	<pre><code>&lt;blockquote&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;
-&lt;/blockquote&gt;</code></pre>
-					</div>
-					<p>如果要在引用内容中加入引用來源，可以在引用内容的末尾插入<code>&lt;small&gt;</code>。</p>
-					<div class="example-box">
-				      <blockquote>
-				        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-				        <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
-				      </blockquote>
-				    </div>
-					<div class="highlight">
-						<pre><code>&lt;blockquote&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;
-&lt;small&gt;Someone famous in &lt;cite title="Source Title"&gt;Source Title&lt;/cite&gt;&lt;/small&gt;
-&lt;/blockquote&gt;</code></pre>
-					</div>
-				    <!--  -->
-					<h3 id="css-components">
-						代碼
-						<small>使用 <code>&lt;code&gt;</code> 或 <code>&lt;pre&gt;</code> 在文檔中插入代碼</small>
-					</h3>
-					<p>行内的代碼内容可以使用 <code>&lt;code&gt;</code> 標簽</p>
-					<div class="example-box">
-					  For example, <code>&lt;section&gt;</code> should be wrapped as inline.
-					</div>
-					<div class="highlight">
-						<pre><code>For example, &lt;code&gt;&lt;section&gt;&lt;/code&gt; should be wrapped as inline.</code></pre>
-					</div>
-					<p>多行的代碼段則應該使用 <code>&lt;pre&gt;</code> 標簽</p>
-					<div class="example-box">
-					  <pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre>
-					</div>
-					<div class="highlight">
-						<pre><code>&lt;pre&gt;&lt;p&gt;Sample text here...&lt;/p&gt;&lt;/pre&gt;</code></pre>
-					</div>
-		        </div>
 
 				<!-- 工具 -->
 		        <div class="docs-section" id="layout">
@@ -192,9 +70,12 @@
 					<h3 id="css-components">
 						顯現和隱藏
 					</h3>
-
-
-
+					<p>
+						使用 <code>.hide</code> 類實現 <code>display: none</code> 的效果；<br>
+						使用 <code>.show</code> 類實現 <code>display: block</code> 的效果；<br>
+						使用 <code>.invisible</code> 類實現 <code>visibility: hidden</code> 的效果；<br>
+						使用 <code>.text-hide</code> 類實現 圖片替換文本 的效果。
+					</p>
 
 
 		        </div>
@@ -204,9 +85,10 @@
 					<div class="page-header">
 		                <h1>佈局結構 <small>以簡單的標簽結構完成對頁面内容的靈活佈局</small></h1>
 		            </div>
+		            <p>通過靈活的運用 <code>.container</code> 這個容器類可輕鬆實現下面三種佈局。</p>
 		            <div class="row">
-						<div class="col-lg-6">
-							<div class="dummyscreen">
+						<div class="col-lg-4">
+							<div class="dummyscreen screen-1">
 								<div class="container">
 									<div class="header">Header</div>
 									<div class="nav">Nav</div>
@@ -221,9 +103,10 @@
 									<div class="footer">Footer</div>
 								</div>
 							</div>
+							<h6 class="text-center">各區塊寬度被 <code>.container</code> 限制住</h6>
 						</div>
-						<div class="col-lg-6">
-							<div class="dummyscreen">
+						<div class="col-lg-4">
+							<div class="dummyscreen screen-2">
 								<div class="header">
 									<div class="container">
 										Header
@@ -250,9 +133,31 @@
 									</div>
 								</div>
 							</div>
+							<h6 class="text-center">祇有各區塊内容部分的寬度被 <code>.container</code> 限制住</h6>
+						</div>
+						<div class="col-lg-4">
+							<div class="dummyscreen screen-3">
+								<div class="header">
+									Header
+								</div>
+								<div class="nav">
+									Nav
+								</div>
+								<div class="main">
+									Main
+									<section class="row">
+										<p>section</p>
+										<aside class="col-4">aside</aside>
+										<article class="col-8">article</article>
+									</section>
+								</div>
+								<div class="footer">
+									Footer
+								</div>
+							</div>
+							<h6 class="text-center">沒有 <code>.container</code> 的限制</h6>
 						</div>
 					</div>
-				</div>
 				<!-- 柵格系統 -->
 				<div class="docs-section" id="grid">
 					<div class="page-header">
@@ -508,7 +413,120 @@
 &lt;/div&gt;
 				    </pre>
 		        </div>
+				<!-- 響應系統 -->
+				<div class="docs-section" id="responsive">
+					<div class="page-header">
+		                <h1>響應系統 <small>爲響應式應用提供基礎</small></h1>
+		            </div>
+					<p>
+						通過媒體查詢 <code>@media</code> 來對各種分辨率的屏幕或打印機提供專有的樣式。
+					</p>
 
+				    <h3>響應類</h3>
+				    <div class="hidden-sm">
+				      <table class="table table-bordered table-striped responsive-utilities">
+				        <thead>
+				          <tr>
+				            <th width="25%">類名</th>
+				            <th>手機 <small>768px 以下</small></th>
+				            <th>平板電腦 <small>768px - 979px</small></th>
+				            <th>桌面電腦 <small>980px 以上</small></th>
+				          </tr>
+				        </thead>
+				        <tbody>
+				          <tr>
+				            <th><code>.visible-sm</code></th>
+				            <td class="is-visible">可見的</td>
+				            <td class="is-hidden">不可見的</td>
+				            <td class="is-hidden">不可見的</td>
+				          </tr>
+				          <tr>
+				            <th><code>.visible-md</code></th>
+				            <td class="is-hidden">不可見的</td>
+				            <td class="is-visible">可見的</td>
+				            <td class="is-hidden">不可見的</td>
+				          </tr>
+				          <tr>
+				            <th><code>.visible-lg</code></th>
+				            <td class="is-hidden">不可見的</td>
+				            <td class="is-hidden">不可見的</td>
+				            <td class="is-visible">可見的</td>
+				          </tr>
+				          <tr>
+				            <th><code>.hidden-sm</code></th>
+				            <td class="is-hidden">不可見的</td>
+				            <td class="is-visible">可見的</td>
+				            <td class="is-visible">可見的</td>
+				          </tr>
+				          <tr>
+				            <th><code>.hidden-md</code></th>
+				            <td class="is-visible">可見的</td>
+				            <td class="is-hidden">不可見的</td>
+				            <td class="is-visible">可見的</td>
+				          </tr>
+				          <tr>
+				            <th><code>.hidden-lg</code></th>
+				            <td class="is-visible">可見的</td>
+				            <td class="is-visible">可見的</td>
+				            <td class="is-hidden">不可見的</td>
+				          </tr>
+				        </tbody>
+				      </table>
+				    </div>
+
+				    <h3>打印類</h3>
+				    <table class="table table-bordered table-striped responsive-utilities">
+				      <thead>
+				        <tr>
+				          <th width="25%">類名</th>
+				          <th>瀏覽器</th>
+				          <th>打印機</th>
+				        </tr>
+				      </thead>
+				      <tbody>
+				        <tr>
+				          <th><code>.visible-print</code></th>
+				          <td class="is-hidden">不可見的</td>
+				          <td class="is-visible">可見的</td>
+				        </tr>
+				        <tr>
+				          <th><code>.hidden-print</code></th>
+				          <td class="is-visible">可見的</td>
+				          <td class="is-hidden">不可見的</td>
+				        </tr>
+				      </tbody>
+				    </table>
+
+				    <ul class="responsive-utilities-test visible-on">
+				      <li>
+				        <span class="hidden-sm">手機</span>
+				        <span class="visible-sm">✔ 手機中可見</span>
+				      </li>
+				      <li>
+				        <span class="hidden-md">平板</span>
+				        <span class="visible-md">✔ 平板中可見</span>
+				      </li>
+				      <li>
+				        <span class="hidden-lg">PC</span>
+				        <span class="visible-lg">✔ 桌面中可見</span>
+				      </li>
+				    </ul>
+				    <ul class="responsive-utilities-test hidden-on">
+				      <li>
+				        <span class="visible-sm">手機</span>
+				        <span class="hidden-sm">✔ 手機中不可見</span>
+				      </li>
+				      <li>
+				        <span class="visible-md">平板</span>
+				        <span class="hidden-md">✔ 平板中不可見</span>
+				      </li>
+				      <li>
+				        <span class="visible-lg">PC</span>
+				        <span class="hidden-lg">✔ 桌面中不可見</span>
+				      </li>
+				    </ul>
+
+				  </div>
 
 
 

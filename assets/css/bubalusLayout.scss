@@ -14,9 +14,14 @@
 @import "bubaluslayout/core/reset";
 @import "bubaluslayout/core/layout.scss";
 @import "bubaluslayout/core/common.scss";
+@import "bubaluslayout/core/responsive.scss";
 
 /* 擴展組件
 ----------------------------------*/
+/* 手風琴 */
+@import "bubaluslayout/module/accordion/accordion";
+/* 麵包屑 */
+@import "bubaluslayout/module/alerttip/alerttip";
 /* 麵包屑 */
 @import "bubaluslayout/module/breadcrumb/breadcrumb";
 /* 按鈕/按鈕組 */
@@ -39,8 +44,14 @@
 @import "bubaluslayout/module/panel/panel";
 /* 進度條 */
 @import "bubaluslayout/module/progress/progress";
+/* 幻燈片 */
+@import "bubaluslayout/module/slideshow/slideshow";
+/* 表格 */
+@import "bubaluslayout/module/table/table";
 /* 縮略圖 */
 @import "bubaluslayout/module/thumbnails/thumbnails";
+/* Tooltips */
+@import "bubaluslayout/module/tooltip/tooltip";
 /* 文本樣式 */
 @import "bubaluslayout/module/typography/typography";
 

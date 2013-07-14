@@ -1,3 +1,5 @@
+@import "../config";
+
 body {
   position: relative;
 }
@@ -160,16 +162,78 @@ body {
   color: #bebec5;
 }
 
+/* Utility classes table
+------------------------- */
+.bs-table th small,
+.responsive-utilities th small {
+  display: block;
+  font-weight: normal;
+  color: #999;
+}
+.responsive-utilities tbody th {
+  font-weight: normal;
+}
+.responsive-utilities td {
+  text-align: center;
+}
+.responsive-utilities td.is-visible {
+  color: #468847;
+  background-color: #dff0d8 !important;
+}
+.responsive-utilities td.is-hidden {
+  color: #ccc;
+  background-color: #f9f9f9 !important;
+}
+
+/* Responsive tests
+------------------------- */
+.responsive-utilities-test {
+  margin-top: 5px;
+  margin-left: 0;
+  list-style: none;
+  overflow: hidden; /* clear floats */
+}
+.responsive-utilities-test li {
+  position: relative;
+  float: left;
+  width: 25%;
+}
+.responsive-utilities-test li + li {
+  margin-left: 10px;
+}
+.responsive-utilities-test span {
+  padding: 15px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.1;
+  text-align: center;
+  border-radius: 4px;
+}
+.responsive-utilities-test.visible-on [class*="hidden"],
+.responsive-utilities-test.hidden-on [class*="visible"] {
+  color: #999;
+  border: 1px solid #ddd;
+}
+.responsive-utilities-test.visible-on [class*="visible"],
+.responsive-utilities-test.hidden-on [class*="hidden"] {
+  color: #468847;
+  background-color: #dff0d8;
+  border: 1px solid #d6e9c6;
+}
+
+
 #layout {
 	.header, .footer, .nav, .main {
 		padding: 10px;
 	}
 	.container{
-		padding: 10px;
-		.header, .footer, .nav, .main {
-			padding: 18px 10px;
-		}
+		padding: 5px;
 	}
+  .screen-2 {
+    .row {
+      margin: 0;
+    }
+  }
 	.dummyscreen {
 	    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 	    border: 1px #888 solid;
