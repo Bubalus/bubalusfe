@@ -45,16 +45,16 @@ $grid-float-breakpoint:     $screen-tablet !default;
 @mixin make-row() {
   @include clear();
 
-  @media (min-width: $screen-small) {
-    margin-left:  ($grid-gutter-width / -2);
-    margin-right: ($grid-gutter-width / -2);
-  }
+  // @media (min-width: $screen-small) {
+  //   margin-left:  ($grid-gutter-width / -2);
+  //   margin-right: ($grid-gutter-width / -2);
+  // }
 
-  // 嵌套的水平容器设置负值空白边，避免产生重复的栅格间距
-  .row {
-    margin-left:  ($grid-gutter-width / -2);
-    margin-right: ($grid-gutter-width / -2);
-  }
+  // // 嵌套的水平容器设置负值空白边，避免产生重复的栅格间距
+  // .row {
+  //   margin-left:  ($grid-gutter-width / -2);
+  //   margin-right: ($grid-gutter-width / -2);
+  // }
 }
 
 // 栅格公用样式
@@ -251,14 +251,8 @@ header, footer, nav, #main {
 .equalize { overflow:hidden; }
 
 .equalize > [class*="col"] {
-  display:table-cell;
-  float:none;
-  margin:0;
-  vertical-align:top;
-}
-.equalize > [class*="col"] > [class*="col-box"] {
-  padding-bottom: 10000px;
-  margin-bottom: -10000px
+    padding-bottom:32767px;
+    margin-bottom:-32767px;
 }
 
 /* END Layout */

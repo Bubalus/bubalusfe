@@ -8,6 +8,15 @@
 body {
   position: relative; }
 
+header {
+  height: 400px;
+  background-image: url("assets/images/project/head_back.png"); }
+
+#logo {
+  width: 622px;
+  height: 334px;
+  background-image: url("assets/images/project/logo.png"); }
+
 .docs-nav {
   width: 60%;
   margin: 0 auto; }
@@ -249,11 +258,6 @@ body {
       #layout .dummyscreen .main section .g-box {
         background: #ddd; }
 
-#grid .row {
-  margin: 0 15px 20px 15px; }
-  #grid .row .row {
-    margin-right: -15px;
-    margin-left: -15px; }
 #grid [class*="col-lg-"] {
   padding-top: 15px;
   padding-bottom: 15px;

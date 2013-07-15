@@ -1,85 +1,119 @@
-@import "../config";
-
 body {
   position: relative;
+  background-color: #172b36;
 }
+.container {
 
+}
+header {
+  @include clear;
+  border-top:5px solid #172b36;
+  background-image: url('#{$images-path}/head_back.png');
 
-.docs-nav {
-  //background-color: #b94a48;
-  width: 60%;
-  margin: 0 auto;
+  .jumbotron{
+    color: #172b36;
+  }
 }
-.docs-nav .navbar-brand {
-  color: #fff;
-}
-.docs-nav .navbar-nav > li > a {
-  color: #e6cac8;
-}
-.docs-nav .navbar-nav > li > a:hover {
-  color: #fff;
-}
-.docs-nav .navbar-nav > .active > a,
-.docs-nav .navbar-nav > .active > a:hover {
-  color: #fff;
-  background-color: #993c3a;
-}
-.docs-nav .navbar-toggle {
-  border-color: #b94a48;
-}
-.docs-nav .navbar-toggle:hover {
-  background-color: #993c3a;
-  border-color: #993c3a;
-}
-
-/* Homepage masthead
--------------------------------------------------- */
-
-.masthead {
-  position: relative;
-  padding: 80px 15px 30px 15px;
+#logo {
+  float: left;
+  max-width: 829px;
+  margin: 10px 60px; 
   text-align: center;
 }
-.masthead h1 {
-  font-size: 120px;
-  line-height: 1.2;
-}
-.masthead .social {
-  margin-top: 80px;
+
+@media (max-width: $screen-large-desktop) {
+  #logo {
+    float: none;
+    margin: 10px auto 0 auto;
+  }
 }
 
-/* Download button */
-.masthead .btn {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding: 18px 24px;
-  font-size: 21px;
-  color: #b94a48; /* redeclare to override the `.jumbotron a` */
-  background-color: #fff;
-  border-color: #e5e5e5;
+.docs-nav {
+  @include clear;
+  border-bottom:1px solid #38596b;
+  background-image: url('#{$images-path}/nav_back.png');
+  background-repeat: repeat-x;
+  margin: 0 auto;
+  padding-left:40px;
+  
+  .navbar-nav > li {
+    border-top:7px solid transparent;
+  }
+  .navbar-nav > li.active{
+    border-top:7px solid #5b912f;
+  }
+  .navbar-nav > li > a {
+    line-height: 43px;
+    padding:0 40px;
+    color: #76a4bd;
+  }
+  .navbar-nav > li > a:hover {
+    color: #fff;
+  }
+  .navbar-nav > .active > a,
+  .navbar-nav > .active > a:hover {
+    color: #fff;
+    background-color: #112028;
+  }
 }
-.masthead .btn:hover,
-.masthead .btn:active {
-  color: #fff; /* redeclare to override the `.jumbotron a` */
-  background-color: #b94a48;
-  border-color: #b94a48;
+@media (max-width: $screen-tablet) {
+  .docs-nav {
+    padding:0;
+
+    .navbar-nav > li,
+    .navbar-nav > li.active {
+      border-top:none;
+    }
+  }
 }
 
-/* Textual links */
-.masthead-links {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-left: 0;
-  list-style: none;
+#main {
+  padding:20px;
+  color: #76a4bd;
 }
-.masthead-links li {
-  display: inline;
-  color: #999;
+.docs-page-header {
+  color: #82be51;
+  border-bottom:1px solid #38596b;
+  margin-bottom: 0;
+  small {
+    color: #76a4bd;
+  }
 }
-.masthead-links li + li {
-  margin-left: 20px;
-}
+.row {
+  border-bottom:1px solid #38596b;
+  .col-box {
+    padding:20px 0;
+  }
+  .col-lg-4 {
+    border-right:1px solid #38596b;
+    h3 {
+      margin-bottom: 10px;
+      color: #82be51;
+    }
+  }
 
+  .col-lg-8 {
+    padding-left:15px;
+    pre {
+      color: $gray-light;
+      margin-bottom: 0;
+      background-color:#101e26;
+    }
+  }
+}
+@media (max-width: $screen-desktop){
+  .row .col-lg-4 {
+    border:none;
+    .col-box{
+      padding-bottom:10px;
+    }
+  }
+  .row .col-lg-8 {
+    .col-box{
+      padding-top:10px;
+    }
+  }
+}
 /* Base class */
 .example-box {
   position: relative;
@@ -271,13 +305,6 @@ body {
 }
 
 #grid {
-	.row {
-		margin: 0 15px 20px 15px;
-		.row {
-			margin-right: -15px;
-			margin-left: -15px;
-		}
-	}
 	[class*="col-lg-"] {
 		padding-top: 15px;
 		padding-bottom: 15px;

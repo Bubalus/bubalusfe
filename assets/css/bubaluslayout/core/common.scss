@@ -13,10 +13,12 @@
 
 	.ie-clearing { display:none; }
 
-.pull-right {
+.fl-ri {
+  display: inline;
   float: right;
 }
-.pull-left {
+.fl-le {
+  display: inline;
   float: left;
 }
 
