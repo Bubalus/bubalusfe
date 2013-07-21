@@ -1,4 +1,3 @@
-$.bubalusToolsStep = {};
 (function($){
 	$.fn.bubalusToolsStep = function(bts_settings) {
 		bts_settings = jQuery.extend({

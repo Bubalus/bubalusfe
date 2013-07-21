@@ -14,7 +14,7 @@
 		<!--[if lte IE 7]>
 		<link rel="stylesheet" href="../assets/css/core/iehacks.css" type="text/css"/>
 		<![endif]-->
-		<script src="../assets/js/head.js"></script>
+		<script src="../assets/js/bubalusbase.js"></script>
 		<!--[if lt IE 9]>
 		<script src="../assets/js/html5shiv.js"></script>
 		<![endif]-->
@@ -62,29 +62,44 @@
 					            <p>
 					            	所有的CSS、javascript組件和媒體内容都被存放在 assets 文件夾，這是一個比較常見的文件結構。
 					            </p>
+					            <ul>
+					            	<li><strong>CSS/</strong> - 用於存放項目中所有CSS文件</li>
+					            	<li><strong>CSS/bubaluslayout</strong> - BubalusFE 的 CSS 組件</li>
+					            	<li><strong>CSS/bubaluslayout/core</strong> - BubalusFE 核心樣式表</li>
+					            	<li><strong>CSS/bubaluslayout/module</strong> - BubalusFE CSS模塊</li>
+					            	<li><strong>CSS/config</strong> - 用於存放 CSS 組件的配置文件</li>
+					            	<li><strong>CSS/project</strong> - 用於存放當前項目中用到的 CSS 文件</li>
+					            	<li><strong>CSS/quoted</strong> - 用于存放來自於第三方的 CSS 文件</li>
+					            	<li><strong>images/</strong> - 用於存放項目中所有媒體文件，如圖片等</li>
+					            	<li><strong>images/bubaluslayout</strong> - CSS 組件中用到的媒體文件</li>
+					            	<li><strong>images/project</strong> - 用於存放當前項目中用到的媒體文件</li>
+					            	<li><strong>js/</strong> - 用于存放項目中所有 javascript 文件</li>
+					            	<li><strong>js/ui</strong> - 用于存放 UI 類javascript文件</li>
+					            	<li><strong>js/utility</strong> - 用于存放 功能 類javascript文件</li>
+					            </ul>
 							</div>
 						</div>
 						<div class="col-lg-8">
 							<div class="col-box">
 								<pre>
-BubalusFE		            
-├─ assets
-│	├─ css                                          // 用於存放項目中所有CSS文件
-│	│	├─ bubaluslayout
-│	│	│	├─ core                                 // BubalusFE 核心樣式表
-│	│	│	└─ module                               // BubalusFE CSS模塊
-│	│	│                               
-│	│	├─ config                                   // 用於存放 BubalusLayout 配置文件
-│	│	├─ project                                  // 用於存放當前項目中的CSS文件，也就是使用者自己編寫的CSS文件
-│	│	└─ quoted                                   // 用于存放來自於第三方的CSS文件，比如一些JQuery附帶的CSS文件
-│	│
-│	├─ images                                       // 用於存放項目中所有媒體文件，如圖片等
-│	│
-│	└─ js                                           // 用于存放項目中所有javascript文件
-│	 	├─ ui                                       // 用于存放 UI 類javascript文件
-│	 	└─ utility                                  // 用于存放 功能 類javascript文件
-│
-└─ doc                                              // 演示與説明文檔
+	BubalusFE
+	├─ assets
+	│	├─ css
+	│	│	├─ bubaluslayout
+	│	│	│	├─ core
+	│	│	│	└─ module
+	│	│	│                               
+	│	│	├─ config
+	│	│	├─ project
+	│	│	└─ quoted
+	│	│
+	│	├─ images
+	│	│
+	│	└─ js
+	│	 	├─ ui
+	│	 	└─ utility
+	│
+	└─ docs
 								</pre>
 							</div>
 						</div>
@@ -142,7 +157,53 @@ BubalusFE
 							<div class="col-box">
 								<h3 id="js-components">javascript組件 <small>assets/js</small></h3>
 					            <p>
-					            	BubalusFE 的 javascript組件 依賴于 JQuery 項目，包含一個瀏覽器檢測與模塊加載組件和各種常用的UI組件和功能組件。
+					            	BubalusFE 的 javascript組件，包含瀏覽器檢測組件（Modernizr）、資源異步加載組件與各種常用的UI組件和功能組件。
+					            </p>
+				            </div>
+						</div>
+						<div class="col-lg-8">
+							<div class="col-box">
+							</div>
+						</div>
+					</div>
+
+					<div class="row equalize">
+						<div class="col-lg-4">
+							<div class="col-box">
+								<h3 id="js-components">javascript UI 模块 <small>assets/js/ui</small></h3>
+					            <p>
+					            	各种 UI 类 javascript 模块，包含如 tabs、tooltip、dropdown 等等。
+					            </p>
+				            </div>
+						</div>
+						<div class="col-lg-8">
+							<div class="col-box">
+							</div>
+						</div>
+					</div>
+
+					<div class="row equalize">
+						<div class="col-lg-4">
+							<div class="col-box">
+								<h3 id="js-components">javascript 功能組件 <small>assets/js/utility</small></h3>
+					            <p>
+					            	各种功能类 javascript 模块，包含如 表单验证、动画、AJAX 等。
+					            </p>
+				            </div>
+						</div>
+						<div class="col-lg-8">
+							<div class="col-box">
+							</div>
+						</div>
+					</div>
+
+					<div class="row equalize">
+						<div class="col-lg-4">
+							<div class="col-box">
+								<h3 id="js-components">javascript 核心组件 <small>assets/js/bubalusbase.js</small></h3>
+					            <p>
+					            	bubalusbase.js 包含了浏览器检测、模块加载、javascript模板等最核心的功能。<br>
+					            	
 					            </p>
 				            </div>
 						</div>
@@ -180,7 +241,7 @@ BubalusFE
 		&lt;!--[if lte IE 7]&gt;
 		&lt;link rel="stylesheet" href="assets/css/core/iehacks.css" type="text/css"/&gt;
 		&lt;![endif]--&gt;
-		&lt;script src="assets/js/head.js"&gt;&lt;/script&gt;
+		&lt;script src="assets/js/bubalusbase.js"&gt;&lt;/script&gt;
 		&lt;!--[if lt IE 9]&gt;
 		&lt;script src="assets/js/html5shiv.js"&gt;&lt;/script&gt;
 		&lt;![endif]--&gt;

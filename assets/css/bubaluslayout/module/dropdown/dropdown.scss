@@ -145,6 +145,16 @@ $zindex-dropdown:          1000 !default;
   }
 }
 
+// Dropdown section headers
+// ---------------------------
+.dropdown-header {
+  display: block;
+  padding: 3px 20px;
+  font-size: $font-size-small;
+  line-height: $line-height-base;
+  color: $gray-light;
+}
+
 
 // 移動設備優化
 // ---------------------------
@@ -182,14 +192,6 @@ $zindex-dropdown:          1000 !default;
     margin-bottom: 1px;
   }
 }
-
-// 其他適應性調整 
-// ---------------------------
-.dropdown .dropdown-menu .nav-header {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
 
 
 

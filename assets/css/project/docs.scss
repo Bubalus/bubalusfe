@@ -90,6 +90,17 @@ header {
       margin-bottom: 10px;
       color: #82be51;
     }
+    ul{
+      margin:20px;
+      li{
+        margin: 10px 0;
+        color: $gray-light;
+        strong {
+          color: #76a4bd;
+          text-decoration: underline;
+        }
+      }
+    }
   }
 
   .col-lg-8 {
@@ -114,6 +125,12 @@ header {
     }
   }
 }
+code {
+  color: #ff6600;
+  background-color:#101e26;
+}
+
+
 /* Base class */
 .example-box {
   position: relative;

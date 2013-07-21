@@ -12,7 +12,8 @@
 $navbar-height:                    3.571428571428571 !default;
 $navbar-color:                     #777 !default;
 $navbar-bg:                        #eee !default;
-$navbar-padding:                   floor($grid-gutter-width / 2) !default;  // ~15px
+$navbar-padding-horizontal:        floor($grid-gutter-width / 2) !default;  // ~15px
+$navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !defaul
 
 // Navbar links
 $navbar-link-color:                #777 !default;
@@ -92,9 +93,8 @@ $list-group-active-border:    $list-group-active-bg !default;
 // Navs 樣式
 // -------------------------
 .nav {
-  // margin-left: 0;
-  // margin-bottom: 0;
-  // padding-left: 0;
+  margin-bottom: 0;
+  padding-left: 0;
   list-style: none;
   @include clear();
 
@@ -272,22 +272,6 @@ $list-group-active-border:    $list-group-active-bg !default;
 .nav-justified { @include nav-justified }
 
 
-// 導航頭 用於 dropdowns 和 lists
-// -------------------------
-
-.nav-header {
-  display: block;
-  padding: 3px 15px;
-  font-size: $font-size-mini;
-  font-weight: bold;
-  line-height: $line-height-base;
-  color: $gray-light;
-  text-shadow: 0 1px 0 rgba(255,255,255,.5);
-  text-transform: uppercase;
-}
-
-
-
 // Tabbable tabs
 // -------------------------
 
@@ -333,9 +317,10 @@ $list-group-active-border:    $list-group-active-bg !default;
 
 .navbar {
   position: relative;
+  min-height: $navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
   margin-bottom: 20px;
-  padding-left: $navbar-padding;
-  padding-right: $navbar-padding;
+  padding-left: $navbar-padding-horizontal;
+  padding-right: $navbar-padding-horizontal;
   background-color: $navbar-bg;
   border-radius: $border-radius-base;
 
@@ -436,7 +421,7 @@ $list-group-active-border:    $list-group-active-bg !default;
   max-width: 200px;
   margin-left: auto;
   margin-right: auto;
-  padding: $navbar-padding;
+  padding: $navbar-padding-vertical $navbar-padding-horizontal;
   font-size: $font-size-large;
   font-weight: 500;
   line-height: $line-height-computed;
@@ -455,6 +440,8 @@ $list-group-active-border:    $list-group-active-bg !default;
   position: absolute;
   top: 10px;
   right: 10px;
+  width: 48px;
+  height: 32px;
   padding: 8px 12px;
   background-color: transparent;
   border: 1px solid #ddd;
@@ -627,7 +614,7 @@ $list-group-active-border:    $list-group-active-bg !default;
 
   .navbar-brand {
     float: left;
-    margin-left: -($navbar-padding);
+    margin-left: -($navbar-padding-horizontal);
     margin-right: 5px;
   }
   .navbar-nav {

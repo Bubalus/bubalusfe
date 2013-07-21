@@ -3,6 +3,27 @@
 //
 /* Accordion - 手風琴樣式 */
 // --------------------------------------------
+// Accordion
+// -------------------------
+$accordion-border-color:      #e5e5e5 !default;
+
+
+// Badges
+// -------------------------
+$badge-color:                 #fff !default;
+$badge-link-hover-color:      #fff !default;
+
+$badge-bg:                    #f5f5f5 !default;
+$badge-active-color:          $link-color !default;
+$badge-active-bg:             #fff !default;
+
+
+// Breadcrumbs
+// -------------------------
+$breadcrumb-bg:               #f5f5f5 !default;
+$breadcrumb-color:            #ccc !default;
+$breadcrumb-active-color:     $gray-light !default;
+
 
 // 父容器
 .accordion {
@@ -12,7 +33,7 @@
 // Group == heading + body
 .accordion-group {
   margin-bottom: 2px;
-  border: 1px solid #e5e5e5;
+  border: 1px solid $accordion-border-color;
   border-radius: $border-radius-base;
 }
 .accordion-heading {
@@ -28,5 +49,5 @@
 // 内層樣式
 .accordion-inner {
   padding: 9px 15px;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid $accordion-border-color;
 }

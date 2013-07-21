@@ -65,12 +65,12 @@ $label-danger-bg:             $brand-danger !default;
   padding: 3px 7px;
   font-size: $font-size-small;
   font-weight: bold;
-  color: #fff;
+  color: $badge-color;
   line-height: 1;
   vertical-align: middle;
   white-space: nowrap;
   text-align: center;
-  background-color: $gray-light;
+  background-color: $badge-bg;
   border-radius: 10px;
 
   // 空標簽隱藏
@@ -83,7 +83,7 @@ $label-danger-bg:             $brand-danger !default;
 a.badge {
   &:hover,
   &:focus {
-    color: #fff;
+    color: $badge-link-hover-color;
     text-decoration: none;
     cursor: pointer;
   }
@@ -99,8 +99,8 @@ a.badge {
 // 列表組和導航裏的狀態標簽
 a.list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
-  color: $link-color;
-  background-color: #fff;
+  color: $badge-active-color;
+  background-color: $badge-active-bg;
 }
 .nav-pills > li > a > .badge {
   margin-left: 3px;

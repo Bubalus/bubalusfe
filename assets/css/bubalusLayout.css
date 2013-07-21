@@ -3790,6 +3790,14 @@ header {
     .row .col-lg-4 h3 {
       margin-bottom: 10px;
       color: #82be51; }
+    .row .col-lg-4 ul {
+      margin: 20px; }
+      .row .col-lg-4 ul li {
+        margin: 10px 0;
+        color: #999999; }
+        .row .col-lg-4 ul li strong {
+          color: #76a4bd;
+          text-decoration: underline; }
   .row .col-lg-8 {
     padding-left: 15px; }
     .row .col-lg-8 pre {
@@ -3805,6 +3813,10 @@ header {
 
   .row .col-lg-8 .col-box {
     padding-top: 10px; } }
+code {
+  color: #ff6600;
+  background-color: #101e26; }
+
 /* Base class */
 .example-box {
   position: relative;

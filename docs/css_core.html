@@ -14,7 +14,7 @@
 		<!--[if lte IE 7]>
 		<link rel="stylesheet" href="../assets/css/core/iehacks.css" type="text/css"/>
 		<![endif]-->
-		<script src="../assets/js/head.js"></script>
+		<script src="../assets/js/bubalusbase.js"></script>
 		<!--[if lt IE 9]>
 		<script src="../assets/js/html5shiv.js"></script>
 		<![endif]-->
@@ -61,14 +61,18 @@
 								<h3 id="css-components">
 									浮動元素
 								</h3>
+								<p>
+									使用 <code>.fl-le</code> 類實現 <code>float: left</code> 的效果；<br>
+									使用 <code>.fl-ri</code> 類實現 <code>float: right</code> 的效果
+								</p>
 							</div>
 						</div>
 						<div class="col-lg-8">
 							<div class="col-box">
-								<div class="highlight">
-									<pre><code>&lt;div class="pull-left"&gt;...&lt;/div&gt;
-			&lt;div class="pull-right"&gt;...&lt;/div&gt;</code></pre>
-								</div>
+								<pre>
+&lt;div class="fl-le"&gt;...&lt;/div&gt;
+&lt;div class="fl-ri"&gt;...&lt;/div&gt;
+								</pre>
 							</div>
 						</div>
 					</div>
@@ -79,13 +83,14 @@
 								<h3 id="css-components">
 									清除浮動
 								</h3>
+								<p>
+									使用 <code>.clear</code> 類實現 清除浮動 的功能
+								</p>
 							</div>
 						</div>
 						<div class="col-lg-8">
 							<div class="col-box">
-								<div class="highlight">
-									<pre><code>&lt;div class="clearfix"&gt;...&lt;/div&gt;</code></pre>
-								</div>
+								<pre>&lt;div class="clear"&gt;...&lt;/div&gt;</pre>
 							</div>
 						</div>
 					</div>
@@ -99,14 +104,17 @@
 								<p>
 									使用 <code>.hide</code> 類實現 <code>display: none</code> 的效果；<br>
 									使用 <code>.show</code> 類實現 <code>display: block</code> 的效果；<br>
-									使用 <code>.invisible</code> 類實現 <code>visibility: hidden</code> 的效果；<br>
-									使用 <code>.text-hide</code> 類實現 圖片替換文本 的效果。
+									使用 <code>.invisible</code> 類實現 <code>visibility: hidden</code> 的效果；
 								</p>
 							</div>
 						</div>
 						<div class="col-lg-8">
 							<div class="col-box">
-							
+								<pre>
+&lt;div class="hide"&gt;...&lt;/div&gt;
+&lt;div class="show"&gt;...&lt;/div&gt;
+&lt;div class="invisible"&gt;...&lt;/div&gt;
+								</pre>
 							</div>
 						</div>
 					</div>

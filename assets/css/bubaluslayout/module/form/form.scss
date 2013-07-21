@@ -104,7 +104,7 @@ input[type="search"],
 input[type="tel"],
 input[type="color"] {
   display: block;
-  min-height: $input-height-base; // 同步对应按钮的高度
+  height: $input-height-base; // 同步对应按钮的高度
   padding: $padding-base-vertical $padding-base-horizontal;
   font-size: $font-size-base;
   line-height: $line-height-base;
@@ -164,7 +164,6 @@ input[type="checkbox"] {
 }
 
 // 调整 选单和文件输入框 的高度,和 input[type="text"] 统一
-select,
 input[type="file"] {
   height: $input-height-base; // IE7 奇葩，需要设置font-size
   line-height: $input-height-base;
@@ -280,19 +279,28 @@ input[type="search"],
 input[type="tel"],
 input[type="color"] {
   &.input-large {
-    min-height: $input-height-large;
+    height: $input-height-large;
     padding: $padding-large-vertical $padding-large-horizontal;
     font-size: $font-size-large;
     border-radius: $border-radius-large;
   }
   &.input-small {
-    min-height: $input-height-small;
+    height: $input-height-small;
     padding: $padding-small-vertical $padding-small-horizontal;
     font-size: $font-size-small;
     border-radius: $border-radius-small;
   }
 }
-
+select {
+  &.input-large {
+    height: $input-height-large;
+    line-height: $input-height-large;
+  }
+  &.input-small {
+    height: $input-height-small;
+    line-height: $input-height-small;
+  }
+}
 // 表单项状态反馈
 // --------------------------
 
@@ -414,9 +422,8 @@ input[type="color"] {
 }
 .input-group-btn > .btn {
   position: relative;
-  float: left;
   + .btn {
-    margin-left: -1px;
+    margin-left: -4px;
   }
   // 层次调整
   &:hover,
