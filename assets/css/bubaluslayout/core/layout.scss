@@ -198,15 +198,6 @@ header, footer, nav, #main {
     .col-sm-#{$i}  { width: percentage(($i / $grid-columns)); }
   }
 
-
-  // Push and pull columns for source order changes
-  @for $i from 1 through $grid-columns - 1 {
-    .col-push-#{$i}  { left: percentage(($i / $grid-columns)); }
-  }
-
-  @for $i from 1 through $grid-columns - 1 {
-    .col-pull-#{$i}  { right: percentage(($i / $grid-columns)); }
-  }
 }
 
 
@@ -233,10 +224,6 @@ header, footer, nav, #main {
     .col-lg-#{$i}  { width: percentage(($i / $grid-columns)); }
   }
   
-  // Offsets
-  @for $i from 1 through $grid-columns - 1 {
-    .col-offset-#{$i}  { margin-left: percentage(($i / $grid-columns)); }
-  }
 }
 
 // 响应设置: 针对宽屏桌面分辨率

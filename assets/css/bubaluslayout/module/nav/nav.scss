@@ -13,7 +13,7 @@ $navbar-height:                    3.571428571428571 !default;
 $navbar-color:                     #777 !default;
 $navbar-bg:                        #eee !default;
 $navbar-padding-horizontal:        floor($grid-gutter-width / 2) !default;  // ~15px
-$navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !defaul
+$navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
 
 // Navbar links
 $navbar-link-color:                #777 !default;
