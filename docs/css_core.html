@@ -122,6 +122,163 @@
 
 		        </div>
 
+				<!-- 響應系統 -->
+				<div class="docs-section" id="responsive">
+					<div class="page-header docs-page-header">
+		                <h1>響應系統 <small>爲響應式應用提供基礎</small></h1>
+						<p>通過媒體查詢 <code>@media</code> 來對各種分辨率的屏幕或打印機提供專有的樣式。</p>
+		            </div>
+
+					<div class="row equalize">
+						<div class="col-lg-4 docs-side">
+							<div class="col-box">
+								<h3 id="css-module">響應式的應用</h3>
+								<p>BubalusFE 核心 CSS 提供了一套響應式的柵格系統和一組響應式顯隱的工具類，附帶的一些 CSS 模塊也都具備響應式效果。<br>他們可以在 BubalusFE 預置的四種常見響應設置（
+								<abbr title="分辨率寬度 ≤768px">手機</abbr>、
+								<abbr title="分辨率寬度 768px - 1024px">平板</abbr>、
+								<abbr title="分辨率寬度 ≥1024px">PC</abbr>、打印機
+								）中實現各自專有的響應式效果</p>
+								
+				            </div>
+						</div>
+						<div class="col-lg-8 docs-article">
+							<div class="col-box">
+
+							</div>
+						</div>
+					</div>
+
+					<div class="row equalize">
+						<div class="col-lg-4 docs-side">
+							<div class="col-box">
+								<h3 id="css-module">響應式顯隱</h3>
+								<p>在默認的四種響應式設置中提供響應式顯隱功能</p>
+								<ul>
+									<li>使用 <code>.visible-phone</code> 實現手機中顯示</li>
+									<li>使用 <code>.hidden-phone</code> 實現手機中隱藏</li>
+									<li>使用 <code>.visible-table</code> 實現平板中顯示</li>
+									<li>使用 <code>.hidden-table</code> 實現平板中隱藏</li>
+									<li>使用 <code>.visible-pc</code> 實現PC中顯示</li>
+									<li>使用 <code>.hidden-pc</code> 實現PC中隱藏</li>
+									<li>使用 <code>.visible-print</code> 實現打印中顯示</li>
+									<li>使用 <code>.hidden-print</code> 實現打印中隱藏</li>
+								</ul>
+				            </div>
+						</div>
+						<div class="col-lg-8 docs-article">
+							<div class="col-box">
+							    <ul class="responsive-utilities-test">
+							      <li>
+							        <span class="visible-sm">當前處於智能手機分辨率範圍</span>
+							        <span class="hidden-sm">智能手機分辨率</span>
+							      </li>
+							      <li>
+							        <span class="visible-md">當前處於平板電腦分辨率範圍</span>
+							        <span class="hidden-md">平板電腦分辨率</span>
+							      </li>
+							      <li class="fl-ri">
+							        <span class="visible-lg">當前處於 PC 桌面分辨率範圍</span>
+							        <span class="hidden-lg"> PC 桌面分辨率</span>
+							      </li>
+							    </ul>
+							    <pre>
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;span class="visible-sm"&gt;當前適配智能手機分辨率&lt;/span&gt;
+    &lt;span class="hidden-sm"&gt;智能手機分辨率&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;span class="visible-md"&gt;當前適配平板電腦分辨率&lt;/span&gt;
+    &lt;span class="hidden-md"&gt;平板電腦分辨率&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li class="fl-ri"&gt;
+    &lt;span class="visible-lg"&gt;當前適配 PC 桌面分辨率&lt;/span&gt;
+    &lt;span class="hidden-lg"&gt; PC 桌面分辨率&lt;/span&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+							    </pre>
+
+							</div>
+						</div>
+					</div>
+
+					<div class="row equalize">
+						<div class="col-lg-4 docs-side">
+							<div class="col-box">
+								<h3 id="css-module">編寫自己的響應式設計</h3>
+								<p>CSS 配置文件 <code>assets\css\config</code> 中提供了一些預置的方法和響應點變量，利用這些方法和變量來編寫自己的響應式設計。<br>
+								這些内容應該寫到 <code>assets\css\project\responsive.scss</code> 裏面。</p>
+								<ul>
+									<li><strong>$screen-phone: 480px</strong><br> - 通常为智能手機竪屏分辨率</li>
+									<li><strong>$screen-tablet: 768px</strong><br> - 通常为平板电脑竖屏分辨率</li>
+									<li><strong>$screen-desktop: 1024px</strong><br> - 通常为平板电脑横屏分辨率</li>
+									<li><strong>$screen-large-desktop: 1200px</strong><br> - 通常作为笔记本电脑和台式电脑屏幕分辨率分界点</li>
+								</ul>
+								<ul>
+									<li><strong>@mixin screen($res-min, $res-max)</strong><br> - 寬度區間內觸發響應</li>
+									<li><strong>@mixin max-screen($res)</strong><br> - 最大寬度以內觸發響應</li>
+									<li><strong>@mixin min-screen($res)</strong><br> - 最小寬度以內觸發響應</li>
+									<li><strong>@mixin screen-height($res-min, $res-max)</strong><br> - 高度區間內觸發響應</li>
+									<li><strong>@mixin max-screen-height($res)</strong><br> - 最大高度值以內觸發響應</li>
+									<li><strong>@mixin min-screen-height($res)</strong><br> - 最小高度值以內觸發響應</li>
+									<li><strong>@mixin hdpi</strong><br> - 高清屏移動設備專用</li>
+									<li><strong>@mixin ipad</strong><br> - ipad專用</li>
+									<li><strong>@mixin ipad-retina</strong><br> - 配備Retina顯示屏的ipad專用</li>
+								</ul>
+
+				            </div>
+						</div>
+						<div class="col-lg-8 docs-article">
+							<div class="col-box">
+								<pre>
+@include screen(768px, 1280px) { ... }
+
+// 使用上面的方法將會生成
+
+@media screen and ( min-width: 768px ) and ( max-width: 1280px ) {
+  ...
+}
+
+============================
+
+@include min-screen($screen-phone)  { ... }
+
+// 使用上面的方法將會生成
+
+@media screen and ( min-width: 480px ) {
+  ...
+}
+
+============================
+
+@include max-screen-height(768px)  { ... }
+
+// 使用上面的方法將會生成
+
+@media screen and ( max-height: 768px ) {
+  ...
+}
+
+============================
+
+// 如果是針對高清屏移動設備的項目，可以直接使用下面的方法實現橫豎屏的響應
+
+@include hdpi { ... } 
+@include hdpi(2) { ... } // 視網膜屏
+
+============================
+
+// 如果是針對ipad的項目，可以直接使用下面的方法實現橫豎屏的響應
+
+@include ipad { ... }
+@include ipad-retina { ... }  // 針對Retina顯示屏
+								</pre>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
 		        <!-- 佈局 -->
 				<div class="docs-section" id="layout">
 					<div class="page-header docs-page-header">
@@ -131,7 +288,7 @@
 		            <div class="row">
 						<div class="col-lg-4">
 							<div class="col-box">
-								<h6 class="text-center">各區塊寬度被 <code>.container</code> 限制住</h6>
+								<h6 class="text-center">各區塊寬度被 <code>.container</code> （虛綫）限制住</h6>
 								<div class="dummyscreen screen-1">
 									<div class="container">
 										<div class="header">Header</div>
@@ -151,7 +308,7 @@
 						</div>
 						<div class="col-lg-4">
 							<div class="col-box">
-								<h6 class="text-center">祇有各區塊内容部分的寬度被 <code>.container</code> 限制住</h6>
+								<h6 class="text-center">祇有各區塊内容部分的寬度被 <code>.container</code> （虛綫）限制住</h6>
 								<div class="dummyscreen screen-2">
 									<div class="header">
 										<div class="container">
@@ -207,6 +364,7 @@
 						</div>
 					</div>
 				</div>
+
 				<!-- 柵格系統 -->
 				<div class="docs-section" id="grid">
 					<div class="page-header docs-page-header">
@@ -217,7 +375,7 @@
 					<div class="row equalize">
 						<div class="col-lg-4 docs-side">
 							<div class="col-box">
-								<h3 id="css-module">三個柵格行組成的柵格佈局</h3>
+								<h3 id="css-module">多個柵格行組成的柵格佈局</h3>
 				            </div>
 						</div>
 						<div class="col-lg-8 docs-article">
@@ -300,32 +458,35 @@
 						<div class="col-lg-8 docs-article">
 							<div class="col-box">
 								<div class="row">
-								  <div class="col-12 col-lg-8">.col-12 .col-lg-8</div>
+								  <div class="col-12 col-lg-4">.col-12 .col-lg-4</div>
 								  <div class="col-6 col-lg-4">.col-6 .col-lg-4</div>
+								  <div class="col-6 col-lg-4">col-6 .col-lg-4</div>
 								</div>
 								<div class="row">
-								  <div class="col-6 col-lg-4">.col-6 .col-lg-4</div>
-								  <div class="col-6 col-lg-4">.col-6 .col-lg-4</div>
-								  <div class="col-6 col-lg-4">.col-6 .col-lg-4</div>
+								  <div class="col-6 col-lg-3">.col-6 .col-lg-3</div>
+								  <div class="col-6 col-lg-6">.col-6 .col-lg-6</div>
+								  <div class="col-12 col-lg-3">.col-12 .col-lg-3</div>
 								</div>
 								<div class="row">
-								  <div class="col-6 col-lg-6">.col-6 .col-lg-6</div>
-								  <div class="col-6 col-lg-6">.col-6 .col-lg-6</div>
+								  <div class="col-4 col-lg-8">.col-4 .col-lg-8</div>
+								  <div class="col-8 col-lg-4">.col-8 .col-lg-4</div>
 								</div>
 								<pre>
 &lt;div class="row"&gt;
-  &lt;div class="col-12 col-lg-8"&gt;.col-12 .col-lg-8&lt;/div&gt;
+  &lt;div class="col-12 col-lg-4"&gt;.col-12 .col-lg-4&lt;/div&gt;
   &lt;div class="col-6 col-lg-4"&gt;.col-6 .col-lg-4&lt;/div&gt;
+  &lt;div class="col-6 col-lg-4"&gt;col-6 .col-lg-4&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="row"&gt;
-  &lt;div class="col-6 col-lg-4"&gt;.col-6 .col-lg-4&lt;/div&gt;
-  &lt;div class="col-6 col-lg-4"&gt;.col-6 .col-lg-4&lt;/div&gt;
-  &lt;div class="col-6 col-lg-4"&gt;.col-6 .col-lg-4&lt;/div&gt;
+  &lt;div class="col-6 col-lg-3"&gt;.col-6 .col-lg-3&lt;/div&gt;
+  &lt;div class="col-6 col-lg-6"&gt;.col-6 .col-lg-6&lt;/div&gt;
+  &lt;div class="col-12 col-lg-3"&gt;.col-12 .col-lg-3&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="row"&gt;
-  &lt;div class="col-6 col-lg-6"&gt;.col-6 .col-lg-6&lt;/div&gt;
-  &lt;div class="col-6 col-lg-6"&gt;.col-6 .col-lg-6&lt;/div&gt;
+  &lt;div class="col-4 col-lg-8"&gt;.col-4 .col-lg-8&lt;/div&gt;
+  &lt;div class="col-8 col-lg-4"&gt;.col-8 .col-lg-4&lt;/div&gt;
 &lt;/div&gt;
+
 								</pre>
 							</div>
 						</div>
@@ -341,31 +502,33 @@
 						<div class="col-lg-8 docs-article">
 							<div class="col-box">
 								<div class="row">
-								  <div class="col-12 col-sm-8 col-lg-8">.col-12 .col-lg-8</div>
-								  <div class="col-6 col-sm-4 col-lg-4">.col-6 .col-lg-4</div>
+								  <div class="col-12 col-sm-4 col-lg-4">.col-12 col-sm-4 .col-lg-4</div>
+								  <div class="col-6 col-sm-4 col-lg-4">.col-6 col-sm-4 .col-lg-4</div>
+								  <div class="col-6 col-sm-4 col-lg-4">col-6 col-sm-4 .col-lg-4</div>
 								</div>
 								<div class="row">
-								  <div class="col-6 col-sm-4 col-lg-4">.col-6 .col-lg-4</div>
-								  <div class="col-6 col-sm-4 col-lg-4">.col-6 .col-lg-4</div>
-								  <div class="col-6 col-sm-4 col-lg-4">.col-6 .col-lg-4</div>
+								  <div class="col-6 col-sm-3 col-lg-3">.col-6 col-sm-3 .col-lg-3</div>
+								  <div class="col-6 col-sm-6 col-lg-6">.col-6 col-sm-6 .col-lg-6</div>
+								  <div class="col-12 col-sm-3 col-lg-3">.col-12 col-sm-3 .col-lg-3</div>
 								</div>
 								<div class="row">
-								  <div class="col-6 col-sm-6 col-lg-6">.col-6 .col-lg-6</div>
-								  <div class="col-6 col-sm-6 col-lg-6">.col-6 .col-lg-6</div>
+								  <div class="col-4 col-sm-8 col-lg-8">.col-4 col-sm-8 .col-lg-8</div>
+								  <div class="col-8 col-sm-4 col-lg-4">.col-8 col-sm-4 .col-lg-4</div>
 								</div>
 								<pre>
 &lt;div class="row"&gt;
-  &lt;div class="col-12 col-sm-8 col-lg-8"&gt;.col-12 .col-lg-8&lt;/div&gt;
-  &lt;div class="col-6 col-sm-4 col-lg-4"&gt;.col-6 .col-lg-4&lt;/div&gt;
+  &lt;div class="col-12 col-sm-4 col-lg-4"&gt;.col-12 col-sm-4 .col-lg-4&lt;/div&gt;
+  &lt;div class="col-6 col-sm-4 col-lg-4"&gt;.col-6 col-sm-4 .col-lg-4&lt;/div&gt;
+  &lt;div class="col-6 col-sm-4 col-lg-4"&gt;col-6 col-sm-4 .col-lg-4&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="row"&gt;
-  &lt;div class="col-6 col-sm-4 col-lg-4"&gt;.col-6 .col-lg-4&lt;/div&gt;
-  &lt;div class="col-6 col-sm-4 col-lg-4"&gt;.col-6 .col-lg-4&lt;/div&gt;
-  &lt;div class="col-6 col-sm-4 col-lg-4"&gt;.col-6 .col-lg-4&lt;/div&gt;
+  &lt;div class="col-6 col-sm-3 col-lg-3"&gt;.col-6 col-sm-3 .col-lg-3&lt;/div&gt;
+  &lt;div class="col-6 col-sm-6 col-lg-6"&gt;.col-6 col-sm-6 .col-lg-6&lt;/div&gt;
+  &lt;div class="col-12 col-sm-3 col-lg-3"&gt;.col-12 col-sm-3 .col-lg-3&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="row"&gt;
-  &lt;div class="col-6 col-sm-6 col-lg-6"&gt;.col-6 .col-lg-6&lt;/div&gt;
-  &lt;div class="col-6 col-sm-6 col-lg-6"&gt;.col-6 .col-lg-6&lt;/div&gt;
+  &lt;div class="col-4 col-sm-8 col-lg-8"&gt;.col-4 col-sm-8 .col-lg-8&lt;/div&gt;
+  &lt;div class="col-8 col-sm-4 col-lg-4"&gt;.col-8 col-sm-4 .col-lg-4&lt;/div&gt;
 &lt;/div&gt;
 								</pre>
 							</div>
@@ -400,120 +563,6 @@
 					</div>
 
 		        </div>
-				<!-- 響應系統 -->
-				<div class="docs-section" id="responsive">
-					<div class="page-header docs-page-header">
-		                <h1>響應系統 <small>爲響應式應用提供基礎</small></h1>
-		            </div>
-					<p>
-						通過媒體查詢 <code>@media</code> 來對各種分辨率的屏幕或打印機提供專有的樣式。
-					</p>
-
-				    <h3>響應類</h3>
-				    <div class="hidden-sm">
-				      <table class="table table-bordered table-striped responsive-utilities">
-				        <thead>
-				          <tr>
-				            <th width="25%">類名</th>
-				            <th>手機 <small>768px 以下</small></th>
-				            <th>平板電腦 <small>768px - 979px</small></th>
-				            <th>桌面電腦 <small>980px 以上</small></th>
-				          </tr>
-				        </thead>
-				        <tbody>
-				          <tr>
-				            <th><code>.visible-sm</code></th>
-				            <td class="is-visible">可見的</td>
-				            <td class="is-hidden">不可見的</td>
-				            <td class="is-hidden">不可見的</td>
-				          </tr>
-				          <tr>
-				            <th><code>.visible-md</code></th>
-				            <td class="is-hidden">不可見的</td>
-				            <td class="is-visible">可見的</td>
-				            <td class="is-hidden">不可見的</td>
-				          </tr>
-				          <tr>
-				            <th><code>.visible-lg</code></th>
-				            <td class="is-hidden">不可見的</td>
-				            <td class="is-hidden">不可見的</td>
-				            <td class="is-visible">可見的</td>
-				          </tr>
-				          <tr>
-				            <th><code>.hidden-sm</code></th>
-				            <td class="is-hidden">不可見的</td>
-				            <td class="is-visible">可見的</td>
-				            <td class="is-visible">可見的</td>
-				          </tr>
-				          <tr>
-				            <th><code>.hidden-md</code></th>
-				            <td class="is-visible">可見的</td>
-				            <td class="is-hidden">不可見的</td>
-				            <td class="is-visible">可見的</td>
-				          </tr>
-				          <tr>
-				            <th><code>.hidden-lg</code></th>
-				            <td class="is-visible">可見的</td>
-				            <td class="is-visible">可見的</td>
-				            <td class="is-hidden">不可見的</td>
-				          </tr>
-				        </tbody>
-				      </table>
-				    </div>
-
-				    <h3>打印類</h3>
-				    <table class="table table-bordered table-striped responsive-utilities">
-				      <thead>
-				        <tr>
-				          <th width="25%">類名</th>
-				          <th>瀏覽器</th>
-				          <th>打印機</th>
-				        </tr>
-				      </thead>
-				      <tbody>
-				        <tr>
-				          <th><code>.visible-print</code></th>
-				          <td class="is-hidden">不可見的</td>
-				          <td class="is-visible">可見的</td>
-				        </tr>
-				        <tr>
-				          <th><code>.hidden-print</code></th>
-				          <td class="is-visible">可見的</td>
-				          <td class="is-hidden">不可見的</td>
-				        </tr>
-				      </tbody>
-				    </table>
-
-				    <ul class="responsive-utilities-test visible-on">
-				      <li>
-				        <span class="hidden-sm">手機</span>
-				        <span class="visible-sm">✔ 手機中可見</span>
-				      </li>
-				      <li>
-				        <span class="hidden-md">平板</span>
-				        <span class="visible-md">✔ 平板中可見</span>
-				      </li>
-				      <li>
-				        <span class="hidden-lg">PC</span>
-				        <span class="visible-lg">✔ 桌面中可見</span>
-				      </li>
-				    </ul>
-				    <ul class="responsive-utilities-test hidden-on">
-				      <li>
-				        <span class="visible-sm">手機</span>
-				        <span class="hidden-sm">✔ 手機中不可見</span>
-				      </li>
-				      <li>
-				        <span class="visible-md">平板</span>
-				        <span class="hidden-md">✔ 平板中不可見</span>
-				      </li>
-				      <li>
-				        <span class="visible-lg">PC</span>
-				        <span class="hidden-lg">✔ 桌面中不可見</span>
-				      </li>
-				    </ul>
-
-				  </div>
 
 
 

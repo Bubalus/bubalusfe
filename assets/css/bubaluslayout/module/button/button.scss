@@ -273,11 +273,12 @@ $btn-info-border:                $btn-info-bg !default;
     float: left;
   }
   // 按钮组之间要有间距
-  > .btn + .btn,
-  > .btn-group + .btn,
-  > .btn + .btn-group,
-  > .btn-group + .btn-group {
-    margin-left: 5px;
+  > .btn,
+  > .btn-group {
+    + .btn,
+    + .btn-group {
+      margin-left: 5px;
+    }
   }
 }
 

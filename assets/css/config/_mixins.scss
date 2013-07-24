@@ -338,19 +338,6 @@
   border-bottom: 1px solid $bottom;
 }
 
-// Alerts
-// ----------------------
-@mixin alert-variant($background, $border, $text-color) {
-  background-color: $background;
-  border-color: $border;
-  color: $text-color;
-  hr {
-    border-top-color: darken($border, 5%);
-  }
-  .alert-link {
-    color: darken($text-color, 10%);
-  }
-}
 
 // Labels
 // -------------------------
@@ -375,11 +362,70 @@
 
 // 響應式相關
 // ----------------------
+@mixin screen($res-min, $res-max) {
+  @media screen and ( min-width: $res-min ) and ( max-width: $res-max ) {
+    @content;
+  }
+}
+
+@mixin max-screen($res) {
+  @media screen and ( max-width: $res ) {
+    @content;
+  }
+}
+
+@mixin min-screen($res) {
+  @media screen and ( min-width: $res ) {
+    @content;
+  }
+}
+
+@mixin screen-height($res-min, $res-max) {
+  @media screen and ( min-height: $res-min ) and ( max-height: $res-max ) {
+    @content;
+  }
+}
+
+@mixin max-screen-height($res) {
+  @media screen and ( max-height: $res ) {
+    @content;
+  }
+}
+
+@mixin min-screen-height($res) {
+  @media screen and ( min-height: $res ) {
+    @content;
+  }
+}
+//HDPI
+@mixin hdpi($ratio: 1.3) {
+  @media only screen and (-webkit-min-device-pixel-ratio: $ratio),
+  only screen and (min--moz-device-pixel-ratio: $ratio),
+  only screen and (-o-min-device-pixel-ratio: #{$ratio}/1),
+  only screen and (min-resolution: #{round($ratio*96)}dpi),
+  only screen and (min-resolution: #{$ratio}dppx) {
+    @content;
+  }
+}
+//iPADs 響應
+@mixin ipad {
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    @content;
+  }
+}
+//iPADs Retina 響應
+@mixin ipad-retina {
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px)
+  and (-webkit-device-pixel-ratio: 2) {
+    @content;
+  }
+}
+
+// 響應式顯隱
 @mixin responsive-visibility($selector) {
   #{$selector} {
     display: block !important;
   }
-
   tr#{$selector} { display: table-row !important; }
   th#{$selector},
   td#{$selector} { display: table-cell !important; }

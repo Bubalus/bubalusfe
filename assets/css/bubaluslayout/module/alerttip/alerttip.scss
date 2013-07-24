@@ -24,6 +24,19 @@ $alert-info-bg:               $state-info-bg !default;
 $alert-info-text:             $state-info-text !default;
 $alert-info-border:           $state-info-border !default;
 
+
+@mixin alert-variant($background, $border, $text-color) {
+  background-color: $background;
+  border-color: $border;
+  color: $text-color;
+  hr {
+    border-top-color: darken($border, 5%);
+  }
+  .alert-link {
+    color: darken($text-color, 10%);
+  }
+}
+
 // 基本樣式
 // -------------------------
 

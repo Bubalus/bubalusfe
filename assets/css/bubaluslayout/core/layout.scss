@@ -45,7 +45,7 @@ $grid-float-breakpoint:     $screen-tablet !default;
 @mixin make-row() {
   @include clear();
 
-  // @media (min-width: $screen-small) {
+  // @media (min-width: $screen-tablet) {
   //   margin-left:  ($grid-gutter-width / -2);
   //   margin-right: ($grid-gutter-width / -2);
   // }

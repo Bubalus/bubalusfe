@@ -376,7 +376,7 @@ header, footer, nav, #main {
 
   .col-sm-12 {
     width: 100%; } }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .container {
     max-width: 940px; }
 
@@ -461,11 +461,11 @@ header, footer, nav, #main {
 
 .fl-ri {
   display: inline;
-  float: right; }
+  float: right !important; }
 
 .fl-le {
   display: inline;
-  float: left; }
+  float: left !important; }
 
 .hide {
   display: none !important; }
@@ -519,15 +519,9 @@ header, footer, nav, #main {
   border-radius: 3px; }
 
 /* END Common */
+/* Responsives - 響應 */
 @-ms-viewport {
   width: device-width; }
-
-@media screen and (max-width: 400px) {
-  @-ms-viewport {
-    width: 320px; } }
-.hidden {
-  display: none !important;
-  visibility: hidden !important; }
 
 .visible-sm {
   display: block !important; }
@@ -589,7 +583,7 @@ th.hidden-lg,
 td.hidden-lg {
   display: table-cell !important; }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .visible-sm {
     display: none !important; }
 
@@ -649,7 +643,7 @@ td.hidden-lg {
   th.hidden-lg,
   td.hidden-lg {
     display: table-cell !important; } }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .visible-sm {
     display: none !important; }
 
@@ -862,7 +856,6 @@ td.visible-print {
   .breadcrumb > li {
     display: inline-block; }
     .breadcrumb > li + li:before {
-      display: inline-block;
       content: "/\00a0";
       padding: 0 5px;
       color: #cccccc; }
@@ -1058,8 +1051,8 @@ td.visible-print {
   .btn-toolbar .btn-group {
     float: left; }
   .btn-toolbar > .btn + .btn,
-  .btn-toolbar > .btn-group + .btn,
   .btn-toolbar > .btn + .btn-group,
+  .btn-toolbar > .btn-group + .btn,
   .btn-toolbar > .btn-group + .btn-group {
     margin-left: 5px; }
 
@@ -1397,8 +1390,7 @@ input[type="checkbox"] {
   line-height: normal; }
 
 input[type="file"] {
-  height: 38px;
-  line-height: 38px; }
+  display: block; }
 
 select[multiple],
 select[size] {
@@ -3713,7 +3705,7 @@ header {
       margin-bottom: 0;
       background-color: #101e26; }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .row .docs-side {
     border: none; }
     .row .docs-side .col-box {
@@ -3768,6 +3760,37 @@ code {
   background-color: rgba(147, 182, 202, 0.15);
   border: 1px solid rgba(147, 182, 202, 0.2); }
 
+/* Responsive tests
+------------------------- */
+.responsive-utilities-test {
+  margin-bottom: 15px;
+  margin-left: 0;
+  list-style: none;
+  overflow: hidden;
+  /* clear floats */
+  border: 1px solid #38596b;
+  border-radius: 4px; }
+
+.responsive-utilities-test li {
+  position: relative;
+  float: left;
+  width: 33%; }
+
+.responsive-utilities-test span {
+  padding: 15px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.1;
+  text-align: center; }
+
+.responsive-utilities-test [class*="hidden"] {
+  color: #466271;
+  text-decoration: line-through; }
+
+.responsive-utilities-test [class*="visible"] {
+  color: #76a4bd;
+  background-color: rgba(147, 182, 202, 0.15); }
+
 /* Base class */
 .example-box {
   position: relative;
@@ -3818,61 +3841,3 @@ code {
 
 .example-box > .close {
   float: none; }
-
-/* Utility classes table
-------------------------- */
-.bs-table th small,
-.responsive-utilities th small {
-  display: block;
-  font-weight: normal;
-  color: #999; }
-
-.responsive-utilities tbody th {
-  font-weight: normal; }
-
-.responsive-utilities td {
-  text-align: center; }
-
-.responsive-utilities td.is-visible {
-  color: #468847;
-  background-color: #dff0d8 !important; }
-
-.responsive-utilities td.is-hidden {
-  color: #ccc;
-  background-color: #f9f9f9 !important; }
-
-/* Responsive tests
-------------------------- */
-.responsive-utilities-test {
-  margin-top: 5px;
-  margin-left: 0;
-  list-style: none;
-  overflow: hidden;
-  /* clear floats */ }
-
-.responsive-utilities-test li {
-  position: relative;
-  float: left;
-  width: 25%; }
-
-.responsive-utilities-test li + li {
-  margin-left: 10px; }
-
-.responsive-utilities-test span {
-  padding: 15px 10px;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 1.1;
-  text-align: center;
-  border-radius: 4px; }
-
-.responsive-utilities-test.visible-on [class*="hidden"],
-.responsive-utilities-test.hidden-on [class*="visible"] {
-  color: #999;
-  border: 1px solid #ddd; }
-
-.responsive-utilities-test.visible-on [class*="visible"],
-.responsive-utilities-test.hidden-on [class*="hidden"] {
-  color: #468847;
-  background-color: #dff0d8;
-  border: 1px solid #d6e9c6; }

@@ -156,24 +156,19 @@ $well-bg:                     #f5f5f5 !default;
 // 響應點    //////////////////////////////////
 // --------------------------------------------
 
-// 針對手機
-$screen-tiny:                480px !default;
-$screen-phone:               $screen-tiny !default;
+// 針對手機豎屏
+$screen-phone:               480px !default;
 
-// 針對平板電腦
-$screen-small:               768px !default;
-$screen-tablet:              $screen-small !default;
+// 針對平板電腦豎屏
+$screen-tablet:              768px !default;
 
-// 針對普通顯示器
-$screen-medium:              992px !default;
-$screen-desktop:             $screen-medium !default;
+// 針對平板電腦橫屏
+$screen-desktop:             1024px  !default;
 
-$screen-small-max:           ($screen-medium - 1) !default;
-$screen-tablet-max:          $screen-small-max !default;
+$screen-tablet-max:          ($screen-desktop - 1) !default;
 
-// 針對寬屏顯示器
-$screen-large:               1200px !default;
-$screen-large-desktop:       $screen-large !default;
+// 筆記本和臺機顯示器分辨率分界點
+$screen-large-desktop:       1200px !default;
 
 
 // --------------------------------------------

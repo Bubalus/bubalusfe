@@ -208,6 +208,36 @@ code {
   }
 }
 
+/* Responsive tests
+------------------------- */
+.responsive-utilities-test {
+  margin-bottom: 15px;
+  margin-left: 0;
+  list-style: none;
+  overflow: hidden; /* clear floats */
+  border: 1px solid $docs-border-color;
+  border-radius: 4px;
+}
+.responsive-utilities-test li {
+  position: relative;
+  float: left;
+  width: 33%;
+}
+.responsive-utilities-test span {
+  padding: 15px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.1;
+  text-align: center;
+}
+.responsive-utilities-test [class*="hidden"] {
+  color: $docs-font-color-blue * 0.6;
+  text-decoration: line-through;
+}
+.responsive-utilities-test [class*="visible"] {
+  color: $docs-font-color-blue;
+  background-color: rgba(147,182,202,.15);
+}
 
 
 /* Base class */
@@ -265,61 +295,3 @@ code {
 }
 
 
-/* Utility classes table
-------------------------- */
-.bs-table th small,
-.responsive-utilities th small {
-  display: block;
-  font-weight: normal;
-  color: #999;
-}
-.responsive-utilities tbody th {
-  font-weight: normal;
-}
-.responsive-utilities td {
-  text-align: center;
-}
-.responsive-utilities td.is-visible {
-  color: #468847;
-  background-color: #dff0d8 !important;
-}
-.responsive-utilities td.is-hidden {
-  color: #ccc;
-  background-color: #f9f9f9 !important;
-}
-
-/* Responsive tests
-------------------------- */
-.responsive-utilities-test {
-  margin-top: 5px;
-  margin-left: 0;
-  list-style: none;
-  overflow: hidden; /* clear floats */
-}
-.responsive-utilities-test li {
-  position: relative;
-  float: left;
-  width: 25%;
-}
-.responsive-utilities-test li + li {
-  margin-left: 10px;
-}
-.responsive-utilities-test span {
-  padding: 15px 10px;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 1.1;
-  text-align: center;
-  border-radius: 4px;
-}
-.responsive-utilities-test.visible-on [class*="hidden"],
-.responsive-utilities-test.hidden-on [class*="visible"] {
-  color: #999;
-  border: 1px solid #ddd;
-}
-.responsive-utilities-test.visible-on [class*="visible"],
-.responsive-utilities-test.hidden-on [class*="hidden"] {
-  color: #468847;
-  background-color: #dff0d8;
-  border: 1px solid #d6e9c6;
-}
