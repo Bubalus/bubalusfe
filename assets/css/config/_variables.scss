@@ -91,27 +91,6 @@ $zindex-modal-background:  1040 !default;
 $zindex-modal:             1050 !default;
 
 
-// 表格組件
-// -------------------------
-$table-cell-padding:                 8px !default;
-$table-condensed-cell-padding:       5px !default;
-
-$table-bg:                           transparent !default; // overall background-color
-$table-bg-accent:                    #f9f9f9 !default; // for striping
-$table-bg-hover:                     #f5f5f5 !default;
-$table-bg-active:                    $table-bg-hover !default;
-
-$table-border-color:                 #ddd !default; // table and cell border
-
-
-// Jumbotron 大屏幕組件
-// -------------------------
-
-$jumbotron-bg:                   $gray-lighter !default;
-$jumbotron-heading-color:        inherit !default;
-$jumbotron-lead-color:           inherit !default;
-
-
 // Form 狀態 和 alerts
 // -------------------------
 $state-warning-text:             #c09853 !default;
@@ -159,15 +138,15 @@ $well-bg:                     #f5f5f5 !default;
 $screen-phone:               480px !default;
 
 // 針對平板電腦豎屏
-$screen-tablet:              768px !default;
+$screen-table:              768px !default;
 
 // 針對平板電腦橫屏
 $screen-desktop:             1024px  !default;
 
-$screen-tablet-max:          ($screen-desktop - 1) !default;
+$screen-table-max:          ($screen-desktop - 1) !default;
 
 // 筆記本和臺機顯示器分辨率分界點
-$screen-large-desktop:       1200px !default;
+$screen-large-desktop:       1280px !default;
 
 
 // --------------------------------------------

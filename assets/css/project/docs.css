@@ -258,7 +258,7 @@ header {
       #layout .dummyscreen .main section .g-box {
         background: #ddd; }
 
-#grid [class*="col-lg-"] {
+#grid [class*="col-desktop-"] {
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: rgba(185, 74, 72, 0.15);

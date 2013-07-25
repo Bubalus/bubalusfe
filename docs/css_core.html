@@ -49,6 +49,106 @@
 		</nav>
 
 		<div id="main">
+				<!-- 重置 -->
+		        <div class="docs-section" id="reset">
+					<div class="page-header docs-page-header">
+		                <h1>CSS 重置 <small>用於統一各瀏覽器下的呈現</small></h1>
+		            </div>
+
+					<div class="row equalize">
+						<div class="col-desktop-4 docs-side">
+							<div class="col-box">
+								<h3 id="css-components">
+									一個可配置的 CSS 重置工具  <small>assets/css/bubaluslayout/core/reset.scss</small>
+								</h3>
+								<p>
+									包含「基礎」和「擴展」兩種重置類型。其中「基礎」重置類型大量參考了大名鼎鼎的 normalize.css，而「擴展」類型則在「基礎」類型的基礎上加強了呈現效果，尤其是表單和排版的方面。
+								</p>
+							</div>
+						</div>
+						<div class="col-desktop-8 docs-article">
+							<div class="col-box">
+								<pre>
+// assets/css/bubaluslayout/_config.scss
+
+// 只开启基本重置
+$only-base-reset: 		false !default;
+								</pre>
+							</div>
+						</div>
+					</div>
+
+		        </div>
+
+				<!-- IE HACK -->
+		        <div class="docs-section" id="iehack">
+					<div class="page-header docs-page-header">
+		                <h1>IE-Hack <small>用於對早期版本的IE瀏覽器提供</small></h1>
+		            </div>
+
+					<div class="row equalize">
+						<div class="col-desktop-4 docs-side">
+							<div class="col-box">
+								<h3 id="css-components">
+									Hack 的實現
+								</h3>
+								<p>
+									BubalusFE的模板文件中，HTML 標籤被插入了一些瀏覽器識別信息，如 <code>lt-ie7</code> 等，所以，大部分情況下本工具不會使用傳統的 hack 選擇器，而會根據 HTML 標籤中的信息來進行匹配。<br>
+									而在一些 Javascript 組件中，IE-Hack 則更多依賴 Modernizr.js 提供的功能。
+								</p>
+							</div>
+						</div>
+						<div class="col-desktop-8 docs-article">
+							<div class="col-box">
+								<pre>
+&lt;!--[if lt IE 7]&gt;      &lt;html class="no-js lt-ie9 lt-ie8 lt-ie7"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 7]&gt;         &lt;html class="no-js lt-ie9 lt-ie8"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 8]&gt;         &lt;html class="no-js lt-ie9"&gt; &lt;![endif]--&gt;
+&lt;!--[if gt IE 8]&gt;&lt;!--&gt; &lt;html class="no-js"&gt; &lt;!--&lt;![endif]--&gt;
+								</pre>
+							</div>
+						</div>
+					</div>
+
+					<div class="row equalize">
+						<div class="col-desktop-4 docs-side">
+							<div class="col-box">
+								<h3 id="css-components">
+									核心 Hack <small>assets/css/bubaluslayout/core/iehacks.scss</small>
+								</h3>
+								<p>
+									包含了一些全局 Hack 和一些用於解決核心 CSS 組件在早期 IE 版本中出現的問題的 Hack。<br>
+									再重申一下：本工具箱只對早期版本 IE 提供有限的支持，因為作者是「沒必要保證一致，不影響使用就好」的那一派，而且過多使用 Hack 只會更加加重 早期 IE 的渲染負擔，進而拖累早期 IE 本不來就怎樣的性能。
+								</p>
+							</div>
+						</div>
+						<div class="col-desktop-8 docs-article">
+							<div class="col-box">
+
+							</div>
+						</div>
+					</div>
+
+					<div class="row equalize">
+						<div class="col-desktop-4 docs-side">
+							<div class="col-box">
+								<h3 id="css-components">
+									模塊 Hack 
+								</h3>
+								<p>
+									同樣，只對早期 IE 版本提供有限的支持。
+								</p>
+							</div>
+						</div>
+						<div class="col-desktop-8 docs-article">
+							<div class="col-box">
+
+							</div>
+						</div>
+					</div>
+
+		        </div>
+
 				<!-- 工具 -->
 		        <div class="docs-section" id="layout">
 					<div class="page-header docs-page-header">
@@ -56,7 +156,7 @@
 		            </div>
 
 					<div class="row equalize">
-						<div class="col-lg-4 docs-side">
+						<div class="col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="css-components">
 									浮動元素
@@ -67,7 +167,7 @@
 								</p>
 							</div>
 						</div>
-						<div class="col-lg-8 docs-article">
+						<div class="col-desktop-8 docs-article">
 							<div class="col-box">
 								<pre>
 &lt;div class="fl-le"&gt;...&lt;/div&gt;
@@ -78,7 +178,7 @@
 					</div>
 
 					<div class="row equalize">
-						<div class="col-lg-4 docs-side">
+						<div class="col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="css-components">
 									清除浮動
@@ -88,7 +188,7 @@
 								</p>
 							</div>
 						</div>
-						<div class="col-lg-8 docs-article">
+						<div class="col-desktop-8 docs-article">
 							<div class="col-box">
 								<pre>&lt;div class="clear"&gt;...&lt;/div&gt;</pre>
 							</div>
@@ -96,7 +196,7 @@
 					</div>
 
 					<div class="row equalize">
-						<div class="col-lg-4 docs-side">
+						<div class="col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="css-components">
 									顯現和隱藏
@@ -108,7 +208,7 @@
 								</p>
 							</div>
 						</div>
-						<div class="col-lg-8 docs-article">
+						<div class="col-desktop-8 docs-article">
 							<div class="col-box">
 								<pre>
 &lt;div class="hide"&gt;...&lt;/div&gt;
@@ -130,7 +230,7 @@
 		            </div>
 
 					<div class="row equalize">
-						<div class="col-lg-4 docs-side">
+						<div class="col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="css-module">響應式的應用</h3>
 								<p>BubalusFE 核心 CSS 提供了一套響應式的柵格系統和一組響應式顯隱的工具類，附帶的一些 CSS 模塊也都具備響應式效果。<br>他們可以在 BubalusFE 預置的四種常見響應設置（
@@ -141,7 +241,7 @@
 								
 				            </div>
 						</div>
-						<div class="col-lg-8 docs-article">
+						<div class="col-desktop-8 docs-article">
 							<div class="col-box">
 
 							</div>
@@ -149,7 +249,7 @@
 					</div>
 
 					<div class="row equalize">
-						<div class="col-lg-4 docs-side">
+						<div class="col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="css-module">響應式顯隱</h3>
 								<p>在默認的四種響應式設置中提供響應式顯隱功能</p>
@@ -165,7 +265,7 @@
 								</ul>
 				            </div>
 						</div>
-						<div class="col-lg-8 docs-article">
+						<div class="col-desktop-8 docs-article">
 							<div class="col-box">
 							    <ul class="responsive-utilities-test">
 							      <li>
@@ -203,7 +303,7 @@
 					</div>
 
 					<div class="row equalize">
-						<div class="col-lg-4 docs-side">
+						<div class="col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="css-module">編寫自己的響應式設計</h3>
 								<p>CSS 配置文件 <code>assets\css\config</code> 中提供了一些預置的方法和響應點變量，利用這些方法和變量來編寫自己的響應式設計。<br>
@@ -228,7 +328,7 @@
 
 				            </div>
 						</div>
-						<div class="col-lg-8 docs-article">
+						<div class="col-desktop-8 docs-article">
 							<div class="col-box">
 								<pre>
 @include screen(768px, 1280px) { ... }
@@ -286,7 +386,7 @@
 		            	<p>通過靈活的運用 <code>.container</code> 這個容器類即可以簡單的標簽結構完成對頁面内容的靈活佈局</p>
 		            </div>
 		            <div class="row">
-						<div class="col-lg-4">
+						<div class="col-desktop-4">
 							<div class="col-box">
 								<h6 class="text-center">各區塊寬度被 <code>.container</code> （虛綫）限制住</h6>
 								<div class="dummyscreen screen-1">
@@ -306,7 +406,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-4">
+						<div class="col-desktop-4">
 							<div class="col-box">
 								<h6 class="text-center">祇有各區塊内容部分的寬度被 <code>.container</code> （虛綫）限制住</h6>
 								<div class="dummyscreen screen-2">
@@ -338,7 +438,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-4">
+						<div class="col-desktop-4">
 							<div class="col-box">
 								<h6 class="text-center">沒有 <code>.container</code> 的限制</h6>
 								<div class="dummyscreen screen-3">
@@ -373,41 +473,64 @@
 		            </div>
 
 					<div class="row equalize">
-						<div class="col-lg-4 docs-side">
+						<div class="col-desktop-4 docs-side">
+							<div class="col-box">
+								<h3 id="css-components">
+									柵格的應用
+								</h3>
+								<p>
+									BubalusFE 的柵格系統具備響應式效果，而這種響應式效果是依賴於三種不同的類聲明來實現的。<br>
+									<ul>
+										<li><code>.col-[i]</code> 該類代表一般柵格，不具備響應式效果，始終保持佈局。</li>
+										<li><code>.col-table-[i]</code> 該類為針對平板電腦的響應式柵格，在瀏覽器寬度小於 <code>768px</code>時佈局會崩壞，每個柵格獨佔一行。</li>
+										<li><code>.col-desktop-[i]</code>該類為針對桌面顯示器的響應式柵格，在瀏覽器寬度小於 <code>1024px</code>時佈局會崩壞，每個柵格獨佔一行。</li>
+									</ul>
+								</p>
+							</div>
+						</div>
+						<div class="col-desktop-8 docs-article">
+							<div class="col-box">
+
+							</div>
+						</div>
+					</div>
+
+					<div class="row equalize">
+						<div class="col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="css-module">多個柵格行組成的柵格佈局</h3>
 				            </div>
 						</div>
-						<div class="col-lg-8 docs-article">
+						<div class="col-desktop-8 docs-article">
 							<div class="col-box">
-								<div class="row">
-								  <div class="col-lg-4">.col-lg-4</div>
-								  <div class="col-lg-4">.col-lg-4</div>
-								  <div class="col-lg-4">.col-lg-4</div>
+								<div class="row demo-row">
+								  <div class="col-4">.col-4</div>
+								  <div class="col-4">.col-4</div>
+								  <div class="col-4">.col-4</div>
 								</div>
-								<div class="row">
-								  <div class="col-lg-3">.col-lg-3</div>
-								  <div class="col-lg-6">.col-lg-6</div>
-								  <div class="col-lg-3">.col-lg-3</div>
+								<div class="row demo-row">
+								  <div class="col-table-3">.col-table-3</div>
+								  <div class="col-table-6">.col-table-6</div>
+								  <div class="col-table-3">.col-table-3</div>
 								</div>
-								<div class="row">
-								  <div class="col-lg-8">.col-lg-8</div>
-								  <div class="col-lg-4">.col-lg-4</div>
+								<div class="row demo-row">
+								  <div class="col-desktop-8">.col-desktop-8</div>
+								  <div class="col-desktop-4">.col-desktop-4</div>
 								</div>
 								<pre>
 &lt;div class="row"&gt;
-  &lt;div class="col-lg-4"&gt;.col-lg-4&lt;/div&gt;
-  &lt;div class="col-lg-4"&gt;.col-lg-4&lt;/div&gt;
-  &lt;div class="col-lg-4"&gt;.col-lg-4&lt;/div&gt;
+  &lt;div class="col-4"&gt;.col-4&lt;/div&gt;
+  &lt;div class="col-4"&gt;.col-4&lt;/div&gt;
+  &lt;div class="col-4"&gt;.col-4&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="row"&gt;
-  &lt;div class="col-lg-3"&gt;.col-lg-3&lt;/div&gt;
-  &lt;div class="col-lg-6"&gt;.col-lg-6&lt;/div&gt;
-  &lt;div class="col-lg-3"&gt;.col-lg-3&lt;/div&gt;
+  &lt;div class="col-table-3"&gt;.col-table-3&lt;/div&gt;
+  &lt;div class="col-table-6"&gt;.col-table-6&lt;/div&gt;
+  &lt;div class="col-table-3"&gt;.col-table-3&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="row"&gt;
-  &lt;div class="col-lg-8"&gt;.col-lg-8&lt;/div&gt;
-  &lt;div class="col-lg-4"&gt;.col-lg-4&lt;/div&gt;
+  &lt;div class="col-desktop-8"&gt;.col-desktop-8&lt;/div&gt;
+  &lt;div class="col-desktop-4"&gt;.col-desktop-4&lt;/div&gt;
 &lt;/div&gt;
 								</pre>
 							</div>
@@ -415,31 +538,31 @@
 					</div>
 
 					<div class="row equalize">
-						<div class="col-lg-4 docs-side">
+						<div class="col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="css-module">柵格的嵌套</h3>
 				            </div>
 						</div>
-						<div class="col-lg-8 docs-article">
+						<div class="col-desktop-8 docs-article">
 							<div class="col-box">
-								<div class="row">
-								  <div class="col-lg-4">.col-lg-4</div>
-								  <div class="col-lg-8">
-								    .col-lg-8
+								<div class="row demo-row">
+								  <div class="col-desktop-4">.col-desktop-4</div>
+								  <div class="col-desktop-8">
+								    .col-desktop-8
 								    <div class="row">
-								      <div class="col-lg-6">.col-lg-6</div>
-								      <div class="col-lg-6">.col-lg-6</div>
+								      <div class="col-desktop-6">.col-desktop-6</div>
+								      <div class="col-desktop-6">.col-desktop-6</div>
 								    </div>
 								  </div>
 								</div>
 								<pre>
 &lt;div class="row"&gt;
-  &lt;div class="col-lg-4"&gt;.col-lg-4&lt;/div&gt;
-  &lt;div class="col-lg-8"&gt;
-    .col-lg-8
+  &lt;div class="col-desktop-4"&gt;.col-desktop-4&lt;/div&gt;
+  &lt;div class="col-desktop-8"&gt;
+    .col-desktop-8
     &lt;div class="row"&gt;
-      &lt;div class="col-lg-6"&gt;.col-lg-6&lt;/div&gt;
-      &lt;div class="col-lg-6"&gt;.col-lg-6&lt;/div&gt;
+      &lt;div class="col-desktop-6"&gt;.col-desktop-6&lt;/div&gt;
+      &lt;div class="col-desktop-6"&gt;.col-desktop-6&lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -450,41 +573,41 @@
 
 
 					<div class="row equalize">
-						<div class="col-lg-4 docs-side">
+						<div class="col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="css-module">兩種柵格結合使用，可以在各自分辨率下實現完全不同的佈局</h3>
 				            </div>
 						</div>
-						<div class="col-lg-8 docs-article">
+						<div class="col-desktop-8 docs-article">
 							<div class="col-box">
-								<div class="row">
-								  <div class="col-12 col-lg-4">.col-12 .col-lg-4</div>
-								  <div class="col-6 col-lg-4">.col-6 .col-lg-4</div>
-								  <div class="col-6 col-lg-4">col-6 .col-lg-4</div>
+								<div class="row demo-row">
+								  <div class="col-12 col-desktop-4">.col-12 .col-desktop-4</div>
+								  <div class="col-6 col-desktop-4">.col-6 .col-desktop-4</div>
+								  <div class="col-6 col-desktop-4">col-6 .col-desktop-4</div>
 								</div>
-								<div class="row">
-								  <div class="col-6 col-lg-3">.col-6 .col-lg-3</div>
-								  <div class="col-6 col-lg-6">.col-6 .col-lg-6</div>
-								  <div class="col-12 col-lg-3">.col-12 .col-lg-3</div>
+								<div class="row demo-row">
+								  <div class="col-6 col-desktop-3">.col-6 .col-desktop-3</div>
+								  <div class="col-6 col-desktop-6">.col-6 .col-desktop-6</div>
+								  <div class="col-12 col-desktop-3">.col-12 .col-desktop-3</div>
 								</div>
-								<div class="row">
-								  <div class="col-4 col-lg-8">.col-4 .col-lg-8</div>
-								  <div class="col-8 col-lg-4">.col-8 .col-lg-4</div>
+								<div class="row demo-row">
+								  <div class="col-4 col-desktop-8">.col-4 .col-desktop-8</div>
+								  <div class="col-8 col-desktop-4">.col-8 .col-desktop-4</div>
 								</div>
 								<pre>
 &lt;div class="row"&gt;
-  &lt;div class="col-12 col-lg-4"&gt;.col-12 .col-lg-4&lt;/div&gt;
-  &lt;div class="col-6 col-lg-4"&gt;.col-6 .col-lg-4&lt;/div&gt;
-  &lt;div class="col-6 col-lg-4"&gt;col-6 .col-lg-4&lt;/div&gt;
+  &lt;div class="col-12 col-desktop-4"&gt;.col-12 .col-desktop-4&lt;/div&gt;
+  &lt;div class="col-6 col-desktop-4"&gt;.col-6 .col-desktop-4&lt;/div&gt;
+  &lt;div class="col-6 col-desktop-4"&gt;col-6 .col-desktop-4&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="row"&gt;
-  &lt;div class="col-6 col-lg-3"&gt;.col-6 .col-lg-3&lt;/div&gt;
-  &lt;div class="col-6 col-lg-6"&gt;.col-6 .col-lg-6&lt;/div&gt;
-  &lt;div class="col-12 col-lg-3"&gt;.col-12 .col-lg-3&lt;/div&gt;
+  &lt;div class="col-6 col-desktop-3"&gt;.col-6 .col-desktop-3&lt;/div&gt;
+  &lt;div class="col-6 col-desktop-6"&gt;.col-6 .col-desktop-6&lt;/div&gt;
+  &lt;div class="col-12 col-desktop-3"&gt;.col-12 .col-desktop-3&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="row"&gt;
-  &lt;div class="col-4 col-lg-8"&gt;.col-4 .col-lg-8&lt;/div&gt;
-  &lt;div class="col-8 col-lg-4"&gt;.col-8 .col-lg-4&lt;/div&gt;
+  &lt;div class="col-4 col-desktop-8"&gt;.col-4 .col-desktop-8&lt;/div&gt;
+  &lt;div class="col-8 col-desktop-4"&gt;.col-8 .col-desktop-4&lt;/div&gt;
 &lt;/div&gt;
 
 								</pre>
@@ -494,41 +617,41 @@
 
 
 					<div class="row equalize">
-						<div class="col-lg-4 docs-side">
+						<div class="col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="css-module">再來看下三種佈局結合使用</h3>
 				            </div>
 						</div>
-						<div class="col-lg-8 docs-article">
+						<div class="col-desktop-8 docs-article">
 							<div class="col-box">
-								<div class="row">
-								  <div class="col-12 col-sm-4 col-lg-4">.col-12 col-sm-4 .col-lg-4</div>
-								  <div class="col-6 col-sm-4 col-lg-4">.col-6 col-sm-4 .col-lg-4</div>
-								  <div class="col-6 col-sm-4 col-lg-4">col-6 col-sm-4 .col-lg-4</div>
+								<div class="row demo-row">
+								  <div class="col-12 col-table-4 col-desktop-4">.col-12 col-table-4 .col-desktop-4</div>
+								  <div class="col-6 col-table-4 col-desktop-4">.col-6 col-table-4 .col-desktop-4</div>
+								  <div class="col-6 col-table-4 col-desktop-4">col-6 col-table-4 .col-desktop-4</div>
 								</div>
-								<div class="row">
-								  <div class="col-6 col-sm-3 col-lg-3">.col-6 col-sm-3 .col-lg-3</div>
-								  <div class="col-6 col-sm-6 col-lg-6">.col-6 col-sm-6 .col-lg-6</div>
-								  <div class="col-12 col-sm-3 col-lg-3">.col-12 col-sm-3 .col-lg-3</div>
+								<div class="row demo-row">
+								  <div class="col-6 col-table-3 col-desktop-3">.col-6 col-table-3 .col-desktop-3</div>
+								  <div class="col-6 col-table-6 col-desktop-6">.col-6 col-table-6 .col-desktop-6</div>
+								  <div class="col-12 col-table-3 col-desktop-3">.col-12 col-table-3 .col-desktop-3</div>
 								</div>
-								<div class="row">
-								  <div class="col-4 col-sm-8 col-lg-8">.col-4 col-sm-8 .col-lg-8</div>
-								  <div class="col-8 col-sm-4 col-lg-4">.col-8 col-sm-4 .col-lg-4</div>
+								<div class="row demo-row">
+								  <div class="col-4 col-table-8 col-desktop-8">.col-4 col-table-8 .col-desktop-8</div>
+								  <div class="col-8 col-table-4 col-desktop-4">.col-8 col-table-4 .col-desktop-4</div>
 								</div>
 								<pre>
 &lt;div class="row"&gt;
-  &lt;div class="col-12 col-sm-4 col-lg-4"&gt;.col-12 col-sm-4 .col-lg-4&lt;/div&gt;
-  &lt;div class="col-6 col-sm-4 col-lg-4"&gt;.col-6 col-sm-4 .col-lg-4&lt;/div&gt;
-  &lt;div class="col-6 col-sm-4 col-lg-4"&gt;col-6 col-sm-4 .col-lg-4&lt;/div&gt;
+  &lt;div class="col-12 col-table-4 col-desktop-4"&gt;.col-12 col-table-4 .col-desktop-4&lt;/div&gt;
+  &lt;div class="col-6 col-table-4 col-desktop-4"&gt;.col-6 col-table-4 .col-desktop-4&lt;/div&gt;
+  &lt;div class="col-6 col-table-4 col-desktop-4"&gt;col-6 col-table-4 .col-desktop-4&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="row"&gt;
-  &lt;div class="col-6 col-sm-3 col-lg-3"&gt;.col-6 col-sm-3 .col-lg-3&lt;/div&gt;
-  &lt;div class="col-6 col-sm-6 col-lg-6"&gt;.col-6 col-sm-6 .col-lg-6&lt;/div&gt;
-  &lt;div class="col-12 col-sm-3 col-lg-3"&gt;.col-12 col-sm-3 .col-lg-3&lt;/div&gt;
+  &lt;div class="col-6 col-table-3 col-desktop-3"&gt;.col-6 col-table-3 .col-desktop-3&lt;/div&gt;
+  &lt;div class="col-6 col-table-6 col-desktop-6"&gt;.col-6 col-table-6 .col-desktop-6&lt;/div&gt;
+  &lt;div class="col-12 col-table-3 col-desktop-3"&gt;.col-12 col-table-3 .col-desktop-3&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="row"&gt;
-  &lt;div class="col-4 col-sm-8 col-lg-8"&gt;.col-4 col-sm-8 .col-lg-8&lt;/div&gt;
-  &lt;div class="col-8 col-sm-4 col-lg-4"&gt;.col-8 col-sm-4 .col-lg-4&lt;/div&gt;
+  &lt;div class="col-4 col-table-8 col-desktop-8"&gt;.col-4 col-table-8 .col-desktop-8&lt;/div&gt;
+  &lt;div class="col-8 col-table-4 col-desktop-4"&gt;.col-8 col-table-4 .col-desktop-4&lt;/div&gt;
 &lt;/div&gt;
 								</pre>
 							</div>
@@ -536,22 +659,22 @@
 					</div>
 
 					<div class="row equalize">
-						<div class="col-lg-4 docs-side">
+						<div class="col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="css-module">等高柵格</h3>
 								<p>本文檔欄就是用了該技術,以使左欄的右邊線達到和右欄同等的高度</p>
 				            </div>
 						</div>
-						<div class="col-lg-8 docs-article">
+						<div class="col-desktop-8 docs-article">
 							<div class="col-box">
 							    <pre>
 &lt;div class="row equalize"&gt;
-	&lt;div class="col-lg-6"&gt;
+	&lt;div class="col-desktop-6"&gt;
 		&lt;div class="col-box"&gt;
 			&lt;!-- code --&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
-	&lt;div class="col-lg-6"&gt;
+	&lt;div class="col-desktop-6"&gt;
 		&lt;div class="col-box"&gt;
 			&lt;!-- code --&gt;
 		&lt;/div&gt;

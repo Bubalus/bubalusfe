@@ -3,6 +3,13 @@
 //
 /* Typography - 排版樣式 */
 // --------------------------------------------
+
+// Jumbotron 大屏幕組件
+// -------------------------
+$jumbotron-bg:                   $gray-lighter !default;
+$jumbotron-heading-color:        inherit !default;
+$jumbotron-lead-color:           inherit !default;
+
 // Code
 // ------------------------
 $code-color:                  #c7254e !default;
@@ -102,7 +109,7 @@ abbr.initialism {
     line-height: 1.4;
   }
 
-  @media screen and (min-width: $screen-tablet) {
+  @media screen and (min-width: $screen-table) {
     padding: 50px 60px;
     border-radius: $border-radius-large; // Only round corners at higher resolutions
     h1 {

@@ -21,8 +21,8 @@
 @include responsive-visibility(".hidden-lg");
 
 
-// Tablets & small desktops only
-@media (min-width: $screen-tablet) and (max-width: $screen-tablet-max) {
+// tables & small desktops only
+@media (min-width: $screen-table) and (max-width: $screen-table-max) {
   @include responsive-invisibility(".visible-sm");
   @include responsive-visibility(".visible-md");
   @include responsive-invisibility(".visible-lg");

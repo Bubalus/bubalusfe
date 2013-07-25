@@ -455,7 +455,7 @@ select {
   }
 }
 
-@media (min-width: $screen-tablet) {
+@media (min-width: $screen-table) {
   .form-horizontal .control-label {
     text-align: right;
   }

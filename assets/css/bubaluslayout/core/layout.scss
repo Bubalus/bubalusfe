@@ -11,14 +11,14 @@
 // Container sizes
 // --------------------------------------------------
 
-// Small screen / tablet
-$container-tablet:          728px !default;
+// Small screen / table
+$container-table:          728px !default;
 
 // Medium screen / desktop
 $container-desktop:         940px !default;
 
 // Large screen / wide desktop
-$container-large-desktop:   1170px !default;
+$container-large-desktop:   1200px !default;
 
 
 // 设置栅格系统中 列 的数量
@@ -26,7 +26,7 @@ $grid-columns:              12 !default;
 // 栅格间距值，即列与列之间的间距值
 $grid-gutter-width:         20px !default;
 // 栅格响应点
-$grid-float-breakpoint:     $screen-tablet !default;
+$grid-float-breakpoint:     $screen-table !default;
 
 
 
@@ -45,7 +45,7 @@ $grid-float-breakpoint:     $screen-tablet !default;
 @mixin make-row() {
   @include clear();
 
-  // @media (min-width: $screen-tablet) {
+  // @media (min-width: $screen-table) {
   //   margin-left:  ($grid-gutter-width / -2);
   //   margin-right: ($grid-gutter-width / -2);
   // }
@@ -119,30 +119,30 @@ header, footer, nav, #main {
 .col-10,
 .col-11,
 .col-12,
-.col-sm-1,
-.col-sm-2,
-.col-sm-3,
-.col-sm-4,
-.col-sm-5,
-.col-sm-6,
-.col-sm-7,
-.col-sm-8,
-.col-sm-9,
-.col-sm-10,
-.col-sm-11,
-.col-sm-12,
-.col-lg-1,
-.col-lg-2,
-.col-lg-3,
-.col-lg-4,
-.col-lg-5,
-.col-lg-6,
-.col-lg-7,
-.col-lg-8,
-.col-lg-9,
-.col-lg-10,
-.col-lg-11,
-.col-lg-12 {
+.col-table-1,
+.col-table-2,
+.col-table-3,
+.col-table-4,
+.col-table-5,
+.col-table-6,
+.col-table-7,
+.col-table-8,
+.col-table-9,
+.col-table-10,
+.col-table-11,
+.col-table-12,
+.col-desktop-1,
+.col-desktop-2,
+.col-desktop-3,
+.col-desktop-4,
+.col-desktop-5,
+.col-desktop-6,
+.col-desktop-7,
+.col-desktop-8,
+.col-desktop-9,
+.col-desktop-10,
+.col-desktop-11,
+.col-desktop-12 {
   position: relative;
   min-height: 1px; // 防止没有内容时列塌陷而造成错位
   // 通过设置填充来产生列与列之间的间距，内容不会紧挨在一起
@@ -174,28 +174,28 @@ header, footer, nav, #main {
   .col-#{$i}  { width: percentage(($i / $grid-columns)); }
 }
 
-@media (min-width: $screen-tablet) {
+@media (min-width: $screen-table) {
   .container {
-    max-width: $container-tablet;
+    max-width: $container-table;
   }
-  .col-sm-1,
-  .col-sm-2,
-  .col-sm-3,
-  .col-sm-4,
-  .col-sm-5,
-  .col-sm-6,
-  .col-sm-7,
-  .col-sm-8,
-  .col-sm-9,
-  .col-sm-10,
-  .col-sm-11,
-  .col-sm-12 {
+  .col-table-1,
+  .col-table-2,
+  .col-table-3,
+  .col-table-4,
+  .col-table-5,
+  .col-table-6,
+  .col-table-7,
+  .col-table-8,
+  .col-table-9,
+  .col-table-10,
+  .col-table-11,
+  .col-table-12 {
     float: left;
   }
 
 
   @for $i from 1 through $grid-columns {
-    .col-sm-#{$i}  { width: percentage(($i / $grid-columns)); }
+    .col-table-#{$i}  { width: percentage(($i / $grid-columns)); }
   }
 
 }
@@ -206,22 +206,22 @@ header, footer, nav, #main {
   .container {
     max-width: $container-desktop;
   }
-  .col-lg-1,
-  .col-lg-2,
-  .col-lg-3,
-  .col-lg-4,
-  .col-lg-5,
-  .col-lg-6,
-  .col-lg-7,
-  .col-lg-8,
-  .col-lg-9,
-  .col-lg-10,
-  .col-lg-11,
-  .col-lg-12 {
+  .col-desktop-1,
+  .col-desktop-2,
+  .col-desktop-3,
+  .col-desktop-4,
+  .col-desktop-5,
+  .col-desktop-6,
+  .col-desktop-7,
+  .col-desktop-8,
+  .col-desktop-9,
+  .col-desktop-10,
+  .col-desktop-11,
+  .col-desktop-12 {
     float: left;
   }
   @for $i from 1 through $grid-columns {
-    .col-lg-#{$i}  { width: percentage(($i / $grid-columns)); }
+    .col-desktop-#{$i}  { width: percentage(($i / $grid-columns)); }
   }
   
 }
