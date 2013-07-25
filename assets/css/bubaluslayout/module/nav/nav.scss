@@ -74,6 +74,8 @@ $list-group-active-color:     #fff !default;
 $list-group-active-bg:        $component-active-bg !default;
 $list-group-active-border:    $list-group-active-bg !default;
 
+$list-group-link-color:          #555 !default;
+$list-group-link-heading-color:  #333 !default;
 
 // -------------------------
 // Navs 方法
@@ -731,10 +733,10 @@ $list-group-active-border:    $list-group-active-bg !default;
 a.list-group-item {
     // Colorize content accordingly
   .list-group-item-heading {
-    color: #333;
+    color: $list-group-link-heading-color;
   }
   .list-group-item-text {
-    color: #555;
+    color: $list-group-link-color;
   }
   // Hover state
   &:hover,

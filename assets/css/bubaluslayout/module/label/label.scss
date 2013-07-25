@@ -11,7 +11,18 @@ $label-success-bg:            $brand-success !default;
 $label-info-bg:               $brand-info !default;
 $label-warning-bg:            $brand-warning !default;
 $label-danger-bg:             $brand-danger !default;
+$label-color:                 #fff !default;
+$label-link-hover-color:      #fff !default;
 
+
+// Badges
+// -------------------------
+$badge-color:                 #fff !default;
+$badge-link-hover-color:      #fff !default;
+
+$badge-bg:                    $gray-light !default;
+$badge-active-color:          $link-color !default;
+$badge-active-bg:             #fff !default;
 
 // -------------------------
 // label 樣式
@@ -22,7 +33,7 @@ $label-danger-bg:             $brand-danger !default;
   font-size: 75%;
   font-weight: 500;
   line-height: 1;
-  color: #fff;
+  color: $label-color;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -33,7 +44,7 @@ $label-danger-bg:             $brand-danger !default;
   &[href] {
     &:hover,
     &:focus {
-      color: #fff;
+      color: $label-link-hover-color;
       text-decoration: none;
       cursor: pointer;
       background-color: darken($gray-light, 10%);

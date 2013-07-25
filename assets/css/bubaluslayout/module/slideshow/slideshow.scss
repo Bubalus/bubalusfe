@@ -4,6 +4,17 @@
 /* Carousel - 幻燈樣式 */
 // --------------------------------------------
 
+// Carousel
+// ------------------------
+$carousel-text-shadow:                        0 1px 2px rgba(0,0,0,.6) !default;
+
+$carousel-control-color:                      #fff !default;
+
+$carousel-indicator-border-color:             #fff !default;
+$carousel-indicator-active-bg:                #fff !default;
+
+$carousel-caption-color:                      #fff !default;
+
 // 主要容器
 .carousel {
   position: relative;
@@ -73,9 +84,9 @@
   width: 15%;
   @include opacity(.5);
   font-size: 20px;
-  color: #fff;
+  color: $carousel-control-color;
   text-align: center;
-  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+  text-shadow: $carousel-text-shadow;
   
   &.left {
     @include gradient-horizontal($start-color: rgba(0,0,0,.5), $end-color: rgba(0,0,0,.0001));
@@ -91,7 +102,7 @@
   // 懸停和聚焦時
   &:hover,
   &:focus {
-    color: #fff;
+    color: $carousel-control-color;
     text-decoration: none;
     @include opacity(.9);
   }
@@ -142,7 +153,7 @@
     height: 10px;
     margin: 1px;
     text-indent: -999px;
-    border: 1px solid #fff;
+    border: 1px solid $carousel-indicator-border-color;
     border-radius: 10px;
     cursor: pointer;
   }
@@ -150,7 +161,7 @@
     margin: 0;
     width:  12px;
     height: 12px;
-    background-color: #fff;
+    background-color: $carousel-indicator-active-bg;
   }
 }
 
@@ -164,9 +175,9 @@
   z-index: 10;
   padding-top: 20px;
   padding-bottom: 20px;
-  color: #fff;
+  color: $carousel-caption-color;
   text-align: center;
-  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+  text-shadow: $carousel-text-shadow;
   & .btn {
     text-shadow: none;
   }

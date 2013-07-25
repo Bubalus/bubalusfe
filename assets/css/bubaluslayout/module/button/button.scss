@@ -32,6 +32,7 @@ $btn-info-color:                 $btn-default-color !default;
 $btn-info-bg:                    $brand-info !default;
 $btn-info-border:                $btn-info-bg !default;
 
+$btn-hover-color:                $btn-default-color !default;
 
 // -------------------------
 // Buttons 方法
@@ -94,7 +95,7 @@ $btn-info-border:                $btn-info-bg !default;
 
   &:hover,
   &:focus {
-    color: #fff;
+    color: $btn-hover-color;
     text-decoration: none;
   }
 

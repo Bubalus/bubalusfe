@@ -330,12 +330,11 @@
 
 // 水平分割綫，可用於下拉菜單或導航
 // ----------------------
-@mixin nav-divider($top: #e5e5e5, $bottom: #fff) {
-  height: 2px;
+@mixin nav-divider($color: #e5e5e5) {
+  height: 1px;
   margin: (($line-height-computed / 2) - 1) 0;
   overflow: hidden;
-  background-color: $top;
-  border-bottom: 1px solid $bottom;
+  background-color: $color;
 }
 
 

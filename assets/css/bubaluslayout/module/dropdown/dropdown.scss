@@ -10,8 +10,8 @@
 
 $dropdown-bg:                    #fff !default;
 $dropdown-border:                rgba(0,0,0,.15) !default;
-$dropdown-divider-top:           #e5e5e5 !default;
-$dropdown-divider-bottom:        #fff !default;
+$dropdown-fallback-border:       #ccc !default;
+$dropdown-divider-bg:            #e5e5e5 !default;
 
 $dropdown-link-active-color:     #fff !default;
 $dropdown-link-active-bg:        $component-active-bg !default;
@@ -19,6 +19,8 @@ $dropdown-link-active-bg:        $component-active-bg !default;
 $dropdown-link-color:            $gray-dark !default;
 $dropdown-link-hover-color:      #fff !default;
 $dropdown-link-hover-bg:         $dropdown-link-active-bg !default;
+
+$dropdown-caret-color:           #000 !default;
 
 // Z-index master list
 // -------------------------
@@ -40,7 +42,7 @@ $zindex-dropdown:          1000 !default;
   height: 0;
   margin-left: 2px;
   vertical-align: middle;
-  border-top:   4px solid #000;
+  border-top:   4px solid $dropdown-caret-color;
   border-right: 4px solid transparent;
   border-left:  4px solid transparent;
   content: "";
@@ -60,7 +62,7 @@ $zindex-dropdown:          1000 !default;
   margin: 2px 0 0;
   list-style: none;
   background-color: $dropdown-bg;
-  // border: 1px solid #ccc; 
+  border: 1px solid $dropdown-fallback-border; // IE8 fallback
   border: 1px solid $dropdown-border;
   border-radius: $border-radius-base;
   @include box-shadow(0 6px 12px rgba(0,0,0,.175));
@@ -74,7 +76,7 @@ $zindex-dropdown:          1000 !default;
 
   // 菜單中的分割綫
   .divider {
-    @include nav-divider($dropdown-divider-top, $dropdown-divider-bottom);
+    @include nav-divider($dropdown-divider-bg);
   }
 
   // 菜單項
@@ -182,7 +184,7 @@ $zindex-dropdown:          1000 !default;
   // 改爲向上的箭頭
   .caret {
     border-top: 0;
-    border-bottom: 4px solid #000;
+    border-bottom: 4px solid $dropdown-caret-color;
     content: "";
   }
   // 調整菜單的定位到按鈕上面

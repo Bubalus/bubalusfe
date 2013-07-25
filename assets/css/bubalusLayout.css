@@ -3627,7 +3627,7 @@ header {
 @media (max-width: 1200px) {
   #logo {
     float: none;
-    margin: 10px auto 0 auto; } }
+    margin: 10px; } }
 .docs-nav {
   *zoom: 1;
   border-bottom: 1px solid #38596b;
