@@ -33,8 +33,15 @@ $navbar-brand-hover-bg:            transparent !default;
 $navbar-inverse-color:                       $gray-light !default;
 $navbar-inverse-bg:                         #222 !default;
 
-// Inverted navbar links
-$navbar-inverse-link-color:                 $gray-light !default;
+// Navbar toggle
+$navbar-toggle-hover-bg:           #ddd !default;
+$navbar-toggle-icon-bar-bg:        #ccc !default;
+$navbar-toggle-border-color:       #ddd !default;
+
+
+//
+// Reset inverted navbar basics
+$navbar-inverse-link-color:                      $gray-light !default;
 $navbar-inverse-link-hover-color:           #fff !default;
 $navbar-inverse-link-hover-bg:              transparent !default;
 $navbar-inverse-link-active-color:          $navbar-inverse-link-hover-color !default;
@@ -53,6 +60,40 @@ $navbar-inverse-search-bg:                  lighten($navbar-inverse-bg, 25%) !de
 $navbar-inverse-search-bg-focus:            #fff !default;
 $navbar-inverse-search-border:              $navbar-inverse-bg !default;
 $navbar-inverse-search-placeholder-color:   #ccc !default;
+
+// Inverted navbar toggle
+$navbar-inverse-toggle-hover-bg:            #333 !default;
+$navbar-inverse-toggle-icon-bar-bg:         #fff !default;
+$navbar-inverse-toggle-border-color:        #333 !default;
+
+
+// Navs
+// -------------------------
+
+$nav-link-hover-bg:                         $gray-lighter !default;
+
+$nav-disabled-link-color:                   $gray-light !default;
+$nav-disabled-link-hover-color:             $gray-light !default;
+
+$nav-open-link-hover-color:                 #fff !default;
+$nav-open-caret-border-color:               #fff !default;
+
+// Tabs
+$nav-tabs-border-color:                     #ddd !default;
+
+$nav-tabs-link-hover-border-color:          $gray-lighter !default;
+
+$nav-tabs-active-link-hover-bg:             $body-bg !default;
+$nav-tabs-active-link-hover-color:          $gray !default;
+$nav-tabs-active-link-hover-border-color:   #ddd !default;
+
+$nav-tabs-justified-link-border-color:            #ddd !default;
+$nav-tabs-justified-active-link-border-color:     $body-bg !default;
+
+// Pills
+$nav-pills-active-link-hover-bg:            $component-active-bg !default;
+$nav-pills-active-link-hover-color:         #fff !default;
+
 
 // Z-index master list
 // -------------------------
@@ -77,6 +118,12 @@ $list-group-active-border:    $list-group-active-bg !default;
 $list-group-link-color:          #555 !default;
 $list-group-link-heading-color:  #333 !default;
 
+
+// Breadcrumbs
+// -------------------------
+$breadcrumb-bg:               #f5f5f5 !default;
+$breadcrumb-color:            #ccc !default;
+$breadcrumb-active-color:     $gray-light !default;
 // -------------------------
 // Navs 方法
 // -------------------------
@@ -111,17 +158,17 @@ $list-group-link-heading-color:  #333 !default;
       &:hover,
       &:focus {
         text-decoration: none;
-        background-color: $gray-lighter;
+        background-color: $nav-link-hover-bg;
       }
     }
 
     // 禁用狀態設置
     &.disabled > a {
-      color: $gray-light;
+      color: $nav-disabled-link-color;
 
       &:hover,
       &:focus {
-        color: $gray-light;
+        color: $nav-disabled-link-hover-color;
         text-decoration: none;
         background-color: transparent;
         cursor: default;
@@ -139,12 +186,12 @@ $list-group-link-heading-color:  #333 !default;
     &,
     &:hover,
     &:focus {
-      color: #fff;
+      color: $nav-open-link-hover-color;
       background-color: $link-color;
       border-color: $link-color;
       .caret {
-        border-top-color: #fff;
-        border-bottom-color: #fff;
+        border-top-color: $nav-open-caret-border-color;
+        border-bottom-color: $nav-open-caret-border-color;
       }
     }
   }
@@ -183,11 +230,11 @@ $list-group-link-heading-color:  #333 !default;
 @mixin nav-tabs-justified () {
   border-bottom: 0;
   > li > a {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid $nav-tabs-justified-link-border-color;
     margin-right: 0;
   }
   > .active > a {
-    border-bottom-color: $body-bg;
+    border-bottom-color: $nav-tabs-justified-active-link-border-color;
   }
 
 }
@@ -197,7 +244,7 @@ $list-group-link-heading-color:  #333 !default;
 // -------------------------
 
 .nav-tabs {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid $nav-tabs-border-color;
   > li {
     float: left;
     margin-bottom: -1px;
@@ -209,24 +256,27 @@ $list-group-link-heading-color:  #333 !default;
       border: 1px solid transparent;
       border-radius: $border-radius-base $border-radius-base 0 0;
       &:hover {
-        border-color: $gray-lighter $gray-lighter #ddd;
+        border-color: $nav-tabs-link-hover-border-color;
       }
     }
 
     // 覆蓋懸停效果
-    &.active > a,
-    &.active > a:hover,
-    &.active > a:focus {
-      color: $gray;
-      background-color: $body-bg;
-      border: 1px solid #ddd;
-      border-bottom-color: transparent;
-      cursor: default;
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: $nav-tabs-active-link-hover-color;
+        background-color: $nav-tabs-active-link-hover-bg;
+        border: 1px solid $nav-tabs-active-link-hover-border-color;
+        border-bottom-color: transparent;
+        cursor: default;
+      }
     }
   }
+  // pulling this in mainly for less shorthand
   &.nav-justified {
-    @include nav-justified;
-    @include nav-tabs-justified;
+    @include nav-justified();
+    @include nav-tabs-justified();
   }
 }
 
@@ -250,8 +300,8 @@ $list-group-link-heading-color:  #333 !default;
       &,
       &:hover,
       &:focus {
-        color: #fff;
-        background-color: $component-active-bg;
+        color: $nav-pills-active-link-hover-color;
+        background-color: $nav-pills-active-link-hover-bg;
       }
     }
   }
@@ -440,25 +490,25 @@ $list-group-link-heading-color:  #333 !default;
 // 可折疊的導航欄
 .navbar-toggle {
   position: absolute;
-  top: 10px;
+  top: floor(($navbar-height - 32) / 2);
   right: 10px;
   width: 48px;
   height: 32px;
   padding: 8px 12px;
   background-color: transparent;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border: 1px solid $navbar-toggle-border-color;
+  border-radius: $border-radius-base;
 
   &:hover,
   &:focus {
-    background-color: #ddd;
+    background-color: $navbar-toggle-hover-bg;
   }
 
   .icon-bar {
     display: block;
     width: 22px;
     height: 2px;
-    background-color: #ccc;
+    background-color: $navbar-toggle-icon-bar-bg;
     border-radius: 1px;
   }
   .icon-bar + .icon-bar {
@@ -567,13 +617,13 @@ $list-group-link-heading-color:  #333 !default;
     }
   }
   .navbar-toggle {
-    border-color: #333;
+    border-color: $navbar-inverse-toggle-border-color;
     &:hover,
     &:focus {
-      background-color: #333;
+      background-color: $navbar-inverse-toggle-hover-bg;
     }
     .icon-bar {
-      background-color: #fff;
+      background-color: $navbar-inverse-toggle-icon-bar-bg;
     }
   }
   .navbar-nav {
@@ -762,4 +812,23 @@ a.list-group-item {
   }
 }
 
+// 麵包屑
+.breadcrumb {
+  padding: 8px 15px;
+  margin-bottom: $line-height-computed;
+  list-style: none;
+  background-color: $breadcrumb-bg;
+  border-radius: $border-radius-base;
+  > li {
+    display: inline-block;
+    &+li:before {
+      content: "/\00a0"; // Unicode space added since inline-block means non-collapsing white-space
+      padding: 0 5px;
+      color: $breadcrumb-color;
+    }
+  }
+  > .active {
+    color: $breadcrumb-active-color;
+  }
+}
 /* END Navs */

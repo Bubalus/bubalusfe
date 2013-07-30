@@ -1,6 +1,6 @@
 /* ========================================================================
  * Bootstrap: carousel.js v3.0.0
- * http://twitter.github.com/bootstrap/javascript.html#carousel
+ * http://twbs.github.com/bootstrap/javascript.html#carousel
  * ========================================================================
  * Copyright 2012 Twitter, Inc.
  *
@@ -130,7 +130,7 @@
       $next[0].offsetWidth // force reflow
       $active.addClass(direction)
       $next.addClass(direction)
-      this.$element.find('.item')
+      $active
         .one($.support.transition.end, function () {
           $next.removeClass([type, direction].join(' ')).addClass('active')
           $active.removeClass(['active', direction].join(' '))

@@ -143,7 +143,6 @@ input[type="radio"] {
 }
 input[type="search"] {
     -webkit-appearance: textfield; // 校正 Safari 5 和 Chrome 中 appearance 被设置为 searchfield 的问题
-  	@include box-sizing(border-box);
 }
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration { // 移除 OS X 中 Safari 5 和 Chrome 内部的内边距以及搜索框的取消按钮

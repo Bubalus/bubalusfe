@@ -51,8 +51,6 @@ $panel-info-heading-bg:       $state-info-bg !default;
 .panel-heading {
   margin: -15px -15px 15px;
   padding: 10px 15px;
-  font-size: ($font-size-base * 1.25);
-  font-weight: 500;
   background-color: $panel-heading-bg;
   border-bottom: 1px solid $panel-border;
   border-top-left-radius:  ($panel-border-radius - 1);
@@ -68,7 +66,13 @@ $panel-info-heading-bg:       $state-info-bg !default;
   border-bottom-left-radius:  ($panel-border-radius - 1);
   border-bottom-right-radius: ($panel-border-radius - 1);
 }
-
+// Within heading, strip any `h*` tag of it's default margins for spacing.
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: ($font-size-base * 1.25);
+  font-weight: 500;
+}
 // 主題
 .panel-primary {
   border-color: $panel-primary-border;

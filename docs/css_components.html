@@ -21,154 +21,354 @@
 	</head>
 	<body>
 		<header>
+    		<h1 id="logo"><img src="../assets/images/project/logo.png" alt="BubalusFE - Web front-end toolkit" class="img-responsive"></h1>
+			<div class="jumbotron">
+				<h1><span class="hide">BubalusFE Web 前端開發工具集 —— </span>沒錯，<span class="hide">雖然有那麽多英文，但</span>這并不是什么高級貨！</h1>
+	    		<p class="lead">BubalusFE，是一組就像遛狗大嬸一樣常見的 WEB 前端開發工具集，它所提供的功能也好像總是色迷迷盯著遛狗大嬸的散步大爺一樣普通，蹲在路邊虐殺螞蟻的小女孩也說：“它根本沒什麽了不起！”</p>
+	    		<p class="lead">它誕生于2007年的秋天，一個懶惰的傢伙爲了減輕工作壓力而拼湊出了它的原型。這個傢伙真是個會耍小聰明的懶鬼，使用這組工具后，他的工作用時節省了一半，但他還是向領導上報跟以前一樣多的工時，從此他感覺工作變得輕鬆了許多。真是可喜可賀！可喜可賀！</p>
+	  		</div>
 		</header>
-		<nav class="navbar-fixed-left docs-nav">
 
-		  <div class="container">
-		      <ul class="nav list-group">
-		        <li>
-		          <a href="introduction.html">概述</a>
-		        </li>
-		        <li>
-		          <a href="css_core.html">核心 CSS</a>
-		        </li>
-		        <li>
-		          <a href="css_components.html">CSS 组件</a>
-		        </li>
-		        <li>
-		          <a href="js_components.html">JavaScript 组件</a>
-		        </li>
-		      </ul>
-		  </div>
-
+		<nav class="docs-nav">
+		    <div class="nav-collapse collapse bs-navbar-collapse">
+		    	<ul class="nav navbar-nav">
+			        <li>
+			          <a href="introduction.html">概述</a>
+			        </li>
+			        <li>
+			          <a href="css_core.html">核心 CSS</a>
+			        </li>
+			        <li class="active">
+			          <a href="css_components.html">CSS 组件</a>
+			        </li>
+			        <li>
+			          <a href="js_components.html">JavaScript 组件</a>
+			        </li>
+		    	</ul>
+	    	</div>
 		</nav>
 		<div id="main">
-			<div class="container">
-				<!-- 排版 -->
-		        <div class="docs-section" id="layout">
-					<div class="page-header">
-		                <h1>排版 <small>一些内置和附加的排版類</small></h1>
+				<!-- AlertTip -->
+		        <div class="docs-section" id="reset">
+					<div class="page-header docs-page-header">
+		                <h1>AlertTip<small>一個彈出式提醒樣式</small></h1>
 		            </div>
-					<p>
-		            	BubalusFE 設置了全局默認文字大小爲14px，行高約為20px，並為大部分標簽重設了排版樣式以使其能在多種瀏覽器中以統一的方式呈現。
-		            </p>
-		            <!--  -->
-					<h3 id="css-components">
-						小號文本
-						<small><code>&lt;small&gt;</code> 標簽，提供了比標準字體大小還要稍小一些的字號，約為12px。</small>
-					</h3>
-		            <div class="example-box">
-	                  <p><small>This line of text is meant to be treated as fine print.</small></p>
-	                </div>
-	                <div class="highlight">
-	                	<pre><code>&lt;small&gt;This line of text is meant to be treated as fine print.&lt;/small&gt;</code></pre>
-	                </div>
-					<!--  -->
-					<h3 id="css-components">
-						粗體文本
-						<small><code>&lt;strong&gt;</code> 標簽，爲粗體字，相當於<code>font-weight:700</code>。</small>
-					</h3>
-					<div class="example-box">
-				      <p>The following snippet of text is <strong>rendered as bold text</strong>.</p>
-				    </div>
-				    <div class="highlight">
-				    	<pre><code>&lt;strong&gt;rendered as bold text&lt;/strong&gt;</code></pre>
-				    </div>
-				    <!--  -->
-					<h3 id="css-components">
-						文本對齊
-						<small>使用 <code>.text-left</code> <code>.text-center</code> <code>.text-right</code> 來實現文字的左、中、右對齊。</small>
-					</h3>
-					<div class="example-box">
-				      <p class="text-left">Left aligned text.</p>
-				      <p class="text-center">Center aligned text.</p>
-				      <p class="text-right">Right aligned text.</p>
-				    </div>
-				    <div class="highlight">
-					    <pre><code>&lt;p class="text-left"&gt;Left aligned text.&lt;/p&gt;
-&lt;p class="text-center"&gt;Center aligned text.&lt;/p&gt;
-&lt;p class="text-right"&gt;Right aligned text.&lt;/p&gt;</code></pre>
-				    </div>
-				    <!--  -->
-					<h3 id="css-components">
-						字色
-						<small>一系列帶有提示性含義的文字顔色。</small>
-					</h3>
-					<div class="example-box">
-				      <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
-				      <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
-				      <p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
-				      <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
-				    </div>
-				    <div class="highlight">
-						<pre><code>&lt;p class="text-muted"&gt;...&lt;/p&gt;
-&lt;p class="text-warning"&gt;...&lt;/p&gt;
-&lt;p class="text-danger"&gt;...&lt;/p&gt;
-&lt;p class="text-success"&gt;...&lt;/p&gt;</code></pre>
+
+					<div class="row equalize">
+						<div class="col-desktop-4 docs-side">
+							<div class="col-box">
+								<p>
+									AlertTip 有兩種呈現方式，一個是<strong>「行內」</strong>，一個是<strong>「塊級」</strong>。
+								</p>
+								<ul>
+									<li>封裝容器只使用 <code>.alertTip</code> 類即顯示行內效果</li>
+									<li>封裝容器在 <code>.alertTip</code> 類基礎上加入  <code>.alertTip-block</code> 類即為塊級呈現效果。</li>
+								</ul>
+								<p>AlertTip 額外附帶了3種主題，可用於各種提醒類型。將下面的類名加入到 <code>alertTip</code> 類所在標籤即可。</p>
+								<ul>
+									<li><code>.alertTip-success</code> 即用於「成功」內容的樣式</li>
+									<li><code>.alertTip-danger</code> 即用于「警告」內容的樣式</li>
+									<li><code>.alertTip-info</code> 即用於「描述」內容的樣式</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-desktop-8 docs-article">
+							<div class="col-box">
+								<div class="alertTip">
+								  <button type="button" class="close-btn" data-dismiss="alert">&times;</button>
+								  <strong>注意!</strong> 看這裡！對！看過來！好了，沒事你可以走了。
+								</div>
+								<pre>
+// 行內效果
+
+&lt;div class="alertTip"&gt;
+  &lt;button type="button" class="close-btn" data-dismiss="alert"&gt;&times;&lt;/button&gt;
+  &lt;strong&gt;注意!&lt;/strong&gt; 看這裡！對！看過來！好了，沒事你可以走了。
+&lt;/div&gt;
+								</pre>
+								<div class="alertTip alertTip-block">
+								  <button type="button" class="close-btn" data-dismiss="alert">&times;</button>
+								  <h4>注意!</h4>
+								  <p>看這裡！對！看過來！好了，沒事你可以走了。</p>
+								</div>
+								<pre>
+// 塊級效果
+
+&lt;div class="alertTip alertTip-block"&gt;
+  &lt;button type="button" class="close-btn" data-dismiss="alert"&gt;&times;&lt;/button&gt;
+  &lt;h4&gt;注意!&lt;/h4&gt;
+  &lt;p&gt;看這裡！對！看過來！好了，沒事你可以走了。&lt;/p&gt;
+&lt;/div&gt;
+								</pre>
+								<div class="alertTip alertTip-success">
+								  <button type="button" class="close-btn" data-dismiss="alert">&times;</button>
+								  <strong>成功!</strong> 看這裡！對！看過來！好了，沒事你可以走了。
+								</div>
+								<div class="alertTip alertTip-danger">
+								  <button type="button" class="close-btn" data-dismiss="alert">&times;</button>
+								  <strong>警告!</strong> 看這裡！對！看過來！好了，沒事你可以走了。
+								</div>
+								<div class="alertTip alertTip-info">
+								  <button type="button" class="close-btn" data-dismiss="alert">&times;</button>
+								  <strong>接下來</strong>，看這裡！對！看過來！好了，沒事你可以走了。
+								</div>
+								<pre>
+// 成功樣式
+&lt;div class="alertTip alertTip-success"&gt;
+
+// 警告樣式
+&lt;div class="alertTip alertTip-danger"&gt;
+
+// 描述樣式
+&lt;div class="alertTip alertTip-info"&gt;
+								</pre>
+							</div>
+						</div>
 					</div>
-					<!--  -->
-					<h3 id="css-components">
-						縮寫
-						<small>爲 <code>&lt;abbr&gt;</code> 標簽加入『幫助』光標和下虛綫效果</small>
-					</h3>
-					<div class="example-box">
-				      <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
-				    </div>
-				    <div class="highlight">
-				    	<pre><code>&lt;abbr title="attribute"&gt;attr&lt;/abbr&gt;</code></pre>
-				    </div>
-				    <!--  -->
-					<h3 id="css-components">
-						引用
-						<small>使用 <code>&lt;blockquote&gt;</code> 標簽在文檔中引用別處的資源</small>
-					</h3>
-					<div class="example-box">
-				      <blockquote>
-				        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-				      </blockquote>
-				    </div>
-				    <div class="highlight">
-				    	<pre><code>&lt;blockquote&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;
-&lt;/blockquote&gt;</code></pre>
-					</div>
-					<p>如果要在引用内容中加入引用來源，可以在引用内容的末尾插入<code>&lt;small&gt;</code>。</p>
-					<div class="example-box">
-				      <blockquote>
-				        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-				        <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
-				      </blockquote>
-				    </div>
-					<div class="highlight">
-						<pre><code>&lt;blockquote&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;
-&lt;small&gt;Someone famous in &lt;cite title="Source Title"&gt;Source Title&lt;/cite&gt;&lt;/small&gt;
-&lt;/blockquote&gt;</code></pre>
-					</div>
-				    <!--  -->
-					<h3 id="css-components">
-						代碼
-						<small>使用 <code>&lt;code&gt;</code> 或 <code>&lt;pre&gt;</code> 在文檔中插入代碼</small>
-					</h3>
-					<p>行内的代碼内容可以使用 <code>&lt;code&gt;</code> 標簽</p>
-					<div class="example-box">
-					  For example, <code>&lt;section&gt;</code> should be wrapped as inline.
-					</div>
-					<div class="highlight">
-						<pre><code>For example, &lt;code&gt;&lt;section&gt;&lt;/code&gt; should be wrapped as inline.</code></pre>
-					</div>
-					<p>多行的代碼段則應該使用 <code>&lt;pre&gt;</code> 標簽</p>
-					<div class="example-box">
-					  <pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre>
-					</div>
-					<div class="highlight">
-						<pre><code>&lt;pre&gt;&lt;p&gt;Sample text here...&lt;/p&gt;&lt;/pre&gt;</code></pre>
-					</div>
+
 		        </div>
 
+				<!-- Button 按鈕 -->
+		        <div class="docs-section" id="button">
+					<div class="page-header docs-page-header">
+		                <h1>Button <small>各種按鈕樣式</small></h1>
+		            </div>
 
+					<div class="row equalize">
+						<div class="col-desktop-4 docs-side">
+							<div class="col-box">
+								<p>
+									Button 模塊附帶了數種按鈕主題，可選擇配合情況使用
+								</p>
+								<ul>
+									<li><code>.btn</code> 默認按鈕樣式</li>
+									<li><code>.btn .btn-success</code> 「成功」按鈕樣式</li>
+									<li><code>.btn .btn-info</code> 「描述」按鈕樣式</li>
+									<li><code>.btn .btn-warning</code> 「注意」按鈕樣式</li>
+									<li><code>.btn .btn-danger</code> 「警告」按鈕樣式</li>
+									<li><code>.btn .btn-link</code> 「鏈接」按鈕樣式</li>
+								</ul>
+								<p>
+									另外還有兩種默認的尺寸可供直接指定
+								</p>
+								<ul>
+									<li>默認即為標準大小</li>
+									<li>如果加入 <code>.btn-large</code> 類則為大尺寸按鈕</li>
+								</ul>
+								<p>
+									<strong>不可用按鈕樣式</strong> 可以通過指定 <code>disabled</code> 屬性或加入 <code>.disabled</code> 類來實現。
+								</p>
+								<p>
+									<strong>塊級按鈕樣式</strong> 可以通過加入 <code>.btn-block</code> 類來實現。
+								</p>
+							</div>
+						</div>
+						<div class="col-desktop-8 docs-article">
+							<div class="col-box">
+								<button type="button" class="btn">默認</button>
+								<button type="button" class="btn btn-success">成功</button>
+								<button type="button" class="btn btn-info">描述</button>
+								<button type="button" class="btn btn-warning">注意</button>
+								<button type="button" class="btn btn-danger">警告</button>
+								<button type="button" class="btn btn-link">鏈接</button>
+								<pre>
+// 默認按鈕
+&lt;button type="button" class="btn"&gt;默認&lt;/button&gt;
+// 成功按鈕
+&lt;button type="button" class="btn btn-success"&gt;成功&lt;/button&gt;
+// 描述按鈕
+&lt;button type="button" class="btn btn-info"&gt;描述&lt;/button&gt;
+// 注意按鈕
+&lt;button type="button" class="btn btn-warning"&gt;注意&lt;/button&gt;
+// 警告按鈕
+&lt;button type="button" class="btn btn-danger"&gt;警告&lt;/button&gt;
+// 鏈接按鈕
+&lt;button type="button" class="btn btn-link"&gt;鏈接&lt;/button&gt;
+								</pre>
+								<div>
+									<button type="button" class="btn btn-large">默認</button>
+									<button type="button" class="btn btn-success btn-large">成功</button>
+									<button type="button" class="btn btn-info btn-large">描述</button>
+									<button type="button" class="btn btn-warning btn-large">注意</button>
+									<button type="button" class="btn btn-danger btn-large">警告</button>
+									<button type="button" class="btn btn-link btn-large">鏈接</button>
+								</div>
+								<pre>
+// 默認尺寸
+&lt;button type="button" class="btn"&gt;默認&lt;/button&gt;
+// 大號按鈕
+&lt;button type="button" class="btn btn-large"&gt;默認&lt;/button&gt;
+								</pre>
+								<div>
+									<button type="button" class="btn btn-success" disabled="disabled">成功</button>
+									<button type="button" class="btn btn-info disabled">描述</button>
+								</div>
+								<pre>
+// 被禁用的按鈕
+&lt;button type="button" class="btn btn-success" disabled="disabled"&gt;成功&lt;/button&gt;
+&lt;button type="button" class="btn btn-info disabled"&gt;描述&lt;/button&gt;
+								</pre>
+								<button type="button" class="btn btn-block">描述</button>
+								<pre>
+// 塊級按鈕
+&lt;button type="button" class="btn btn-block"&gt;描述&lt;/button&gt;
+								</pre>
+								<div class="btn-group">
+								  <button type="button" class="btn">左</button>
+								  <button type="button" class="btn">中</button>
+								  <button type="button" class="btn">右</button>
+								</div>
+								<pre>
+// 按鈕組
+&lt;div class="btn-group"&gt;
+  &lt;button type="button" class="btn"&gt;左&lt;/button&gt;
+  &lt;button type="button" class="btn"&gt;中&lt;/button&gt;
+  &lt;button type="button" class="btn"&gt;右&lt;/button&gt;
+&lt;/div&gt;
+								</pre>
+								<div class="btn-group-vertical">
+								  <button type="button" class="btn">一</button>
+								  <button type="button" class="btn">二</button>
+								  <button type="button" class="btn">三</button>
+								</div>
+								<pre>
+// 豎排按鈕組
+&lt;div class="btn-group-vertical"&gt;
+  &lt;button type="button" class="btn"&gt;一&lt;/button&gt;
+  &lt;button type="button" class="btn"&gt;二&lt;/button&gt;
+  &lt;button type="button" class="btn"&gt;三&lt;/button&gt;
+&lt;/div&gt;
+								</pre>
+								<div class="btn-bar">
+									<div class="btn-group">
+										<button type="button" class="btn">1</button>
+										<button type="button" class="btn">2</button>
+										<button type="button" class="btn">3</button>
+										<button type="button" class="btn">4</button>
+									</div>
+									<div class="btn-group">
+										<button type="button" class="btn">5</button>
+										<button type="button" class="btn">6</button>
+										<button type="button" class="btn">7</button>
+									</div>
+									<div class="btn-group">
+										<button type="button" class="btn">8</button>
+									</div>
+								</div>
+								<pre>
+// 按鈕欄
+&lt;div class="btn-bar"&gt;
+  &lt;div class="btn-group"&gt;
+	&lt;button type="button" class="btn"&gt;1&lt;/button&gt;
+	...
+  &lt;/div&gt;
+  &lt;div class="btn-group"&gt;
+	&lt;button type="button" class="btn"&gt;5&lt;/button&gt;
+	...
+  &lt;/div&gt;
+  &lt;div class="btn-group"&gt;
+	&lt;button type="button" class="btn"&gt;7&lt;/button&gt;
+	...
+  &lt;/div&gt;
+&lt;/div&gt;
+								</pre>
+								<div class="btn-bar">
+									<div class="btn-group">
+									  <button type="button" class="btn btn-danger">警告</button>
+									  <button type="button" class="btn btn-danger"><span class="caret"></span></button>
+									</div>
+									<div class="btn-group">
+									  <button type="button" class="btn btn-warning">注意</button>
+									  <button type="button" class="btn btn-warning"><span class="caret"></span></button>
+									</div>
+									<div class="btn-group">
+									  <button type="button" class="btn btn-success">成功</button>
+									  <button type="button" class="btn btn-success"><span class="caret"></span></button>
+									</div>
+								</div>
+								<pre>
+// 下拉菜單按鈕
+&lt;div class="btn-bar"&gt;
+  &lt;div class="btn-group"&gt;
+    &lt;button type="button" class="btn btn-danger"&gt;警告&lt;/button&gt;
+    &lt;button type="button" class="btn btn-danger"&gt;&lt;span class="caret"&gt;&lt;/span&gt;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="btn-group"&gt;
+    &lt;button type="button" class="btn btn-warning"&gt;注意&lt;/button&gt;
+    &lt;button type="button" class="btn btn-warning"&gt;&lt;span class="caret"&gt;&lt;/span&gt;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="btn-group"&gt;
+    &lt;button type="button" class="btn btn-success"&gt;成功&lt;/button&gt;
+    &lt;button type="button" class="btn btn-success"&gt;&lt;span class="caret"&gt;&lt;/span&gt;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+								</pre>
+							</div>
+						</div>
+					</div>
 
-			</div>
+		        </div>
+
+				<!-- 重置 -->
+		        <div class="docs-section" id="dropdown">
+					<div class="page-header docs-page-header">
+		                <h1>下拉菜單 <small>下拉菜單的那個菜單</small></h1>
+		            </div>
+
+					<div class="row equalize">
+						<div class="col-desktop-4 docs-side">
+							<div class="col-box">
+								<p>
+									配合按鈕樣式模塊中的「下拉菜單按鈕」和 Javascript 組件中的 <small>dropdown.js</small> UI組件，就可以實現常見的下拉菜單效果了。
+								</p>
+								<p>
+									為菜單項添加 <code>.disabled</code> 類可以使該項應用「禁用」的樣式。
+								</p>
+							</div>
+						</div>
+						<div class="col-desktop-8 docs-article">
+							<div class="col-box">
+								<div class="dropdown clear dropdown-demo">
+									<ul class="dropdown-menu">
+										<li><a href="#">菜單項</a></li>
+										<li><a href="#">菜單項</a></li>
+										<li><a href="#">菜單項</a></li>
+										<li class="divider"></li>
+										<li><a href="#">菜單項</a></li>
+									</ul>
+								</div>
+								<pre>
+&lt;div class="dropdown"&gt;
+  &lt;ul class="dropdown-menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;菜單項&lt;/a&gt;&lt;/li&gt;
+    ...
+    &lt;li class="divider"&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;菜單項&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+								</pre>
+								<div class="dropdown clear dropdown-demo">
+									<ul class="dropdown-menu">
+									    <li><a href="#">菜單項</a></li>
+									    <li class="disabled"><a href="#">禁用的菜單項</a></li>
+									    <li><a href="#">菜單項</a></li>
+									</ul>
+								</div>
+								<pre>
+&lt;div class="dropdown"&gt;
+  &lt;ul class="dropdown-menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;菜單項&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="disabled"&gt;&lt;a href="#"&gt;禁用的菜單項&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;菜單項&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+								</pre>
+							</div>
+						</div>
+					</div>
+
+		        </div>
+
 		</div>
 		<footer></footer>
 
