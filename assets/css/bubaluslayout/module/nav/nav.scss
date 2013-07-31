@@ -175,10 +175,6 @@ $breadcrumb-active-color:     $gray-light !default;
       }
     }
 
-
-    + .nav-header {
-      margin-top: 9px;
-    }
   }
 
   // 展開下拉菜單
@@ -291,9 +287,7 @@ $breadcrumb-active-color:     $gray-light !default;
       border-radius: 5px;
     }
     + li {
-      > a {
-        margin-left: 2px;
-      }
+      margin-left: 2px;
     }
 
     &.active > a {
@@ -313,10 +307,8 @@ $breadcrumb-active-color:     $gray-light !default;
   > li {
     float: none;
     + li {
-      > a {
-        margin-top: 2px;
-        margin-left: 0;
-      }
+      margin-top: 2px;
+      margin-left: 0; // no need for this gap between nav items
     }
   }
 }
@@ -694,6 +686,7 @@ $breadcrumb-active-color:     $gray-light !default;
     display: none;
   }
   .nav-collapse.collapse {
+    display: block !important;
     height: auto !important;
     overflow: visible !important;
   }
@@ -741,7 +734,6 @@ $breadcrumb-active-color:     $gray-light !default;
 .list-group {
   margin-bottom: 20px;
   padding-left: 0; // reset padding because ul and ol
-  background-color: $list-group-bg;
 }
 
 // 導航條目
@@ -750,6 +742,7 @@ $breadcrumb-active-color:     $gray-light !default;
   display: block;
   padding: 10px 30px 10px 15px;
   margin-bottom: -1px;
+  background-color: $list-group-bg;
   border: 1px solid $list-group-border;
 
   // Round the first and last items

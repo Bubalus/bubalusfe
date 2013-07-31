@@ -259,36 +259,22 @@ textarea.form-control {
 // Form control sizing
 //
 // Relative text size, padding, and border-radii changes for form controls. For
-// horizontal sizing, wrap controls in the predefined grid classes.
-select,
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"] {
-  &.input-large {
-    height: $input-height-large;
-    padding: $padding-large-vertical $padding-large-horizontal;
-    font-size: $font-size-large;
-    border-radius: $border-radius-large;
-  }
-  &.input-small {
-    height: $input-height-small;
-    padding: $padding-small-vertical $padding-small-horizontal;
-    font-size: $font-size-small;
-    border-radius: $border-radius-small;
-  }
+// horizontal sizing, wrap controls in the predefined grid classes. `<select>`
+// element gets special love because it's special, and that's a fact!
+
+.input-large {
+  height: $input-height-large;
+  padding: $padding-large-vertical $padding-large-horizontal;
+  font-size: $font-size-large;
+  border-radius: $border-radius-large;
 }
+.input-small {
+  height: $input-height-small;
+  padding: $padding-small-vertical $padding-small-horizontal;
+  font-size: $font-size-small;
+  border-radius: $border-radius-small;
+}
+
 select {
   &.input-large {
     height: $input-height-large;
@@ -297,6 +283,12 @@ select {
   &.input-small {
     height: $input-height-small;
     line-height: $input-height-small;
+  }
+}
+textarea {
+  &.input-large,
+  &.input-small {
+    height: auto;
   }
 }
 // 表单项状态反馈
@@ -348,8 +340,7 @@ select {
     padding-right: 0;
   }
 
-  input,
-  select {
+  .form-control {
     width: 100%;
     margin-bottom: 0;
   }
@@ -359,7 +350,7 @@ select {
 // --------------------------
 .input-group-addon,
 .input-group-btn,
-.input-group input {
+.input-group .form-control {
   display: table-cell;
 
   &:not(:first-child):not(:last-child) {
@@ -393,10 +384,16 @@ select {
     font-size: $font-size-large;
     border-radius: $border-radius-large;
   }
+
+  // Nuke default margins from checkboxes and radios to vertically center within.
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-top: 0;
+  }
 }
 
 // 根据不同应用重设圆角位置
-.input-group input:first-child,
+.input-group .form-control:first-child,
 .input-group-addon:first-child,
 .input-group-btn:first-child > .btn,
 .input-group-btn:first-child > .dropdown-toggle,
@@ -406,7 +403,7 @@ select {
 .input-group-addon:first-child {
   border-right: 0;
 }
-.input-group input:last-child,
+.input-group .form-control:last-child,
 .input-group-addon:last-child,
 .input-group-btn:last-child > .btn,
 .input-group-btn:last-child > .dropdown-toggle,
@@ -439,9 +436,7 @@ select {
 // 行内表单
 // --------------------------
 @mixin form-inline {
-  input,
-  select,
-  textarea,
+  .form-control,
   .radio,
   .checkbox {
     display: inline-block;
@@ -458,15 +453,17 @@ select {
 // 水平表单
 // --------------------------
 
+.form-horizontal .control-label {
+  padding-top: 9px;
+}
+
 .form-horizontal {
-  .row + .row {
-    margin-top: 15px;
-  }
-  .control-label {
-    padding-top: 6px;
+  .form-group {
+    @include make-row();
   }
 }
 
+// Only right align form labels here when the columns stop stacking
 @media (min-width: $screen-table) {
   .form-horizontal .control-label {
     text-align: right;

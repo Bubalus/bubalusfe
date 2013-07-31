@@ -154,6 +154,12 @@
   -webkit-transform: translate3d($x, $y, $z);
           transform: translate3d($x, $y, $z);
 }
+@mixin transition-transform($transition) {
+  -webkit-transition: -webkit-transform $transition;
+     -moz-transition: -moz-transform $transition;
+       -o-transition: -o-transform $transition;
+          transition: transform $transition;
+}
 
 // 背景剪裁
 // ----------------------

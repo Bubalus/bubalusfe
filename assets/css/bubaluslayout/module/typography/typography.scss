@@ -75,9 +75,12 @@ h4 small, .h4 small { font-size: $font-size-base; }
 
 .lead {
   margin-bottom: $line-height-computed;
-  font-size: ($font-size-base * 1.5);
+  font-size: ($font-size-base * 1.15);
   font-weight: 200;
   line-height: 1.4;
+  @media (min-width: 768px) {
+    font-size: ($font-size-base * 1.5);
+  }
 }
 
 // Abbreviations and acronyms
