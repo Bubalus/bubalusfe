@@ -132,17 +132,17 @@
 // ----------------------
 @mixin rotate($degrees) {
   -webkit-transform: rotate($degrees);
-      -ms-transform: rotate($degrees);
+      -ms-transform: rotate($degrees); // IE9+
           transform: rotate($degrees);
 }
 @mixin scale($ratio) {
   -webkit-transform: scale($ratio);
-      -ms-transform: scale($ratio);
+      -ms-transform: scale($ratio); // IE9+
           transform: scale($ratio);
 }
 @mixin translate($x, $y) {
   -webkit-transform: translate($x, $y);
-      -ms-transform: translate($x, $y);
+      -ms-transform: translate($x, $y); // IE9+
           transform: translate($x, $y);
 }
 @mixin skew($x, $y) {
@@ -164,15 +164,13 @@
 // 背景剪裁
 // ----------------------
 @mixin background-clip($clip) {
-  -webkit-background-clip: $clip;
-          background-clip: $clip;
+  background-clip: $clip;
 }
 
 // 背景尺寸
 // ----------------------
 @mixin background-size($size) {
-  -webkit-background-size: $size;
-          background-size: $size;
+  background-size: $size;
 }
 
 // 盒模型定義
@@ -235,7 +233,7 @@
 // 漸變
 // ----------------------
 // 從左到右的水平漸變
-@mixin gradient-horizontal($start-color: #555, $start-percent: 0%, $end-color: #333, $end-percent: 100%) {
+@mixin gradient-horizontal($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
   background-color: $end-color;
   background-image: -webkit-gradient(linear, $start-percent top, $end-percent top, from($start-color), to($end-color)); // Safari 4+, Chrome 2+
   background-image: -webkit-linear-gradient(left, color-stop($start-color $start-percent), color-stop($end-color $end-percent)); // Safari 5.1+, Chrome 10+
@@ -246,7 +244,7 @@
 }
 
 // 從上到下的垂直漸變
-@mixin gradient-vertical($start-color: #555, $start-percent: 0%, $end-color: #333, $end-percent: 100%) {
+@mixin gradient-vertical($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
   background-color: $end-color;
   background-image: -webkit-gradient(linear, left $start-percent, left $end-percent, from($start-color), to($end-color)); // Safari 4+, Chrome 2+
   background-image: -webkit-linear-gradient(top, $start-color, $start-percent, $end-color, $end-percent); // Safari 5.1+, Chrome 10+

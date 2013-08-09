@@ -87,7 +87,7 @@ header {
     color: $gray-light;
   }
 }
-.row {
+.docs-row {
   border-bottom:1px solid $docs-border-color;
   .col-box {
     padding:20px 0;
@@ -247,6 +247,56 @@ code {
       position: static;
       display: block;
       margin-bottom: 5px;
+    }
+  }
+}
+
+#forms {
+  .form-inline {
+    .inline-input-text { width:150px; }
+  }
+}
+
+#images{
+  .img-rounded,
+  .img-circle {
+    background-color: #172b36;
+    border: 1px solid $docs-border-color;
+  }
+}
+
+#tables {
+  .table-bordered {
+    border: 1px solid $docs-border-color;
+    > thead,
+    > tbody,
+    > tfoot {
+      > tr {
+        > th,
+        > td {
+          border: 1px solid $docs-border-color;
+        }
+      }
+    }
+  }
+  .table-striped {
+    > tbody {
+      > tr:nth-child(odd) {
+        > td,
+        > th {
+          background-color: #243e4d;
+        }
+      }
+    }
+  }
+  .table-hover {
+    > tbody {
+      > tr:hover {
+        > td,
+        > th {
+          background-color: #2b4858;
+        }
+      }
     }
   }
 }

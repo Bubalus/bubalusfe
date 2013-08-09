@@ -67,14 +67,17 @@ $headings-line-height:    1.1 !default;
 // 組件相關    ////////////////////////////////
 // --------------------------------------------
 // 填充
-$padding-base-vertical:          8px !default;
+$padding-base-vertical:          6px !default;
 $padding-base-horizontal:        12px !default;
 
-$padding-large-vertical:         14px !default;
+$padding-large-vertical:         10px !default;
 $padding-large-horizontal:       16px !default;
 
 $padding-small-vertical:         5px !default;
 $padding-small-horizontal:       10px !default;
+
+$line-height-large:              1.33 !default;
+$line-height-small:              1.5 !default;
 
 // 圓角
 $border-radius-base:             4px !default;
@@ -83,6 +86,9 @@ $border-radius-small:            3px !default;
 
 // 組件背景
 $component-active-bg:            $brand-primary !default;
+
+$caret-width-base:               4px !default;
+$caret-width-large:              5px !default;
 
 // Z-index
 $zindex-popover:           1010 !default;
@@ -147,6 +153,9 @@ $screen-table-max:          ($screen-desktop - 1) !default;
 
 // 筆記本和臺機顯示器分辨率分界點
 $screen-large-desktop:       1280px !default;
+
+$screen-tablet-max:          ($screen-desktop - 1) !default;
+$screen-desktop-max:         ($screen-large-desktop - 1) !default;
 
 
 // --------------------------------------------

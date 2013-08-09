@@ -7,10 +7,13 @@
 // -------------------------
 // alertTipTip 變量
 // -------------------------
+$alertTip-padding:               15px !default;
+$alertTip-border-radius:         $border-radius-base !default;
+$alertTip-link-font-weight:      bold !default;
+
 $alertTip-bg:                    $state-warning-bg !default;
 $alertTip-text:                  $state-warning-text !default;
 $alertTip-border:                $state-warning-border !default;
-$alertTip-border-radius:         $border-radius-base !default;
 
 $alertTip-success-bg:            $state-success-bg !default;
 $alertTip-success-text:          $state-success-text !default;
@@ -41,8 +44,8 @@ $alertTip-info-border:           $state-info-border !default;
 // -------------------------
 
 .alertTip {
-  padding:10px 15px;
-  margin: 5px 0;
+  padding: $alertTip-padding ($alertTip-padding + 20) $alertTip-padding $alertTip-padding;
+  margin-bottom: $line-height-computed;
   color: $alertTip-text;
   background-color: $alertTip-bg;
   border: 1px solid $alertTip-border;
@@ -60,7 +63,7 @@ $alertTip-info-border:           $state-info-border !default;
   }
   // Provide class for links that match alertTips
   .alertTip-link {
-    font-weight: 500;
+    font-weight: $alertTip-link-font-weight;
     color: darken($alertTip-text, 10%);
   }
 
@@ -70,6 +73,15 @@ $alertTip-info-border:           $state-info-border !default;
     top: -2px;
     right: -21px;
     color: inherit;
+  }
+
+  // Improve alignment and spacing of inner content
+  > p,
+  > ul {
+    margin-bottom: 0;
+  }
+  > p + p {
+    margin-top: 5px;
   }
 }
 
@@ -84,17 +96,4 @@ $alertTip-info-border:           $state-info-border !default;
 }
 .alertTip-info {
   @include alertTip-variant($alertTip-info-bg, $alertTip-info-border, $alertTip-info-text);
-}
-
-// Block alertTips
-// -------------------------
-
-.alertTip-block {
-  > p,
-  > ul {
-    margin-bottom: 0;
-  }
-  p + p {
-    margin-top: 5px;
-  }
 }

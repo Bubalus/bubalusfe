@@ -116,10 +116,10 @@ $panel-info-heading-bg:       $state-info-bg !default;
 }
 
 // 面板組
-.list-group-flush {
+.nav-list-flush {
   margin: 15px -15px -15px;
 
-  .list-group-item {
+  .nav-list-item {
     border-width: 1px 0;
 
     &:first-child {

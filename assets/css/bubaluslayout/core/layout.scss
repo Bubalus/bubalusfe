@@ -174,7 +174,7 @@ header, footer, nav, #main {
   .col-#{$i}  { width: percentage(($i / $grid-columns)); }
 }
 
-@media (min-width: $screen-table) {
+@media (min-width: $screen-table) and (max-width: $screen-tablet-max) {
   .container {
     max-width: $container-table;
   }

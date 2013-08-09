@@ -7,28 +7,29 @@
 // -------------------------
 // Buttons 變量
 // -------------------------
+$btn-font-weight:                bold !default;
 
-$btn-default-color:              #fff !default;
-$btn-default-bg:                 #474949 !default;
-$btn-default-border:             $btn-default-bg !default;
+$btn-default-color:              #333 !default;
+$btn-default-bg:                 #fff !default;
+$btn-default-border:             #ccc !default;
 
-$btn-success-color:              $btn-default-color !default;
+$btn-success-color:              #fff !default;
 $btn-success-bg:                 $brand-success !default;
-$btn-success-border:             $btn-success-bg !default;
+$btn-success-border:             darken($btn-success-bg, 5%) !default;
 
-$btn-warning-color:              $btn-default-color !default;
+$btn-warning-color:              #fff !default;
 $btn-warning-bg:                 $brand-warning !default;
-$btn-warning-border:             $btn-warning-bg !default;
+$btn-warning-border:             darken($btn-warning-bg, 5%) !default;
 
-$btn-danger-color:               $btn-default-color !default;
+$btn-danger-color:               #fff !default;
 $btn-danger-bg:                  $brand-danger !default;
-$btn-danger-border:              $btn-danger-bg !default;
+$btn-danger-border:              darken($btn-danger-bg, 5%) !default;
 
-$btn-info-color:                 $btn-default-color !default;
+$btn-info-color:                 #fff !default;
 $btn-info-bg:                    $brand-info !default;
-$btn-info-border:                $btn-info-bg !default;
+$btn-info-border:                darken($btn-info-bg, 5%) !default;
 
-$btn-hover-color:                $btn-default-color !default;
+$btn-link-disabled-color:        $gray-light !default;
 
 // -------------------------
 // Buttons 方法
@@ -47,8 +48,9 @@ $btn-hover-color:                $btn-default-color !default;
   &:focus,
   &:active,
   &.active {
-    background-color: darken($background, 5%);
-        border-color: darken($border, 10%);
+    color: $color;
+    background-color: darken($background, 8%);
+        border-color: darken($border, 12%);
   }
 
   &.disabled,
@@ -76,7 +78,7 @@ $btn-hover-color:                $btn-default-color !default;
   padding: $padding-base-vertical $padding-base-horizontal;
   margin-bottom: 0;
   font-size: $font-size-base;
-  font-weight: 500;
+  font-weight: $btn-font-weight;
   line-height: $line-height-base;
   text-align: center;
   vertical-align: middle;
@@ -94,6 +96,7 @@ $btn-hover-color:                $btn-default-color !default;
 
   &:hover,
   &:focus {
+    color: $btn-default-color;
     background-color: darken(#fff, 5%);
     border-color: darken($gray-lighter, 10%);
     text-decoration: none;
@@ -172,7 +175,7 @@ $btn-hover-color:                $btn-default-color !default;
   fieldset[disabled] & {
     &:hover,
     &:focus {
-      color: $gray-dark;
+      color: $btn-link-disabled-color;
       text-decoration: none;
     }
   }
@@ -191,7 +194,7 @@ $btn-hover-color:                $btn-default-color !default;
 .btn-mini {
   padding: $padding-small-vertical $padding-small-horizontal;
   font-size: $font-size-small;
-  line-height: 1.5;
+  line-height: $line-height-small;
   border-radius: $border-radius-small;
 }
 .btn-mini {
@@ -227,18 +230,38 @@ $btn-hover-color:                $btn-default-color !default;
 // -------------------------
 
 // 按钮中的符号
-.btn .caret {
-  border-top-color: $btn-default-color;
-  margin-left: 0;
+//
+// Match the button text color to the arrow/caret for indicating dropdown-ness.
+
+.caret {
+  .btn-default & {
+    border-top-color: $btn-default-color;
+  }
+  .btn-primary &,
+  .btn-success &,
+  .btn-warning &,
+  .btn-danger &,
+  .btn-info & {
+    border-top-color: #fff;
+  }
 }
-.dropup .btn .caret {
-  border-bottom-color: $btn-default-color;
+.dropup .caret {
+  .btn-default & {
+    border-bottom-color: $btn-default-color;
+  }
+  .btn-primary &,
+  .btn-success &,
+  .btn-warning &,
+  .btn-danger &,
+  .btn-info & {
+    border-bottom-color: #fff;
+  }
 }
 .btn-large .caret {
-  border-width: 5px;
+  border-width: $caret-width-large;
 }
 .dropup .btn-large .caret {
-  border-bottom-width: 5px;
+  border-bottom-width: $caret-width-large;
 }
 
 // 搞个长得像按钮的 DIV
@@ -253,8 +276,13 @@ $btn-hover-color:                $btn-default-color !default;
     // 层次调整
     &:hover,
     &:focus,
-    &:active {
+    &:active,
+    &.active {
       z-index: 2;
+    }
+    &:focus {
+      // Remove focus outline when dropdown JS adds it after closing the menu
+      outline: none;
     }
   }
 }
@@ -354,10 +382,10 @@ $btn-hover-color:                $btn-default-color !default;
   &:not(:first-child):not(:last-child) {
     border-radius: 0;
   }
-  &:first-child {
+  &:first-child:not(:last-child) {
     @include border-bottom-radius(0);
   }
-  &:last-child {
+  &:last-child:not(:first-child) {
     @include border-top-radius(0);
   }
 }
@@ -369,6 +397,7 @@ $btn-hover-color:                $btn-default-color !default;
 .btn-group-justified {
   display: table;
   width: 100%;
+  table-layout: fixed;
   .btn {
     float: none;
     display: table-cell;

@@ -205,8 +205,7 @@ blockquote {
   }
 
   // Float right with text-align: right
-  &.pull-right {
-    float: right;
+  &.fl-ri {
     padding-right: 15px;
     padding-left: 0;
     border-right: 5px solid $blockquote-border-color;

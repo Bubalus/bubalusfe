@@ -9,9 +9,11 @@
 // -------------------------
 
 // Basics of a navbar
-$navbar-height:                    3.571428571428571 !default;
+$navbar-height:                    50px !default;
 $navbar-color:                     #777 !default;
 $navbar-bg:                        #eee !default;
+$navbar-border-radius:             $border-radius-base !default;
+
 $navbar-padding-horizontal:        floor($grid-gutter-width / 2) !default;  // ~15px
 $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
 
@@ -29,10 +31,6 @@ $navbar-brand-color:               $navbar-link-color !default;
 $navbar-brand-hover-color:         darken($navbar-link-color, 10%) !default;
 $navbar-brand-hover-bg:            transparent !default;
 
-// Inverted navbar
-$navbar-inverse-color:                       $gray-light !default;
-$navbar-inverse-bg:                         #222 !default;
-
 // Navbar toggle
 $navbar-toggle-hover-bg:           #ddd !default;
 $navbar-toggle-icon-bar-bg:        #ccc !default;
@@ -41,7 +39,11 @@ $navbar-toggle-border-color:       #ddd !default;
 
 //
 // Reset inverted navbar basics
-$navbar-inverse-link-color:                      $gray-light !default;
+$navbar-inverse-color:                      $gray-light !default;
+$navbar-inverse-bg:                         #222 !default;
+
+// Inverted navbar links
+$navbar-inverse-link-color:                 $gray-light !default;
 $navbar-inverse-link-hover-color:           #fff !default;
 $navbar-inverse-link-hover-bg:              transparent !default;
 $navbar-inverse-link-active-color:          $navbar-inverse-link-hover-color !default;
@@ -106,17 +108,17 @@ $zindex-navbar-fixed:      1030 !default;
 
 // List group
 // -------------------------
-$list-group-bg:               #fff !default;
-$list-group-border:           #ddd !default;
-$list-group-border-radius:    $border-radius-base !default;
+$nav-list-bg:               #fff !default;
+$nav-list-border:           #ddd !default;
+$nav-list-border-radius:    $border-radius-base !default;
 
-$list-group-hover-bg:         #f5f5f5 !default;
-$list-group-active-color:     #fff !default;
-$list-group-active-bg:        $component-active-bg !default;
-$list-group-active-border:    $list-group-active-bg !default;
+$nav-list-hover-bg:         #f5f5f5 !default;
+$nav-list-active-color:     #fff !default;
+$nav-list-active-bg:        $component-active-bg !default;
+$nav-list-active-border:    $nav-list-active-bg !default;
 
-$list-group-link-color:          #555 !default;
-$list-group-link-heading-color:  #333 !default;
+$nav-list-link-color:          #555 !default;
+$nav-list-link-heading-color:  #333 !default;
 
 
 // Breadcrumbs
@@ -152,6 +154,7 @@ $breadcrumb-active-color:     $gray-light !default;
     display: block;
 
     > a {
+      border-radius: 5px;
       position: relative;
       display: block;
       padding: 10px 15px;
@@ -159,6 +162,15 @@ $breadcrumb-active-color:     $gray-light !default;
       &:focus {
         text-decoration: none;
         background-color: $nav-link-hover-bg;
+      }
+    }
+
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: $nav-pills-active-link-hover-color;
+        background-color: $nav-pills-active-link-hover-bg;
       }
     }
 
@@ -171,7 +183,7 @@ $breadcrumb-active-color:     $gray-light !default;
         color: $nav-disabled-link-hover-color;
         text-decoration: none;
         background-color: transparent;
-        cursor: default;
+        cursor: not-allowed;
       }
     }
 
@@ -191,10 +203,6 @@ $breadcrumb-active-color:     $gray-light !default;
       }
     }
   }
-
-  // > .pull-right {
-  //   float: right;
-  // }
 
   // 導航中的分隔綫
   .nav-divider {
@@ -276,39 +284,12 @@ $breadcrumb-active-color:     $gray-light !default;
   }
 }
 
-
-// 按鈕式導航
-// -------------------------
-.nav-pills {
+// 堆疊的按鈕式導航
+.nav-horizontal {
   > li {
     float: left;
-
-    > a {
-      border-radius: 5px;
-    }
     + li {
       margin-left: 2px;
-    }
-
-    &.active > a {
-      &,
-      &:hover,
-      &:focus {
-        color: $nav-pills-active-link-hover-color;
-        background-color: $nav-pills-active-link-hover-bg;
-      }
-    }
-  }
-}
-
-
-// 堆疊的按鈕式導航
-.nav-stacked {
-  > li {
-    float: none;
-    + li {
-      margin-top: 2px;
-      margin-left: 0; // no need for this gap between nav items
     }
   }
 }
@@ -366,7 +347,7 @@ $breadcrumb-active-color:     $gray-light !default;
   padding-left: $navbar-padding-horizontal;
   padding-right: $navbar-padding-horizontal;
   background-color: $navbar-bg;
-  border-radius: $border-radius-base;
+  border-radius: $navbar-border-radius;
 
   @include clear();
 }
@@ -382,7 +363,7 @@ $breadcrumb-active-color:     $gray-light !default;
     padding-top: (($navbar-height - $line-height-computed) / 2);
     padding-bottom: (($navbar-height - $line-height-computed) / 2);
     color: $navbar-link-color;
-    line-height: 20px;
+    line-height: $line-height-computed;
     border-radius: $border-radius-base;
     &:hover,
     &:focus {
@@ -408,7 +389,7 @@ $breadcrumb-active-color:     $gray-light !default;
   }
 
   // 右對齊的内容
-  &.pull-right {
+  &.fl-ri {
     width: 100%;
   }
 }
@@ -435,6 +416,8 @@ $breadcrumb-active-color:     $gray-light !default;
 }
 .navbar-fixed-top {
   top: 0;
+  nav-collapse {
+  }
 }
 .navbar-fixed-bottom {
   bottom: 0;
@@ -454,6 +437,26 @@ $breadcrumb-active-color:     $gray-light !default;
 .navbar-fixed-right {
   right: 0;
 }
+
+// Scrollable navbar navigation
+//
+// Sometimes you might have too many links in your fixed navbar and you need to
+// maintain access to all that content. To help, add `.nav-collapse-scrollable`
+// to your `.nav-collapse` to prevent the the content from flowing past the max-
+// height of your browser.
+//
+// This is not automatically added to the `.navbar-fixed-top` because it causes
+// z-index bugs in iOS7 (possibly earlier).
+
+@media (max-width: $screen-phone) {
+  .nav-collapse-scrollable {
+    margin-bottom: $navbar-padding-vertical;
+    max-height: 360px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 
 
 // 導航欄的相關組件
@@ -481,12 +484,12 @@ $breadcrumb-active-color:     $gray-light !default;
 
 // 可折疊的導航欄
 .navbar-toggle {
-  position: absolute;
-  top: floor(($navbar-height - 32) / 2);
-  right: 10px;
+  position: relative;
+  float: right;
+  height: 34px;
   width: 48px;
-  height: 32px;
-  padding: 8px 12px;
+  @include navbar-vertical-align(34px);
+  padding: $padding-base-vertical $padding-base-horizontal;
   background-color: transparent;
   border: 1px solid $navbar-toggle-border-color;
   border-radius: $border-radius-base;
@@ -554,8 +557,8 @@ $breadcrumb-active-color:     $gray-light !default;
 }
 
 // 右對齊菜單位置
-.navbar-nav.pull-right > li > .dropdown-menu,
-.navbar-nav > li > .dropdown-menu.pull-right {
+.navbar-nav.fl-ri > li > .dropdown-menu,
+.navbar-nav > li > .dropdown-menu.fl-ri {
   left: auto;
   right: 0;
 }
@@ -660,6 +663,7 @@ $breadcrumb-active-color:     $gray-light !default;
     float: left;
     margin-left: -($navbar-padding-horizontal);
     margin-right: 5px;
+    max-width: none;
   }
   .navbar-nav {
     float: left;
@@ -673,8 +677,7 @@ $breadcrumb-active-color:     $gray-light !default;
       }
     }
 
-    &.pull-right {
-      float: right;
+    &.fl-ri {
       width: auto;
     }
   }
@@ -706,6 +709,8 @@ $breadcrumb-active-color:     $gray-light !default;
 // 導航欄的文字
 
 .navbar-text {
+  float: left;
+  padding: 0 $navbar-padding-horizontal;
   @include navbar-vertical-align($line-height-computed);
 }
 
@@ -731,19 +736,19 @@ $breadcrumb-active-color:     $gray-light !default;
 
 // 列式導航樣式
 // -------------------------
-.list-group {
+.nav-list {
   margin-bottom: 20px;
   padding-left: 0; // reset padding because ul and ol
 }
 
 // 導航條目
-.list-group-item {
+.nav-list-item {
   position: relative;
   display: block;
   padding: 10px 30px 10px 15px;
   margin-bottom: -1px;
-  background-color: $list-group-bg;
-  border: 1px solid $list-group-border;
+  background-color: $nav-list-bg;
+  border: 1px solid $nav-list-border;
 
   // Round the first and last items
   &:first-child {
@@ -763,50 +768,50 @@ $breadcrumb-active-color:     $gray-light !default;
 
 
 // 導航條目附加內容
-.list-group-item-heading {
+.nav-list-item-heading {
   margin-top: 0;
   margin-bottom: 5px;
 }
-.list-group-item-text {
+.nav-list-item-text {
   margin-bottom: 0;
   line-height: 1.3;
 }
 
 // 鏈接形式的條目
-a.list-group-item {
+a.nav-list-item {
     // Colorize content accordingly
-  .list-group-item-heading {
-    color: $list-group-link-heading-color;
+  .nav-list-item-heading {
+    color: $nav-list-link-heading-color;
   }
-  .list-group-item-text {
-    color: $list-group-link-color;
+  .nav-list-item-text {
+    color: $nav-list-link-color;
   }
   // Hover state
   &:hover,
   &:focus {
     text-decoration: none;
-    background-color: $list-group-hover-bg;
+    background-color: $nav-list-hover-bg;
   }
 
   // Active class on item itself, not parent
   &.active {
     z-index: 2; // Place active items above their siblings for proper border styling
-    color: $list-group-active-color;
-    background-color: $list-group-active-bg;
-    border-color: $list-group-active-border;
+    color: $nav-list-active-color;
+    background-color: $nav-list-active-bg;
+    border-color: $nav-list-active-border;
 
     // Force color to inherit for custom content
-    .list-group-item-heading {
+    .nav-list-item-heading {
       color: inherit;
     }
-    .list-group-item-text {
-      color: lighten($list-group-active-bg, 40%);
+    .nav-list-item-text {
+      color: lighten($nav-list-active-bg, 40%);
     }
   }
 }
 
 // 麵包屑
-.breadcrumb {
+.nav-breadcrumb {
   padding: 8px 15px;
   margin-bottom: $line-height-computed;
   list-style: none;

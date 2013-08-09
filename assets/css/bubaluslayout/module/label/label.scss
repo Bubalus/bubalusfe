@@ -7,6 +7,7 @@
 // -------------------------
 // label 變量
 // -------------------------
+$label-default-bg:            $gray-light !default;
 $label-success-bg:            $brand-success !default;
 $label-info-bg:               $brand-info !default;
 $label-warning-bg:            $brand-warning !default;
@@ -24,6 +25,10 @@ $badge-bg:                    $gray-light !default;
 $badge-active-color:          $link-color !default;
 $badge-active-bg:             #fff !default;
 
+$badge-font-weight:           bold !default;
+$badge-line-height:           1 !default;
+$badge-border-radius:         10px !default;
+
 // -------------------------
 // label 樣式
 // -------------------------
@@ -36,8 +41,7 @@ $badge-active-bg:             #fff !default;
   color: $label-color;
   text-align: center;
   white-space: nowrap;
-  vertical-align: middle;
-  background-color: $gray-light;
+  vertical-align: baseline;
   border-radius: .25em;
 
   // 懸浮樣式
@@ -47,11 +51,13 @@ $badge-active-bg:             #fff !default;
       color: $label-link-hover-color;
       text-decoration: none;
       cursor: pointer;
-      background-color: darken($gray-light, 10%);
     }
   }
 }
 
+.label-default {
+  @include label-variant($label-default-bg);
+}
 // 危險標簽
 .label-danger {
   @include label-variant($label-danger-bg);
@@ -75,14 +81,14 @@ $badge-active-bg:             #fff !default;
   min-width: 10px;
   padding: 3px 7px;
   font-size: $font-size-small;
-  font-weight: bold;
+  font-weight: $badge-font-weight;
   color: $badge-color;
-  line-height: 1;
-  vertical-align: middle;
+  line-height: $badge-line-height;
+  vertical-align: baseline;
   white-space: nowrap;
   text-align: center;
   background-color: $badge-bg;
-  border-radius: 10px;
+  border-radius: $badge-border-radius;
 
   // 空標簽隱藏
   &:empty {
@@ -108,7 +114,7 @@ a.badge {
 
 
 // 列表組和導航裏的狀態標簽
-a.list-group-item.active > .badge,
+a.nav-list-item.active > .badge,
 .nav-pills > .active > a > .badge {
   color: $badge-active-color;
   background-color: $badge-active-bg;
