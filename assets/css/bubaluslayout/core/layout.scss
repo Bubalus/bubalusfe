@@ -42,28 +42,30 @@ $grid-float-breakpoint:     $screen-table !default;
 }
 
 // 用于为一组 列式栅格 创建一个水平容器,并清除列栅格的浮动
-@mixin make-row() {
+@mixin make-row($gutter: $grid-gutter-width) {
   @include clear();
 
-  // @media (min-width: $screen-table) {
-  //   margin-left:  ($grid-gutter-width / -2);
-  //   margin-right: ($grid-gutter-width / -2);
-  // }
+  .container & {
+    @media (min-width: $screen-phone) {
+      margin-left:  ($gutter / -2);
+      margin-right: ($gutter / -2);
+    }
+  }
 
   // // 嵌套的水平容器设置负值空白边，避免产生重复的栅格间距
-  // .row {
-  //   margin-left:  ($grid-gutter-width / -2);
-  //   margin-right: ($grid-gutter-width / -2);
-  // }
+  .row {
+    margin-left:  ($gutter / -2);
+    margin-right: ($gutter / -2);
+  }
 }
 
 // 栅格公用样式
-@mixin make-column($columns) {
+@mixin make-column($columns, $gutter: $grid-gutter-width) {
   position: relative;
   min-height: 1px; // 防止没有内容时列塌陷而造成错位
   // 通过设置填充来产生列与列之间的间距，内容不会紧挨在一起
-  padding-left:  ($grid-gutter-width / 2);
-  padding-right: ($grid-gutter-width / 2);
+  padding-left:  ($gutter / 2);
+  padding-right: ($gutter / 2);
 
   // 计算到达相应点后的列宽
   @media (min-width: $grid-float-breakpoint) {
@@ -72,6 +74,22 @@ $grid-float-breakpoint:     $screen-table !default;
   }
 }
 
+// Generate the small columns
+@mixin make-small-column($columns, $gutter: $grid-gutter-width) {
+  position: relative;
+  float: left;
+  // Prevent columns from collapsing when empty
+  min-height: 1px;
+  // Inner gutter via padding
+  padding-left:  ($gutter / 2);
+  padding-right: ($gutter / 2);
+  $max-width: ($grid-float-breakpoint - 1);
+
+  // Calculate width based on number of columns available
+  @media (max-width: $max-width) {
+    width: percentage(($columns / $grid-columns));
+  }
+}
 
 // 生成横移列
 @mixin make-column-offset($columns) {

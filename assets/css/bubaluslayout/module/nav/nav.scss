@@ -356,7 +356,6 @@ $breadcrumb-active-color:     $gray-light !default;
 // -------------------------
 
 .navbar-nav {
-  margin-top: 10px;
   margin-bottom: 15px;
 
   > li > a {
@@ -416,12 +415,24 @@ $breadcrumb-active-color:     $gray-light !default;
 }
 .navbar-fixed-top {
   top: 0;
-  nav-collapse {
-  }
 }
 .navbar-fixed-bottom {
   bottom: 0;
   margin-bottom: 0;
+}
+
+.nav-collapse {
+  // Space out collapsed contents within the mobile navbar
+  padding-bottom: $navbar-padding-vertical;
+  // Clear floated elements and prevent collapsing of padding
+  @include clear();
+
+  // When there is no `.navbar-brand` present (which normally sits between the
+  // navbar brand and toggle), prevent the nav from overlapping the toggle.
+  .navbar-toggle + & {
+    width: 100%;
+    margin-top: $navbar-height;
+  }
 }
 
 .navbar-fixed-left,
@@ -522,13 +533,11 @@ $breadcrumb-active-color:     $gray-light !default;
 // 調整菜單位置
 .navbar-nav > li > .dropdown-menu {
   margin-top: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  @include border-top-radius(0);
 }
 
 .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  @include border-bottom-radius(0);
 }
 
 .navbar-nav {
@@ -691,6 +700,7 @@ $breadcrumb-active-color:     $gray-light !default;
   .nav-collapse.collapse {
     display: block !important;
     height: auto !important;
+    padding-bottom: 0; // Override default setting
     overflow: visible !important;
   }
 
@@ -752,17 +762,20 @@ $breadcrumb-active-color:     $gray-light !default;
 
   // Round the first and last items
   &:first-child {
-    @include border-top-radius($border-radius-base);
+    @include border-top-radius($nav-list-border-radius);
   }
   &:last-child {
     margin-bottom: 0;
-    @include border-bottom-radius($border-radius-base);
+    @include border-bottom-radius($nav-list-border-radius);
   }
 
   // Align badges within list items
   > .badge {
     float: right;
     margin-right: -15px;
+  }
+  > .badge + .badge {
+    margin-right: 0;
   }
 }
 

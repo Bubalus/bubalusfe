@@ -44,7 +44,7 @@ $alertTip-info-border:           $state-info-border !default;
 // -------------------------
 
 .alertTip {
-  padding: $alertTip-padding ($alertTip-padding + 20) $alertTip-padding $alertTip-padding;
+  padding: $alertTip-padding;
   margin-bottom: $line-height-computed;
   color: $alertTip-text;
   background-color: $alertTip-bg;
