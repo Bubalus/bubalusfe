@@ -42,6 +42,9 @@ $alertTip-info-border:           $state-info-border !default;
 
 // 基本樣式
 // -------------------------
+.alertTip-area {
+  position: fixed;
+}
 
 .alertTip {
   padding: $alertTip-padding;
@@ -68,10 +71,9 @@ $alertTip-info-border:           $state-info-border !default;
   }
 
   // Adjust close link position
-  .close {
+  .close-btn {
     position: relative;
-    top: -2px;
-    right: -21px;
+    top: -4px;
     color: inherit;
   }
 
@@ -85,15 +87,95 @@ $alertTip-info-border:           $state-info-border !default;
   }
 }
 
+.alertTip-closer {
+  padding: $alertTip-padding;
+  margin-bottom: $line-height-computed;
+  color: $alertTip-text;
+  background-color: $alertTip-bg;
+  border: 1px solid $alertTip-border;
+  border-radius: $alertTip-border-radius;
+}
+
 // Alternate styles
 // -------------------------
 
 .alertTip-success {
   @include alertTip-variant($alertTip-success-bg, $alertTip-success-border, $alertTip-success-text);
+  .close-btn {
+    color: $alertTip-success-text;
+  }
 }
 .alertTip-danger {
   @include alertTip-variant($alertTip-danger-bg, $alertTip-danger-border, $alertTip-danger-text);
+  .close-btn {
+    color: $alertTip-danger-text;
+  }
 }
 .alertTip-info {
   @include alertTip-variant($alertTip-info-bg, $alertTip-info-border, $alertTip-info-text);
+  .close-btn {
+    color: $alertTip-info-text;
+  }
+}
+
+.alertTip-area.top-left {
+  left:         0px;
+  top:        0px;
+}
+
+.alertTip-area.top-right {
+  right:        0px;
+  top:        0px;
+}
+
+.alertTip-area.bottom-left {
+  left:         0px;
+  bottom:       0px;
+}
+
+.alertTip-area.bottom-right {
+  right:        0px;
+  bottom:       0px;
+}
+
+.alertTip-area.center {
+  top:        0px;
+  width:        50%;
+  left:         25%;
+}
+
+/** Cross Browser Styling **/
+.center .alertTip, .center .alertTip-closer {
+  margin-left:    auto;
+  margin-right:     auto;
+}
+
+.alertTip-area .alertTip, .alertTip-area .alertTip-closer {
+  //@include opacity(.9);
+  zoom:           1;
+  width:          300px;
+  padding:        10px;
+  margin:       5px 10px;
+  display:        none;
+  border-radius: $alertTip-border-radius;
+}
+
+.alertTip-area .alertTip {
+  min-height:       40px;
+}
+
+.alertTip-area .alertTip-closer {
+  padding-top:      4px;
+  padding-bottom:     4px;
+  cursor:         pointer;
+  font-size:        .9em;
+  font-weight:      bold;
+  text-align:       center;
+}
+
+/** Hide jGrowl when printing **/
+@media print {
+  .alertTip-area {
+    display:      none;
+  }
 }

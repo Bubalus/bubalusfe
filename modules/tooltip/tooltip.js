@@ -1,16 +1,3 @@
-/**
- * jquery.simpletip 1.3.1. A simple tooltip plugin
- * 
- * Copyright (c) 2009 Craig Thompson
- * http://craigsworks.com
- *
- * Licensed under GPLv3
- * http://www.opensource.org/licenses/gpl-3.0.html
- *
- * Launch  : February 2009
- * Version : 1.3.1
- * Released: February 5, 2009 - 11:04am
- */
 (function($){
 
    function Simpletip(elem, conf)

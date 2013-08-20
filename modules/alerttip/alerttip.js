@@ -5,13 +5,14 @@
 // --------------------------------------------
 
 +function($) {
-
 	$.alertTip = function( message , options ) {
+		// 如果 alertTip 容器不存在，就先創建一個
 		if ( $('#alertTip').size() == 0 )
 			$('<div id="alertTip"></div>').addClass( (options && options.position) ? options.position : $.alertTip.defaults.position ).appendTo('body');
 
 		$('#alertTip').alertTip(message,options);
 	};
+
 
 	$.fn.alertTip = function( message , options ) {
 		if ( $.isFunction(this.each) ) {
@@ -40,7 +41,7 @@
 			sticky:				false, // 设置为true时，该实例将停留到用户手动关闭为止
 			position: 			'top-right', // 弹出位置
 			glue:				'after', // 在系列中置顶或沉底 after | before
-			theme:				'default', // 指定样式
+			theme:				'', // 指定样式
 			life:				3000, // 生命值 毫秒
 			closeDuration: 		'normal', // 关闭动画速度
 			openDuration: 		'normal', // 打开动画速度
@@ -82,11 +83,11 @@
 			var options = notification.options;
 
 			var notification = $('<div/>')
-				.addClass('alertTip ' + ((options.group != undefined && options.group != '') ? ' ' + options.group : ''))
-				.append($('<button/>').addClass('close').attr('type','button').html(options.closeTemplate))
+				.addClass('alertTip ' + options.theme + ((options.group != undefined && options.group != '') ? ' ' + options.group : ''))
+				.append($('<button/>').addClass('close-btn').attr('type','button').html(options.closeTemplate))
 				.append($('<h4/>').html(options.header))
 				.append($('<p/>').html(message))
-				.data("alertTip", options).addClass(options.theme).children('.close').bind("click.alertTip", function() {
+				.data("alertTip", options).addClass(options.theme).children('.close-btn').bind("click.alertTip", function() {
 					$(this).parent().trigger('alertTip.beforeClose');
 				})
 				.parent();
@@ -121,8 +122,8 @@
 				options.afterOpen.apply( notification , [notification,message,options,self.element] );
 			}).bind('alertTip.beforeClose', function() {
 				if ( options.beforeClose.apply( notification , [notification,message,options,self.element] ) !== false )
-					$(this).trigger('alertTip.close');
-			}).bind('alertTip.close', function() {
+					$(this).trigger('alertTip.close-btn');
+			}).bind('alertTip.close-btn', function() {
 				$(this).data('alertTip.pause', true);
 				$(this).animate(options.animateClose, options.closeDuration, options.easing, function() {
 					if ( $.isFunction(options.close) ) {
@@ -171,7 +172,7 @@
 		},
 
 		startup:	function(e) {
-			this.element = $(e).addClass('alertTip-box').append('<div class="alertTip"></div>');
+			this.element = $(e).addClass('alertTip-area').append('<div class="alertTip"></div>');
 			this.interval = setInterval( function() {
 				$(e).data('alertTip.instance').update();
 			}, parseInt(250));
@@ -179,7 +180,7 @@
 		},
 
 		shutdown:   function() {
-			$(this.element).removeClass('alertTip-box')
+			$(this.element).removeClass('alertTip-area')
 				.find('.alertTip').trigger('alertTip.close')
 				.parent().empty()
 
@@ -194,6 +195,33 @@
 	});
 
 	$.alertTip.defaults = $.fn.alertTip.prototype.defaults;
+
+	$(document).on('click.alertTip', '[data-toggle=alertTip]', function (e) {
+		var $this = $(this)
+		var $header = $this.data('header')
+		var $message = $this.data('message')
+		var $theme = $this.data('theme')
+		var $wrapper = $this.data('wrapper')
+		var $sticky = $this.data('sticky')
+
+		if ($wrapper == null){
+			$.alertTip($message, { 
+				header: $header,
+				theme: $theme,
+				sticky: $sticky
+			});
+		}else{
+			if ( $('#' + $wrapper).size() == 0 ){
+				$('<div/>').attr('id',$wrapper).addClass('alertTip-area').appendTo('body');
+			}
+
+			$('#' + $wrapper).alertTip($message, { 
+				header: $header,
+				theme: $theme,
+				sticky: $sticky
+			});
+		}
+	})
 
 }(jQuery);
 

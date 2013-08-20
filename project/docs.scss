@@ -300,3 +300,10 @@ code {
     }
   }
 }
+#alertTip-BR,
+#alertTip-BL {
+  position: fixed;
+  bottom: 0;
+}
+#alertTip-BR{right: 0;}
+#alertTip-BL{left:0;}

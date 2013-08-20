@@ -553,8 +553,8 @@ header, footer, nav, #main {
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: font-url("assets/images/bubaluslayout/glyphiconshalflings-regular.eot");
-  src: font-url("assets/images/bubaluslayout/glyphiconshalflings-regular.eot?#iefix") format("embedded-opentype"), font-url("assets/images/bubaluslayout/glyphiconshalflings-regular.woff") format("woff"), font-url("assets/images/bubaluslayout/glyphiconshalflings-regular.ttf") format("truetype"), font-url("assets/images/bubaluslayout/glyphiconshalflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
+  src: font-url(".../modules/bubaluslayout/images/glyphiconshalflings-regular.eot");
+  src: font-url(".../modules/bubaluslayout/images/glyphiconshalflings-regular.eot?#iefix") format("embedded-opentype"), font-url(".../modules/bubaluslayout/images/glyphiconshalflings-regular.woff") format("woff"), font-url(".../modules/bubaluslayout/images/glyphiconshalflings-regular.ttf") format("truetype"), font-url(".../modules/bubaluslayout/images/glyphiconshalflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
 
 .glyphicon:before {
   font-family: 'Glyphicons Halflings';
@@ -1260,29 +1260,11 @@ td.visible-print {
     display: none !important; } }
 /* 擴展組件
 ----------------------------------*/
-/* 手風琴 */
-/* Accordion - 手風琴樣式 */
-.accordion {
-  margin-bottom: 20px; }
-
-.accordion-group {
-  margin-bottom: 2px;
-  border: 1px solid #e5e5e5;
-  border-radius: 4px; }
-
-.accordion-heading {
-  border-bottom: 0; }
-  .accordion-heading .accordion-toggle {
-    display: block;
-    padding: 8px 15px;
-    cursor: pointer; }
-
-.accordion-inner {
-  padding: 9px 15px;
-  border-top: 1px solid #e5e5e5; }
-
 /* 麵包屑 */
 /* alertTipTip - 弹出通知 */
+.alertTip-area {
+  position: fixed; }
+
 .alertTip {
   padding: 15px;
   margin-bottom: 20px;
@@ -1298,16 +1280,23 @@ td.visible-print {
   .alertTip .alertTip-link {
     font-weight: bold;
     color: #a47e3c; }
-  .alertTip .close {
+  .alertTip .close-btn {
     position: relative;
-    top: -2px;
-    right: -21px;
+    top: -4px;
     color: inherit; }
   .alertTip > p,
   .alertTip > ul {
     margin-bottom: 0; }
   .alertTip > p + p {
     margin-top: 5px; }
+
+.alertTip-closer {
+  padding: 15px;
+  margin-bottom: 20px;
+  color: #c09853;
+  background-color: #fcf8e3;
+  border: 1px solid #fbeed5;
+  border-radius: 4px; }
 
 .alertTip-success {
   background-color: #dff0d8;
@@ -1317,6 +1306,8 @@ td.visible-print {
     border-top-color: #c9e2b3; }
   .alertTip-success .alertTip-link {
     color: #356635; }
+  .alertTip-success .close-btn {
+    color: #468847; }
 
 .alertTip-danger {
   background-color: #f2dede;
@@ -1326,6 +1317,8 @@ td.visible-print {
     border-top-color: #e6c1c7; }
   .alertTip-danger .alertTip-link {
     color: #953b39; }
+  .alertTip-danger .close-btn {
+    color: #b94a48; }
 
 .alertTip-info {
   background-color: #d9edf7;
@@ -1335,7 +1328,58 @@ td.visible-print {
     border-top-color: #a6e1ec; }
   .alertTip-info .alertTip-link {
     color: #2d6987; }
+  .alertTip-info .close-btn {
+    color: #3a87ad; }
 
+.alertTip-area.top-left {
+  left: 0px;
+  top: 0px; }
+
+.alertTip-area.top-right {
+  right: 0px;
+  top: 0px; }
+
+.alertTip-area.bottom-left {
+  left: 0px;
+  bottom: 0px; }
+
+.alertTip-area.bottom-right {
+  right: 0px;
+  bottom: 0px; }
+
+.alertTip-area.center {
+  top: 0px;
+  width: 50%;
+  left: 25%; }
+
+/** Cross Browser Styling **/
+.center .alertTip, .center .alertTip-closer {
+  margin-left: auto;
+  margin-right: auto; }
+
+.alertTip-area .alertTip, .alertTip-area .alertTip-closer {
+  zoom: 1;
+  width: 300px;
+  padding: 10px;
+  margin: 5px 10px;
+  display: none;
+  border-radius: 4px; }
+
+.alertTip-area .alertTip {
+  min-height: 40px; }
+
+.alertTip-area .alertTip-closer {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  cursor: pointer;
+  font-size: .9em;
+  font-weight: bold;
+  text-align: center; }
+
+/** Hide jGrowl when printing **/
+@media print {
+  .alertTip-area {
+    display: none; } }
 /* 按鈕/按鈕組 */
 /* Buttons - 一组按钮样式 */
 .btn {
@@ -3224,6 +3268,27 @@ table th[class^="col-"] {
   border-color: #f8e5be; }
 
 /* END Table */
+/* Tabs */
+/* Accordion - 手風琴樣式 */
+.accordion {
+  margin-bottom: 20px; }
+
+.accordion-group {
+  margin-bottom: 2px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px; }
+
+.accordion-heading {
+  border-bottom: 0; }
+  .accordion-heading .accordion-toggle {
+    display: block;
+    padding: 8px 15px;
+    cursor: pointer; }
+
+.accordion-inner {
+  padding: 9px 15px;
+  border-top: 1px solid #e5e5e5; }
+
 /* 縮略圖 */
 /* Thumbnails - 一套縮圖样式 */
 .thumbnail,
@@ -3509,8 +3574,6 @@ blockquote {
       content: '\00A0 \2014'; }
 
 /* END Typography */
-/* 載入第三方樣式
-----------------------------------*/
 /* 載入項目樣式
 ----------------------------------*/
 body {
@@ -3520,7 +3583,7 @@ body {
 header {
   *zoom: 1;
   border-top: 5px solid #172b36;
-  background-image: url("../images/project/head_back.png"); }
+  background-image: url("../project/images/head_back.png"); }
   header:before {
     content: "";
     display: table;
@@ -3548,7 +3611,7 @@ header {
 .docs-nav {
   *zoom: 1;
   border-bottom: 1px solid #38596b;
-  background-image: url("../images/project/nav_back.png");
+  background-image: url("../project/images/nav_back.png");
   background-repeat: repeat-x;
   margin: 0 auto;
   padding-left: 40px; }
@@ -3737,3 +3800,14 @@ code {
 #tables .table-hover > tbody > tr:hover > td,
 #tables .table-hover > tbody > tr:hover > th {
   background-color: #2b4858; }
+
+#alertTip-BR,
+#alertTip-BL {
+  position: fixed;
+  bottom: 0; }
+
+#alertTip-BR {
+  right: 0; }
+
+#alertTip-BL {
+  left: 0; }

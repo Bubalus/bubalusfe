@@ -32,8 +32,8 @@ $responsive-support: 	true !default;
 $font-size-base:        14px !default;
 
 // 路徑指向
-$images-path:           "../images/project" !default;
-$glyphicons-font-path:  "assets/images/bubaluslayout" !default;
+$images-path:           "../project/images" !default;
+$glyphicons-font-path:  ".../modules/bubaluslayout/images" !default;
 // 引入全局變量和方法
 // ----------------------
 @import "config/variables";
