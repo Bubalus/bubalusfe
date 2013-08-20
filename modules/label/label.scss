@@ -34,9 +34,9 @@ $badge-border-radius:         10px !default;
 // -------------------------
 .label {
   display: inline;
-  padding: .25em .6em;
+  padding: .2em .6em .3em;
   font-size: 75%;
-  font-weight: 500;
+  font-weight: bold;
   line-height: 1;
   color: $label-color;
   text-align: center;
@@ -52,6 +52,11 @@ $badge-border-radius:         10px !default;
       text-decoration: none;
       cursor: pointer;
     }
+  }
+
+  // Empty labels collapse automatically (not available in IE8)
+  &:empty {
+    display: none;
   }
 }
 

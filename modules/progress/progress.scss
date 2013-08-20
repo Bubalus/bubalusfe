@@ -77,7 +77,7 @@ $progress-bar-info-bg:        $brand-info !default;
 // 條紋樣式
 .progress-striped .progress-bar {
   @include gradient-striped($progress-bar-bg);
-  @include background-size(40px 40px);
+  background-size: 40px 40px;
 }
 
 // 代入動畫

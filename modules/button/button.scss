@@ -39,23 +39,30 @@ $btn-link-disabled-color:        $gray-light !default;
 // -------------------------
 // Easily pump out default styles, as well as :hover, :focus, :active,
 // and disabled options for all buttons
-@mixin btn-pseudo-states($color, $background, $border) {
-  color: $color;
-  background-color: $background;
-  border-color: $border;
+@mixin button-variant($selector, $color, $background, $border) {
+  #{$selector} {
+    color: $color;
+    background-color: $background;
+    border-color: $border;
+  }
 
-  &:hover,
-  &:focus,
-  &:active,
-  &.active {
+  #{$selector}:hover,
+  #{$selector}:focus,
+  #{$selector}:active,
+  #{$selector}.active,
+  .open .dropdown-toggle#{$selector} {
     color: $color;
     background-color: darken($background, 8%);
         border-color: darken($border, 12%);
   }
-
-  &.disabled,
-  &[disabled],
-  fieldset[disabled] & {
+  #{$selector}:active,
+  #{$selector}.active,
+  .open .dropdown-toggle#{$selector} {
+    background-image: none;
+  }
+  #{$selector}.disabled,
+  #{$selector}[disabled],
+  fieldset[disabled] #{$selector} {
     &,
     &:hover,
     &:focus,
@@ -65,6 +72,15 @@ $btn-link-disabled-color:        $gray-light !default;
           border-color: $border
     }
   }
+}
+
+// Button sizes
+// -------------------------
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
 }
 
 // -------------------------
@@ -111,7 +127,7 @@ $btn-link-disabled-color:        $gray-light !default;
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
-    cursor: default;
+    cursor: not-allowed;
     pointer-events: none; // 预置,暂无浏览器支持,禁用点击事件
     @include opacity(.65);
     @include box-shadow(none);
@@ -123,25 +139,15 @@ $btn-link-disabled-color:        $gray-light !default;
 // 按钮主题
 // -------------------------
 // 默认：灰色
-.btn-default {
-  @include btn-pseudo-states($btn-default-color, $btn-default-bg, $btn-default-border);
-}
+@include button-variant(".btn-default", $btn-default-color, $btn-default-bg, $btn-default-border);
 // 警告：橙色
-.btn-warning {
-  @include btn-pseudo-states($btn-warning-color, $btn-warning-bg, $btn-warning-border);
-}
+@include button-variant(".btn-warning", $btn-warning-color, $btn-warning-bg, $btn-warning-border);
 // 危险或错误：红色
-.btn-danger {
-  @include btn-pseudo-states($btn-danger-color, $btn-danger-bg, $btn-danger-border);
-}
+@include button-variant(".btn-danger", $btn-danger-color, $btn-danger-bg, $btn-danger-border);
 // 成功：绿色
-.btn-success {
-  @include btn-pseudo-states($btn-success-color, $btn-success-bg, $btn-success-border);
-}
+@include button-variant(".btn-success", $btn-success-color, $btn-success-bg, $btn-success-border);
 // 信息详情：浅蓝
-.btn-info {
-  @include btn-pseudo-states($btn-info-color, $btn-info-bg, $btn-info-border);
-}
+@include button-variant(".btn-info", $btn-info-color, $btn-info-bg, $btn-info-border);
 
 // 链接样式的按钮
 // -------------------------
@@ -185,21 +191,23 @@ $btn-link-disabled-color:        $gray-light !default;
 // 按钮尺寸
 // -------------------------
 
-.btn-large {
-  padding: $padding-large-vertical $padding-large-horizontal;
-  font-size: $font-size-large;
-  border-radius: $border-radius-large;
+@mixin btn-large {
+    // line-height: ensure even-numbered height of button next to large input
+  @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
 }
+
+@mixin btn-small {
+  // line-height: ensure proper height of button next to small input
+  @include button-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small);
+}
+@mixin btn-mini {
+  padding: 1px 5px;
+}
+
+.btn-large {@include btn-large}
 .btn-small,
-.btn-mini {
-  padding: $padding-small-vertical $padding-small-horizontal;
-  font-size: $font-size-small;
-  line-height: $line-height-small;
-  border-radius: $border-radius-small;
-}
-.btn-mini {
-  padding: 3px 5px;
-}
+.btn-mini {@include btn-small}
+.btn-mini {@include btn-mini}
 
 // 块级按钮
 // -------------------------
@@ -245,23 +253,19 @@ $btn-link-disabled-color:        $gray-light !default;
     border-top-color: #fff;
   }
 }
-.dropup .caret {
-  .btn-default & {
+.dropup {
+  & .btn-default .caret {
     border-bottom-color: $btn-default-color;
   }
-  .btn-primary &,
-  .btn-success &,
-  .btn-warning &,
-  .btn-danger &,
-  .btn-info & {
-    border-bottom-color: #fff;
+  .btn-primary,
+  .btn-success,
+  .btn-warning,
+  .btn-danger,
+  .btn-info {
+   .caret {
+      border-bottom-color: #fff;
+    }
   }
-}
-.btn-large .caret {
-  border-width: $caret-width-large;
-}
-.dropup .btn-large .caret {
-  border-bottom-width: $caret-width-large;
 }
 
 // 搞个长得像按钮的 DIV
@@ -288,8 +292,13 @@ $btn-link-disabled-color:        $gray-light !default;
 }
 
 // 避免相邻的按钮呈现出两条边框
-.btn-group .btn + .btn {
-  margin-left: -1px;
+.btn-group {
+  .btn + .btn,
+  .btn + .btn-group,
+  .btn-group + .btn,
+  .btn-group + .btn-group {
+    margin-left: -1px;
+  }
 }
 
 // 由多组按钮组形成一個按鈕欄
@@ -347,7 +356,13 @@ $btn-link-disabled-color:        $gray-light !default;
   outline: 0;
 }
 
+// Sizing
+//
+// Remix the default button sizing classes into new ones for easier manipulation.
 
+.btn-group-xs > .btn { @include btn-xs(); }
+.btn-group-sm > .btn { @include btn-sm(); }
+.btn-group-lg > .btn { @include btn-lg(); }
 
 // 分离式下拉按钮
 // ----------------------
@@ -366,28 +381,72 @@ $btn-link-disabled-color:        $gray-light !default;
   @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
 }
 
+// Reposition the caret
+.btn .caret {
+  margin-left: 0;
+}
+// Carets in other button sizes
+.btn-large .caret {
+  border-width: $caret-width-large $caret-width-large 0;
+  border-bottom-width: 0;
+}
+// Upside down carets for .dropup
+.dropup .btn-large .caret {
+  border-width: 0 $caret-width-large $caret-width-large;
+}
+
 // 垂直按钮组
 // ----------------------
+.btn-group-vertical {
+  > .btn,
+  > .btn-group {
+    display: block;
+    float: none;
+    width: 100%;
+    max-width: 100%;
+  }
 
-.btn-group-vertical > .btn {
-  display: block;
-  float: none;
-  width: 100%;
-  max-width: 100%;
-  + .btn {
+  // Clear floats so dropdown menus can be properly placed
+  > .btn-group {
+    @include clearfix();
+    > .btn {
+      float: none;
+    }
+  }
+
+  > .btn + .btn,
+  > .btn + .btn-group,
+  > .btn-group + .btn,
+  > .btn-group + .btn-group {
     margin-top: -1px;
+    margin-left: 0;
   }
 }
-.btn-group-vertical .btn {
+
+.btn-group-vertical > .btn {
   &:not(:first-child):not(:last-child) {
     border-radius: 0;
   }
   &:first-child:not(:last-child) {
+    border-top-right-radius: $border-radius-base;
     @include border-bottom-radius(0);
   }
   &:last-child:not(:first-child) {
+    border-bottom-left-radius: $border-radius-base;
     @include border-top-radius(0);
   }
+}
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+.btn-group-vertical > .btn-group:first-child {
+  > .btn:last-child,
+  > .dropdown-toggle {
+    @include border-bottom-radius(0);
+  }
+}
+.btn-group-vertical > .btn-group:last-child > .btn:first-child {
+  @include border-top-radius(0);
 }
 
 
@@ -398,6 +457,7 @@ $btn-link-disabled-color:        $gray-light !default;
   display: table;
   width: 100%;
   table-layout: fixed;
+  border-collapse: separate;
   .btn {
     float: none;
     display: table-cell;
@@ -407,8 +467,8 @@ $btn-link-disabled-color:        $gray-light !default;
 
 
 // 多选和单选
-.btn-group[data-toggle="buttons"] > .btn > input[type="radio"],
-.btn-group[data-toggle="buttons"] > .btn > input[type="checkbox"] {
+[data-toggle="buttons"] > .btn > input[type="radio"],
+[data-toggle="buttons"] > .btn > input[type="checkbox"] {
   display: none;
 }
 

@@ -10,9 +10,14 @@
 // 但经测试，在现代浏览器中使用通配符对渲染性能的影响其实很有限
 // ----------------------
 * {
-  @include box-sizing(border-box);
 	margin:0; 
   padding:0;
+}
+
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
 }
 
 // HTML5
@@ -161,7 +166,6 @@ textarea {
     overflow: auto; // 移除 IE 中默认的垂直滚动条
     vertical-align: top; // 增强可读性
 }
-
 // 图片
 // ----------------------
 img { 

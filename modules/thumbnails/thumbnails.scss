@@ -17,22 +17,13 @@ $thumbnail-border-radius:     $border-radius-base !default;
 // Thumbnails 樣式
 // -------------------------
 // 縮略的元素
-.thumbnail,
-.img-thumbnail {
-  padding: 4px;
-  line-height: $line-height-base;
-  background-color: $thumbnail-bg;
-  border: 1px solid $thumbnail-border;
-  border-radius: $thumbnail-border-radius;
-  @include transition(all .2s ease-in-out);
-}
-
 .thumbnail {
-  display: block;
-}
-.thumbnail > img,
-.img-thumbnail {
-  @include img-responsive();
+  @extend .img-thumbnail;
+  display: block; // Override the inline-block from `.img-thumbnail`
+
+  > img {
+    @include img-responsive();
+  }
 }
 
 // 爲鏈接設置鼠標懸浮樣式
@@ -47,6 +38,6 @@ a.thumbnail:focus {
   margin-right: auto;
 }
 .thumbnail .caption {
-  padding: 9px;
+  padding: $thumbnail-caption-padding;
   color: $thumbnail-caption-color;
 }

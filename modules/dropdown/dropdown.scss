@@ -20,6 +20,10 @@ $dropdown-link-color:            $gray-dark !default;
 $dropdown-link-hover-color:      #fff !default;
 $dropdown-link-hover-bg:         $dropdown-link-active-bg !default;
 
+$dropdown-link-disabled-color:   $gray-light !default;
+
+$dropdown-header-color:          $gray-light !default;
+
 $dropdown-caret-color:           #000 !default;
 
 // Z-index master list
@@ -45,6 +49,9 @@ $zindex-dropdown:          1000 !default;
   border-top:   $caret-width-base solid $dropdown-caret-color;
   border-right: $caret-width-base solid transparent;
   border-left:  $caret-width-base solid transparent;
+  // Firefox fix for https://github.com/twbs/bootstrap/issues/9538. Once fixed,
+  // we can just straight up remove this.
+  border-bottom: 0 dotted;
   content: "";
 }
 // The dropdown wrapper (div)
@@ -52,6 +59,11 @@ $zindex-dropdown:          1000 !default;
 .dropdown {
   position: relative;
 }
+// Prevent the focus on the dropdown toggle when closing dropdowns
+.dropdown-toggle:focus {
+  outline: 0;
+}
+
 // 下拉菜單 (ul)
 // ----------------------
 .dropdown-menu {
@@ -65,12 +77,13 @@ $zindex-dropdown:          1000 !default;
   padding: 5px 0;
   margin: 2px 0 0;
   list-style: none;
+  font-size: $font-size-base;
   background-color: $dropdown-bg;
   border: 1px solid $dropdown-fallback-border; // IE8 fallback
   border: 1px solid $dropdown-border;
   border-radius: $border-radius-base;
+  background-clip: padding-box;
   @include box-shadow(0 6px 12px rgba(0,0,0,.175));
-  @include background-clip(padding-box);
 
   // 右對齊的下拉菜單
   &.fl-ri {
@@ -102,8 +115,7 @@ $zindex-dropdown:          1000 !default;
   &:focus {
     text-decoration: none;
     color: $dropdown-link-hover-color;
-    @include gradient-vertical($start-color: $dropdown-link-hover-bg, $end-color: darken($dropdown-link-hover-bg, 5%));
-    background-color: darken($dropdown-link-hover-bg, 5%);
+    background-color: $dropdown-link-hover-bg;
   }
 }
 
@@ -114,8 +126,7 @@ $zindex-dropdown:          1000 !default;
     color: $dropdown-link-active-color;
     text-decoration: none;
     outline: 0;
-    @include gradient-vertical($start-color: $dropdown-link-active-bg, $end-color: darken($dropdown-link-active-bg, 5%));
-    background-color: darken($dropdown-link-active-bg, 5%);
+    background-color: $dropdown-link-active-bg;
   }
 }
 
@@ -125,7 +136,7 @@ $zindex-dropdown:          1000 !default;
   &,
   &:hover,
   &:focus {
-    color: $gray-light;
+    color: $dropdown-link-disabled-color;
   }
 }
 .dropdown-menu > .disabled > a {
@@ -160,7 +171,7 @@ $zindex-dropdown:          1000 !default;
   padding: 3px 20px;
   font-size: $font-size-small;
   line-height: $line-height-base;
-  color: $gray-light;
+  color: $dropdown-header-color;
 }
 
 
@@ -189,7 +200,9 @@ $zindex-dropdown:          1000 !default;
 .navbar-fixed-bottom .dropdown {
   // 改爲向上的箭頭
   .caret {
-    border-top: 0;
+    // Firefox fix for https://github.com/twbs/bootstrap/issues/9538. Once this
+    // gets fixed, restore `border-top: 0;`.
+    border-top: 0 dotted;
     border-bottom: 4px solid $dropdown-caret-color;
     content: "";
   }
@@ -201,6 +214,18 @@ $zindex-dropdown:          1000 !default;
   }
 }
 
+// Component alignment
+//
+// Reiterate per navbar.less and the modified component alignment there.
+
+@media (min-width: $grid-float-breakpoint) {
+  .navbar-right {
+    .dropdown-menu {
+      right: 0;
+      left: auto;
+    }
+  }
+}
 
 
 /* END Dropdown */

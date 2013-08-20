@@ -11,6 +11,7 @@
 $input-bg:                       #fff !default;
 $input-bg-disabled:              $gray-lighter !default;
 
+$input-color:                    $gray !default;
 $input-border:                   #ccc !default;
 $input-border-radius:            $border-radius-base !default;
 $input-border-focus:             #66afe9 !default;
@@ -21,9 +22,10 @@ $input-height-base:              ($line-height-computed + ($padding-base-vertica
 $input-height-large:             (floor($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2) !default;
 $input-height-small:             (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2) !default;
 
-//$form-actions-bg:                #f5f5f5 !default;
+$legend-color:                   $gray-dark !default;
 $legend-border-color:            #e5e5e5 !default;
 
+$input-group-addon-bg:           $gray-lighter !default;
 $input-group-addon-border-color: $input-border !default;
 
 // -------------------------
@@ -87,6 +89,30 @@ $input-group-addon-border-color: $input-border !default;
     @include box-shadow((inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $color-rgba));
   }
 }
+// Form control sizing
+//
+// Relative text size, padding, and border-radii changes for form controls. For
+// horizontal sizing, wrap controls in the predefined grid classes. `<select>`
+// element gets special love because it's special, and that's a fact!
+
+@mixin input-size($selector, $input-height, $padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+  #{$selector} {
+    height: $input-height;
+    padding: $padding-vertical $padding-horizontal;
+    font-size: $font-size;
+    line-height: $line-height;
+    border-radius: $border-radius;
+  }
+
+  select#{$selector} {
+    height: $input-height;
+    line-height: $input-height;
+  }
+
+  textarea#{$selector} {
+    height: auto;
+  }
+}
 
 
 // -------------------------
@@ -102,7 +128,7 @@ legend {
   margin-bottom: $line-height-computed;
   font-size: ($font-size-base * 1.5);
   line-height: inherit;
-  color: $gray-dark;
+  color: $legend-color;
   border: 0;
   border-bottom: 1px solid $legend-border-color;
 }
@@ -190,7 +216,7 @@ input[type="number"] {
   padding: $padding-base-vertical $padding-base-horizontal;
   font-size: $font-size-base;
   line-height: $line-height-base;
-  color: $gray;
+  color: $input-color;
   vertical-align: middle;
   background-color: $input-bg;
   border: 1px solid $input-border;
@@ -199,17 +225,17 @@ input[type="number"] {
   @include transition((border-color ease-in-out .15s, box-shadow ease-in-out .15s));
 
   @include form-control-focus();
-}
 
-// Disabled and read-only inputs
-// Note: HTML5 says that inputs under a fieldset > legend:first-child won't be
-//   disabled if the fieldset is disabled. Due to implementation difficulty,
-//   we don't honor that edge case; we style them as disabled anyway.
-.form-control[disabled],
-.form-control[readonly],
-fieldset[disabled] .form-control {
-  cursor: not-allowed;
-  background-color: $input-bg-disabled;
+  // Disabled and read-only inputs
+  // Note: HTML5 says that controls under a fieldset > legend:first-child won't
+  // be disabled if the fieldset is disabled. Due to implementation difficulty,
+  // we don't honor that edge case; we style them as disabled anyway.
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    background-color: $input-bg-disabled;
+  }
 }
 
 // Reset height for `textarea`s
@@ -272,44 +298,27 @@ textarea.form-control {
   margin-left: 10px;
 }
 
+// Apply same disabled cursor tweak as for inputs
+//
+// Note: Neither radios nor checkboxes can be readonly.
+input[type="radio"],
+input[type="checkbox"],
+.radio,
+.radio-inline,
+.checkbox,
+.checkbox-inline {
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+  }
+}
+
 // 控件的规格
 // -------------------------
-// Form control sizing
-//
-// Relative text size, padding, and border-radii changes for form controls. For
-// horizontal sizing, wrap controls in the predefined grid classes. `<select>`
-// element gets special love because it's special, and that's a fact!
+@include input-size(".input-small", $input-height-small, $padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small);
 
-.input-large {
-  height: $input-height-large;
-  padding: $padding-large-vertical $padding-large-horizontal;
-  font-size: $font-size-large;
-  border-radius: $border-radius-large;
-}
-.input-small {
-  height: $input-height-small;
-  padding: $padding-small-vertical $padding-small-horizontal;
-  font-size: $font-size-small;
-  line-height: $line-height-small;
-  border-radius: $border-radius-small;
-}
+@include input-size(".input-large", $input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
 
-select {
-  &.input-large {
-    height: $input-height-large;
-    line-height: $input-height-large;
-  }
-  &.input-small {
-    height: $input-height-small;
-    line-height: $input-height-small;
-  }
-}
-textarea {
-  &.input-large,
-  &.input-small {
-    height: auto;
-  }
-}
 // 表单项状态反馈
 // --------------------------
 // Form control feedback states
@@ -334,7 +343,7 @@ textarea {
 
 .form-control-static {
   margin-bottom: 0; // Remove default margin from `p`
-  padding-top: $padding-base-vertical;
+  padding-top: ($padding-base-vertical + 1);
 }
 
 
@@ -358,28 +367,44 @@ textarea {
 
 // Inline forms
 //
-// Make forms appear inline(-block).
-
+// Make forms appear inline(-block) by adding the `.form-inline` class. Inline
+// forms begin stacked on extra small (mobile) devices and then go inline when
+// viewports reach <768px.
+//
+// Requires wrapping inputs and labels with `.form-group` for proper display of
+// default HTML form controls and our custom form controls (e.g., input groups).
+//
+// Heads up! This is mixin-ed into `.navbar-form` in navbars.less.
 @mixin form-inline {
-  .form-control,
-  .radio,
-  .checkbox {
-    display: inline-block;
-  }
+  // Kick in the inline
+  @media (min-width: $screen-tablet) {
+    // Inline-block all the things for "inline"
+    .form-group  {
+      display: inline-block;
+      margin-bottom: 0;
+      vertical-align: middle;
+    }
 
-  // Remove default margin on radios/checkboxes that were used for stacking, and
-  // then undo the floating of radios and checkboxes to match (which also avoids
-  // a bug in WebKit: https://github.com/twbs/bootstrap/issues/1969).
-  .radio,
-  .checkbox {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-left: 0;
-  }
-  .radio input[type="radio"],
-  .checkbox input[type="checkbox"] {
-    float: none;
-    margin-left: 0;
+    // In navbar-form, allow folks to *not* use `.form-group`
+    .form-control {
+      display: inline-block;
+    }
+
+    // Remove default margin on radios/checkboxes that were used for stacking, and
+    // then undo the floating of radios and checkboxes to match (which also avoids
+    // a bug in WebKit: https://github.com/twbs/bootstrap/issues/1969).
+    .radio,
+    .checkbox {
+      display: inline-block;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-left: 0;
+    }
+    .radio input[type="radio"],
+    .checkbox input[type="checkbox"] {
+      float: none;
+      margin-left: 0;
+    }
   }
 }
 
@@ -391,22 +416,28 @@ textarea {
 // Horizontal forms are built on grid classes and allow you to create forms with
 // labels on the left and inputs on the right.
 
-.form-horizontal .control-label,
-.form-horizontal .radio-inline,
-.form-horizontal .checkbox-inline {
-  padding-top: $padding-base-vertical;
-}
-
 .form-horizontal {
+  // Consistent vertical alignment of labels, radios, and checkboxes
+  .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: ($padding-base-vertical + 1); // Default padding plus a border
+  }
+
+  // Make form groups behave like rows
   .form-group {
     @include make-row();
   }
-}
 
-// Only right align form labels here when the columns stop stacking
-@media (min-width: $screen-table) {
-  .form-horizontal .control-label {
-    text-align: right;
+  // Only right align form labels here when the columns stop stacking
+  @media (min-width: $screen-tablet) {
+    .control-label {
+      text-align: right;
+    }
   }
 }
 
@@ -430,6 +461,18 @@ textarea {
     margin-bottom: 0;
   }
 }
+// Sizing options
+//
+// Remix the default form control sizing classes into new ones for easier
+// manipulation.
+
+.input-group-large > .form-control,
+.input-group-large > .input-group-addon,
+.input-group-large > .input-group-btn > .btn { @extend .input-large; }
+.input-group-small > .form-control,
+.input-group-small > .input-group-addon,
+.input-group-small > .input-group-btn > .btn { @extend .input-small; }
+
 
 // input 附加件样式
 // --------------------------
@@ -454,7 +497,7 @@ textarea {
   font-weight: normal;
   line-height: 1;
   text-align: center;
-  background-color: $gray-lighter;
+  background-color: $input-group-addon-bg;
   border: 1px solid $input-group-addon-border-color;
   border-radius: $border-radius-base;
 

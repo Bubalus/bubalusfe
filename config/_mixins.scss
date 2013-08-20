@@ -8,6 +8,13 @@
 // 基本方法  //////////////////////////////////
 // --------------------------------------------
 
+@mixin fl-ri {
+  float: right !important;
+}
+
+@mixin fl-le {
+  float: left !important;
+}
 // 清除浮動
 // ----------------------
 @mixin clear {
@@ -76,12 +83,11 @@
 
 // 響應式圖片 （圖片根據父容器尺寸縮放）
 // ----------------------
-@mixin img-responsive {
-  display: inline-block;
+@mixin img-responsive($display: block) {
+  display: $display;
   max-width: 100%;
   height: auto;
 }
-
 
 // --------------------------------------------
 // CSS3       /////////////////////////////////
@@ -159,18 +165,6 @@
      -moz-transition: -moz-transform $transition;
        -o-transition: -o-transform $transition;
           transition: transform $transition;
-}
-
-// 背景剪裁
-// ----------------------
-@mixin background-clip($clip) {
-  background-clip: $clip;
-}
-
-// 背景尺寸
-// ----------------------
-@mixin background-size($size) {
-  background-size: $size;
 }
 
 // 盒模型定義
@@ -307,7 +301,7 @@
 // RETINA 圖像支持
 // ----------------------
 @mixin img-retina($file-1x, $file-2x, $width-1x, $height-1x) {
-  background-image: url("#{$file-1x}");
+  background-image: url($file-1x);
 
   @media
   only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -328,10 +322,18 @@
 // -------------------------
 @mixin panel-variant($border, $heading-text-color, $heading-bg-color, $heading-border) {
   border-color: $border;
-  .panel-heading {
+  & > .panel-heading {
     color: $heading-text-color;
     background-color: $heading-bg-color;
     border-color: $heading-border;
+    + .panel-collapse .panel-body {
+      border-top-color: $border;
+    }
+  }
+  & > .panel-footer {
+    + .panel-collapse .panel-body {
+      border-bottom-color: $border;
+    }
   }
 }
 

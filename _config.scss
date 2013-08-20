@@ -33,7 +33,8 @@ $font-size-base:        14px !default;
 
 // 路徑指向
 $images-path:           "../project/images" !default;
-$glyphicons-font-path:  ".../modules/bubaluslayout/images" !default;
+$icon-font-path:        "../modules/bubaluslayout/images" !default;
+$icon-font-name:        "glyphicons-halflings-regular" !default;
 // 引入全局變量和方法
 // ----------------------
 @import "config/variables";

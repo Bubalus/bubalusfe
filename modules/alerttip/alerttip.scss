@@ -49,9 +49,7 @@ $alertTip-info-border:           $state-info-border !default;
 .alertTip {
   padding: $alertTip-padding;
   margin-bottom: $line-height-computed;
-  color: $alertTip-text;
-  background-color: $alertTip-bg;
-  border: 1px solid $alertTip-border;
+  border: 1px solid transparent;
   border-radius: $alertTip-border-radius;
 
   // Headings for larger alertTips
@@ -60,21 +58,10 @@ $alertTip-info-border:           $state-info-border !default;
     // Specified for the h4 to prevent conflicts of changing @headingsColor
     color: inherit;
   }
-  // Match the hr to the border of the alertTip
-  hr {
-    border-top-color: darken($alertTip-border, 5%);
-  }
+
   // Provide class for links that match alertTips
   .alertTip-link {
     font-weight: $alertTip-link-font-weight;
-    color: darken($alertTip-text, 10%);
-  }
-
-  // Adjust close link position
-  .close-btn {
-    position: relative;
-    top: -4px;
-    color: inherit;
   }
 
   // Improve alignment and spacing of inner content
@@ -84,6 +71,22 @@ $alertTip-info-border:           $state-info-border !default;
   }
   > p + p {
     margin-top: 5px;
+  }
+}
+
+// Dismissable alerts
+//
+// Expand the right padding and account for the close button's positioning.
+
+.alert-dismissable {
+ padding-right: ($alert-padding + 20);
+
+  // Adjust close link position
+  .close {
+    position: relative;
+    top: -2px;
+    right: -21px;
+    color: inherit;
   }
 }
 
@@ -97,7 +100,8 @@ $alertTip-info-border:           $state-info-border !default;
 }
 
 // Alternate styles
-// -------------------------
+//
+// Generate contextual modifier classes for colorizing the alert.
 
 .alertTip-success {
   @include alertTip-variant($alertTip-success-bg, $alertTip-success-border, $alertTip-success-text);
@@ -105,16 +109,18 @@ $alertTip-info-border:           $state-info-border !default;
     color: $alertTip-success-text;
   }
 }
+.alert-info {
+  @include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
+    color: $alertTip-info-text;
+}
+.alert-warning {
+  @include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text);
+    color: $alertTip-warning-text;
+}
 .alertTip-danger {
   @include alertTip-variant($alertTip-danger-bg, $alertTip-danger-border, $alertTip-danger-text);
   .close-btn {
     color: $alertTip-danger-text;
-  }
-}
-.alertTip-info {
-  @include alertTip-variant($alertTip-info-bg, $alertTip-info-border, $alertTip-info-text);
-  .close-btn {
-    color: $alertTip-info-text;
   }
 }
 

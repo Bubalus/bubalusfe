@@ -13,9 +13,11 @@ $blockquote-border-color:     $gray-lighter !default;
 $page-header-border-color:    $gray-lighter !default;
 // Jumbotron 大屏幕組件
 // -------------------------
+$jumbotron-padding:              30px !default;
+$jumbotron-color:                inherit !default;
 $jumbotron-bg:                   $gray-lighter !default;
+
 $jumbotron-heading-color:        inherit !default;
-$jumbotron-lead-color:           inherit !default;
 
 // Code
 // ------------------------
@@ -101,12 +103,13 @@ abbr.initialism {
 
 
 .jumbotron {
-  padding: 30px;
-  //margin-bottom: 30px;
+  padding: $jumbotron-padding;
+  margin-bottom: $jumbotron-padding;
   font-size: ($font-size-base * 1.5);
   font-weight: 200;
   line-height: ($line-height-base * 1.5);
-  color: $jumbotron-lead-color;
+  color: $jumbotron-color;
+  background-color: $jumbotron-bg;
   h1 {
     line-height: 1;
     margin-bottom: $line-height-computed;
@@ -116,9 +119,19 @@ abbr.initialism {
     line-height: 1.4;
   }
 
+  .container & {
+    border-radius: $border-radius-large; // Only round corners at higher resolutions if contained in a container
+  }
+
   @media screen and (min-width: $screen-table) {
-    padding: 50px 60px;
-    border-radius: $border-radius-large; // Only round corners at higher resolutions
+    padding-top:    ($jumbotron-padding * 1.6);
+    padding-bottom: ($jumbotron-padding * 1.6);
+
+    .container & {
+      padding-left:  ($jumbotron-padding * 2);
+      padding-right: ($jumbotron-padding * 2);
+    }
+
     h1 {
       font-size: ($font-size-base * 4.5);
     }
@@ -143,7 +156,7 @@ code {
   color: $code-color;
   background-color: $code-bg;
   white-space: nowrap;
-  border-radius: 4px;
+  border-radius: $border-radius-base;
 }
 
 // Blocks of code
@@ -155,7 +168,7 @@ pre {
   line-height: $line-height-base;
   word-break: break-all;
   word-wrap: break-word;
-  color: $gray-dark;
+  color: $pre-color;
   background-color: $pre-bg;
   border: 1px solid $pre-border-color;
   border-radius: $border-radius-base;
@@ -168,6 +181,7 @@ pre {
   // Account for some code outputs that place code tags in pre tags
   code {
     padding: 0;
+    font-size: inherit;
     color: inherit;
     white-space: pre-wrap;
     background-color: transparent;
@@ -177,7 +191,7 @@ pre {
 
 // Enable scrollable blocks of code
 .pre-scrollable {
-  max-height: 340px;
+  max-height: $pre-scrollable-max-height;
   overflow-y: scroll;
 }
 
