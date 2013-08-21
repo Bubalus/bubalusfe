@@ -11,46 +11,53 @@
 
 /* 載入 BubalusLayout 核心
 ----------------------------------*/
-@import "../modules/bubaluslayout/reset";
-@import "../modules/bubaluslayout/layout.scss";
-@import "../modules/bubaluslayout/common.scss";
-@import "../modules/bubaluslayout/responsive.scss";
+@import "modules/bubaluslayout/reset";
+@import "modules/bubaluslayout/layout.scss";
+@import "modules/bubaluslayout/common.scss";
+@import "modules/bubaluslayout/responsive.scss";
 
 /* 擴展組件
 ----------------------------------*/
 /* 麵包屑 */
-@import "../modules/alerttip/alerttip";
+@import "modules/alerttip/alerttip";
 /* 按鈕/按鈕組 */
-@import "../modules/button/button";
+@import "modules/button/button";
 /* 關閉按鈕 */
-@import "../modules/closebtn/closebtn";
+@import "modules/closebtn/closebtn";
 /* 菜單 */
-@import "../modules/dropdown/dropdown";
+@import "modules/dropdown/dropdown";
 /* 表單 */
-@import "../modules/form/form";
+@import "modules/form/form";
 /* 標簽 */
-@import "../modules/label/label";
+@import "modules/label/label";
 /* 導航 */
-@import "../modules/nav/nav";
+@import "modules/nav/nav";
 /* 分頁 */
-@import "../modules/page/page";
+@import "modules/modal/modal";
+/* 分頁 */
+@import "modules/page/page";
 /* 面板 */
-@import "../modules/panel/panel";
+@import "modules/panel/panel";
 /* 進度條 */
-@import "../modules/progress/progress";
+@import "modules/progress/progress";
 /* 幻燈片 */
-@import "../modules/slideshow/slideshow";
+@import "modules/slideshow/slideshow";
 /* 表格 */
-@import "../modules/table/table";
+@import "modules/table/table";
 /* Tabs */
-@import "../modules/tabs/tabs";
+@import "modules/tabs/tabs";
 /* 縮略圖 */
-@import "../modules/thumbnails/thumbnails";
+@import "modules/thumbnails/thumbnails";
 /* Tooltips */
-@import "../modules/tooltip/tooltip";
+@import "modules/tooltip/tooltip";
 /* 文本樣式 */
-@import "../modules/typography/typography";
+@import "modules/typography/typography";
+
+/* 載入自定義組件主題
+----------------------------------*/
+@import "modules/project/bubalus_theme";
+
 
 /* 載入項目樣式
 ----------------------------------*/
-@import "../project/docs";
+@import "project/docs";

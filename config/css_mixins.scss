@@ -9,10 +9,12 @@
 // --------------------------------------------
 
 @mixin fl-ri {
+  display: inline;
   float: right !important;
 }
 
 @mixin fl-le {
+  display: inline;
   float: left !important;
 }
 // 清除浮動

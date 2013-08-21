@@ -11,21 +11,21 @@ $alertTip-padding:               15px !default;
 $alertTip-border-radius:         $border-radius-base !default;
 $alertTip-link-font-weight:      bold !default;
 
-$alertTip-bg:                    $state-warning-bg !default;
-$alertTip-text:                  $state-warning-text !default;
-$alertTip-border:                $state-warning-border !default;
-
 $alertTip-success-bg:            $state-success-bg !default;
 $alertTip-success-text:          $state-success-text !default;
 $alertTip-success-border:        $state-success-border !default;
 
+$alert-info-bg:               $state-info-bg !default;
+$alert-info-text:             $state-info-text !default;
+$alert-info-border:           $state-info-border !default;
+
+$alert-warning-bg:            $state-warning-bg !default;
+$alert-warning-text:          $state-warning-text !default;
+$alert-warning-border:        $state-warning-border !default;
+
 $alertTip-danger-bg:             $state-danger-bg !default;
 $alertTip-danger-text:           $state-danger-text !default;
 $alertTip-danger-border:         $state-danger-border !default;
-
-$alertTip-info-bg:               $state-info-bg !default;
-$alertTip-info-text:             $state-info-text !default;
-$alertTip-info-border:           $state-info-border !default;
 
 
 @mixin alertTip-variant($background, $border, $text-color) {
