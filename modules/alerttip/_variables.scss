@@ -1,0 +1,25 @@
+// --------------------------------------------
+// BubalusFE - The front-end development framework
+//
+/* alertTipTip 變量 */
+// --------------------------------------------
+
+$alertTip-padding:               15px !default;
+$alertTip-border-radius:         $border-radius-base !default;
+$alertTip-link-font-weight:      bold !default;
+
+$alertTip-success-bg:            $state-success-bg !default;
+$alertTip-success-text:          $state-success-text !default;
+$alertTip-success-border:        $state-success-border !default;
+
+$alertTip-info-bg:               $state-info-bg !default;
+$alertTip-info-text:             $state-info-text !default;
+$alertTip-info-border:           $state-info-border !default;
+
+$alertTip-warning-bg:            $state-warning-bg !default;
+$alertTip-warning-text:          $state-warning-text !default;
+$alertTip-warning-border:        $state-warning-border !default;
+
+$alertTip-danger-bg:             $state-danger-bg !default;
+$alertTip-danger-text:           $state-danger-text !default;
+$alertTip-danger-border:         $state-danger-border !default;

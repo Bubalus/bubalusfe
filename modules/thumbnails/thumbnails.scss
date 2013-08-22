@@ -4,18 +4,11 @@
 /* Thumbnails - 一套縮圖样式 */
 // --------------------------------------------
 
-
 // -------------------------
-// Thumbnails 變量
+// 引入配置
 // -------------------------
-// -------------------------
-$thumbnail-padding:           4px !default;
-$thumbnail-bg:                $body-bg !default;
-$thumbnail-border:            #ddd !default;
-$thumbnail-border-radius:     $border-radius-base !default;
-
-$thumbnail-caption-color:     $text-color !default;
-$thumbnail-caption-padding:   9px !default;
+@import "variables";
+@import "mixins";
 
 // -------------------------
 // Thumbnails 樣式
@@ -44,4 +37,19 @@ a.thumbnail:focus {
 .thumbnail .caption {
   padding: $thumbnail-caption-padding;
   color: $thumbnail-caption-color;
+}
+
+// Image thumbnails
+//
+// Heads up! This is mixin-ed into thumbnails.less for `.thumbnail`.
+.img-thumbnail {
+  padding: $thumbnail-padding;
+  line-height: $line-height-base;
+  background-color: $thumbnail-bg;
+  border: 1px solid $thumbnail-border;
+  border-radius: $thumbnail-border-radius;
+  @include transition(all .2s ease-in-out);
+
+  // Keep them at most 100% wide
+  @include img-responsive(inline-block);
 }

@@ -149,8 +149,6 @@ $screen-table:              768px !default;
 // 針對平板電腦橫屏
 $screen-desktop:             1024px  !default;
 
-$screen-table-max:          ($screen-desktop - 1) !default;
-
 // 筆記本和臺機顯示器分辨率分界點
 $screen-large-desktop:       1280px !default;
 

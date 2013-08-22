@@ -1,6 +1,14 @@
+// --------------------------------------------
+// BubalusFE - The front-end development framework
 //
-// Modals
-// --------------------------------------------------
+/* Modal - 模式窗口 */
+// --------------------------------------------
+
+// -------------------------
+// 引入配置
+// -------------------------
+@import "variables";
+@import "mixins";
 
 // .modal-open      - body class for killing the scroll
 // .modal           - container to scroll within
@@ -106,7 +114,7 @@ body.modal-open,
   padding: ($modal-inner-padding - 1) $modal-inner-padding $modal-inner-padding;
   text-align: right; // right align buttons
   border-top: 1px solid $modal-footer-border-color;
-  @include clearfix(); // clear it in case folks use .pull-* classes on buttons
+  @include clear(); // clear it in case folks use .pull-* classes on buttons
 
   // Properly space out buttons
   .btn + .btn {
@@ -124,7 +132,7 @@ body.modal-open,
 }
 
 // Scale up the modal
-@media screen and (min-width: $screen-tablet) {
+@media screen and (min-width: $screen-table) {
 
   .modal-dialog {
     left: 50%;

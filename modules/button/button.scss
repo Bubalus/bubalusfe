@@ -5,83 +5,10 @@
 // --------------------------------------------
 
 // -------------------------
-// Buttons 變量
+// 引入配置
 // -------------------------
-$btn-font-weight:                normal !default;
-
-$btn-default-color:              #333 !default;
-$btn-default-bg:                 #fff !default;
-$btn-default-border:             #ccc !default;
-
-$btn-success-color:              #fff !default;
-$btn-success-bg:                 $brand-success !default;
-$btn-success-border:             darken($btn-success-bg, 5%) !default;
-
-$btn-warning-color:              #fff !default;
-$btn-warning-bg:                 $brand-warning !default;
-$btn-warning-border:             darken($btn-warning-bg, 5%) !default;
-
-$btn-danger-color:               #fff !default;
-$btn-danger-bg:                  $brand-danger !default;
-$btn-danger-border:              darken($btn-danger-bg, 5%) !default;
-
-$btn-info-color:                 #fff !default;
-$btn-info-bg:                    $brand-info !default;
-$btn-info-border:                darken($btn-info-bg, 5%) !default;
-
-$btn-link-disabled-color:        $gray-light !default;
-
-// -------------------------
-// Buttons 方法
-// -------------------------
-
-// Button pseudo states
-// -------------------------
-// Easily pump out default styles, as well as :hover, :focus, :active,
-// and disabled options for all buttons
-@mixin button-variant($selector, $color, $background, $border) {
-  #{$selector} {
-    color: $color;
-    background-color: $background;
-    border-color: $border;
-  }
-
-  #{$selector}:hover,
-  #{$selector}:focus,
-  #{$selector}:active,
-  #{$selector}.active,
-  .open .dropdown-toggle#{$selector} {
-    color: $color;
-    background-color: darken($background, 8%);
-        border-color: darken($border, 12%);
-  }
-  #{$selector}:active,
-  #{$selector}.active,
-  .open .dropdown-toggle#{$selector} {
-    background-image: none;
-  }
-  #{$selector}.disabled,
-  #{$selector}[disabled],
-  fieldset[disabled] #{$selector} {
-    &,
-    &:hover,
-    &:focus,
-    &:active,
-    &.active {
-      background-color: $background;
-          border-color: $border
-    }
-  }
-}
-
-// Button sizes
-// -------------------------
-@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
-  padding: $padding-vertical $padding-horizontal;
-  font-size: $font-size;
-  line-height: $line-height;
-  border-radius: $border-radius;
-}
+@import "variables";
+@import "mixins";
 
 // -------------------------
 // Buttons 樣式
@@ -360,9 +287,9 @@ $btn-link-disabled-color:        $gray-light !default;
 //
 // Remix the default button sizing classes into new ones for easier manipulation.
 
-.btn-group-xs > .btn { @include btn-xs(); }
-.btn-group-sm > .btn { @include btn-sm(); }
-.btn-group-lg > .btn { @include btn-lg(); }
+.btn-group-mini > .btn { @include btn-mini(); }
+.btn-group-small > .btn { @include btn-small(); }
+.btn-group-large > .btn { @include btn-large(); }
 
 // 分离式下拉按钮
 // ----------------------
@@ -408,7 +335,7 @@ $btn-link-disabled-color:        $gray-light !default;
 
   // Clear floats so dropdown menus can be properly placed
   > .btn-group {
-    @include clearfix();
+    @include clear();
     > .btn {
       float: none;
     }

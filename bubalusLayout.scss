@@ -7,7 +7,7 @@
 // --------------------------------------------
 
 // 載入配置文件
-@import "config";
+@import "modules/bubaluslayout/config";
 
 /* 載入 BubalusLayout 核心
 ----------------------------------*/
@@ -45,7 +45,7 @@
 /* 表格 */
 @import "modules/table/table";
 /* Tabs */
-@import "modules/tabs/tabs";
+//@import "modules/tabs/tabs";
 /* 縮略圖 */
 @import "modules/thumbnails/thumbnails";
 /* Tooltips */
@@ -55,7 +55,7 @@
 
 /* 載入自定義組件主題
 ----------------------------------*/
-@import "modules/project/bubalus_theme";
+//@import "project/bubalus_theme";
 
 
 /* 載入項目樣式

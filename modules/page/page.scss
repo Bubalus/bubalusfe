@@ -4,27 +4,11 @@
 /* Pagination - 一套分頁样式 */
 // --------------------------------------------
 
-
 // -------------------------
-// Pagination 變量
+// 引入配置
 // -------------------------
-
-$pagination-bg:                        #fff !default;
-$pagination-border:                    #ddd !default;
-
-$pagination-hover-bg:                  $gray-lighter !default;
-
-$pagination-active-bg:                 $brand-primary !default;
-$pagination-active-color:              #fff !default;
-
-$pagination-disabled-color:            $gray-light !default;
-
-// Pager
-// -------------------------
-
-$pager-border-radius:                  15px !default;
-$pager-disabled-color:                 $gray-light !default;
-
+@import "variables";
+@import "mixins";
 
 // -------------------------
 // Pagination 樣式

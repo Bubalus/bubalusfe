@@ -32,11 +32,12 @@ $responsive-support: 	true !default;
 $font-size-base:        14px !default;
 
 // 路徑指向
-$images-path:           "../project/images" !default;
-$icon-font-path:        "../modules/bubaluslayout/images" !default;
+$images-path:           "project/images" !default;
+$icon-font-path:        "modules/bubaluslayout/images" !default;
+
 // 引入全局變量和方法
 // ----------------------
-@import "config/css_variables";
-@import "config/css_mixins";
+@import "../config/global_variables";
+@import "../config/global_mixins";
 
 /* END Config */

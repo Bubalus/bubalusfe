@@ -5,15 +5,10 @@
 // --------------------------------------------
 
 // -------------------------
-// Progress bars 變量
+// 引入配置
 // -------------------------
-$progress-bg:                 #f5f5f5 !default;
-$progress-bar-color:          #fff !default;
-$progress-bar-bg:             $brand-primary !default;
-$progress-bar-success-bg:     $brand-success !default;
-$progress-bar-warning-bg:     $brand-warning !default;
-$progress-bar-danger-bg:      $brand-danger !default;
-$progress-bar-info-bg:        $brand-info !default;
+@import "variables";
+@import "mixins";
 
 // -------------------------
 // Progress bars 樣式

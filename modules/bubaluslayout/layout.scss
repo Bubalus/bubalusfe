@@ -8,18 +8,6 @@
 // Grid 变量
 // ----------------------
 
-// Container sizes
-// --------------------------------------------------
-
-// Small screen / tablet
-$container-tablet:            ((720px + $grid-gutter-width)) !default;
-
-// Medium screen / desktop
-$container-desktop:           ((940px + $grid-gutter-width)) !default;
-
-// Large screen / wide desktop
-$container-large-desktop:        ((1140px + $grid-gutter-width)) !default;
-
 
 // 设置栅格系统中 列 的数量
 $grid-columns:              12 !default;
@@ -27,6 +15,18 @@ $grid-columns:              12 !default;
 $grid-gutter-width:         20px !default;
 // 栅格响应点
 $grid-float-breakpoint:     $screen-table !default;
+// Container sizes
+// --------------------------------------------------
+
+// Small screen / tablet
+$container-table:            ((720px + $grid-gutter-width)) !default;
+
+// Medium screen / desktop
+$container-desktop:           ((940px + $grid-gutter-width)) !default;
+
+// Large screen / wide desktop
+$container-large-desktop:        ((1140px + $grid-gutter-width)) !default;
+
 
 
 
@@ -221,7 +221,7 @@ header, footer, nav, #main {
 // Note that `.col-sm-12` doesn't get floated on purpose—there's no need since
 // it's full-width.
 
-@media (min-width: $screen-tablet) {
+@media (min-width: $screen-table) {
   .container {
     max-width: $container-table;
   }

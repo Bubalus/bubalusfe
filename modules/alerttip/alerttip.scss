@@ -5,40 +5,10 @@
 // --------------------------------------------
 
 // -------------------------
-// alertTipTip 變量
+// 引入配置
 // -------------------------
-$alertTip-padding:               15px !default;
-$alertTip-border-radius:         $border-radius-base !default;
-$alertTip-link-font-weight:      bold !default;
-
-$alertTip-success-bg:            $state-success-bg !default;
-$alertTip-success-text:          $state-success-text !default;
-$alertTip-success-border:        $state-success-border !default;
-
-$alert-info-bg:               $state-info-bg !default;
-$alert-info-text:             $state-info-text !default;
-$alert-info-border:           $state-info-border !default;
-
-$alert-warning-bg:            $state-warning-bg !default;
-$alert-warning-text:          $state-warning-text !default;
-$alert-warning-border:        $state-warning-border !default;
-
-$alertTip-danger-bg:             $state-danger-bg !default;
-$alertTip-danger-text:           $state-danger-text !default;
-$alertTip-danger-border:         $state-danger-border !default;
-
-
-@mixin alertTip-variant($background, $border, $text-color) {
-  background-color: $background;
-  border-color: $border;
-  color: $text-color;
-  hr {
-    border-top-color: darken($border, 5%);
-  }
-  .alertTip-link {
-    color: darken($text-color, 10%);
-  }
-}
+@import "variables";
+@import "mixins";
 
 // 基本樣式
 // -------------------------
@@ -79,7 +49,7 @@ $alertTip-danger-border:         $state-danger-border !default;
 // Expand the right padding and account for the close button's positioning.
 
 .alert-dismissable {
- padding-right: ($alert-padding + 20);
+ padding-right: ($alertTip-padding + 20);
 
   // Adjust close link position
   .close {
@@ -93,9 +63,8 @@ $alertTip-danger-border:         $state-danger-border !default;
 .alertTip-closer {
   padding: $alertTip-padding;
   margin-bottom: $line-height-computed;
-  color: $alertTip-text;
-  background-color: $alertTip-bg;
-  border: 1px solid $alertTip-border;
+  color: #fff;
+  background-color: #000;
   border-radius: $alertTip-border-radius;
 }
 
@@ -109,12 +78,12 @@ $alertTip-danger-border:         $state-danger-border !default;
     color: $alertTip-success-text;
   }
 }
-.alert-info {
-  @include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
+.alertTip-info {
+  @include alertTip-variant($alertTip-info-bg, $alertTip-info-border, $alertTip-info-text);
     color: $alertTip-info-text;
 }
-.alert-warning {
-  @include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text);
+.alertTip-warning {
+  @include alertTip-variant($alertTip-warning-bg, $alertTip-warning-border, $alertTip-warning-text);
     color: $alertTip-warning-text;
 }
 .alertTip-danger {

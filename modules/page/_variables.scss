@@ -1,0 +1,18 @@
+// --------------------------------------------
+// BubalusFE - The front-end development framework
+//
+/* Pagination - 變量 */
+// --------------------------------------------
+
+$pagination-bg:                        #fff !default;
+$pagination-border:                    #ddd !default;
+
+$pagination-hover-bg:                  $gray-lighter !default;
+
+$pagination-active-bg:                 $brand-primary !default;
+$pagination-active-color:              #fff !default;
+
+$pagination-disabled-color:            $gray-light !default;
+
+$pager-border-radius:                  15px !default;
+$pager-disabled-color:                 $gray-light !default;

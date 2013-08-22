@@ -1,0 +1,15 @@
+// --------------------------------------------
+// BubalusFE - The front-end development framework
+//
+/* Table - 變量 */
+// --------------------------------------------
+
+$table-cell-padding:                 8px !default;
+$table-condensed-cell-padding:       5px !default;
+
+$table-bg:                           transparent !default; // overall background-color
+$table-bg-accent:                    #f9f9f9 !default; // for striping
+$table-bg-hover:                     #f5f5f5 !default;
+$table-bg-active:                    $table-bg-hover !default;
+
+$table-border-color:                 #ddd !default; // table and cell border

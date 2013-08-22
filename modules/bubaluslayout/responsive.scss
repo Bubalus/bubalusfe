@@ -42,59 +42,59 @@
 // Visibility utilities
 
 
-@include responsive-invisibility(".visible-xs");
-@include responsive-invisibility(".visible-sm");
-@include responsive-invisibility(".visible-md");
-@include responsive-invisibility(".visible-lg");
+@include responsive-invisibility(".visible-phone");
+@include responsive-invisibility(".visible-table");
+@include responsive-invisibility(".visible-desktop");
+@include responsive-invisibility(".visible-large");
 
-@include responsive-visibility(".hidden-xs");
-@include responsive-visibility(".hidden-sm");
-@include responsive-visibility(".hidden-md");
-@include responsive-visibility(".hidden-lg");
+@include responsive-visibility(".hidden-phone");
+@include responsive-visibility(".hidden-table");
+@include responsive-visibility(".hidden-desktop");
+@include responsive-visibility(".hidden-large");
 
-@media (max-width: $screen-xs-max) {
-  @include responsive-visibility(".visible-xs");
-  @include responsive-visibility(".visible-sm.visible-xs");
-  @include responsive-visibility(".visible-md.visible-xs");
-  @include responsive-visibility(".visible-lg.visible-xs");
+@media (max-width: $screen-phone-max) {
+  @include responsive-visibility(".visible-phone");
+  @include responsive-visibility(".visible-table.visible-phone");
+  @include responsive-visibility(".visible-desktop.visible-phone");
+  @include responsive-visibility(".visible-large.visible-phone");
 
-  @include responsive-invisibility(".hidden-xs");
-  @include responsive-invisibility(".hidden-sm.hidden-xs");
-  @include responsive-invisibility(".hidden-md.hidden-xs");
-  @include responsive-invisibility(".hidden-lg.hidden-xs");
+  @include responsive-invisibility(".hidden-phone");
+  @include responsive-invisibility(".hidden-table.hidden-phone");
+  @include responsive-invisibility(".hidden-desktop.hidden-phone");
+  @include responsive-invisibility(".hidden-large.hidden-phone");
 }
-@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
-  @include responsive-visibility(".visible-xs.visible-sm");
-  @include responsive-visibility(".visible-sm");
-  @include responsive-visibility(".visible-md.visible-sm");
-  @include responsive-visibility(".visible-lg.visible-sm");
+@media (min-width: $screen-table) and (max-width: $screen-table-max) {
+  @include responsive-visibility(".visible-phone.visible-table");
+  @include responsive-visibility(".visible-table");
+  @include responsive-visibility(".visible-desktop.visible-table");
+  @include responsive-visibility(".visible-large.visible-table");
 
-  @include responsive-invisibility(".hidden-xs.hidden-sm");
-  @include responsive-invisibility(".hidden-sm");
-  @include responsive-invisibility(".hidden-md.hidden-sm");
-  @include responsive-invisibility(".hidden-lg.hidden-sm");
+  @include responsive-invisibility(".hidden-phone.hidden-table");
+  @include responsive-invisibility(".hidden-table");
+  @include responsive-invisibility(".hidden-desktop.hidden-table");
+  @include responsive-invisibility(".hidden-large.hidden-table");
 }
-@media (min-width: $screen-md) and (max-width: $screen-md-max) {
-  @include responsive-visibility(".visible-xs.visible-md");
-  @include responsive-visibility(".visible-sm.visible-md");
-  @include responsive-visibility(".visible-md");
-  @include responsive-visibility(".visible-lg.visible-md");
+@media (min-width: $screen-desktop) and (max-width: $screen-desktop-max) {
+  @include responsive-visibility(".visible-phone.visible-desktop");
+  @include responsive-visibility(".visible-table.visible-desktop");
+  @include responsive-visibility(".visible-desktop");
+  @include responsive-visibility(".visible-large.visible-desktop");
 
-  @include responsive-invisibility(".hidden-xs.hidden-md");
-  @include responsive-invisibility(".hidden-sm.hidden-md");
-  @include responsive-invisibility(".hidden-md");
-  @include responsive-invisibility(".hidden-lg.hidden-md");
+  @include responsive-invisibility(".hidden-phone.hidden-desktop");
+  @include responsive-invisibility(".hidden-table.hidden-desktop");
+  @include responsive-invisibility(".hidden-desktop");
+  @include responsive-invisibility(".hidden-large.hidden-desktop");
 }
-@media (min-width: $screen-lg) {
-  @include responsive-visibility(".visible-xs.visible-lg");
-  @include responsive-visibility(".visible-sm.visible-lg");
-  @include responsive-visibility(".visible-md.visible-lg");
-  @include responsive-visibility(".visible-lg");
+@media (min-width: $screen-large-desktop) {
+  @include responsive-visibility(".visible-phone.visible-large");
+  @include responsive-visibility(".visible-table.visible-large");
+  @include responsive-visibility(".visible-desktop.visible-large");
+  @include responsive-visibility(".visible-large");
 
-  @include responsive-invisibility(".hidden-xs.hidden-lg");
-  @include responsive-invisibility(".hidden-sm.hidden-lg");
-  @include responsive-invisibility(".hidden-md.hidden-lg");
-  @include responsive-invisibility(".hidden-lg");
+  @include responsive-invisibility(".hidden-phone.hidden-large");
+  @include responsive-invisibility(".hidden-table.hidden-large");
+  @include responsive-invisibility(".hidden-desktop.hidden-large");
+  @include responsive-invisibility(".hidden-large");
 }
 
 

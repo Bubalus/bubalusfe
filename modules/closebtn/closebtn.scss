@@ -4,11 +4,11 @@
 /* CloseBtn - 関閉按鈕 */
 // --------------------------------------------
 
-// Close
-// ------------------------
-$close-color:                 #000 !default;
-$close-font-weight:           bold !default;
-$close-text-shadow:           0 1px 0 #fff !default;
+// -------------------------
+// 引入配置
+// -------------------------
+@import "variables";
+@import "mixins";
 
 .close-btn {
   float: right;

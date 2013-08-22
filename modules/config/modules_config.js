@@ -2,9 +2,8 @@ seajs.config({
   // 设置别名，方便调用
   alias: {
     'jquery': 'modules/jquery/jquery-1.10.2.js',
-
-    'alerttip': 'modules/alerttip/alerttip',
-    'button': 'modules/button/button',
+    'alerttip': 'modules/alerttip/alerttip.js',
+    'button': 'modules/button/button.js',
     'dropdown': 'modules/dropdown/dropdown',
     'guide': 'modules/guide/guide',
     'loadtip': 'modules/loadtip/loadtip',
