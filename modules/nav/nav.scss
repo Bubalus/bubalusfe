@@ -31,7 +31,7 @@
       &:hover,
       &:focus {
         text-decoration: none;
-        //background-color: $nav-link-hover-bg;
+        background-color: $nav-link-hover-bg;
       }
     }
 
@@ -40,7 +40,7 @@
       &:hover,
       &:focus {
         color: $nav-pills-active-link-hover-color;
-        //background-color: $nav-pills-active-link-hover-bg;
+        background-color: $nav-pills-active-link-hover-bg;
       }
     }
 
@@ -164,7 +164,7 @@
   }
 }
 
-.nav-justified { @include nav-justified() }
+.nav-justified { @include nav-justified(); }
 
 
 // Tabbable tabs
@@ -787,4 +787,11 @@ a.nav-list-item {
     color: $breadcrumb-active-color;
   }
 }
+
+// -------------------------
+// 引入主題樣式
+// -------------------------
+
+@import "theme";
+
 /* END Navs */

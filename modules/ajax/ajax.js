@@ -1,9 +1,7 @@
 +(function($, undefined) {
 	"use strict";
 
-	var pluginName = 'scojs_ajax';
-
-	$(document).on('click.' + pluginName, '[data-trigger="ajax"]', function() {
+	$(document).on('click.scojs_ajax', '[data-trigger="ajax"]', function() {
 		var $this = $(this)
 			,data = $this.data()
 			,$target

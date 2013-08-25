@@ -20,20 +20,22 @@ a?e.use(c,function(){c.splice(0,a);e.preload(b)},h.cwd+"_preload_"+w++):b()};f.u
 c){P.push(c)});B.preload=P;f.config=function(b){for(var c in b){var a=b[c],d=h[c];if(d&&X(d))for(var e in a)d[e]=a[e];else A(d)?a=d.concat(a):"base"===c&&("/"===a.slice(-1)||(a+="/"),a=I(a)),h[c]=a}m("config",b);return f}}})(this);
 
 seajs.config({
+  base: "modules/",
   // 设置别名，方便调用
   alias: {
-    'jquery': 'modules/jquery/jquery-1.10.2.js',
-    'alerttip': 'modules/alerttip/alerttip.js',
-    'button': 'modules/button/button.js',
-    'dropdown': 'modules/dropdown/dropdown',
-    'guide': 'modules/guide/guide',
-    'loadtip': 'modules/loadtip/loadtip',
-    'modal': 'modules/modal/modal',
-    'scrollbar': 'modules/scrollbar/scrollbar',
-    'slideshow': 'modules/slideshow/slideshow',
-    'step': 'modules/step/step',
-    'tabs': 'modules/tabs/tabs',
-    'tooltip': 'modules/tooltip/tooltip'
+    'jquery': 'jquery/jquery-1.10.2.js',
+    'alerttip': 'alerttip/alerttip.js',
+    'button': 'button/button.js',
+    'dropdown': 'dropdown/dropdown',
+    'guide': 'guide/guide',
+    'loadtip': 'loadtip/loadtip',
+    'modal': 'modal/modal',
+    'scrollbar': 'scrollbar/scrollbar',
+    'slideshow': 'slideshow/slideshow',
+    'step': 'step/step',
+    'tabs': 'tabs/tabs',
+    'tooltip': 'tooltip/tooltip',
+    'transition': 'transition/transition'
   },
   preload: ["jquery"]
 

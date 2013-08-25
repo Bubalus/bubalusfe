@@ -108,3 +108,11 @@
 .progress-bar-info {
   @include progress-bar-variant($progress-bar-info-bg);
 }
+
+// -------------------------
+// 引入主題樣式
+// -------------------------
+
+@import "theme";
+
+/* END Progress */

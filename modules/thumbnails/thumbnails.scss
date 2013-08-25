@@ -53,3 +53,11 @@ a.thumbnail:focus {
   // Keep them at most 100% wide
   @include img-responsive(inline-block);
 }
+
+// -------------------------
+// 引入主題樣式
+// -------------------------
+
+@import "theme";
+
+/* END Thumbnail */

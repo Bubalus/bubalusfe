@@ -17,6 +17,9 @@ header {
 
   .jumbotron{
     color: #172b36;
+    background-color: transparent;
+    background-image: none;
+    border:none;
   }
 }
 #logo {
@@ -40,27 +43,35 @@ header {
   background-repeat: repeat-x;
   margin: 0 auto;
   padding-left:40px;
-  
+
   .navbar-nav > li {
     border-top:7px solid transparent;
-  }
-  .navbar-nav > li.active{
-    border-top:7px solid #5b912f;
-  }
-  .navbar-nav > li > a {
-    line-height: 43px;
-    padding:0 40px;
-    color: #76a4bd;
-  }
-  .navbar-nav > li > a:hover {
-    color: #fff;
-  }
-  .navbar-nav > .active > a,
-  .navbar-nav > .active > a:hover {
-    color: #fff;
-    background-color: #112028;
+
+    > a {
+      line-height: 43px;
+      padding:0 40px;
+      color: #76a4bd;
+
+      &:hover,
+      &:focus {
+        color: #fff;
+        background-color: transparent;
+      }
+    }
+    &.active{
+      border-top:7px solid #5b912f;
+    }
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: #fff;
+        background-color: #112028;
+      }
+    }
   }
 }
+
 @media (max-width: $screen-table) {
   .docs-nav {
     padding:0;

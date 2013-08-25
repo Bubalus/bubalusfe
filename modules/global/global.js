@@ -4,8 +4,10 @@
 /* Global.js - 全局 Javascript */
 // 一些常用的 JS 方法和全局事件
 // --------------------------------------------
-Utility = {
-	// Cookie 讀寫
+Global = {
+// -------------------------
+// Cookie 讀寫
+// -------------------------
 	cookieGet : function (name) {
 		var nameEQ = name + "=";
 		var ca = document.cookie.split(';');
@@ -18,7 +20,6 @@ Utility = {
 				return c.substring(nameEQ.length,c.length);
 			}
 		};
-
 		return null;
 	},
 	cookieSet : function(name,value,days,domain) {
@@ -31,17 +32,68 @@ Utility = {
 		}
 		document.cookie = name+"="+value+expires+"; domain="+domain+"; path=/";
 	},
-	/* ctrl+enter 提交表單 */ 
+
+// -------------------------
+// 表單項為空值時禁用按鈕
+// -------------------------
+	buttonStatus : function(input, btn){
+		var timer;
+
+		//默认为按钮禁用状态
+		if(!input.val() || ($.browser.msie && input.val() == input.attr('placeholder'))) {
+			btn.addClass('disabled').prop('disabled', true);
+		}
+
+		//聚焦
+		input.on('focus.b keydown.b', function(){
+			var $this = $(this),
+				tagname = input[0].tagName.toLowerCase(),
+				type_input = false;
+
+			//输入内容是否来自表单控件或div
+			if(tagname == 'textarea' || tagname == 'input') {
+				type_input = true;
+			}
+
+			timer && clearInterval(timer);
+
+			//计时器开始
+			timer = setInterval(function(){
+				var trim_v = $.trim( type_input ? $this.val() : $this.text() );
+
+				if(trim_v.length) {
+					//有内容
+					btn.removeClass('disabled').prop('disabled', false);
+				}else{
+					//空内容
+					btn.addClass('disabled').prop('disabled', true);
+				}
+			}, 200);
+
+		});
+
+		//输入失焦，解除计时
+		input.on('blur.b', function(){
+			clearInterval(timer);
+		});
+	},
+// -------------------------
+// ctrl+enter 提交表單
+// -------------------------
 	ctrlEnterSub : function(elem, btn) {
 		elem.on('keydown', function(e) {
 			if (e.ctrlKey && e.keyCode === 13) {
 				//防止跟Wind.Util.buttonStatus按键冲突
 				elem.blur();
+
 				btn.click();
 			}
 		});
 	},
-	// 錨點定位
+
+// -------------------------
+// 錨點定位
+// -------------------------
 	hashPos : function(){
 		var hash = location.hash.replace('#', '');
 		if(hash.indexOf('hashpos') < 0 ) {
@@ -58,8 +110,73 @@ Utility = {
 			$(document).scrollTop(elem_ot - hh);
 		}
 	},
+
+// -------------------------
+// 点击显示隐藏
+// -------------------------
+	clickToggle : function (options) {
+		var elem = options.elem,						//触发元素
+			list = options.list,						//隐藏列表
+			callback = options.callback,				//显示后回调
+			callbackHide = options.callbackHide,		//隐藏后回调
+			lock = false;								//隐藏锁定，默认否
+			(function() {
+				elem.on('keydown click', function(e) {
+					var $this = $(this);
+					//非a标签添加 tabIndex，聚焦用
+					if($this[0].tagName.toLowerCase() !== 'a') {
+						$this.attr('tabindex', '0');
+					}
+					//点击触发
+					if( (e.type === 'keydown' && e.keyCode === 13) || e.type === 'click') {
+						e.preventDefault();
+
+						if(list.is(':visible')) {
+							list.hide();
+						}else{
+							list.show();
+						}
+						
+					}else {
+						$('.J_dropDownList').hide();
+						if(e.type === 'keydown' && e.keyCode === 40) {
+							list.attr('tabindex','0').addClass('J_dropDownList').show();
+							list.focus();
+						}
+					}
+					//回调
+					if(!list.filter(':hidden').length) {
+						lock = false;
+						callback && callback(elem, list);
+					}
+				});
+				$(document.body).on('mousedown',function(e) {
+					//判断点击对象 隐藏列表
+					if(list.is(':visible') && e.target!=list[0] && !$.contains(list[0],e.target) && !$.contains(elem[0],e.target)) {
+						list.hide();
+						elem.focus();
+						callbackHide && callbackHide(elem, list);
+					}
+				});
+				list.on('keydown',function(e) {
+					if(e.keyCode === 27) {
+		                list.hide();
+		                elem.focus();
+		            }
+				});
+				list.on('mouseenter', function(e){
+					//鼠标进入，锁定
+					lock = true;
+				}).on('mouseleave', function(){
+					//鼠标离开，触发元素聚焦，解除锁定
+					elem.focus();
+					lock = false;
+				});
+			})();
+	},
 	// hover显示/隐藏内容
 	hoverToggle : function(options) {
+		//hover显示隐藏内容
 		try{
 			var elem = options.elem,																//触发元素
 					list = options.list,																//隐藏列表
@@ -123,6 +240,38 @@ Utility = {
 		}catch(e){
 				$.error(e);
 		}
+	},
+	ajaxMaskShow : function(zindex){
+		//显示ajax操作全页遮罩
+		var $maskhtml = $('<div id="J_ajaxmask" class="top_loading" style="display:none;">载入中...</div>'),
+			header = $('#J_header'),
+			pos,
+			top,
+			doc_srh = $(document).scrollTop();
+
+		this.ajaxMaskRemove();
+
+		$maskhtml.appendTo('body');
+
+		if($.browser.msie && $.browser.version < 7) {
+			//ie6的定位
+			pos = 'absolute';
+			top = header.length ? header.height() + doc_srh : doc_srh;
+		}else{
+			pos = 'fixed';
+			top = header.length ? header.height() : 0;
+		}
+
+		$maskhtml.css({
+			position : pos,
+			zIndex : zindex ? zindex : 12,
+			top : top
+		}).show();
+
+	},
+	ajaxMaskRemove : function(){
+		//移除ajax操作全页遮罩
+		$('#J_ajaxmask').remove();
 	},
 	// 强制刷新
 	reloadPage : function (win) {
@@ -211,6 +360,23 @@ Utility = {
 			});
 		}
 	},
+	popPos : function(wrap){
+		//弹窗居中定位
+		var top,
+			win_height = $(window).height(),
+			wrap_height = wrap.outerHeight();
+
+		if(win_height < wrap_height) {
+			top = 0;
+		}else{
+			top = ($(window).height() - wrap.outerHeight())/2;
+		}
+
+		wrap.css({
+			top : top + $(document).scrollTop(),
+			left : ($(window).width() - wrap.innerWidth())/2
+		}).show();
+	},
 	postTip : function(options){
 		var elem = options.elem,			//定位元素
 			msg  = options.msg,				//提示信息
@@ -227,6 +393,50 @@ Utility = {
 			$(this).remove();
 			//回调
 			callback && callback();
+		});
+	},
+	ajaxConfirm : function(options) {
+		//所有的确认提交操作（删除、加入黑名单等）
+		var _this = this,
+			elem = options.elem,				//点击元素
+			href = elem.data('uri') ? elem.data('uri') : options.href,				//ajax地址
+			msg = options.msg,					//提示文字
+			callback = options.callback;		//回调
+
+		var params = {
+			message : msg ? msg : '确定要删除吗？',
+			type : 'confirm',
+			isMask : false,
+			follow : elem,
+			onOk : function () {
+				_this.ajaxMaskShow();
+				$('body').trigger('setCustomPost', [elem]);
+				$.post(href, function (data) {
+					_this.ajaxMaskRemove();
+					if (data.state === 'success') {
+						if (callback) {
+							//回调处理
+							callback();
+						} else {
+							//默认刷新
+							if (data.referer) {
+								location.href = decodeURIComponent(data.referer);
+							} else {
+								location.reload();
+							}
+						}
+					} else if (data.state === 'fail') {
+						Wind.Util.resultTip({
+							error : true,
+							msg : data.message,
+							follow : elem
+						});
+					}
+				}, 'json');
+			}
+		}
+		Wind.use('dialog', function(){
+			Wind.dialog(params);
 		});
 	},
 	// 添加收藏
@@ -311,15 +521,6 @@ Utility = {
 		});
 	}
 
-
-	// select控件关联日期组件
-	var date_select = $('.J_date_select');
-	if (date_select.length) {
-		Wind.use('dateSelect', function () {
-			date_select.dateSelect();
-		});
-	}
-
 	// 全选
 	if ($('.J_check_wrap').length) {
 		//遍历所有全选框
@@ -401,28 +602,12 @@ Utility = {
 		$(this).val(v.replace(/\D/g,''));
 	});
 
-	// 日历组件
-	var date_btns = $("input.J_date");
-	if(date_btns.length) {
-		Wind.use('datePicker',function() {
-			date_btns.datePicker();
-		});
-	}
-
 	// 邮箱自动匹配
 	var email_match = $('input.J_email_match');
 	if(email_match.length) {
 		email_match.attr('autocomplete', 'off');
 		Wind.use('emailAutoMatch', function(){
 			email_match.emailAutoMatch();
-		});
-	}
-
-	// 地区组件
-	var region_set = $('.J_region_set');
-	if(region_set.length) {
-		Wind.use('region', function(){
-			$('a.J_region_change').region();
 		});
 	}
 

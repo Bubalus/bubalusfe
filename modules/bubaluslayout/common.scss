@@ -50,11 +50,9 @@
 // For Affix plugin
 // -------------------------
 
-.affix {
+.posfix {
   position: fixed;
 }
-
-
 
 
 .img-responsive {
@@ -105,6 +103,14 @@
   padding: 9px;
   border-radius: $border-radius-small;
 }
+
+.well {
+  @include gradient-vertical($start-color: darken($well-bg, 5%), $end-color: $well-bg);
+  border-color: darken($well-bg, 10%);
+  $shadow: inset 0 1px 3px rgba(0,0,0,.05), 0 1px 0 rgba(255,255,255,.1);
+  @include box-shadow($shadow);
+}
+
 
 //
 // Component animations

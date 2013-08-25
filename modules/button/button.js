@@ -1,4 +1,4 @@
-+function($) { "use strict";
++function ($) { "use strict";
 
   // BUTTON PUBLIC CLASS DEFINITION
   // ==============================
@@ -9,48 +9,31 @@
   }
 
   Button.DEFAULTS = {
-    loadingText: '加載中...'
+    loadingText: 'loading...'
   }
 
   Button.prototype.setState = function (state) {
-    var d    = 'disabled'
-    var $el  = this.$element
-    var val  = $el.is('input') ? 'val' : 'html'
-    var data = $el.data()
+    var disabled  = 'disabled'
+    var $element  = this.$element
+    var val  = $element.is('input') ? 'val' : 'html'
+    var data = $element.data()
 
     state = state + 'Text'
 
-    if (!data.resetText) $el.data('resetText', $el[val]())
+    if (!data.resetText) $element.data('resetText', $element[val]())
 
-    $el[val](data[state] || this.options[state])
+    $element[val](data[state] || this.options[state])
 
     // push to event loop to allow forms to submit
     setTimeout(function () {
       state == 'loadingText' ?
-        $el.addClass(d).attr(d, d) :
-        $el.removeClass(d).removeAttr(d);
+        $element.addClass(disabled).attr(disabled, disabled) :
+        $element.removeClass(disabled).removeAttr(disabled);
     }, 0)
   }
 
-  Button.prototype.toggle = function () {
-    var $parent = this.$element.closest('[data-toggle="buttons"]')
-
-    if ($parent.length) {
-      var $input = this.$element.find('input')
-        .prop('checked', !this.$element.hasClass('active'))
-        .trigger('change')
-      if ($input.prop('type') === 'radio') $parent.find('.active').removeClass('active')
-    }
-
-    this.$element.toggleClass('active')
-  }
-
-
   // BUTTON PLUGIN DEFINITION
   // ========================
-
-  var old = $.fn.button
-
   $.fn.button = function (option) {
     return this.each(function () {
       var $this   = $(this)
@@ -59,31 +42,20 @@
 
       if (!data) $this.data('bs.button', (data = new Button(this, options)))
 
-      if (option == 'toggle') data.toggle()
-      else if (option) data.setState(option)
+      if (option) data.setState(option)
     })
   }
-
-  $.fn.button.Constructor = Button
-
-
-  // BUTTON NO CONFLICT
-  // ==================
-
-  $.fn.button.noConflict = function () {
-    $.fn.button = old
-    return this
-  }
-
 
   // BUTTON DATA-API
   // ===============
 
-  $(document).on('click.bs.button.data-api', '[data-toggle^=button]', function (e) {
-    var $btn = $(e.target)
-    if (!$btn.hasClass('btn')) $btn = $btn.closest('.btn')
-    $btn.button('toggle')
-    e.preventDefault()
+  $(document).on('click.button', '[data-loading-text]', function (e) {
+    var btn = $(this),
+        timeout = btn.data('set-timeout');
+    btn.button('loading')
+    setTimeout(function () {
+      btn.button('complete')
+    }, timeout)
   })
 
 }(window.jQuery);
