@@ -25,10 +25,10 @@ seajs.config({
   alias: {
     'jquery': 'jquery/jquery-1.10.2.js',
 
-    'alerttip': 'alerttip/alerttip.js',
-    'buttonstatus': 'button/buttonStatus.js',
+    'alerttip': 'alerttip/alerttip',
+    'buttonstatus': 'button/buttonstatus',
     'dropdown': 'dropdown/dropdown',
-    'easyajax': 'easyajax/easyajax.js',
+    'easyajax': 'easyajax/easyajax',
     'guide': 'guide/guide',
     'loadtip': 'loadtip/loadtip',
     'modal': 'modal/modal',
