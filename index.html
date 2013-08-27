@@ -1,98 +1,252 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=640" />
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
+		<link rel="stylesheet" href="bubalusfe/bubaluslayout.css">
+		<!--[if lte IE 7]>
+		<link rel="stylesheet" href="bubalusfe/modules/bubaluslayout/iehacks.css" type="text/css"/>
+		<![endif]-->
+	</head>
+	<body>
+		<header>
+    		<h1 id="logo"><img src="bubalusfe/project/images/logo.png" alt="BubalusFE - Web front-end toolkit" class="img-responsive"></h1>
+			<div class="jumbotron">
+				<h1><span class="hide">BubalusFE Web 前端開發工具集 —— </span>沒錯，<span class="hide">雖然有那麽多英文，但</span>這并不是什么高級貨！</h1>
+	    		<p class="lead">BubalusFE，是一組就像遛狗大嬸一樣常見的 WEB 前端開發工具集，它所提供的功能也好像總是色迷迷盯著遛狗大嬸的散步大爺一樣普通，蹲在路邊虐殺螞蟻的小女孩也說：“它根本沒什麽了不起！”</p>
+	    		<p class="lead">它誕生于2007年的秋天，一個懶惰的傢伙爲了減輕工作壓力而拼湊出了它的原型。這個傢伙真是個會耍小聰明的懶鬼，使用這組工具后，他的工作用時節省了一半，但他還是向領導上報跟以前一樣多的工時，從此他感覺工作變得輕鬆了許多。真是可喜可賀！可喜可賀！</p>
+	  		</div>
+		</header>
 
-    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
-    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+		<nav class="docs-nav">
+	    	<ul class="nav navbar-nav">
+		        <li class="active">
+		          <a href="introduction.html">概述</a>
+		        </li>
+		        <li>
+		          <a href="css_core.html">核心 CSS</a>
+		        </li>
+		        <li>
+		          <a href="css_components.html">CSS 组件</a>
+		        </li>
+		        <li>
+		          <a href="js_components.html">JavaScript 组件</a>
+		        </li>
+	    	</ul>
+		</nav>
 
-    <script type="text/javascript" src="javascripts/modernizr.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#main_content').headsmart()
-      })
-    </script>
-    <title>Bubalusfe by zedks</title>
-  </head>
+		<div id="main">
+				<!-- 概述 -->
+				<div class="docs-section" id="introduction">
+					<div class="page-header docs-page-header">
+		                <h1>概述 </h1>
+		                <p>BubalusFE 是一套 web前端開發工具集。它提供了一套CSS框架和一組基於JQuery的常用javascript組件集，以及一套實踐范例。</p>
+		            </div>
 
-  <body>
-    <a id="forkme_banner" href="https://github.com/zedks/BubalusFE">View on GitHub</a>
-    <div class="shell">
+					<div class="row docs-row equalize">
+						<div class="col-desktop-4 docs-side">
+							<div class="col-box">
+								<h3 id="file-structure">文件結構</h3>
+					            <p>
+					            	所有的CSS、javascript組件和媒體内容都被存放在 assets 文件夾，這是一個比較常見的文件結構。
+					            </p>
+					            <ul>
+					            	<li><strong>CSS/</strong> - 用於存放項目中所有CSS文件</li>
+					            	<li><strong>CSS/bubaluslayout</strong> - BubalusFE 的 CSS 組件</li>
+					            	<li><strong>CSS/bubaluslayout/core</strong> - BubalusFE 核心樣式表</li>
+					            	<li><strong>CSS/bubaluslayout/module</strong> - BubalusFE CSS模塊</li>
+					            	<li><strong>CSS/config</strong> - 用於存放 CSS 組件的配置文件</li>
+					            	<li><strong>CSS/project</strong> - 用於存放當前項目中用到的 CSS 文件</li>
+					            	<li><strong>CSS/quoted</strong> - 用于存放來自於第三方的 CSS 文件</li>
+					            	<li><strong>images/</strong> - 用於存放項目中所有媒體文件，如圖片等</li>
+					            	<li><strong>images/bubaluslayout</strong> - CSS 組件中用到的媒體文件</li>
+					            	<li><strong>images/project</strong> - 用於存放當前項目中用到的媒體文件</li>
+					            	<li><strong>js/</strong> - 用于存放項目中所有 javascript 文件</li>
+					            	<li><strong>js/ui</strong> - 用于存放 UI 類javascript文件</li>
+					            	<li><strong>js/utility</strong> - 用于存放 功能 類javascript文件</li>
+					            </ul>
+							</div>
+						</div>
+						<div class="col-desktop-8 docs-article">
+							<div class="col-box">
+								<pre>
+	BubalusFE
+	├─ assets
+	│	├─ css
+	│	│	├─ bubaluslayout
+	│	│	│	├─ core
+	│	│	│	└─ module
+	│	│	│                               
+	│	│	├─ config
+	│	│	├─ project
+	│	│	└─ quoted
+	│	│
+	│	├─ images
+	│	│
+	│	└─ js
+	│	 	├─ ui
+	│	 	└─ utility
+	│
+	└─ docs
+								</pre>
+							</div>
+						</div>
+					</div>
 
-      <header>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <h1>Bubalusfe</h1>
-            <h2></h2>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-      </header>
+					<div class="page-header docs-page-header">
+		                <h1>CSS 組件 <small>assets/css</small></h1>
+		                <p>BubalusFE 的CSS組件沿用 BubalusLayout CSS框架（v5.x），使用SASS進行編輯維護，提供開關式的功能設置，方便定製化編譯。<br>BubalusLayout 的本次升級經過徹底的重新設計，將帶來更好的性能和體驗，同時仍將爲早期的IE瀏覽器提供基礎的支援。</p>
+		            </div>
+		            
+					<div class="row docs-row equalize">
+						<div class="col-desktop-4 docs-side">
+							<div class="col-box">
+								<h3 id="css-core">核心樣式表 <small>assets/css/bubaluslayout/core</small></h3>
+					            <p>
+					            	這些文件是 BubalusLayout 的核心樣式表文件，提供了樣式重置、柵格佈局、IE早期版本的支持等最重要的功能。<br>注意請不要修改這些文件，方便升級的同時還可防止出現一些奇怪的問題。
+					            </p>
+				            </div>
+						</div>
+						<div class="col-desktop-8 docs-article">
+							<div class="col-box">
+							</div>
+						</div>
+					</div>
 
-      <section id="downloads">
-        <span class="inner">
-          <a href="https://github.com/zedks/BubalusFE/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/zedks/BubalusFE/tarball/master" class="tgz"><em>download</em> .TGZ</a>
-        </span>
-      </section>
+					<div class="row docs-row equalize">
+						<div class="col-desktop-4 docs-side">
+							<div class="col-box">
+								<h3 id="css-module">樣式模塊 <small>assets/css/bubaluslayout/module</small></h3>
+					            <p>
+					            	這些文件是 BubalusLayout 的樣式模塊文件，他們提供了大量常用的預置樣式。<br>
+					            	如果你想要定製修改這些模塊，請注意，爲了方便日後升級維護，我們不建議你直接在這些文件上進行修改。<br>
+					            	您可以在該模塊的文件夾中新建一個補丁樣式，并將其插入到 assets/css/bubaluslayout.scss 中該模塊位置的後面，并重新編譯 bubaluslayout.scss。
+					            </p>
+				            </div>
+						</div>
+						<div class="col-desktop-8 docs-article">
+							<div class="col-box">
+							</div>
+						</div>
+					</div>
+
+					<div class="page-header docs-page-header">
+		                <h1>javascript組件 <small>assets/js</small></h1>
+		                <p>BubalusFE 的 javascript組件，包含瀏覽器檢測組件（Modernizr）、資源異步加載組件與各種常用的UI組件和功能組件。</p>
+		            </div>
+
+					<div class="row docs-row equalize">
+						<div class="col-desktop-4 docs-side">
+							<div class="col-box">
+								<h3 id="js-components">javascript UI 模块 <small>assets/js/ui</small></h3>
+					            <p>
+					            	各种 UI 类 javascript 模块，包含如 tabs、tooltip、dropdown 等等。
+					            </p>
+				            </div>
+						</div>
+						<div class="col-desktop-8 docs-article">
+							<div class="col-box">
+							</div>
+						</div>
+					</div>
+
+					<div class="row docs-row equalize">
+						<div class="col-desktop-4 docs-side">
+							<div class="col-box">
+								<h3 id="js-components">javascript 功能組件 <small>assets/js/utility</small></h3>
+					            <p>
+					            	各种功能类 javascript 模块，包含如 表单验证、动画、AJAX 等。
+					            </p>
+				            </div>
+						</div>
+						<div class="col-desktop-8 docs-article">
+							<div class="col-box">
+							</div>
+						</div>
+					</div>
+
+					<div class="row docs-row equalize">
+						<div class="col-desktop-4 docs-side">
+							<div class="col-box">
+								<h3 id="js-components">javascript 核心组件 <small>assets/js/bubalusbase.js</small></h3>
+					            <p>
+					            	bubalusbase.js 包含了浏览器检测、模块加载、javascript模板等最核心的功能。<br>
+					            	
+					            </p>
+				            </div>
+						</div>
+						<div class="col-desktop-8 docs-article">
+							<div class="col-box">
+							</div>
+						</div>
+					</div>
+
+					<div class="page-header docs-page-header">
+		                <h1>附: </h1>
+		            </div>
+
+					<div class="row docs-row equalize">
+						<div class="col-desktop-4 docs-side">
+							<div class="col-box">
+								<h3 id="html-template">基礎的頁面模板 </h3>
+					            <p>
+					            	右面是一個加載了 BubalusFE 組件的標準 HTML5 模板，祇要稍加修改即可為你所用。
+					            </p>
+				            </div>
+						</div>
+						<div class="col-desktop-8 docs-article">
+							<div class="col-box">
+								<pre>
+&lt;!DOCTYPE html&gt;
+&lt;!--[if lt IE 7]&gt;      &lt;html class="no-js lt-ie9 lt-ie8 lt-ie7"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 7]&gt;         &lt;html class="no-js lt-ie9 lt-ie8"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 8]&gt;         &lt;html class="no-js lt-ie9"&gt; &lt;![endif]--&gt;
+&lt;!--[if gt IE 8]&gt;&lt;!--&gt; &lt;html class="no-js"&gt; &lt;!--&lt;![endif]--&gt;
+	&lt;head&gt;
+		&lt;meta charset="utf-8"&gt;
+		&lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;
+		&lt;title&gt;&lt;/title&gt;
+		&lt;meta name="description" content=""&gt;
+		&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+		&lt;link href="favicon.ico" type="image/x-icon" rel="shortcut icon" /&gt;
+		&lt;link rel="stylesheet" href="assets/css/bubaluslayout.css"&gt;
+		&lt;!--[if lte IE 7]&gt;
+		&lt;link rel="stylesheet" href="assets/css/core/iehacks.css" type="text/css"/&gt;
+		&lt;![endif]--&gt;
+		&lt;script src="assets/js/bubalusbase.js"&gt;&lt;/script&gt;
+		&lt;!--[if lt IE 9]&gt;
+		&lt;script src="assets/js/html5shiv.js"&gt;&lt;/script&gt;
+		&lt;![endif]--&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;!-- 你的代碼 --&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+		            			</pre>
+		            		</div>
+						</div>
+					</div> 
+		            
+		        </div>
 
 
-      <span class="banner-fix"></span>
 
+		</div>
+		<footer></footer>
 
-      <section id="main_content">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-
-      <footer>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <p>this project by <a href="https://github.com/zedks">zedks</a> can be found on <a href="https://github.com/zedks/BubalusFE">GitHub</a></p>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
-        <span class="octocat"></span>
-      </footer>
-
-    </div>
-
-    
-  </body>
+		<!-- Google Analytics 
+		<script>
+			var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+			g.src='//www.google-analytics.com/ga.js';
+			s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>-->
+	</body>
 </html>

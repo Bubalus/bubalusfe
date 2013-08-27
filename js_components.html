@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
+		<link rel="stylesheet" href="bubalusfe/bubaluslayout.css">
+		<!--[if lte IE 7]>
+		<link rel="stylesheet" href="bubalusfe/modules/bubaluslayout/iehacks.css" type="text/css"/>
+		<![endif]-->
+	</head>
+	<body>
+		<header>
+    		<h1 id="logo"><img src="bubalusfe/project/images/logo.png" alt="BubalusFE - Web front-end toolkit" class="img-responsive"></h1>
+			<div class="jumbotron">
+				<h1><span class="hide">BubalusFE Web 前端開發工具集 —— </span>沒錯，<span class="hide">雖然有那麽多英文，但</span>這并不是什么高級貨！</h1>
+	    		<p class="lead">BubalusFE，是一組就像遛狗大嬸一樣常見的 WEB 前端開發工具集，它所提供的功能也好像總是色迷迷盯著遛狗大嬸的散步大爺一樣普通，蹲在路邊虐殺螞蟻的小女孩也說：“它根本沒什麽了不起！”</p>
+	    		<p class="lead">它誕生于2007年的秋天，一個懶惰的傢伙爲了減輕工作壓力而拼湊出了它的原型。這個傢伙真是個會耍小聰明的懶鬼，使用這組工具后，他的工作用時節省了一半，但他還是向領導上報跟以前一樣多的工時，從此他感覺工作變得輕鬆了許多。真是可喜可賀！可喜可賀！</p>
+	  		</div>
+		</header>
+
+		<nav class="docs-nav">
+	    	<ul class="nav navbar-nav">
+		        <li>
+		          <a href="introduction.html">概述</a>
+		        </li>
+		        <li>
+		          <a href="css_core.html">核心 CSS</a>
+		        </li>
+		        <li>
+		          <a href="css_components.html">CSS 组件</a>
+		        </li>
+		        <li class="active">
+		          <a href="js_components.html">JavaScript 组件</a>
+		        </li>
+	    	</ul>
+		</nav>
+		<div id="main">
+
+				<!-- alerTtip -->
+		        <div class="docs-section" id="alerttip">
+					<div class="page-header docs-page-header">
+		                <h1>AlertTip <small>提供彈出式提醒功能的組件</small></h1>
+		            </div>
+
+					<div class="row docs-row equalize">
+						<div class="col-desktop-4 docs-side">
+							<div class="col-box">
+								<h3 id="css-components">
+									通過自定義屬性「data-*」來使用 AlertTip
+								</h3>
+								<p>使用 <code>data-trigger="alertTip"</code> 屬性調用 AlertTip</p>
+								<p>使用 <code>data-wrapper</code> 屬性指定提醒所在的容器，可以通過設置該容器的 CSS 來調整提醒彈出的位置</p>
+								<p>使用 <code>data-theme</code> 屬性設置提醒的風格樣式</p>
+								<ul>
+									<li>不設置該屬性將使用默認樣式</li>
+									<li>值為 <code>alertTip-success</code> 時應用「成功」樣式</li>
+									<li>值為 <code>alertTip-danger</code> 時應用「警告」樣式</li>
+									<li>值為 <code>alertTip-info</code> 時應用「描述」樣式</li>
+								</ul>
+								<p>使用 <code>data-sticky="true"</code> 屬性設置該提醒在手動關閉前始終存在</p>
+								<p>使用 <code>data-header</code> 屬性設置提醒的標題</p>
+								<p>使用 <code>data-message</code> 屬性設置提醒的內容</p>
+							</div>
+						</div>
+						<div class="col-desktop-8 docs-article">
+							<div class="col-box">
+								<input type="button" class="btn btn-success"
+								data-trigger="alertTip"
+								data-theme="alertTip-success"
+								data-sticky="true"
+								data-header="成功!"
+								data-message="這是一個應用了「成功」樣式的 alertTip"
+								value="成功"/>
+								<input type="button" class="btn btn-danger"
+								data-trigger="alertTip"
+								data-theme="alertTip-danger"
+								data-wrapper="alertTip-BR"
+								data-header="警告!"
+								data-message="這是一個應用了「警告」樣式的 alertTip，而且被定位到了右下角"
+								value="警告"/>
+								<input type="button" class="btn btn-info"
+								data-trigger="alertTip"
+								data-theme="alertTip-info"
+								data-wrapper="alertTip-BL"
+								data-message="這是一個應用了「描述」樣式的 alertTip，而且被定位到了左下角"
+								value="描述"/>
+								<pre>
+// HTML
+&lt;input type="button" class="btn btn-success"
+data-toggle="alertTip"
+data-theme="alertTip-success"
+data-sticky="true"
+data-header="成功!"
+data-wrapper="alertTip-BL"
+data-message="這是一個應用了「成功」樣式的 alertTip"
+value="成功"/&gt;
+
+// CSS 
+// 設置指定的容器元素的位置
+#alertTip-BL {
+  position: fixed;
+  bottom: 0;
+  left:0;
+}
+								</pre>
+							</div>
+						</div>
+					</div>
+
+					<div class="row docs-row equalize">
+						<div class="col-desktop-4 docs-side">
+							<div class="col-box">
+								<h3 id="css-components">
+									通過傳統方式來使用 AlertTip
+								</h3>
+								<p>使用傳統調用方式有著更強的靈活性。首先來看一下這些可傳入 AlertTip 的參數，他們可以讓 AlertTip工作得更有想像力</p>
+								<ul>
+									<li><code>pool: 0</code> 单组同时显示的数量限制</li>
+									<li><code>header: ''</code> 标题</li>
+									<li><code>group: ''</code> 为每个 alertTip 添加一个类，用于逻辑分组和统一样式</li>
+									<li><code>sticky: false</code> 设置为true时，该实例将停留到用户手动关闭为止</li>
+									<li><code>position: 'top-right'</code> 弹出位置</li>
+									<li><code>glue: 'after'</code> 在系列中置顶或沉底 after | before</li>
+									<li><code>theme: ''</code> 指定样式</li>
+									<li><code>life: 000</code> 生命值 毫秒</li>
+									<li><code>closeDuration: 'normal'</code> 关闭动画速度</li>
+									<li><code>openDuration: 'normal'</code> 打开动画速度</li>
+									<li><code>easing: 'swing'</code> 动画类型</li>
+									<li><code>closer: true</code> 是否在多条 alert 时显示批量关闭按钮</li>
+									<li><code>closeTemplate: '&times;'</code> 关闭键模板</li>
+									<li><code>closerTemplate: '&lt;div&gt;[ close all ]&lt;/div&gt;'</code> 全部关闭按钮模板</li>
+									<li><code>log: function() {}</code> 日志回调</li>
+									<li><code>beforeOpen: function() {}</code> 弹出之前回调</li>
+									<li><code>afterOpen: function() {}</code> 弹出之后回调</li>
+									<li><code>open: function() {}</code> 弹出时回调</li>
+									<li><code>beforeClose: function() {}</code> 关闭之前回调</li>
+									<li><code>close: function() {}</code> 关闭时回调</li>
+									<li><code>animateOpen: { opacity:'show' }</code> 弹出时动画样式</li>
+									<li><code>animateClose: { opacity:'hide' }</code> 关闭时动画样式</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-desktop-8 docs-article">
+							<div class="col-box">
+								<button id="showAlertTipBtn" class="btn">出來吧！AlertTip 思密達！！</button>
+								<pre>
+// 簡單的用法
+$.alertTip("Hello world!");
+
+// 跟參數的用法
+$('#test1').alertTip("這是一個帶參數的傳統調用", {
+	closer: false,
+	sticky: true, 
+	glue: 'before',
+	speed: 2000,
+	animateOpen: { 
+		height: "show",
+		width: "show"
+	},
+	animateClose: { 
+		height: "hide",
+		width: "show"
+	}
+});
+								</pre>
+							</div>
+						</div>
+					</div>
+
+		        </div>
+
+				<!-- buttonStatus -->
+		        <div class="docs-section" id="buttonStatus">
+					<div class="page-header docs-page-header">
+		                <h1>buttonStatus <small>一個切換按鈕狀態的組件</small></h1>
+		            </div>
+
+					<div class="row docs-row equalize">
+						<div class="col-desktop-4 docs-side">
+							<div class="col-box">
+								<p>使用 <code>$().buttonStatus('loading')</code> 方法，按鈕將進入「使用中」的狀態，此時按鈕將不可用（disabled），配合 <code>data-loading-text</code> 自定義屬性，可以將按鈕的文字替換為自定義屬性中的值</p>
+								<p>使用 <code>$().buttonStatus('reset')</code> 方法，按鈕將恢復到點擊前的狀態</p>
+								<p>使用 <code>$().buttonStatus('value')</code> 方法，配合 <code>data-value-text</code> 自定義屬性，可以將按鈕的文字替換為自定義屬性中的值</p>
+							</div>
+						</div>
+						<div class="col-desktop-8 docs-article">
+							<div class="col-box">
+								<button type="button" data-loading-text="正在提交..." data-value-text="已提交" id="buttonStatus-demo" class="btn">
+									提交
+								</button>
+								<pre>
+// HTML 部分
+&lt;button type="button" data-loading-text="正在提交..." data-value="已提交" id="buttonStatus-demo" class="btn"&gt;
+	提交
+&lt;/button&gt;
+
+// javascript 部分
+$('#buttonStatus-demo').click(function () {
+  var btn = $(this)
+  btn.button('loading') // 目標變為使用中狀態，同時根據自定義屬性改變按鈕文字
+  setTimeout(function () { // 三秒後
+    // btn.button('reset') // 按鈕將恢復到初始狀態，按鈕文字也變回初始
+    btn.button('value') // 解除使用中狀態，同時根據自定義屬性改變按鈕文字
+  }, 3000)
+})
+								</pre>
+							</div>
+						</div>
+					</div>
+
+		        </div>
+
+				<!-- easyAjax -->
+		        <div class="docs-section" id="easyAjax">
+					<div class="page-header docs-page-header">
+		                <h1>easyAjax <small>方便的使用 ajax 加載內容</small></h1>
+		            </div>
+
+					<div class="row docs-row equalize">
+						<div class="col-desktop-4 docs-side">
+							<div class="col-box">
+								<h3 id="css-components">
+									通過自定義屬性「data-*」來使用 easyAjax
+								</h3>
+								<p>在鏈接<code>&lt;a&gt;</code>中加入兩條自定義屬性即可方便調用</p>
+								<ul>
+									<li>加入 <code>data-trigger="easyAjax"</code> 屬性激活 ajax 加載</li>
+									<li>加入 <code>data-target</code> 屬性指定加載目標容器，屬性值為目標選擇器</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-desktop-8 docs-article">
+							<div class="col-box">
+								<a data-trigger="easyAjax" href="https://github.com/zedks/BubalusFE" data-target="#ajax_target" class="btn">點擊使用 ajax 加載</a>
+								<div id="ajax_target">鏈接指向的地址將被加載到本容器</div>
+								<pre>
+&lt;div class="col-box"&gt;
+	&lt;a data-trigger="easyAjax" href="https://github.com/zedks/BubalusFE" data-target="#ajax_target" class="btn"&gt;點擊使用 ajax 加載&lt;/a&gt;
+&lt;/div&gt;
+&lt;div id="ajax_target"&gt;鏈接指向的地址將被加載到本容器&lt;/div&gt;
+								</pre>
+							</div>
+						</div>
+					</div>
+
+		        </div>
+
+		</div>
+		<footer></footer>
+		<div id="alertTip-BR" class="alertTip-area"></div>
+		<div id="alertTip-BL" class="alertTip-area"></div>
+		<!-- Google Analytics 
+		<script>
+			var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+			g.src='//www.google-analytics.com/ga.js';
+			s.parentNode.insertBefore(g,s)}(document,'script'));
+		</script>-->
+		
+		<script src="bubalusfe/bubalusbase.js" id="seajsnode"></script>
+		<script type="text/javascript">
+			seajs.use([
+				'ajax',
+				'alerttip',
+				'buttonstatus'// ,
+				// 'dropdown',
+				// 'guide',
+				// 'loadtip',
+				// 'modal',
+				// 'scrollbar',
+				// 'slideshow',
+				// 'step',
+				// 'tabs',
+				// 'tooltip'
+			], function(){
+				// alertTip
+				$('#showAlertTipBtn').click(function() {
+
+					$.alertTip("你好，人類!");
+					$.alertTip("這條提醒的生命週期只有一秒", { theme: 'alertTip-info', life: 1000 });
+					$.alertTip("這條成功樣式的提示將始終存在，除非你關掉它", { theme:  'alertTip-success', sticky: true });
+					
+					$.alertTip.defaults.closerTemplate = '<div>關閉所有</div>';
+					
+					$('#alertTip-BR').alertTip("這條提醒被設置了與眾不同的動畫", {
+						closer: false,
+						speed: 2000,
+						animateOpen: { 
+							height: "show",
+							width: "show"
+						},
+						animateClose: { 
+							height: "hide",
+							width: "show"
+						}
+					});
+
+					$('#alertTip-BR').alertTip("這個提醒同時調用了多個回調，可以在 console 面板看到", {
+						theme:  'alertTip-danger', 
+						header: 'AlertTip 回調:',
+						sticky: true, 
+						speed:  'slow',
+						beforeOpen: function(e,m,o) {
+							console.log("AlertTip 回調:啊。。啊。。我要彈出啦！", this);
+						},
+						open: function(e,m,o) {
+							console.log("AlertTip 回調:呼。。。已經彈出啦！", this);
+						},
+						beforeClose: function(e,m,o) {
+							console.log("AlertTip 回調:哼哼~我要關閉了~", this);
+						},
+						close: function(e,m,o) {
+							console.log("AlertTip 回調:我已經關閉啦~~啦啦啦~~", this);
+						}
+					});
+				});
+				
+				// buttonStatus
+				$('#buttonStatus-demo').click(function () {
+				  var btn = $(this)
+				  btn.buttonStatus('loading')
+				  setTimeout(function () {
+				  btn.buttonStatus('value')
+				  }, 3000)
+				})
+			});
+		</script>
+	</body>
+</html>
