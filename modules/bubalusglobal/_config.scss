@@ -7,8 +7,6 @@
 
 // 全局設置
 // ----------------------
-// 只启用核心模块
-$only-core: 			false !default;
 // 是否對IE6-7提供（有限的）支持
 $ie6-7-support: 		true !default;
 // 是否對IE6-8提供CSS3濾鏡兼容
@@ -30,6 +28,8 @@ $responsive-support: 	true !default;
 // ----------------------
 // 基礎字號，將以此推演出其他屬性尺寸
 $font-size-base:        14px !default;
+// 標題是否具備外邊距（ <h1> - <h6> ）
+$Hx-margin: 			true !default;
 
 // 路徑指向
 $images-path:           "project/images" !default;
@@ -37,7 +37,7 @@ $icon-font-path:        "modules/bubaluslayout/images" !default;
 
 // 引入全局變量和方法
 // ----------------------
-@import "../config/global_variables";
-@import "../config/global_mixins";
+@import "variables";
+@import "mixins";
 
 /* END Config */

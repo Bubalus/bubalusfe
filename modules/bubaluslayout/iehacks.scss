@@ -68,168 +68,14 @@
 	fieldset, legend { position:relative; }
 
 // 調整流体柵格寬度值，避免錯位，因为IE 6/7 在计算百分比时比较奇葩
-	.g-20 { width:19.98%; }
-	.g-25 { width:24.97%; }
-	.g-30 { width:29.98%; }
-	.g-33 { width:33.29%; }
-	.g-38 { width:38.2%; }
-	.g-40 { width:40%; }
-	.g-50 { width:49.98%; }
-	.g-60 { width:60%; }
-	.g-62 { width:61.8%; }
-	.g-66 { width:66.666%; }
-	.g-70 { width:70%; }
-	.g-75 { width:75%; }
-	.g-80 { width:80%; }
+// TODO
 
 // 表單模塊的相關修正
-	.form,
-	.form div,
-	.form div * { zoom:1; }
-	.form {
-		/* 默認寬度 */
-		input,
-		textarea {
-			width:63.5%;
-			padding-left: 1% !important;
-			padding-right: 1% !important;
-		}
-		select {
-			width:66%;
-			padding-left: 1% !important;
-			padding-right: 1% !important;
-		}
+// TODO
 
-		.fbox-grid {
-			display: block;
-			overflow: hidden;
-			margin-right: -5px;
-
-			// input,
-			// textarea,
-			// select {
-			// 	width: 96%;
-			// }
-			// .input-prepend {
-			// 	input { width:63.5%; }
-			// }
-		}
-		.fbox-check {
-			input {
-				width: auto;
-			}
-		}
-
-		/* 調整表單內柵格寬度值，避免錯位 */
-		.g-20 { width:17% !important; }
-		.g-25 { width:22% !important; }
-		.g-30 { width:27% !important; }
-		.g-33 { width:30.333% !important; }
-		.g-38 { width:35% !important; }
-		.g-40 { width:37% !important; }
-		.g-50 { width:47% !important; }
-		.g-60 { width:57% !important; }
-		.g-62 { width:58% !important; }
-		.g-66 { width:63.666% !important; }
-		.g-70 { width:67% !important; }
-		.g-75 { width:72% !important; }
-		.g-80 { width:77% !important; }
-
-		.fbox-text,
-		.fbox-select {
-			input, textarea, select {
-				&.g-20 { display:inline; width:15% !important; }
-				&.g-25 { display:inline; width:20% !important; }
-				&.g-30 { display:inline; width:25% !important;}
-				&.g-33 { display:inline; width:28.333% !important; }
-				&.g-38 { display:inline; width:33.2% !important; }
-				&.g-40 { display:inline; width:35% !important; }
-				&.g-50 { display:inline; width:45% !important; }
-				&.g-60 { display:inline; width:55% !important; }
-				&.g-62 { display:inline; width:56.8% !important; }
-				&.g-66 { display:inline; width:61.666% !important; }
-				&.g-70 { display:inline; width:65% !important;}
-				&.g-75 { display:inline; width:70% !important; }
-				&.g-80 { display:inline; width:75% !important; }
-			}
-		}
-	}
-	.form-style-gray {
-		.fbox-text{
-			input { height: $lineHeight; }
-		}
-	}
-
-	.full {
-		input,
-		textarea {
-			width:92.5%;
-			margin-right: -3px;
-		}
-
-		select {
-			width:95%;
-			margin-right: -3px;
-		}
-	}
-
-	.input-append,
-	.input-prepend {
-		.add-on {
-			height: $lineHeight;
-		}
-		input {
-			margin-top: -1px;
-		}
-	}
-	.input-prepend {
-		.add-on {
-			margin-right: -2px;
-		}
-	}
-	.input-append {
-		.add-on {
-			margin-left: -2px;
-		}
-	}
-
-	/* 避免IE7中空白邊異常 */
-	.columnar-form {
-		.fbox-grid {
-			float: right;
-			margin-left: -3px !important;
-			margin-right: 0 !important;
-		}
-	}
-
-	/* 輔助類 */
-	* html .form {
-		.ie-checkbox,
-		.ie-radio {
-			display: inline !important;
-			width: auto !important;
-			background: transparent !important;
-			border: 0 none  !important;
-			padding: 0 !important;
-		}
-	}
-
-	html .ie-clearing {
-		position:static;
-		display:block;
-		\clear:both;
-		width:100%;
-		line-height: 0;
-		font-size:0px;
-		margin:-2px 0 -1em 1px;
-	}
-	* html .ie-clearing { margin:-2px 0 -1em 0; }
 }
 
 @media screen, projection {
-	.grid,.fluid-grid { overflow:hidden; display:block; }
-	* html .grid,
-	* html .fluid-grid { overflow:visible; }
 
 	.equalize .fl-le {
 		padding-bottom:32767px;
@@ -239,12 +85,6 @@
 	.equalize .fl-ri {
 		padding-bottom:32767px;
 		margin-bottom:-32767px;
-	}
-
-	.no-ie-padding .fl-le,
-	.no-ie-padding .fl-ri {
-		padding-bottom:0;
-		margin-bottom:0;
 	}
 
 	* html .g-box { word-wrap:break-word; o\verflow:hidden; }

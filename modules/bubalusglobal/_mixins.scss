@@ -86,7 +86,7 @@
 // 響應式圖片 （圖片根據父容器尺寸縮放）
 // ----------------------
 @mixin img-responsive($display: block) {
-  display: $display;
+  //display: $display;
   max-width: 100%;
   height: auto;
 }
@@ -127,6 +127,10 @@
   -webkit-transition: $transition;
           transition: $transition;
 }
+@mixin transition-property($transition-property) {
+  -webkit-transition-property: $transition-property;
+          transition-property: $transition-property;
+}
 @mixin transition-delay($transition-delay) {
   -webkit-transition-delay: $transition-delay;
           transition-delay: $transition-delay;
@@ -134,6 +138,12 @@
 @mixin transition-duration($transition-duration) {
   -webkit-transition-duration: $transition-duration;
           transition-duration: $transition-duration;
+}
+@mixin transition-transform($transition) {
+  -webkit-transition: -webkit-transform $transition;
+     -moz-transition: -moz-transform $transition;
+       -o-transition: -o-transform $transition;
+          transition: transform $transition;
 }
 
 // 轉換

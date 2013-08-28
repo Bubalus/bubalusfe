@@ -3,16 +3,17 @@
   // BUTTON PUBLIC CLASS DEFINITION
   // ==============================
 
-  var Button = function (element, options) {
+  var buttonStatus = function (element, options) {
     this.$element = $(element)
-    this.options  = $.extend({}, Button.DEFAULTS, options)
+    this.options  = $.extend({}, buttonStatus.DEFAULTS, options)
   }
 
-  Button.DEFAULTS = {
-    loadingText: 'loading...'
+  buttonStatus.DEFAULTS = {
+    loadingText: '正在加載...',
+    valueText: '加載完成'
   }
 
-  Button.prototype.setState = function (state) {
+  buttonStatus.prototype.setState = function (state) {
     var disabled  = 'disabled'
     var $element  = this.$element
     var val  = $element.is('input') ? 'val' : 'html'
@@ -34,28 +35,16 @@
 
   // BUTTON PLUGIN DEFINITION
   // ========================
-  $.fn.button = function (option) {
+  $.fn.buttonStatus = function (option) {
     return this.each(function () {
       var $this   = $(this)
-      var data    = $this.data('bs.button')
+      var data    = $this.data('BFE.buttonStatus')
       var options = typeof option == 'object' && option
 
-      if (!data) $this.data('bs.button', (data = new Button(this, options)))
+      if (!data) $this.data('BFE.buttonStatus', (data = new buttonStatus(this, options)))
 
       if (option) data.setState(option)
     })
   }
-
-  // BUTTON DATA-API
-  // ===============
-
-  $(document).on('click.button', '[data-loading-text]', function (e) {
-    var btn = $(this),
-        timeout = btn.data('set-timeout');
-    btn.button('loading')
-    setTimeout(function () {
-      btn.button('complete')
-    }, timeout)
-  })
 
 }(window.jQuery);

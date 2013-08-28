@@ -4,7 +4,7 @@
 /* alertTip.js - 弹出通知 */
 // --------------------------------------------
 
-+function($) {
++function($) { "use strict";
 	$.alertTip = function( message , options ) {
 		// 如果 alertTip 容器不存在，就先創建一個
 		if ( $('#alertTip').size() == 0 )
@@ -196,7 +196,7 @@
 
 	$.alertTip.defaults = $.fn.alertTip.prototype.defaults;
 
-	$(document).on('click.alertTip', '[data-toggle=alertTip]', function (e) {
+	$(document).on('click.BFE.alertTip', '[data-trigger=alertTip]', function (e) {
 		var $this = $(this)
 		var $header = $this.data('header')
 		var $message = $this.data('message')

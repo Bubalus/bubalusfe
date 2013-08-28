@@ -26,24 +26,23 @@
 		</header>
 
 		<nav class="docs-nav">
-		    <div class="nav-collapse collapse bs-navbar-collapse">
-		    	<ul class="nav navbar-nav">
-			        <li>
-			          <a href="introduction.html">概述</a>
-			        </li>
-			        <li>
-			          <a href="css_core.html">核心 CSS</a>
-			        </li>
-			        <li>
-			          <a href="css_components.html">CSS 组件</a>
-			        </li>
-			        <li class="active">
-			          <a href="js_components.html">JavaScript 组件</a>
-			        </li>
-		    	</ul>
-	    	</div>
+	    	<ul class="nav navbar-nav">
+		        <li>
+		          <a href="introduction.html">概述</a>
+		        </li>
+		        <li>
+		          <a href="css_core.html">核心 CSS</a>
+		        </li>
+		        <li>
+		          <a href="css_components.html">CSS 组件</a>
+		        </li>
+		        <li class="active">
+		          <a href="js_components.html">JavaScript 组件</a>
+		        </li>
+	    	</ul>
 		</nav>
 		<div id="main">
+
 				<!-- alerTtip -->
 		        <div class="docs-section" id="alerttip">
 					<div class="page-header docs-page-header">
@@ -56,7 +55,7 @@
 								<h3 id="css-components">
 									通過自定義屬性「data-*」來使用 AlertTip
 								</h3>
-								<p>使用 <code>data-toggle="alertTip"</code> 屬性調用 AlertTip</p>
+								<p>使用 <code>data-trigger="alertTip"</code> 屬性調用 AlertTip</p>
 								<p>使用 <code>data-wrapper</code> 屬性指定提醒所在的容器，可以通過設置該容器的 CSS 來調整提醒彈出的位置</p>
 								<p>使用 <code>data-theme</code> 屬性設置提醒的風格樣式</p>
 								<ul>
@@ -73,21 +72,21 @@
 						<div class="col-desktop-8 docs-article">
 							<div class="col-box">
 								<input type="button" class="btn btn-success"
-								data-toggle="alertTip"
+								data-trigger="alertTip"
 								data-theme="alertTip-success"
 								data-sticky="true"
 								data-header="成功!"
 								data-message="這是一個應用了「成功」樣式的 alertTip"
 								value="成功"/>
 								<input type="button" class="btn btn-danger"
-								data-toggle="alertTip"
+								data-trigger="alertTip"
 								data-theme="alertTip-danger"
 								data-wrapper="alertTip-BR"
 								data-header="警告!"
 								data-message="這是一個應用了「警告」樣式的 alertTip，而且被定位到了右下角"
 								value="警告"/>
 								<input type="button" class="btn btn-info"
-								data-toggle="alertTip"
+								data-trigger="alertTip"
 								data-theme="alertTip-info"
 								data-wrapper="alertTip-BL"
 								data-message="這是一個應用了「描述」樣式的 alertTip，而且被定位到了左下角"
@@ -177,23 +176,76 @@ $('#test1').alertTip("這是一個帶參數的傳統調用", {
 
 		        </div>
 
-				<!-- alerTtip -->
-		        <div class="docs-section" id="alerttip">
+				<!-- buttonStatus -->
+		        <div class="docs-section" id="buttonStatus">
 					<div class="page-header docs-page-header">
-		                <h1>組件名 <small>組件介紹</small></h1>
+		                <h1>buttonStatus <small>一個切換按鈕狀態的組件</small></h1>
 		            </div>
 
 					<div class="row docs-row equalize">
 						<div class="col-desktop-4 docs-side">
 							<div class="col-box">
-
+								<p>使用 <code>$().buttonStatus('loading')</code> 方法，按鈕將進入「使用中」的狀態，此時按鈕將不可用（disabled），配合 <code>data-loading-text</code> 自定義屬性，可以將按鈕的文字替換為自定義屬性中的值</p>
+								<p>使用 <code>$().buttonStatus('reset')</code> 方法，按鈕將恢復到點擊前的狀態</p>
+								<p>使用 <code>$().buttonStatus('value')</code> 方法，配合 <code>data-value-text</code> 自定義屬性，可以將按鈕的文字替換為自定義屬性中的值</p>
 							</div>
 						</div>
 						<div class="col-desktop-8 docs-article">
 							<div class="col-box">
-<button type="button" data-loading-text="Loading..." data-set-timeout="1000"  data-complete-text="finished!" class="btn">
-  Loading state
-</button>
+								<button type="button" data-loading-text="正在提交..." data-value-text="已提交" id="buttonStatus-demo" class="btn">
+									提交
+								</button>
+								<pre>
+// HTML 部分
+&lt;button type="button" data-loading-text="正在提交..." data-value="已提交" id="buttonStatus-demo" class="btn"&gt;
+	提交
+&lt;/button&gt;
+
+// javascript 部分
+$('#buttonStatus-demo').click(function () {
+  var btn = $(this)
+  btn.button('loading') // 目標變為使用中狀態，同時根據自定義屬性改變按鈕文字
+  setTimeout(function () { // 三秒後
+    // btn.button('reset') // 按鈕將恢復到初始狀態，按鈕文字也變回初始
+    btn.button('value') // 解除使用中狀態，同時根據自定義屬性改變按鈕文字
+  }, 3000)
+})
+								</pre>
+							</div>
+						</div>
+					</div>
+
+		        </div>
+
+				<!-- easyAjax -->
+		        <div class="docs-section" id="easyAjax">
+					<div class="page-header docs-page-header">
+		                <h1>easyAjax <small>方便的使用 ajax 加載內容</small></h1>
+		            </div>
+
+					<div class="row docs-row equalize">
+						<div class="col-desktop-4 docs-side">
+							<div class="col-box">
+								<h3 id="css-components">
+									通過自定義屬性「data-*」來使用 easyAjax
+								</h3>
+								<p>在鏈接<code>&lt;a&gt;</code>中加入兩條自定義屬性即可方便調用</p>
+								<ul>
+									<li>加入 <code>data-trigger="easyAjax"</code> 屬性激活 ajax 加載</li>
+									<li>加入 <code>data-target</code> 屬性指定加載目標容器，屬性值為目標選擇器</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-desktop-8 docs-article">
+							<div class="col-box">
+								<a data-trigger="easyAjax" href="https://github.com/zedks/BubalusFE" data-target="#ajax_target" class="btn">點擊使用 ajax 加載</a>
+								<div id="ajax_target">鏈接指向的地址將被加載到本容器</div>
+								<pre>
+&lt;div class="col-box"&gt;
+	&lt;a data-trigger="easyAjax" href="https://github.com/zedks/BubalusFE" data-target="#ajax_target" class="btn"&gt;點擊使用 ajax 加載&lt;/a&gt;
+&lt;/div&gt;
+&lt;div id="ajax_target"&gt;鏈接指向的地址將被加載到本容器&lt;/div&gt;
+								</pre>
 							</div>
 						</div>
 					</div>
@@ -215,19 +267,20 @@ $('#test1').alertTip("這是一個帶參數的傳統調用", {
 		<script src="../bubalusbase.js" id="seajsnode"></script>
 		<script type="text/javascript">
 			seajs.use([
+				'ajax',
 				'alerttip',
-				'button',
-				'dropdown',
-				'guide',
-				'loadtip',
-				'modal',
-				'scrollbar',
-				'slideshow',
-				'step',
-				'tabs',
-				'tooltip'], 
-			function(){
-
+				'buttonstatus'// ,
+				// 'dropdown',
+				// 'guide',
+				// 'loadtip',
+				// 'modal',
+				// 'scrollbar',
+				// 'slideshow',
+				// 'step',
+				// 'tabs',
+				// 'tooltip'
+			], function(){
+				// alertTip
 				$('#showAlertTipBtn').click(function() {
 
 					$.alertTip("你好，人類!");
@@ -269,7 +322,14 @@ $('#test1').alertTip("這是一個帶參數的傳統調用", {
 					});
 				});
 				
-
+				// buttonStatus
+				$('#buttonStatus-demo').click(function () {
+				  var btn = $(this)
+				  btn.buttonStatus('loading')
+				  setTimeout(function () {
+				  btn.buttonStatus('value')
+				  }, 3000)
+				})
 			});
 		</script>
 	</body>

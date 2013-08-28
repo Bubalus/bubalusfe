@@ -2,18 +2,14 @@
 // BubalusFE - The front-end development framework
 //
 /* Reset - 重設基本樣式 */
+// 參考了 normalize scss，鳴謝
 // 最先引入这个文件以覆盖掉一些浏览器的预设样式
 // --------------------------------------------
 
-// 去掉一些元素默认的空白边，並將盒模型定義爲 border-box（IE7尷尬，好在用的人不多了，但仍需注意）
+// 將盒模型定義爲 border-box（IE7尷尬，好在用的人不多了，但仍需注意）
 // 关于通配符 * 的使用一直有争议，根据浏览器的渲染原理，使用通配符确实会严重影响性能
 // 但经测试，在现代浏览器中使用通配符对渲染性能的影响其实很有限
 // ----------------------
-* {
-	margin:0; 
-  padding:0;
-}
-
 *,
 *:before,
 *:after {
@@ -53,6 +49,7 @@ html {
     text-align:left;
 }
 body {
+    margin: 0; // 去掉默認的空白邊
     font-family: $font-family-base;
     font-size: $font-size-base;
     line-height: $line-height-base;
@@ -60,6 +57,9 @@ body {
     background-color: $body-bg;
 }
 div:target { outline:0 none; }
+p {
+  margin: 0 0 ($line-height-computed / 2);
+}
 
 // 链接
 // ----------------------
@@ -75,7 +75,6 @@ a:focus {
   text-decoration: underline;
 }
 a:focus { // 统一聚焦时的外边线
-    outline: thin dotted;
     @include tab-focus();
 }
 
@@ -120,34 +119,65 @@ sub { bottom: -0.25em; }
 
 // 表单
 // ----------------------
+@if $ie6-7-support {
+  form {
+    margin: 0;
+  }
+}
 fieldset {
+  margin: 0; // 去掉默認的空白邊
+  padding: 0; // 和填充
   border: 0;
 }
 legend {
-    border: 0;
-    white-space: normal;
+  padding: 0;
+  border: 0;
+  white-space: normal;
 }
 button, input, select, textarea {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
+  // 修正各瀏覽器表單控件不繼承字體字號的問題
+  // IE 不支持 inherit 屬性，只好重新設置
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+
 	outline: 0 none;
-    vertical-align: baseline;
+  @if $ie6-7-support {
+    margin: 0; // 去掉默認的空白邊
     *vertical-align: middle;
+  }else{
+    vertical-align: baseline;
+  }
 }
-button, input { // 更正 Firefox 4+ 用户代理样式表中在‘input’上设置行高时使用 !important 的问题
+button, input {
+  // 更正 Firefox 4+ 用户代理样式表中在‘input’上设置行高时使用 !important 的问题
 	line-height: normal;
+  // 
+  &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+  }
+}
+button,
+select { // 修正文本轉換的繼承問題
+  text-transform: none;
 }
 button[disabled],
-input[disabled] {
-    cursor: default;
+html input[disabled] { // 設置禁用時的鼠標指針樣式
+  cursor: default;
 }
 input[type="checkbox"],
 input[type="radio"] {
-    box-sizing: border-box; // 调整 IE 8/9 box sizing 被设置为 content-box 的问题
+    padding: 0;
+    @if $ie6-7-support {
+      *height: 13px;
+      *width: 13px;
+    }
 }
-input[type="search"] {
-    -webkit-appearance: textfield; // 校正 Safari 5 和 Chrome 中 appearance 被设置为 searchfield 的问题
+input[type="search"] { // 校正 Safari 5 和 Chrome 中 appearance 被设置为 searchfield 的问题
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration { // 移除 OS X 中 Safari 5 和 Chrome 内部的内边距以及搜索框的取消按钮
@@ -160,35 +190,65 @@ input[type="reset"],
 input[type="submit"] {
     -webkit-appearance: button; // 更正 iOS 中无法设置可点击的 input 的问题
     cursor: pointer;
-    *overflow: visible;  // 防止 IE 在 input 左右莫名其妙的加入 padding
+    @if $ie6-7-support {
+      *overflow: visible;  // 防止 IE 在按鈕類 input 左右莫名其妙的加入 padding
+    }
 }
 textarea {
     overflow: auto; // 移除 IE 中默认的垂直滚动条
     vertical-align: top; // 增强可读性
+    resize: vertical;
 }
 // 图片
 // ----------------------
 img { 
 	border:0 solid; 
 	vertical-align:middle;
-	-ms-interpolation-mode: bicubic; // IE下防止图像失真
+  @if $ie6-7-support {
+    -ms-interpolation-mode: bicubic; // IE下防止图像縮放失真
+  }
 }
-
-
+img, figure {
+  margin: 0;
+}
 svg:not(:root) {  overflow: hidden; } // 更正 IE 9 中奇怪的溢出表现
 
 // 列表
 // ----------------------
 ul, ol {
-    list-style: none;
-    list-style-image: none;
+  margin: 0; // 去掉默認的空白邊
+  padding: 0; // 和填充
+  list-style: none;
+  list-style-image: none;
+}
+dl, dd {
+  margin: 0; // 去掉默認的空白邊
 }
 // 引用
 // ----------------------
 q { quotes: none; }
+blockquote {
+  margin: 0; // 去掉默認的空白邊
+}
 blockquote:before, blockquote:after,
 q:before, q:after { content: ''; content:none }
+pre {
+  margin: 0; // 去掉默認的空白邊
+}
 
+// 標題
+// ----------------------
+// 重設標題的邊距
+@if $Hx-margin {
+  h1, h2, h3, h4, h5, h6 {
+    margin:0;
+  }
+}else{
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: $line-height-computed;
+    margin-bottom: ($line-height-computed / 2);
+  }
+}
 // Addresses
 address {
   display: block;
@@ -196,6 +256,7 @@ address {
   font-style: normal;
   line-height: $line-height-base;
 }
+
 // 分割綫
 // ----------------------
 hr {
@@ -210,6 +271,9 @@ hr {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+th, td {
+  padding: 0;
 }
 
 /* END Reset */

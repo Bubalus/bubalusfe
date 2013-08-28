@@ -7,16 +7,16 @@
 // --------------------------------------------
 
 // 載入配置文件
-@import "modules/bubaluslayout/config";
+@import "modules/bubalusglobal/config";
 
 /* 載入 BubalusLayout 核心
 ----------------------------------*/
 @import "modules/bubaluslayout/reset";
-@import "modules/bubaluslayout/layout.scss";
-@import "modules/bubaluslayout/common.scss";
-@import "modules/bubaluslayout/responsive.scss";
+@import "modules/bubaluslayout/layout";
+@import "modules/bubaluslayout/grid";
+@import "modules/bubaluslayout/common";
 
-/* 擴展組件
+/* 擴展 CSS 組件
 ----------------------------------*/
 /* 麵包屑 */
 @import "modules/alerttip/alerttip";
@@ -52,10 +52,6 @@
 @import "modules/tooltip/tooltip";
 /* 文本樣式 */
 @import "modules/typography/typography";
-
-/* 載入自定義組件主題
-----------------------------------*/
-//@import "project/bubalus_theme";
 
 
 /* 載入項目樣式
