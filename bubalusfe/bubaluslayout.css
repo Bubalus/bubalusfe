@@ -2724,16 +2724,29 @@ a.nav-list-item.active > .badge,
     .nav-tabs.nav-justified > li {
       float: none; }
       .nav-tabs.nav-justified > li > a {
-        text-align: center; }
-    .nav-tabs.nav-justified > li > a {
-      border-bottom: 1px solid #dddddd;
-      margin-right: 0; }
-    .nav-tabs.nav-justified > .active > a {
-      border-bottom-color: white; }
+        text-align: center;
+        margin-bottom: 5px; }
     @media (min-width: 768px) {
       .nav-tabs.nav-justified > li {
         display: table-cell;
-        width: 1%; } }
+        width: 1%; }
+        .nav-tabs.nav-justified > li > a {
+          margin-bottom: 0; } }
+    .nav-tabs.nav-justified > li > a {
+      margin-right: 0;
+      border-radius: 4px; }
+    .nav-tabs.nav-justified > .active > a,
+    .nav-tabs.nav-justified > .active > a:hover,
+    .nav-tabs.nav-justified > .active > a:focus {
+      border: 1px solid #dddddd; }
+    @media (min-width: 768px) {
+      .nav-tabs.nav-justified > li > a {
+        border-bottom: 1px solid #dddddd;
+        border-radius: 4px 4px 0 0; }
+      .nav-tabs.nav-justified > .active > a,
+      .nav-tabs.nav-justified > .active > a:hover,
+      .nav-tabs.nav-justified > .active > a:focus {
+        border-bottom-color: white; } }
 
 .nav-horizontal > li {
   float: left; }
@@ -2745,7 +2758,14 @@ a.nav-list-item.active > .badge,
   .nav-justified > li {
     float: none; }
     .nav-justified > li > a {
-      text-align: center; }
+      text-align: center;
+      margin-bottom: 5px; }
+  @media (min-width: 768px) {
+    .nav-justified > li {
+      display: table-cell;
+      width: 1%; }
+      .nav-justified > li > a {
+        margin-bottom: 0; } }
 
 .tabbable {
   *zoom: 1; }
@@ -4127,7 +4147,8 @@ table th[class*="col-"] {
 /* Thumbnails - 一套縮圖样式 */
 /* Thumbnails - 變量 */
 .thumbnail {
-  display: block; }
+  display: block;
+  margin-bottom: 20px; }
   .thumbnail > img {
     max-width: 100%;
     height: auto; }

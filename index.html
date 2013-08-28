@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title></title>
+		<title>BubalusFE - BubalusFE - The front-end development toolkit</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
@@ -166,7 +166,8 @@
 							<div class="col-box">
 				                <p>
 				                	BubalusFE 的CSS組件采用 BubalusLayout CSS框架（v5.x），經過徹底的重新設計後可以提供更好的性能和體驗，同時仍將爲早期的IE瀏覽器提供基礎的支援。<br>
-					            	這些文件是提供了樣式重置、柵格佈局、IE早期版本的支持等最重要的功能。並且其他 樣式模塊 都或多或少的依賴於這些文件所提供的參數和方法，所以請不要修改這些文件，方便升級的同時還可防止出現一些奇怪的問題。
+					            	這些文件是提供了樣式重置、柵格佈局、IE早期版本的支持等最重要的功能。並且其他 樣式模塊 都或多或少的依賴於這些文件所提供的參數和方法，所以請和我一起念：<br>
+					            	『 不 要 改 動 這 些 文 件 ！』
 					            </p>
 					            <ul>
 					            	<li><code>images</code> 目錄用於存放核心樣式表用到的媒體資源</li>
@@ -210,7 +211,8 @@
 							<div class="col-box">
 								<h3 id="js-components">bubaluslayout.css</h3>
 					            <p>
-					            	bubaluslayout.css 是由 bubaluslayout.scss 生成的文件，其中包含了 核心CSS 模塊和其他模塊的 CSS組件，以及項目所需的CSS樣式。
+					            	bubaluslayout.css 是由 bubaluslayout.scss 生成的文件，其中包含了 核心CSS 模塊和其他模塊的 CSS組件，以及項目所需的CSS樣式。<br>
+					            	將諸多的核心CSS和組件合併爲一個文件可以有效降低網站的并發壓力，用戶可以根據需要來配置 bubaluslayout.scss 以生成最適用的 CSS文件
 					            </p>
 				            </div>
 						</div>
@@ -225,13 +227,18 @@
 							<div class="col-box">
 								<h3 id="js-components">bubalusbase.js</h3>
 					            <p>
-					            	bubalusbase.js 包含了浏览器检测、模块加载、javascript模板等最核心的功能。<br>
-					            	
+					            	bubalusbase.js 包含了浏览器检测（Modernizr）、模块加载（Seajs）、javascript模板（artTemplate）等最核心的功能。<br>
+					            	他們都是很優秀的工具，而且都有很多中文文檔資源，詳情可瀏覽他們各自的官方網站。 
 					            </p>
 				            </div>
 						</div>
 						<div class="col-desktop-8 docs-article">
 							<div class="col-box">
+							<a href="http://modernizr.com" class="btn btn-info" target="_blank">Modernizr 官方網站</a>
+
+							<a href="http://seajs.org/docs/" class="btn btn-info" target="_blank">sea.js 官方網站</a>
+
+							<a href="http://aui.github.io/artTemplate/" class="btn btn-info" target="_blank">artTemplate 官方網站</a>
 							</div>
 						</div>
 					</div>
