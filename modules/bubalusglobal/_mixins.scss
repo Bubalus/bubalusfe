@@ -67,10 +67,14 @@
 
 // 文本溢出處理（截字）
 // ----------------------
-@mixin text-overflow() {
+%ellipsis-basic{
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: nowrap; 
+}
+@mixin text-overflow($substract:0) {
+  @extend %ellipsis-basic;
+  width:100% - $substract;
 }
 
 // 圖片替換文本
@@ -427,36 +431,18 @@
     @content;
   }
 }
-//iPADs 響應
+//iPAD 響應
 @mixin ipad {
   @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
     @content;
   }
 }
-//iPADs Retina 響應
+//iPAD Retina 響應
 @mixin ipad-retina {
   @media screen and (min-device-width: 768px) and (max-device-width: 1024px)
   and (-webkit-device-pixel-ratio: 2) {
     @content;
   }
-}
-
-// 響應式顯隱
-@mixin responsive-visibility($selector) {
-  #{$selector} {
-    display: block !important;
-  }
-  tr#{$selector} { display: table-row !important; }
-  th#{$selector},
-  td#{$selector} { display: table-cell !important; }
-}
-@mixin responsive-invisibility($selector) {
-  #{$selector} {
-    display: none !important;
-  }
-  tr#{$selector} { display: none !important; }
-  th#{$selector},
-  td#{$selector} { display: none !important; }
 }
 
 

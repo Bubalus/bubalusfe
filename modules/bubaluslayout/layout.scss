@@ -120,54 +120,13 @@ header, footer, nav, #main {
   @include container-fixed();
 }
 
-.col-1,
-.col-2,
-.col-3,
-.col-4,
-.col-5,
-.col-6,
-.col-7,
-.col-8,
-.col-9,
-.col-10,
-.col-11,
-.col-12,
-.col-table-1,
-.col-table-2,
-.col-table-3,
-.col-table-4,
-.col-table-5,
-.col-table-6,
-.col-table-7,
-.col-table-8,
-.col-table-9,
-.col-table-10,
-.col-table-11,
-.col-table-12,
-.col-medium-1,
-.col-medium-2,
-.col-medium-3,
-.col-medium-4,
-.col-medium-5,
-.col-medium-6,
-.col-medium-7,
-.col-medium-8,
-.col-medium-9,
-.col-medium-10,
-.col-medium-11,
-.col-medium-12,
-.col-desktop-1,
-.col-desktop-2,
-.col-desktop-3,
-.col-desktop-4,
-.col-desktop-5,
-.col-desktop-6,
-.col-desktop-7,
-.col-desktop-8,
-.col-desktop-9,
-.col-desktop-10,
-.col-desktop-11,
-.col-desktop-12 {
+// 为一组 列式栅格 创建一个行容器,并清除列栅格的浮动
+.row {
+  @include make-row();
+}
+
+.column {
+  float: left;
   position: relative;
   min-height: 1px; // 防止没有内容时列塌陷而造成错位
   // 通过设置填充来产生列与列之间的间距，内容不会紧挨在一起
@@ -175,10 +134,6 @@ header, footer, nav, #main {
   padding-right: ($grid-gutter-width / 2);
 }
 
-// 为一组 列式栅格 创建一个行容器,并清除列栅格的浮动
-.row {
-  @include make-row();
-}
 // Extra small grid
 //
 // Grid classes for extra small devices like smartphones. No offset, push, or
@@ -187,19 +142,6 @@ header, footer, nav, #main {
 // Note that `.col-xs-12` doesn't get floated on purpose—there's no need since
 // it's full-width.
 
-.col-1,
-.col-2,
-.col-3,
-.col-4,
-.col-5,
-.col-6,
-.col-7,
-.col-8,
-.col-9,
-.col-10,
-.col-11 {
-  float: left;
-}
 .col-1  { width: percentage((1 / $grid-columns)); }
 .col-2  { width: percentage((2 / $grid-columns)); }
 .col-3  { width: percentage((3 / $grid-columns)); }
@@ -211,7 +153,7 @@ header, footer, nav, #main {
 .col-9  { width: percentage((9 / $grid-columns)); }
 .col-10 { width: percentage((10/ $grid-columns)); }
 .col-11 { width: percentage((11/ $grid-columns)); }
-.col-12 { width: 100%; }
+.col-12 { width: 100%; float: none; }
 
 // Small grid
 //
@@ -225,19 +167,6 @@ header, footer, nav, #main {
   .container {
     max-width: $container-table;
   }
-  .col-table-1,
-  .col-table-2,
-  .col-table-3,
-  .col-table-4,
-  .col-table-5,
-  .col-table-6,
-  .col-table-7,
-  .col-table-8,
-  .col-table-9,
-  .col-table-10,
-  .col-table-11 {
-    float: left;
-  }
   .col-table-1  { width: percentage((1 / $grid-columns)); }
   .col-table-2  { width: percentage((2 / $grid-columns)); }
   .col-table-3  { width: percentage((3 / $grid-columns)); }
@@ -249,7 +178,7 @@ header, footer, nav, #main {
   .col-table-9  { width: percentage((9 / $grid-columns)); }
   .col-table-10 { width: percentage((10/ $grid-columns)); }
   .col-table-11 { width: percentage((11/ $grid-columns)); }
-  .col-table-12 { width: 100%; }
+  .col-table-12 { width: 100%; float: none; }
 }
 
 
@@ -264,59 +193,6 @@ header, footer, nav, #main {
   .container {
     max-width: $container-desktop;
   }
-  .col-medium-1,
-  .col-medium-2,
-  .col-medium-3,
-  .col-medium-4,
-  .col-medium-5,
-  .col-medium-6,
-  .col-medium-7,
-  .col-medium-8,
-  .col-medium-9,
-  .col-medium-10,
-  .col-medium-11 {
-    float: left;
-  }
-  .col-medium-1  { width: percentage((1 / $grid-columns)); }
-  .col-medium-2  { width: percentage((2 / $grid-columns)); }
-  .col-medium-3  { width: percentage((3 / $grid-columns)); }
-  .col-medium-4  { width: percentage((4 / $grid-columns)); }
-  .col-medium-5  { width: percentage((5 / $grid-columns)); }
-  .col-medium-6  { width: percentage((6 / $grid-columns)); }
-  .col-medium-7  { width: percentage((7 / $grid-columns)); }
-  .col-medium-8  { width: percentage((8 / $grid-columns)); }
-  .col-medium-9  { width: percentage((9 / $grid-columns)); }
-  .col-medium-10 { width: percentage((10/ $grid-columns)); }
-  .col-medium-11 { width: percentage((11/ $grid-columns)); }
-  .col-medium-12 { width: 100%; }
-}
-
-
-// Large grid
-//
-// Columns, offsets, pushes, and pulls for the large desktop device range.
-//
-// Note that `.col-lg-12` doesn't get floated on purpose—there's no need since
-// it's full-width.
-
-@media (min-width: $screen-large-desktop) {
-  .container {
-    max-width: $container-large-desktop;
-  }
-
-  .col-desktop-1,
-  .col-desktop-2,
-  .col-desktop-3,
-  .col-desktop-4,
-  .col-desktop-5,
-  .col-desktop-6,
-  .col-desktop-7,
-  .col-desktop-8,
-  .col-desktop-9,
-  .col-desktop-10,
-  .col-desktop-11 {
-    float: left;
-  }
   .col-desktop-1  { width: percentage((1 / $grid-columns)); }
   .col-desktop-2  { width: percentage((2 / $grid-columns)); }
   .col-desktop-3  { width: percentage((3 / $grid-columns)); }
@@ -328,7 +204,34 @@ header, footer, nav, #main {
   .col-desktop-9  { width: percentage((9 / $grid-columns)); }
   .col-desktop-10 { width: percentage((10/ $grid-columns)); }
   .col-desktop-11 { width: percentage((11/ $grid-columns)); }
-  .col-desktop-12 { width: 100%; }
+  .col-desktop-12 { width: 100%; float: none; }
+}
+
+
+// Large grid
+//
+// Columns, offsets, pushes, and pulls for the large desktop device range.
+//
+// Note that `.col-lg-12` doesn't get floated on purpose—there's no need since
+// it's full-width.
+
+@media (min-width: $screen-notebook) {
+  .container {
+    max-width: $container-large-desktop;
+  }
+
+  .col-notebook-1  { width: percentage((1 / $grid-columns)); }
+  .col-notebook-2  { width: percentage((2 / $grid-columns)); }
+  .col-notebook-3  { width: percentage((3 / $grid-columns)); }
+  .col-notebook-4  { width: percentage((4 / $grid-columns)); }
+  .col-notebook-5  { width: percentage((5 / $grid-columns)); }
+  .col-notebook-6  { width: percentage((6 / $grid-columns)); }
+  .col-notebook-7  { width: percentage((7 / $grid-columns)); }
+  .col-notebook-8  { width: percentage((8 / $grid-columns)); }
+  .col-notebook-9  { width: percentage((9 / $grid-columns)); }
+  .col-notebook-10 { width: percentage((10/ $grid-columns)); }
+  .col-notebook-11 { width: percentage((11/ $grid-columns)); }
+  .col-notebook-12 { width: 100%; float: none; }
   
 }
 
