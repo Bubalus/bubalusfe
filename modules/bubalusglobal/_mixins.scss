@@ -1,24 +1,21 @@
 // --------------------------------------------
 // BubalusFE - The front-end development framework
 //
-/* Mixins - 全局方法 */
+/* Mixins - 全局混入方法 */
 // --------------------------------------------
 
 // --------------------------------------------
 // 基本方法  //////////////////////////////////
 // --------------------------------------------
 
-@mixin fl-ri {
-  display: inline;
-  float: right !important;
-}
-
-@mixin fl-le {
-  display: inline;
-  float: left !important;
-}
-// 清除浮動
+// 浮動和清除浮動
 // ----------------------
+@mixin float($float:left) {
+  float: $float;
+  @if $ie6-7-support {
+    display: inline;
+  }
+}
 @mixin clear {
   &:before {
     content:"";
@@ -34,7 +31,26 @@
     line-height: 0;
     visibility:hidden;
   }
-  *zoom: 1;
+  @if $ie6-7-support {
+    *zoom: 1;
+  }
+}
+
+// 行內塊級元素
+// ----------------------
+@mixin inline-block {
+  display: inline-block;
+  @if $ie6-7-support {
+    *display: inline;*zoom:1;
+  }
+}
+
+// 使一個元素以塊級形式居中對齊
+// ----------------------
+@mixin center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // Webkit 聚焦樣式
@@ -47,22 +63,41 @@
   outline-offset: -2px;
 }
 
-// 使一個元素以塊級形式居中對齊
+// 使列表擁有列表樣式，因為默認被 reset 掉了
 // ----------------------
-@mixin center-block() {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+@mixin list-style {
+  margin-left:25px;
+  list-style:disc;
 }
 
 // 尺寸設置
 // ----------------------
-@mixin size($width, $height) {
+@mixin size($width, $height) { 
   width: $width;
   height: $height;
 }
-@mixin square($size) { // 正方形
-  @include size($size, $size);
+
+// 設置最小高度
+// ----------------------
+@mixin min-height($height){
+  min-height: $height;
+  height: auto !important;
+  @if $ie6-7-support {
+    _height: $height;
+  }
+}
+// 單位轉換 px-em
+// ----------------------
+@function px-em($value, $base: $font-size-base) { // 值 , 基準值
+  @return ($value / $base) * 1em;
+}
+// rem 支持
+// ----------------------
+@mixin rem ($property, $value) { // 屬性 , 值
+  @if $ie6-7-support {
+    #{$property}: $value * $font-size-base;  // 計算出對應的 px值 來兼容舊瀏覽器
+  }
+  #{$property}: #{$value}rem; 
 }
 
 // 文本溢出處理（截字）
@@ -85,6 +120,22 @@
   text-shadow: none;
   background-color: transparent;
   border: 0;
+  @if $ie6-7-support {
+    _line-height:99;
+    _overflow:hidden;
+  }
+}
+
+// 背景色使用支持透明度的rgba
+// ----------------------
+@mixin background-rgba($bgcolor: rgba(0,0,0,.5)){
+  color:#fff;
+  @if $filter{
+    filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#{ie-hex-str($bgcolor)}', endColorstr='#{ie-hex-str($bgcolor)}');
+  }@else{
+    background-color: #333;
+  }
+  background-color:$bgcolor; 
 }
 
 // 響應式圖片 （圖片根據父容器尺寸縮放）
@@ -124,7 +175,35 @@
   -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
           box-shadow: $shadow;
 }
-
+// 生成三角形
+%triangle-basic{
+  content:"";
+  height: 0;
+  width: 0;
+}
+@mixin triangle($direction, $size, $borderColor ) {
+  @extend %triangle-basic;
+  @if $direction == top {
+    border-bottom:$size solid $borderColor;
+    border-left:$size dashed transparent;
+    border-right:$size dashed transparent;
+  } 
+  @else if $direction == right {
+    border-left:$size solid $borderColor;
+    border-top:$size dashed transparent;
+    border-bottom:$size dashed transparent;
+  } 
+  @else if $direction == bottom {
+    border-top:$size solid $borderColor;
+    border-left:$size dashed transparent;
+    border-right:$size dashed transparent;
+  } 
+  @else if $direction == left {
+    border-right:$size solid $borderColor;
+    border-top:$size dashed transparent;
+    border-bottom:$size dashed transparent;
+  }
+}
 // 過渡效果
 // ----------------------
 @mixin transition($transition) {
@@ -232,13 +311,12 @@
 
 // 透明度
 // ----------------------
-@mixin opacity($opacity) {
+@mixin opacity($opacity:0.9) {
   opacity: $opacity;
-  // IE 濾鏡
-  $opacity-ie: ($opacity * 100);
-  filter: alpha(opacity=#{$opacity-ie})
+  @if $ie6-8-filter{
+    filter: alpha(opacity=$opacity*100);
+  }
 }
-
 
 // 漸變
 // ----------------------
@@ -249,7 +327,9 @@
   background-image: -moz-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // FF 3.6+
   background-image:  linear-gradient(to right, $start-color $start-percent, $end-color $end-percent); // Standard, IE10
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
+  @if $ie6-8-filter {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
+  }
 }
 
 // 從上到下的垂直漸變
@@ -259,7 +339,9 @@
   background-image:  -moz-linear-gradient(top, $start-color $start-percent, $end-color $end-percent); // FF 3.6+
   background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent); // Standard, IE10
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
+  @if $ie6-8-filter {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
+  }
 }
 
 // 定向漸變
@@ -277,7 +359,9 @@
   background-image: -moz-linear-gradient(left, $start-color, $mid-color $color-stop, $end-color);
   background-image: linear-gradient(to right, $start-color, $mid-color $color-stop, $end-color);
   background-repeat: no-repeat;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down, gets no color-stop at all for proper fallback
+  @if $ie6-8-filter {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down, gets no color-stop at all for proper fallback
+  }
 }
 
 // 垂直的三色漸變
@@ -287,7 +371,9 @@
   background-image: -moz-linear-gradient(top, $start-color, $mid-color $color-stop, $end-color);
   background-image: linear-gradient($start-color, $mid-color $color-stop, $end-color);
   background-repeat: no-repeat;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down, gets no color-stop at all for proper fallback
+  @if $ie6-8-filter {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down, gets no color-stop at all for proper fallback
+  }
 }
 
 // 徑向漸變
@@ -360,19 +446,6 @@
   margin: (($line-height-computed / 2) - 1) 0;
   overflow: hidden;
   background-color: $color;
-}
-
-
-// Labels
-// -------------------------
-@mixin label-variant($color) {
-  background-color: $color;
-  &[href] {
-    &:hover,
-    &:focus {
-      background-color: darken($color, 10%);
-    }
-  }
 }
 
 // 進度條

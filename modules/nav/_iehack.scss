@@ -1,0 +1,18 @@
+// -------------------------
+// 引入配置
+// -------------------------
+@import "variables";
+@import "mixins";
+
+.navbar-nav {
+  float: left !important;
+  margin: 0;
+
+  li{ 
+  	a {
+	  padding-top:    10px;
+	  padding-bottom: 10px;
+	  line-height: $line-height-computed;
+    }
+  }
+}

@@ -4,109 +4,11 @@
 /* Layout - 一套基于百分比的响应式栅格布局系统及方法 */
 // --------------------------------------------
 
-// ----------------------
-// Grid 变量
-// ----------------------
-
-
-// 设置栅格系统中 列 的数量
-$grid-columns:              12 !default;
-// 栅格间距值，即列与列之间的间距值
-$grid-gutter-width:         20px !default;
-// 栅格响应点
-$grid-float-breakpoint:     $screen-table !default;
-// Container sizes
-// --------------------------------------------------
-
-// Small screen / tablet
-$container-table:            ((720px + $grid-gutter-width)) !default;
-
-// Medium screen / desktop
-$container-desktop:           ((940px + $grid-gutter-width)) !default;
-
-// Large screen / wide desktop
-$container-large-desktop:        ((1140px + $grid-gutter-width)) !default;
-
-
-
-
-// ----------------------
-// Grid 方法
-// ----------------------
-
-// 用于主容器设置居中并清除浮动
-@mixin container-fixed() {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left:  ($grid-gutter-width / 2);
-  padding-right: ($grid-gutter-width / 2);
-  @include clear();
-}
-
-// 用于为一组 列式栅格 创建一个水平容器,并清除列栅格的浮动
-@mixin make-row($gutter: $grid-gutter-width) {
-  margin-left:  ($gutter / -2);
-  margin-right: ($gutter / -2);
-  @include clear();
-}
-// Generate the extra small columns
-@mixin make-xs-column($columns, $gutter: $grid-gutter-width) {
-  position: relative;
-  float: left;
-  width: percentage(($columns / $grid-columns));
-  // Prevent columns from collapsing when empty
-  min-height: 1px;
-  // Inner gutter via padding
-  padding-left:  ($gutter / 2);
-  padding-right: ($gutter / 2);
-}
-
-// Generate the small columns
-@mixin make-sm-column($columns, $gutter: $grid-gutter-width) {
-  position: relative;
-  // Prevent columns from collapsing when empty
-  min-height: 1px;
-  // Inner gutter via padding
-  padding-left:  ($gutter / 2);
-  padding-right: ($gutter / 2);
-
-  // Calculate width based on number of columns available
-  @media (min-width: $screen-sm) {
-    float: left;
-    width: percentage(($columns / $grid-columns));
-  }
-}
-// Generate the medium columns
-@mixin make-md-column($columns, $gutter: $grid-gutter-width) {
-  position: relative;
-  // Prevent columns from collapsing when empty
-  min-height: 1px;
-  // Inner gutter via padding
-  padding-left:  ($gutter / 2);
-  padding-right: ($gutter / 2);
-
-  // Calculate width based on number of columns available
-  @media (min-width: $screen-md) {
-    float: left;
-    width: percentage(($columns / $grid-columns));
-  }
-}
-
-// Generate the large columns
-@mixin make-lg-column($columns, $gutter: $grid-gutter-width) {
-  position: relative;
-  // Prevent columns from collapsing when empty
-  min-height: 1px;
-  // Inner gutter via padding
-  padding-left:  ($gutter / 2);
-  padding-right: ($gutter / 2);
-
-  // Calculate width based on number of columns available
-  @media (min-width: $screen-lg) {
-    float: left;
-    width: percentage(($columns / $grid-columns));
-  }
-}
+// -------------------------
+// 引入配置
+// -------------------------
+@import "variables";
+@import "mixins";
 
 // ----------------------
 // Grid 样式

@@ -3,25 +3,22 @@
 //
 /* Common - 公共樣式 */
 // --------------------------------------------
-// Wells
-// -------------------------
+
 $well-bg:                     #f5f5f5 !default;
 
 
-// Floats
+//  浮動和清除浮動
 // -------------------------
 
 .clear {
   @include clear();
 }
 
-	.ie-clearing { display:none; }
-
 .fl-ri {
-  float: right !important;
+  @include float(right);
 }
 .fl-le {
-  float: left !important;
+  @include float();
 }
 
 
@@ -37,16 +34,16 @@ $well-bg:                     #f5f5f5 !default;
 .invisible {
   visibility: hidden;
 }
-// Only display content to screen readers
-// See: http://a11yproject.com/posts/how-to-hide-content/
-// -------------------------
-.sr-only {
+.on-screen-reader { // 只在屏幕閱讀器中顯示
   position: absolute;
   width: 1px;
   height: 1px;
   margin: -1px;
   padding: 0;
   overflow: hidden;
+  @if $ie6-7-support {
+    clip:rect(1px 1px 1px 1px);//ie6/7
+  }
   clip: rect(0 0 0 0);
   border: 0;
 }

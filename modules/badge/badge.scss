@@ -1,0 +1,83 @@
+// --------------------------------------------
+// BubalusFE - The front-end development framework
+//
+/* Badge - 一個文字標簽样式，用於提示消息數量等 */
+// --------------------------------------------
+
+// -------------------------
+// 引入配置
+// -------------------------
+@import "variables";
+@import "mixins";
+
+// -------------------------
+// badge 樣式
+// -------------------------
+.badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: .3em .6em;;
+  font-size: $font-size-small;
+  font-weight: $badge-font-weight;
+  color: $badge-color;
+  line-height: $badge-line-height;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-align: center;
+  background-color: $badge-bg;
+  border-radius: $badge-border-radius;
+
+  // 懸浮樣式
+  &[href] {
+    &:hover,
+    &:focus {
+      color: $badge-link-hover-color;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+
+  // 空標簽隱藏
+  &:empty {
+    display: none;
+  }
+}
+
+// 按鈕裏的狀態標簽
+.btn .badge {
+  position: relative;
+  top: -1px;
+}
+
+.badge-default {
+  @include badge-variant($badge-default-bg);
+}
+// 危險標簽
+.badge-danger {
+  @include badge-variant($badge-danger-bg);
+}
+//成功標簽
+.badge-success {
+  @include badge-variant($badge-success-bg);
+}
+// 警告標籤
+.badge-warning {
+  @include badge-variant($badge-warning-bg);
+}
+// 詳情標簽
+.badge-info {
+  @include badge-variant($badge-info-bg);
+}
+
+
+// 列表組和導航裏的狀態標簽
+a.nav-list-item.active > .badge,
+.nav-pills > .active > a > .badge {
+  color: $badge-active-color;
+  background-color: $badge-active-bg;
+}
+.nav-pills > li > a > .badge {
+  margin-left: 3px;
+}
+
+/* END Labels */

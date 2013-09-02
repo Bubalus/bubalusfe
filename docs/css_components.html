@@ -12,7 +12,11 @@
 		<link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
 		<link rel="stylesheet" href="../bubaluslayout.css">
 		<!--[if lte IE 7]>
-		<link rel="stylesheet" href="../modules/bubaluslayout/iehacks.css" type="text/css"/>
+		<link rel="stylesheet" href="../bubalusiehacks.css" type="text/css"/>
+		<![endif]-->
+		<!--[if lt IE 9]>
+		<script src="../modules/html5shiv/html5shiv.js"></script>
+		<script src="../modules/respond/respond.min.js"></script>
 		<![endif]-->
 	</head>
 	<body>
@@ -126,6 +130,44 @@
 
 // 描述樣式
 &lt;div class="alertTip alertTip-info"&gt;
+								</pre>
+							</div>
+						</div>
+					</div>
+
+		        </div>
+
+				<!-- Badge -->
+		        <div class="docs-section" id="badge">
+					<div class="page-header docs-page-header">
+		                <h1>Badge <small>一個文字標籤樣式</small></h1>
+		            </div>
+
+					<div class="row docs-row equalize">
+						<div class="column col-desktop-4 docs-side">
+							<div class="col-box">
+								<p>
+									這種文字標籤可用在很多地方，內置了幾種主題樣式便於使用。
+								</p>
+								<ul>
+									<li><code>.badge</code> 默認的文字標籤樣式</li>
+									<li><code>.badge badge-success</code> 「成功」主題的文字標籤樣式</li>
+									<li><code>.badge badge-warning</code> 「注意」主題的文字標籤樣式</li>
+									<li><code>.badge badge-danger</code> 「警告」主題的文字標籤樣式</li>
+								</ul>
+							</div>
+						</div>
+						<div class="column col-desktop-8 docs-article">
+							<div class="col-box">
+								<span class="badge">默認標籤</span>
+								<span class="badge badge-success">成功標籤</span>
+								<span class="badge badge-warning">注意標籤</span>
+								<span class="badge badge-danger">警告標籤</span>
+								<pre>
+&lt;span class="badge"&gt;默認標籤&lt;/span&gt;
+&lt;span class="badge badge-success"&gt;成功標籤&lt;/span&gt;
+&lt;span class="badge badge-warning"&gt;注意標籤&lt;/span&gt;
+&lt;span class="badge badge-danger"&gt;警告標籤&lt;/span&gt;
 								</pre>
 							</div>
 						</div>
@@ -925,44 +967,6 @@
 
 		        </div>
 
-				<!-- Label -->
-		        <div class="docs-section" id="label">
-					<div class="page-header docs-page-header">
-		                <h1>Label <small>一個文字標籤樣式</small></h1>
-		            </div>
-
-					<div class="row docs-row equalize">
-						<div class="column col-desktop-4 docs-side">
-							<div class="col-box">
-								<p>
-									這種文字標籤可用在很多地方，內置了幾種主題樣式便於使用。
-								</p>
-								<ul>
-									<li><code>.label</code> 默認的文字標籤樣式</li>
-									<li><code>.label label-success</code> 「成功」主題的文字標籤樣式</li>
-									<li><code>.label label-warning</code> 「注意」主題的文字標籤樣式</li>
-									<li><code>.label label-danger</code> 「警告」主題的文字標籤樣式</li>
-								</ul>
-							</div>
-						</div>
-						<div class="column col-desktop-8 docs-article">
-							<div class="col-box">
-								<span class="label">默認標籤</span>
-								<span class="label label-success">成功標籤</span>
-								<span class="label label-warning">注意標籤</span>
-								<span class="label label-danger">警告標籤</span>
-								<pre>
-&lt;span class="label"&gt;默認標籤&lt;/span&gt;
-&lt;span class="label label-success"&gt;成功標籤&lt;/span&gt;
-&lt;span class="label label-warning"&gt;注意標籤&lt;/span&gt;
-&lt;span class="label label-danger"&gt;警告標籤&lt;/span&gt;
-								</pre>
-							</div>
-						</div>
-					</div>
-
-		        </div>
-
 				<!-- 導航 -->
 		        <div class="docs-section" id="navs">
 					<div class="page-header docs-page-header">
@@ -1364,5 +1368,6 @@
 			g.src='//www.google-analytics.com/ga.js';
 			s.parentNode.insertBefore(g,s)}(document,'script'));
 		</script>-->
+		<script src="../bubalusbase.js" id="seajsnode"></script>
 	</body>
 </html>

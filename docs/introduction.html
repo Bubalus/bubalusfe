@@ -12,7 +12,11 @@
 		<link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
 		<link rel="stylesheet" href="../bubaluslayout.css">
 		<!--[if lte IE 7]>
-		<link rel="stylesheet" href="../modules/bubaluslayout/iehacks.css" type="text/css"/>
+		<link rel="stylesheet" href="../bubalusiehacks.css" type="text/css"/>
+		<![endif]-->
+		<!--[if lt IE 9]>
+		<script src="../modules/html5shiv/html5shiv.js"></script>
+		<script src="../modules/respond/respond.min.js"></script>
 		<![endif]-->
 	</head>
 	<body>
@@ -295,5 +299,6 @@
 			g.src='//www.google-analytics.com/ga.js';
 			s.parentNode.insertBefore(g,s)}(document,'script'));
 		</script>-->
+		<script src="../bubalusbase.js" id="seajsnode"></script>
 	</body>
 </html>

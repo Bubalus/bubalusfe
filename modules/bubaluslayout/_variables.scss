@@ -1,0 +1,28 @@
+// --------------------------------------------
+// BubalusFE - The front-end development framework
+//
+/* BubalusLayout Variables */
+// --------------------------------------------
+
+// ----------------------
+// Grid 变量
+// ----------------------
+
+
+// 设置栅格系统中 列 的数量
+$grid-columns:              12 !default;
+// 栅格间距值，即列与列之间的间距值
+$grid-gutter-width:         20px !default;
+// 栅格响应点
+$grid-float-breakpoint:     $screen-table !default;
+// Container sizes
+// --------------------------------------------------
+
+// Small screen / tablet
+$container-table:            ((720px + $grid-gutter-width)) !default;
+
+// Medium screen / desktop
+$container-desktop:           ((940px + $grid-gutter-width)) !default;
+
+// Large screen / wide desktop
+$container-large-desktop:        ((1140px + $grid-gutter-width)) !default;

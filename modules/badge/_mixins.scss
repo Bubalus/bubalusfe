@@ -1,0 +1,15 @@
+// --------------------------------------------
+// BubalusFE - The front-end development framework
+//
+/* Badge - 方法 */
+// --------------------------------------------
+
+@mixin badge-variant($color) {
+  background-color: $color;
+  &[href] {
+    &:hover,
+    &:focus {
+      background-color: darken($color, 10%);
+    }
+  }
+}

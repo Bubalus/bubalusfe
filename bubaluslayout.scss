@@ -13,13 +13,14 @@
 ----------------------------------*/
 @import "modules/bubaluslayout/reset";
 @import "modules/bubaluslayout/layout";
-//@import "modules/bubaluslayout/grid";
 @import "modules/bubaluslayout/common";
 
 /* 擴展 CSS 組件
 ----------------------------------*/
 /* 麵包屑 */
 @import "modules/alerttip/alerttip";
+/* 標簽 */
+@import "modules/badge/badge";
 /* 按鈕/按鈕組 */
 @import "modules/button/button";
 /* 關閉按鈕 */
@@ -28,8 +29,6 @@
 @import "modules/dropdown/dropdown";
 /* 表單 */
 @import "modules/form/form";
-/* 標簽 */
-@import "modules/label/label";
 /* 導航 */
 @import "modules/nav/nav";
 /* 分頁 */
