@@ -1,0 +1,419 @@
+@charset "UTF-8";
+/* Config - 样式表配置文件 */
+/* Variables - 全局變量 */
+/* END Variables */
+/* Mixins - 全局混入方法 */
+/* END Mixins */
+/* END Config */
+/* 載入 BubalusLayout 核心
+----------------------------------*/
+/* BubalusLayout Variables */
+/* BubalusLayout Mixins */
+body {
+  o\verflow: visible; }
+
+html {
+  margin-right: 0; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, nav, section {
+  zoom: 1; }
+
+audio, canvas, video {
+  display: inline;
+  zoom: 1; }
+
+.flexible {
+  zoom: 1;
+  width: 98%; }
+
+iframe,
+frame {
+  overflow: auto; }
+
+input,
+frameset {
+  overflow: hidden; }
+
+textarea {
+  overflow: scroll;
+  overflow-x: hidden; }
+
+body, #main {
+  position: relative; }
+
+body {
+  position: static; }
+
+.clear {
+  zoom: 1; }
+
+body, .col-box {
+  height: 1%; }
+
+.container, .col-box, header, nav, #main, footer {
+  zoom: 1; }
+
+.container, .col-box {
+  height: 1%;
+  hei\ght: auto; }
+
+header, nav, #main, footer {
+  width: 100%;
+  wid\th: auto; }
+
+ul, ol, dl {
+  position: relative; }
+
+ol li {
+  display: list-item; }
+
+button, input {
+  *overflow: visible !important; }
+
+table button, table input {
+  *overflow: auto; }
+
+fieldset, legend {
+  position: relative; }
+
+.equalize .col-1,
+.equalize .col-2,
+.equalize .col-3,
+.equalize .col-4,
+.equalize .col-5,
+.equalize .col-6,
+.equalize .col-7,
+.equalize .col-8,
+.equalize .col-9,
+.equalize .col-10,
+.equalize .col-11,
+.equalize .col-table-1,
+.equalize .col-table-2,
+.equalize .col-table-3,
+.equalize .col-table-4,
+.equalize .col-table-5,
+.equalize .col-table-6,
+.equalize .col-table-7,
+.equalize .col-table-8,
+.equalize .col-table-9,
+.equalize .col-table-10,
+.equalize .col-table-11,
+.equalize .col-desktop-1,
+.equalize .col-desktop-2,
+.equalize .col-desktop-3,
+.equalize .col-desktop-4,
+.equalize .col-desktop-5,
+.equalize .col-desktop-6,
+.equalize .col-desktop-7,
+.equalize .col-desktop-8,
+.equalize .col-desktop-9,
+.equalize .col-desktop-10,
+.equalize .col-desktop-11,
+.equalize .col-notebook-1,
+.equalize .col-notebook-2,
+.equalize .col-notebook-3,
+.equalize .col-notebook-4,
+.equalize .col-notebook-5,
+.equalize .col-notebook-6,
+.equalize .col-notebook-7,
+.equalize .col-notebook-8,
+.equalize .col-notebook-9,
+.equalize .col-notebook-10,
+.equalize .col-notebook-11 {
+  padding-bottom: 32767px;
+  margin-bottom: -32767px; }
+
+.col-desktop-1 {
+  width: 8.3% !important; }
+
+.col-desktop-2 {
+  width: 16.6% !important; }
+
+.col-desktop-3 {
+  width: 25% !important; }
+
+.col-desktop-4 {
+  width: 33.3% !important; }
+
+.col-desktop-5 {
+  width: 41.6% !important; }
+
+.col-desktop-6 {
+  width: 50% !important; }
+
+.col-desktop-7 {
+  width: 58.3% !important; }
+
+.col-desktop-8 {
+  width: 66.6% !important; }
+
+.col-desktop-9 {
+  width: 75% !important; }
+
+.col-desktop-10 {
+  width: 83.3% !important; }
+
+.col-desktop-11 {
+  width: 91.6% !important; }
+
+.col-box {
+  word-wrap: break-word;
+  o\verflow: hidden; }
+
+/* 擴展 CSS 組件
+----------------------------------*/
+/* 表單 */
+/* Forms - 變量 */
+/* Forms - 方法 */
+/* 導航 */
+/* Navs - 變量 */
+/* Navs -  */
+.nav li {
+  position: relative;
+  display: block; }
+  .nav li a {
+    border-radius: 5px;
+    position: relative;
+    display: block;
+    padding: 10px 15px; }
+    .nav li a:hover, .nav li a:focus {
+      text-decoration: none;
+      background-color: #eeeeee; }
+  .nav li.active a, .nav li.active a:hover, .nav li.active a:focus {
+    color: white;
+    background-color: #428bca; }
+  .nav li.disabled a {
+    color: #999999; }
+    .nav li.disabled a:hover, .nav li.disabled a:focus {
+      color: #999999;
+      text-decoration: none;
+      background-color: transparent;
+      cursor: not-allowed; }
+.nav .open a, .nav .open a:hover, .nav .open a:focus {
+  background-color: #eeeeee;
+  border-color: #428bca; }
+.nav .nav-divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5; }
+
+.nav-tabs {
+  border-bottom: 1px solid #dddddd; }
+  .nav-tabs li {
+    float: left;
+    margin-bottom: -1px; }
+    .nav-tabs li a {
+      margin-right: 2px;
+      line-height: 1.42857;
+      border: 1px solid transparent;
+      border-radius: 4px 4px 0 0; }
+      .nav-tabs li a:hover {
+        border-color: #eeeeee #eeeeee #dddddd; }
+    .nav-tabs li.active a, .nav-tabs li.active a:hover, .nav-tabs li.active a:focus {
+      color: #555555;
+      background-color: white;
+      border: 1px solid #dddddd;
+      border-bottom-color: transparent;
+      cursor: default; }
+  .nav-tabs.nav-justified {
+    border-bottom: 0; }
+    .nav-tabs.nav-justified li a {
+      margin-right: 0;
+      border-bottom: 1px solid #dddddd;
+      border-radius: 4px 4px 0 0; }
+    .nav-tabs.nav-justified .active a,
+    .nav-tabs.nav-justified .active a:hover,
+    .nav-tabs.nav-justified .active a:focus {
+      border: 1px solid #dddddd;
+      border-bottom-color: white; }
+
+.nav-horizontal li {
+  float: left;
+  margin-left: 2px; }
+
+.nav-justified {
+  width: 100%; }
+  .nav-justified li {
+    float: none;
+    display: table-cell;
+    width: 1%; }
+    .nav-justified li a {
+      text-align: center;
+      margin-bottom: 0; }
+
+.tab-content .tab-pane,
+.pill-content .pill-pane {
+  display: none; }
+
+.tab-content .active,
+.pill-content .active {
+  display: block; }
+
+.navbar-header {
+  zoom: 1;
+  float: left; }
+  .navbar-header:before {
+    content: "";
+    display: table;
+    line-height: 0; }
+  .navbar-header:after {
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden; }
+
+.navbar-collapse {
+  width: auto;
+  border-top: 0;
+  box-shadow: none; }
+  .navbar-collapse.collapse {
+    display: block !important;
+    height: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important; }
+  .navbar-collapse.in {
+    overflow-y: visible; }
+  .navbar-collapse .navbar-nav.navbar-left:first-child {
+    margin-left: -10px; }
+  .navbar-collapse .navbar-nav.navbar-right:last-child {
+    margin-right: -10px; }
+  .navbar-collapse .navbar-text:last-child {
+    margin-right: 0; }
+
+.container .navbar-header,
+.container .navbar-collapse {
+  margin-right: 0;
+  margin-left: 0; }
+
+.navbar .container .navbar-brand {
+  margin-left: -10px; }
+
+.navbar-toggle {
+  display: none; }
+  .navbar-toggle .icon-bar {
+    margin-top: 4px; }
+
+.navbar-nav {
+  float: left;
+  margin: 0; }
+  .navbar-nav li {
+    float: left; }
+    .navbar-nav li a {
+      line-height: 20px;
+      padding-top: 15px;
+      padding-bottom: 15px; }
+
+.navbar-left {
+  float: left;
+  display: inline; }
+
+.navbar-right {
+  float: right;
+  display: inline; }
+
+.navbar-form {
+  width: auto;
+  border: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 0;
+  padding-bottom: 0; }
+  @media (min-width: 768px) {
+    .navbar-form .form-group {
+      display: inline-block;
+      margin-bottom: 0;
+      vertical-align: middle; }
+    .navbar-form .form-control {
+      display: inline-block; }
+    .navbar-form .radio,
+    .navbar-form .checkbox {
+      display: inline-block;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-left: 0; }
+    .navbar-form .radio input[type="radio"],
+    .navbar-form .checkbox input[type="checkbox"] {
+      float: none;
+      margin-left: 0; } }
+
+.navbar-nav li .dropdown-menu {
+  margin-top: 0; }
+
+.navbar-nav.fl-ri li .dropdown-menu,
+.navbar-nav li .dropdown-menu.fl-le {
+  left: auto;
+  right: 0; }
+
+.navbar-text {
+  margin-left: 10px;
+  margin-right: 10px; }
+
+.navbar-default .navbar-nav li a {
+  color: #777777; }
+  .navbar-default .navbar-nav li a:hover, .navbar-default .navbar-nav li a:focus {
+    color: #333333;
+    background-color: transparent; }
+.navbar-default .navbar-nav .active a, .navbar-default .navbar-nav .active a:hover, .navbar-default .navbar-nav .active a:focus {
+  color: #555555;
+  background-color: #e7e7e7; }
+.navbar-default .navbar-nav .disabled a, .navbar-default .navbar-nav .disabled a:hover, .navbar-default .navbar-nav .disabled a:focus {
+  color: #cccccc;
+  background-color: transparent; }
+.navbar-default .navbar-nav .dropdown a:hover .caret,
+.navbar-default .navbar-nav .dropdown a:focus .caret {
+  border-top-color: #333333;
+  border-bottom-color: #333333; }
+.navbar-default .navbar-nav .open a, .navbar-default .navbar-nav .open a:hover, .navbar-default .navbar-nav .open a:focus {
+  background-color: #e7e7e7;
+  color: #555555; }
+  .navbar-default .navbar-nav .open a .caret, .navbar-default .navbar-nav .open a:hover .caret, .navbar-default .navbar-nav .open a:focus .caret {
+    border-top-color: #555555;
+    border-bottom-color: #555555; }
+.navbar-default .navbar-nav .dropdown a .caret {
+  border-top-color: #777777;
+  border-bottom-color: #777777; }
+
+.nav-list-item .badge {
+  float: right;
+  margin-right: 5px; }
+
+.nav-breadcrumb li {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  content: "/\00a0";
+  padding: 0 5px;
+  color: #cccccc; }
+
+/* 載入項目樣式
+----------------------------------*/
+.docs-nav .navbar-nav li {
+  margin-top: 7px; }
+  .docs-nav .navbar-nav li a {
+    line-height: 43px;
+    padding: 0 40px;
+    color: #76a4bd;
+    background-color: transparent; }
+    .docs-nav .navbar-nav li a:hover, .docs-nav .navbar-nav li a:focus {
+      color: #fff; }
+  .docs-nav .navbar-nav li.active {
+    margin-top: 0;
+    border-top: 7px solid #5b912f;
+    background-color: #112028; }
+    .docs-nav .navbar-nav li.active a, .docs-nav .navbar-nav li.active a:hover, .docs-nav .navbar-nav li.active a:focus {
+      color: #fff; }
+
+#tables .table-bordered {
+  border: 1px solid #38596b; }
+  #tables .table-bordered thead tr th,
+  #tables .table-bordered thead tr td,
+  #tables .table-bordered tbody tr th,
+  #tables .table-bordered tbody tr td,
+  #tables .table-bordered tfoot tr th,
+  #tables .table-bordered tfoot tr td {
+    border: 1px solid #38596b; }
