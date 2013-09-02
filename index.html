@@ -12,7 +12,11 @@
 		<link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
 		<link rel="stylesheet" href="bubalusfe/bubaluslayout.css">
 		<!--[if lte IE 7]>
-		<link rel="stylesheet" href="bubalusfe/modules/bubaluslayout/iehacks.css" type="text/css"/>
+		<link rel="stylesheet" href="bubalusfe/bubalusiehacks.css" type="text/css"/>
+		<![endif]-->
+		<!--[if lt IE 9]>
+		<script src="../modules/html5shiv/html5shiv.js"></script>
+		<script src="../modules/respond/respond.min.js"></script>
 		<![endif]-->
 	</head>
 	<body>
@@ -51,7 +55,7 @@
 		            </div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="file-structure">文件結構</h3>
 					            <p>
@@ -78,7 +82,7 @@
 					            </p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<pre>
 // 目錄結構
@@ -99,6 +103,8 @@
 	│
 	├─ bubalusbase.js
 	│
+	├─ bubaluslayout.scss
+	│
 	└─ bubaluslayout.scss
 								</pre>
 							</div>
@@ -113,7 +119,7 @@
 		            </div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 					            <p>
 					            	<code>modules</code> 裏的這些文件夾是 BubalusFE 預置的一些模塊，一個文件夾代表一組模塊，每組模塊中包含其對應的 CSS組件 和 Javascript組件。
@@ -131,7 +137,7 @@
 					            </ul>
 				            </div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<pre>
 // 樣式模塊目錄結構
@@ -162,7 +168,7 @@
 		            </div>
 		            
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 				                <p>
 				                	BubalusFE 的CSS組件采用 BubalusLayout CSS框架（v5.x），經過徹底的重新設計後可以提供更好的性能和體驗，同時仍將爲早期的IE瀏覽器提供基礎的支援。<br>
@@ -178,7 +184,7 @@
 					            </ul>
 				            </div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<pre>
 // 核心樣式表目錄結構
@@ -207,7 +213,7 @@
 		            </div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="js-components">bubaluslayout.css</h3>
 					            <p>
@@ -216,14 +222,14 @@
 					            </p>
 				            </div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 							</div>
 						</div>
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="js-components">bubalusbase.js</h3>
 					            <p>
@@ -232,7 +238,7 @@
 					            </p>
 				            </div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 							<a href="http://modernizr.com" class="btn btn-info" target="_blank">Modernizr 官方網站</a>
 
@@ -250,7 +256,7 @@
 		            </div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="html-template">基礎的頁面模板 </h3>
 					            <p>
@@ -258,7 +264,7 @@
 					            </p>
 				            </div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<pre>
 &lt;!DOCTYPE html&gt;
@@ -269,13 +275,17 @@
 	&lt;head&gt;
 		&lt;meta charset="utf-8"&gt;
 		&lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;
-		&lt;title&gt;&lt;/title&gt;
+		&lt;title&gt;BubalusFE - BubalusFE - The front-end development toolkit&lt;/title&gt;
 		&lt;meta name="description" content=""&gt;
 		&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
 		&lt;link href="favicon.ico" type="image/x-icon" rel="shortcut icon" /&gt;
-		&lt;link rel="stylesheet" href="assets/css/bubaluslayout.css"&gt;
+		&lt;link rel="stylesheet" href="../bubaluslayout.css"&gt;
 		&lt;!--[if lte IE 7]&gt;
-		&lt;link rel="stylesheet" href="assets/css/core/iehacks.css" type="text/css"/&gt;
+		&lt;link rel="stylesheet" href="../bubalusiehacks.css" type="text/css"/&gt;
+		&lt;![endif]--&gt;
+		&lt;!--[if lt IE 9]&gt;
+		&lt;script src="../modules/html5shiv/html5shiv.js"&gt;&lt;/script&gt;
+		&lt;script src="../modules/respond/respond.min.js"&gt;&lt;/script&gt;
 		&lt;![endif]--&gt;
 	&lt;/head&gt;
 	&lt;body&gt;
@@ -302,5 +312,6 @@
 			g.src='//www.google-analytics.com/ga.js';
 			s.parentNode.insertBefore(g,s)}(document,'script'));
 		</script>-->
+		<script src="../bubalusbase.js" id="seajsnode"></script>
 	</body>
 </html>

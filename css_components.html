@@ -12,7 +12,11 @@
 		<link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
 		<link rel="stylesheet" href="bubalusfe/bubaluslayout.css">
 		<!--[if lte IE 7]>
-		<link rel="stylesheet" href="bubalusfe/modules/bubaluslayout/iehacks.css" type="text/css"/>
+		<link rel="stylesheet" href="bubalusfe/bubalusiehacks.css" type="text/css"/>
+		<![endif]-->
+		<!--[if lt IE 9]>
+		<script src="../modules/html5shiv/html5shiv.js"></script>
+		<script src="../modules/respond/respond.min.js"></script>
 		<![endif]-->
 	</head>
 	<body>
@@ -49,7 +53,7 @@
 		            </div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>
 									AlertTip 有兩種呈現方式，一個是<strong>「行內」</strong>，一個是<strong>「塊級」</strong>。
@@ -60,7 +64,7 @@
 								</ul>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<div class="alertTip">
 								  <button type="button" class="close-btn" data-dismiss="alert">&times;</button>
@@ -93,7 +97,7 @@
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>AlertTip 額外附帶了3種主題，可用於各種提醒類型。將下面的類名加入到 <code>alertTip</code> 類所在標籤即可。</p>
 								<ul>
@@ -103,7 +107,7 @@
 								</ul>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<div class="alertTip alertTip-success">
 								  <button type="button" class="close-btn" data-dismiss="alert">&times;</button>
@@ -140,7 +144,7 @@
 		            </div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>
 									Button 模塊附帶了數種按鈕主題，可選擇配合情況使用
@@ -155,7 +159,7 @@
 								</ul>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<button type="button" class="btn">默認</button>
 								<button type="button" class="btn btn-success">成功</button>
@@ -182,7 +186,7 @@
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>
 									另外還有兩種默認的尺寸可供直接指定
@@ -193,7 +197,7 @@
 								</ul>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<div>
 									<button type="button" class="btn btn-large">默認</button>
@@ -214,14 +218,14 @@
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>
 									<strong>不可用按鈕樣式</strong> 可以通過指定 <code>disabled</code> 屬性或加入 <code>.disabled</code> 類來實現。
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<div>
 									<button type="button" class="btn btn-success" disabled="disabled">成功</button>
@@ -237,14 +241,14 @@
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>
 									<strong>塊級按鈕樣式</strong> 可以通過加入 <code>.btn-block</code> 類來實現。
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<button type="button" class="btn btn-block">描述</button>
 								<pre>
@@ -256,7 +260,7 @@
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>
 									將多個按鈕以一組的效果呈現，我們叫他「按鈕組」，實現方式是用一個 <code>.btn-group</code> 容器將多個按鈕元素包裹起來即可。
@@ -266,7 +270,7 @@
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<div class="btn-group">
 								  <button type="button" class="btn">左</button>
@@ -299,14 +303,14 @@
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>
 									將多個按鈕組組織到一起的樣式，我們稱之為「按鈕欄」，實現方式是用一個 <code>.btn-bar</code> 容器將多個按鈕組包裹起來。
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<div class="btn-bar">
 									<div class="btn-group">
@@ -346,12 +350,12 @@
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								帶下拉樣式的按鈕，其實就是一個由兩個按鈕組成的按鈕組。
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<div class="btn-bar">
 									<div class="btn-group">
@@ -397,14 +401,14 @@
 		            </div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>
 									配合按鈕樣式模塊中的「下拉菜單按鈕」和 Javascript 組件中的 <small>dropdown.js</small> UI組件，就可以實現常見的下拉菜單效果了。
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<div class="dropdown clear dropdown-demo">
 									<ul class="dropdown-menu">
@@ -430,14 +434,14 @@
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>
 									為菜單項添加 <code>.disabled</code> 類可以使該項應用「禁用」的樣式。
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<div class="dropdown clear dropdown-demo">
 									<ul class="dropdown-menu">
@@ -468,7 +472,7 @@
 		            </div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="css-components">
 									Input 控件
@@ -478,7 +482,7 @@
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<input type="text" class="form-control" placeholder="這是一個 text 類型的 input 元素">
 								<pre>
@@ -493,7 +497,7 @@
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="css-components">
 									Textarea 控件
@@ -504,7 +508,7 @@
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<textarea class="form-control" rows="3" placeholder="這是一個 Textarea 控件"></textarea>			
 								<pre>
@@ -519,7 +523,7 @@
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="css-components">
 									Checkbox & Radio 控件
@@ -533,7 +537,7 @@
 								</ul>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<div class="checkbox">
 								  <label>
@@ -606,7 +610,7 @@
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="css-components">
 									Select 控件
@@ -616,7 +620,7 @@
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<select class="form-control">
 								  <option>下拉式選單控件</option>
@@ -655,7 +659,7 @@
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="css-components">
 									幫助文本樣式
@@ -665,7 +669,7 @@
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<input type="text" class="form-control" placeholder="這是一個 text 類型的 input 元素">
 								<span class="help-block">這段文字就是幫助文本。</span>
@@ -677,7 +681,7 @@
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="css-components">
 									柵格式控件
@@ -687,11 +691,11 @@
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<div class="row">
-								  <div class="col-desktop-4">
-								    <input type="text" class="form-control" placeholder=".col-desktop-4">
+								  <div class="column col-desktop-4">
+								    <input type="text" class="form-control" placeholder=".column col-desktop-4">
 								  </div>
 								  <div class="col-desktop-8">
 								    <input type="text" class="form-control" placeholder=".col-desktop-8">
@@ -699,8 +703,8 @@
 								</div>
 								<pre>
 &lt;div class="row"&gt;
-  &lt;div class="col-desktop-4"&gt;
-    &lt;input type="text" class="form-control" placeholder=".col-desktop-4"&gt;
+  &lt;div class="column col-desktop-4"&gt;
+    &lt;input type="text" class="form-control" placeholder=".column col-desktop-4"&gt;
   &lt;/div&gt;
   &lt;div class="col-desktop-8"&gt;
     &lt;input type="text" class="form-control" placeholder=".col-desktop-8"&gt;
@@ -712,7 +716,7 @@
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="css-components">
 									控件主題樣式
@@ -722,7 +726,7 @@
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<form class="form-horizontal">
 									<div class="form-group has-warning">
@@ -760,7 +764,7 @@
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="css-components">
 									一個預置的水平登錄表單
@@ -771,7 +775,7 @@
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<form class="form-inline">
 								  <input type="text" class="form-control inline-input-text" placeholder="帳戶">
@@ -803,7 +807,7 @@
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="css-components">
 									一個常見的表單模板
@@ -813,7 +817,7 @@
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<form class="form-horizontal">
 								  <div class="form-group">
@@ -870,14 +874,14 @@
 		            </div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>
 									帶邊框的圖片樣式很常見，而最近圓形的圖片樣式也開始流行了，但這些實在沒辦法去支援早期的IE版本。
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<img data-src="holder.js/140x140/#2b4858:#76a4bd" class="img-rounded">
 								<img data-src="holder.js/140x140/#2b4858:#76a4bd" class="img-circle">
@@ -898,14 +902,14 @@
 		            </div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>
 									使用這個玩意，搭配 Slideshow 組件，可以很方便的創建一個圖文廣告應用。
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<div class="jumbotron">
 									<h1>瞧一瞧！看一看！！</h1>
@@ -932,7 +936,7 @@
 		            </div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>
 									這種文字標籤可用在很多地方，內置了幾種主題樣式便於使用。
@@ -945,7 +949,7 @@
 								</ul>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<span class="label">默認標籤</span>
 								<span class="label label-success">成功標籤</span>
@@ -970,7 +974,7 @@
 		            </div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>
 									通常我們會使用一個列表 <code>ul > li</code> 來在 HTML 中描述一個導航。<br>
@@ -982,7 +986,7 @@
 								</ul>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<ul class="nav">
 								  <li class="active"><a href="#">导航项</a></li>
@@ -1001,14 +1005,14 @@
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>
 									不过我们还是喜欢横向排列的导航，這時候我們只要向 <code>.nav</code> 后面加 <code>.nav-horizontal</code> 類。
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<ul class="nav nav-horizontal">
 								  <li class="active"><a href="#">导航项</a></li>
@@ -1025,14 +1029,14 @@
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>
 									tabs 的標籤欄其實也是一個導航，使用 <code>.nav-tabs</code> 吧。
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<ul class="nav nav-tabs">
 								  <li class="active"><a href="#">导航项</a></li>
@@ -1049,14 +1053,14 @@
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>
 									有的時候我們還想要讓所有導航項兩端對齊填充整行，再加上 <code>.nav-justified</code> 吧。
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<ul class="nav nav-pills nav-justified">
 								  <li class="active"><a href="#">导航项</a></li>
@@ -1073,14 +1077,14 @@
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>
 									有時導航項會需要一個下拉菜單，此時你需要這樣編寫你的HTML：
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<ul class="nav nav-horizontal">
 								  <li class="active"><a href="#">導航項</a></li>
@@ -1119,14 +1123,14 @@
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>
 									一個帶說明的列表式導航樣式，說是列表，但他並不真的是列表，只是長得像而已
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<div class="nav-list">
 								  <a href="#" class="nav-list-item active">
@@ -1156,14 +1160,14 @@
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>
 									有的時候，我們會在導航中插入其他元素，這時候我們需要的是導航欄
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<div class="navbar">
 							      <div class="container">
@@ -1198,14 +1202,14 @@
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>
 									面包渣这种东西肯定要有，我们来认识一下 <code>.nav-breadcrumb</code> 
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<ul class="nav-breadcrumb">
 								  <li><a href="#">首页</a></li>
@@ -1232,7 +1236,7 @@
 		            </div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>
 									通常分頁我們也是也是用一個列表來描述的，這裡有兩種常用的分頁方式
@@ -1243,7 +1247,7 @@
 								</ul>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<ul class="pagination">
 								  <li class="disabled"><a href="#">&laquo;</a></li>
@@ -1285,7 +1289,7 @@
 		            </div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>
 									在我們停止使用 <code>&lt;table&gt;</code> 進行佈局后，表格終于干囘了他的老本行。
@@ -1304,7 +1308,7 @@
 								</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<table class="table table-striped table-bordered table-hover">
 									<thead>
@@ -1355,7 +1359,7 @@
 		</div>
 		<footer></footer>
 
-		<script src="../project/holder.js"></script>
+		<script src="bubalusfe/project/holder.js"></script>
 
 		<!-- Google Analytics 
 		<script>
@@ -1364,5 +1368,6 @@
 			g.src='//www.google-analytics.com/ga.js';
 			s.parentNode.insertBefore(g,s)}(document,'script'));
 		</script>-->
+		<script src="../bubalusbase.js" id="seajsnode"></script>
 	</body>
 </html>

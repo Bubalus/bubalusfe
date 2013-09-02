@@ -12,7 +12,11 @@
 		<link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
 		<link rel="stylesheet" href="bubalusfe/bubaluslayout.css">
 		<!--[if lte IE 7]>
-		<link rel="stylesheet" href="bubalusfe/modules/bubaluslayout/iehacks.css" type="text/css"/>
+		<link rel="stylesheet" href="bubalusfe/bubalusiehacks.css" type="text/css"/>
+		<![endif]-->
+		<!--[if lt IE 9]>
+		<script src="../modules/html5shiv/html5shiv.js"></script>
+		<script src="../modules/respond/respond.min.js"></script>
 		<![endif]-->
 	</head>
 	<body>
@@ -50,7 +54,7 @@
 		            </div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="css-components">
 									通過自定義屬性「data-*」來使用 AlertTip
@@ -69,7 +73,7 @@
 								<p>使用 <code>data-message</code> 屬性設置提醒的內容</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<input type="button" class="btn btn-success"
 								data-trigger="alertTip"
@@ -115,7 +119,7 @@ value="成功"/&gt;
 					</div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="css-components">
 									通過傳統方式來使用 AlertTip
@@ -147,7 +151,7 @@ value="成功"/&gt;
 								</ul>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<button id="showAlertTipBtn" class="btn">出來吧！AlertTip 思密達！！</button>
 								<pre>
@@ -183,14 +187,14 @@ $('#test1').alertTip("這是一個帶參數的傳統調用", {
 		            </div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<p>使用 <code>$().buttonStatus('loading')</code> 方法，按鈕將進入「使用中」的狀態，此時按鈕將不可用（disabled），配合 <code>data-loading-text</code> 自定義屬性，可以將按鈕的文字替換為自定義屬性中的值</p>
 								<p>使用 <code>$().buttonStatus('reset')</code> 方法，按鈕將恢復到點擊前的狀態</p>
 								<p>使用 <code>$().buttonStatus('value')</code> 方法，配合 <code>data-value-text</code> 自定義屬性，可以將按鈕的文字替換為自定義屬性中的值</p>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<button type="button" data-loading-text="正在提交..." data-value-text="已提交" id="buttonStatus-demo" class="btn">
 									提交
@@ -224,7 +228,7 @@ $('#buttonStatus-demo').click(function () {
 		            </div>
 
 					<div class="row docs-row equalize">
-						<div class="col-desktop-4 docs-side">
+						<div class="column col-desktop-4 docs-side">
 							<div class="col-box">
 								<h3 id="css-components">
 									通過自定義屬性「data-*」來使用 easyAjax
@@ -236,7 +240,7 @@ $('#buttonStatus-demo').click(function () {
 								</ul>
 							</div>
 						</div>
-						<div class="col-desktop-8 docs-article">
+						<div class="column col-desktop-8 docs-article">
 							<div class="col-box">
 								<a data-trigger="easyAjax" href="https://github.com/zedks/BubalusFE" data-target="#ajax_target" class="btn">點擊使用 ajax 加載</a>
 								<div id="ajax_target">鏈接指向的地址將被加載到本容器</div>
