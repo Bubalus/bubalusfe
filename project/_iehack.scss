@@ -1,0 +1,53 @@
+// -------------------------
+// 引入配置
+// -------------------------
+@import "variables";
+@import "mixins";
+
+.docs-nav {
+  .navbar-nav {
+    li {
+      margin-top: 7px;
+
+      a {
+        line-height: 43px;
+        padding:0 40px;
+        color: #76a4bd;
+        background-color: transparent;
+
+        &:hover,
+        &:focus {
+          color: #fff;
+        }
+      }
+      &.active{
+            margin-top: 0;
+            border-top:7px solid #5b912f;
+            background-color: #112028;
+        a {
+          &,
+          &:hover,
+          &:focus {
+            color: #fff;
+          }
+        }
+      } 
+    }
+  } 
+}
+
+#tables {
+  .table-bordered {
+    border: 1px solid $docs-border-color;
+    thead,
+    tbody,
+    tfoot {
+      tr {
+        th,
+        td {
+          border: 1px solid $docs-border-color;
+        }
+      }
+    }
+  }
+}

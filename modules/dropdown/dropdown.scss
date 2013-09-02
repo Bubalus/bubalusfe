@@ -69,7 +69,7 @@
 
   // 菜單中的分割綫
   .divider {
-    @include nav-divider($dropdown-divider-bg);
+    @include divider($dropdown-divider-bg);
   }
 
   // 菜單項

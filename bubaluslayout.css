@@ -227,74 +227,75 @@ textarea {
 img {
   border: 0 solid;
   vertical-align: middle;
-  -ms-interpolation-mode: bicubic; }
+  -ms-interpolation-mode: bicubic;
+  zoom: 1; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003211}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003212}}
 img, figure {
   margin: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003214}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003215}}
 svg:not(:root) {
   overflow: hidden; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003218}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003219}}
 ul, ol {
   margin: 0;
   padding: 0;
   list-style: none;
   list-style-image: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003224}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003225}}
 dl, dd {
   margin: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003229}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003230}}
 q {
   quotes: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003230}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003231}}
 blockquote {
   margin: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003234}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003235}}
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
   content: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003235}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003236}}
 pre {
   margin: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003243}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003244}}
 h1, h2, h3, h4, h5, h6 {
   margin: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003247}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003248}}
 else h1, else h2, else h3, else h4, else h5, else h6 {
   margin-top: 20px;
   margin-bottom: 10px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003253}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003254}}
 address {
   display: block;
   margin-bottom: 20px;
   font-style: normal;
   line-height: 1.42857; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003262}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003263}}
 hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
   border-top: 1px solid #eeeeee; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003271}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003272}}
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003275}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/reset\.scss}line{font-family:\00003276}}
 th, td {
   padding: 0; }
 
@@ -312,7 +313,7 @@ header, footer, nav, #main {
   margin-left: auto;
   padding-left: 10px;
   padding-right: 10px;
-  *zoom: 1; }
+  zoom: 1; }
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubalusglobal\/_mixins\.scss}line{font-family:\0000320}}
   .container:before {
     content: "";
@@ -330,9 +331,10 @@ header, footer, nav, #main {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000326}}
 .row {
+  position: relative;
   margin-left: -10px;
   margin-right: -10px;
-  *zoom: 1; }
+  zoom: 1; }
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubalusglobal\/_mixins\.scss}line{font-family:\0000320}}
   .row:before {
     content: "";
@@ -351,224 +353,227 @@ header, footer, nav, #main {
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000330}}
 .column {
   float: left;
+  display: inline;
   position: relative;
-  min-height: 1px;
-  padding-left: 10px;
-  padding-right: 10px; }
+  min-height: 1px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000345}}
 .col-1 {
   width: 8.33333%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000348}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000346}}
 .col-2 {
   width: 16.66667%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000347}}
 .col-3 {
   width: 25%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000348}}
 .col-4 {
   width: 33.33333%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000349}}
 .col-5 {
   width: 41.66667%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000350}}
 .col-6 {
   width: 50%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000353}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000351}}
 .col-7 {
   width: 58.33333%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000354}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000352}}
 .col-8 {
   width: 66.66667%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000353}}
 .col-9 {
   width: 75%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000354}}
 .col-10 {
   width: 83.33333%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000355}}
 .col-11 {
   width: 91.66667%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000358}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000356}}
 .col-12 {
   width: 100%;
   float: none; }
 
 @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000367}}
   .container {
     max-width: 740px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000370}}
   .col-table-1 {
     width: 8.33333%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000371}}
   .col-table-2 {
     width: 16.66667%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000372}}
   .col-table-3 {
     width: 25%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000375}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000373}}
   .col-table-4 {
     width: 33.33333%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000374}}
   .col-table-5 {
     width: 41.66667%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000377}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000375}}
   .col-table-6 {
     width: 50%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000376}}
   .col-table-7 {
     width: 58.33333%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000377}}
   .col-table-8 {
     width: 66.66667%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000378}}
   .col-table-9 {
     width: 75%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000379}}
   .col-table-10 {
     width: 83.33333%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000380}}
   .col-table-11 {
     width: 91.66667%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000381}}
   .col-table-12 {
     width: 100%;
     float: none; } }
 @media (min-width: 1024px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000393}}
   .container {
     max-width: 960px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000398}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000396}}
   .col-desktop-1 {
     width: 8.33333%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000397}}
   .col-desktop-2 {
     width: 16.66667%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003100}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000398}}
   .col-desktop-3 {
     width: 25%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003101}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\0000399}}
   .col-desktop-4 {
     width: 33.33333%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003102}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003100}}
   .col-desktop-5 {
     width: 41.66667%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003103}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003101}}
   .col-desktop-6 {
     width: 50%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003104}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003102}}
   .col-desktop-7 {
     width: 58.33333%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003105}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003103}}
   .col-desktop-8 {
     width: 66.66667%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003106}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003104}}
   .col-desktop-9 {
     width: 75%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003107}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003105}}
   .col-desktop-10 {
     width: 83.33333%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003108}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003106}}
   .col-desktop-11 {
     width: 91.66667%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003109}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003107}}
   .col-desktop-12 {
     width: 100%;
     float: none; } }
 @media (min-width: 1280px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003121}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003119}}
   .container {
     max-width: 1160px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003125}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003123}}
   .col-notebook-1 {
     width: 8.33333%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003126}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003124}}
   .col-notebook-2 {
     width: 16.66667%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003127}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003125}}
   .col-notebook-3 {
     width: 25%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003128}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003126}}
   .col-notebook-4 {
     width: 33.33333%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003129}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003127}}
   .col-notebook-5 {
     width: 41.66667%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003130}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003128}}
   .col-notebook-6 {
     width: 50%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003131}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003129}}
   .col-notebook-7 {
     width: 58.33333%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003132}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003130}}
   .col-notebook-8 {
     width: 66.66667%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003133}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003131}}
   .col-notebook-9 {
     width: 75%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003134}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003132}}
   .col-notebook-10 {
     width: 83.33333%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003135}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003133}}
   .col-notebook-11 {
     width: 91.66667%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003136}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003134}}
   .col-notebook-12 {
     width: 100%;
     float: none; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003141}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003138}}
+.col-box {
+  padding: 10px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003143}}
 .equalize {
   overflow: hidden; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003143}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/layout\.scss}line{font-family:\00003145}}
 .equalize > [class*="col"] {
   padding-bottom: 32767px;
   margin-bottom: -32767px; }
@@ -577,7 +582,7 @@ header, footer, nav, #main {
 /* Common - 公共樣式 */
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/common\.scss}line{font-family:\0000313}}
 .clear {
-  *zoom: 1; }
+  zoom: 1; }
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubalusglobal\/_mixins\.scss}line{font-family:\0000320}}
   .clear:before {
     content: "";
@@ -716,7 +721,7 @@ header, footer, nav, #main {
 /* END Common */
 /* 擴展 CSS 組件
 ----------------------------------*/
-/* 麵包屑 */
+/* alertTip */
 /* alertTipTip - 弹出通知 */
 /* alertTipTip 變量 */
 /* alertTip - 方法 */
@@ -1342,7 +1347,7 @@ fieldset[disabled] .btn-info.active {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/button\/button\.scss}line{font-family:\00003232}}
 .btn-bar {
-  *zoom: 1; }
+  zoom: 1; }
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubalusglobal\/_mixins\.scss}line{font-family:\0000320}}
   .btn-bar:before {
     content: "";
@@ -1464,7 +1469,7 @@ fieldset[disabled] .btn-info.active {
   max-width: 100%; }
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/button\/button\.scss}line{font-family:\00003337}}
 .btn-group-vertical > .btn-group {
-  *zoom: 1; }
+  zoom: 1; }
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubalusglobal\/_mixins\.scss}line{font-family:\0000320}}
   .btn-group-vertical > .btn-group:before {
     content: "";
@@ -2161,28 +2166,28 @@ textarea.input-large, .input-group-large > textarea.form-control,
   color: #737373; }
 
 @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003287}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/_mixins\.scss}line{font-family:\0000395}}
   .form-inline .form-group {
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003294}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/_mixins\.scss}line{font-family:\00003102}}
   .form-inline .form-control {
     display: inline-block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003302}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/_mixins\.scss}line{font-family:\00003110}}
   .form-inline .radio,
   .form-inline .checkbox {
     display: inline-block;
     margin-top: 0;
     margin-bottom: 0;
     padding-left: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003309}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/_mixins\.scss}line{font-family:\00003117}}
   .form-inline .radio input[type="radio"],
   .form-inline .checkbox input[type="checkbox"] {
     float: none;
     margin-left: 0; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003299}}
 .form-horizontal .control-label,
 .form-horizontal .radio,
 .form-horizontal .checkbox,
@@ -2191,11 +2196,12 @@ textarea.input-large, .input-group-large > textarea.form-control,
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 7px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003306}}
 .form-horizontal .form-group {
+  position: relative;
   margin-left: -10px;
   margin-right: -10px;
-  *zoom: 1; }
+  zoom: 1; }
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubalusglobal\/_mixins\.scss}line{font-family:\0000320}}
   .form-horizontal .form-group:before {
     content: "";
@@ -2211,44 +2217,44 @@ textarea.input-large, .input-group-large > textarea.form-control,
     line-height: 0;
     visibility: hidden; }
 @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003312}}
   .form-horizontal .control-label {
     text-align: right; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003321}}
 .input-group {
   position: relative;
   display: table;
   border-collapse: separate; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003358}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003327}}
   .input-group.col {
     float: none;
     padding-left: 0;
     padding-right: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003333}}
   .input-group .form-control {
     width: 100%;
     margin-bottom: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003386}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003355}}
 .input-group-addon,
 .input-group-btn,
 .input-group .form-control {
   display: table-cell; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003389}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003358}}
   .input-group-addon:not(:first-child):not(:last-child),
   .input-group-btn:not(:first-child):not(:last-child),
   .input-group .form-control:not(:first-child):not(:last-child) {
     border-radius: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003363}}
 .input-group-addon,
 .input-group-btn {
   width: 1%;
   white-space: nowrap;
   vertical-align: middle; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003368}}
 .input-group-addon {
   padding: 6px 12px;
   font-size: 14px;
@@ -2258,26 +2264,26 @@ textarea.input-large, .input-group-large > textarea.form-control,
   background-color: #eeeeee;
   border: 1px solid #cccccc;
   border-radius: 4px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003409}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003378}}
   .input-group-addon.input-small,
   .input-group-small > .input-group-addon,
   .input-group-small > .input-group-btn > .input-group-addon.btn {
     padding: 5px 10px;
     font-size: 12px;
     border-radius: 3px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003414}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003383}}
   .input-group-addon.input-large,
   .input-group-large > .input-group-addon,
   .input-group-large > .input-group-btn > .input-group-addon.btn {
     padding: 10px 16px;
     font-size: 18px;
     border-radius: 6px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003422}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003391}}
   .input-group-addon input[type="radio"],
   .input-group-addon input[type="checkbox"] {
     margin-top: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003432}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003401}}
 .input-group .form-control:first-child,
 .input-group-addon:first-child,
 .input-group-btn:first-child > .btn,
@@ -2286,11 +2292,11 @@ textarea.input-large, .input-group-large > textarea.form-control,
   border-bottom-right-radius: 0;
   border-top-right-radius: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003435}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003404}}
 .input-group-addon:first-child {
   border-right: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003442}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003411}}
 .input-group .form-control:last-child,
 .input-group-addon:last-child,
 .input-group-btn:last-child > .btn,
@@ -2299,22 +2305,22 @@ textarea.input-large, .input-group-large > textarea.form-control,
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003445}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003414}}
 .input-group-addon:last-child {
   border-left: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003451}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003420}}
 .input-group-btn {
   position: relative;
   white-space: nowrap; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003455}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003424}}
 .input-group-btn > .btn {
   position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003457}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003426}}
   .input-group-btn > .btn + .btn {
     margin-left: -4px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003462}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003431}}
   .input-group-btn > .btn:hover, .input-group-btn > .btn:active {
     z-index: 2; }
 
@@ -2322,13 +2328,13 @@ textarea.input-large, .input-group-large > textarea.form-control,
 /* 導航 */
 /* Navs - 導航样式 */
 /* Navs - 變量 */
-/* Navs - 方法 */
+/* Navs -  */
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\0000316}}
 .nav {
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
-  *zoom: 1; }
+  zoom: 1; }
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubalusglobal\/_mixins\.scss}line{font-family:\0000320}}
   .nav:before {
     content: "";
@@ -2381,97 +2387,97 @@ textarea.input-large, .input-group-large > textarea.form-control,
     overflow: hidden;
     background-color: #e5e5e5; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003140}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\0000382}}
 .nav-tabs {
   border-bottom: 1px solid #dddddd; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003142}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\0000384}}
   .nav-tabs > li {
     float: left;
     margin-bottom: -1px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003147}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\0000389}}
     .nav-tabs > li > a {
       margin-right: 2px;
       line-height: 1.42857;
       border: 1px solid transparent;
       border-radius: 4px 4px 0 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003152}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\0000394}}
       .nav-tabs > li > a:hover {
         border-color: #eeeeee #eeeeee #dddddd; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003161}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003103}}
     .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
       color: #555555;
       background-color: white;
       border: 1px solid #dddddd;
       border-bottom-color: transparent;
       cursor: default; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003171}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003113}}
   .nav-tabs.nav-justified {
     width: 100%;
     border-bottom: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\0000389}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_mixins\.scss}line{font-family:\0000310}}
     .nav-tabs.nav-justified > li {
       float: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\0000391}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_mixins\.scss}line{font-family:\0000312}}
       .nav-tabs.nav-justified > li > a {
         text-align: center;
         margin-bottom: 5px; }
     @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\0000398}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_mixins\.scss}line{font-family:\0000319}}
       .nav-tabs.nav-justified > li {
         display: table-cell;
         width: 1%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003101}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_mixins\.scss}line{font-family:\0000322}}
         .nav-tabs.nav-justified > li > a {
           margin-bottom: 0; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003112}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_mixins\.scss}line{font-family:\0000345}}
     .nav-tabs.nav-justified > li > a {
       margin-right: 0;
       border-radius: 4px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003119}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_mixins\.scss}line{font-family:\0000352}}
     .nav-tabs.nav-justified > .active > a,
     .nav-tabs.nav-justified > .active > a:hover,
     .nav-tabs.nav-justified > .active > a:focus {
       border: 1px solid #dddddd; }
     @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003124}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_mixins\.scss}line{font-family:\0000357}}
       .nav-tabs.nav-justified > li > a {
         border-bottom: 1px solid #dddddd;
         border-radius: 4px 4px 0 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003130}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_mixins\.scss}line{font-family:\0000363}}
       .nav-tabs.nav-justified > .active > a,
       .nav-tabs.nav-justified > .active > a:hover,
       .nav-tabs.nav-justified > .active > a:focus {
         border-bottom-color: white; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003179}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003121}}
 .nav-horizontal > li {
   float: left; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003181}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003123}}
   .nav-horizontal > li + li {
     margin-left: 2px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003187}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003129}}
 .nav-justified {
   width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\0000389}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_mixins\.scss}line{font-family:\0000310}}
   .nav-justified > li {
     float: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\0000391}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_mixins\.scss}line{font-family:\0000312}}
     .nav-justified > li > a {
       text-align: center;
       margin-bottom: 5px; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\0000398}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_mixins\.scss}line{font-family:\0000319}}
     .nav-justified > li {
       display: table-cell;
       width: 1%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003101}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_mixins\.scss}line{font-family:\0000322}}
       .nav-justified > li > a {
         margin-bottom: 0; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003193}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003135}}
 .tabbable {
-  *zoom: 1; }
+  zoom: 1; }
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubalusglobal\/_mixins\.scss}line{font-family:\0000320}}
   .tabbable:before {
     content: "";
@@ -2487,40 +2493,40 @@ textarea.input-large, .input-group-large > textarea.form-control,
     line-height: 0;
     visibility: hidden; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003199}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003141}}
 .tab-content > .tab-pane,
 .pill-content > .pill-pane {
   display: none; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003204}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003146}}
 .tab-content > .active,
 .pill-content > .active {
   display: block; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003213}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003155}}
 .nav .caret {
   border-top-color: #428bca;
   border-bottom-color: #428bca; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003217}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003159}}
 .nav a:hover .caret {
   border-top-color: #2a6496;
   border-bottom-color: #2a6496; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003222}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003164}}
 .nav-tabs .dropdown-menu {
   margin-top: -1px;
   border-top-right-radius: 0;
   border-top-left-radius: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003233}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003175}}
 .navbar {
   position: relative;
   z-index: 1000;
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent;
-  *zoom: 1; }
+  zoom: 1; }
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubalusglobal\/_mixins\.scss}line{font-family:\0000320}}
   .navbar:before {
     content: "";
@@ -2536,13 +2542,13 @@ textarea.input-large, .input-group-large > textarea.form-control,
     line-height: 0;
     visibility: hidden; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003233}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003175}}
     .navbar {
       border-radius: 4px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003254}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003196}}
 .navbar-header {
-  *zoom: 1; }
+  zoom: 1; }
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubalusglobal\/_mixins\.scss}line{font-family:\0000320}}
   .navbar-header:before {
     content: "";
@@ -2558,11 +2564,11 @@ textarea.input-large, .input-group-large > textarea.form-control,
     line-height: 0;
     visibility: hidden; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003254}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003196}}
     .navbar-header {
       float: left; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003273}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003215}}
 .navbar-collapse {
   max-height: 340px;
   overflow-x: visible;
@@ -2570,7 +2576,7 @@ textarea.input-large, .input-group-large > textarea.form-control,
   padding-left: 10px;
   border-top: 1px solid transparent;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  *zoom: 1;
+  zoom: 1;
   -webkit-overflow-scrolling: touch; }
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubalusglobal\/_mixins\.scss}line{font-family:\0000320}}
   .navbar-collapse:before {
@@ -2586,55 +2592,55 @@ textarea.input-large, .input-group-large > textarea.form-control,
     height: 0;
     line-height: 0;
     visibility: hidden; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003283}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003225}}
   .navbar-collapse.in {
     overflow-y: auto; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003273}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003215}}
     .navbar-collapse {
       width: auto;
       border-top: 0;
       box-shadow: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003292}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003234}}
       .navbar-collapse.collapse {
         display: block !important;
         height: auto !important;
         padding-bottom: 0;
         overflow: visible !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003299}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003241}}
       .navbar-collapse.in {
         overflow-y: visible; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003304}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003246}}
       .navbar-collapse .navbar-nav.navbar-left:first-child {
         margin-left: -10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003307}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003249}}
       .navbar-collapse .navbar-nav.navbar-right:last-child {
         margin-right: -10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003310}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003252}}
       .navbar-collapse .navbar-text:last-child {
         margin-right: 0; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003264}}
 .container > .navbar-header,
 .container > .navbar-collapse {
   margin-right: -10px;
   margin-left: -10px; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003264}}
     .container > .navbar-header,
     .container > .navbar-collapse {
       margin-right: 0;
       margin-left: 0; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003282}}
 .navbar-static-top {
   border-width: 0 0 1px; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003282}}
     .navbar-static-top {
       border-radius: 0; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003291}}
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   position: fixed;
@@ -2642,36 +2648,36 @@ textarea.input-large, .input-group-large > textarea.form-control,
   left: 0;
   border-width: 0 0 1px; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003291}}
     .navbar-fixed-top,
     .navbar-fixed-bottom {
       border-radius: 0; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003360}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003302}}
 .navbar-fixed-top {
   z-index: 1030;
   top: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003306}}
 .navbar-fixed-bottom {
   bottom: 0;
   margin-bottom: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003314}}
 .navbar-brand {
   float: left;
   padding: 15px 10px;
   font-size: 18px;
   line-height: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003320}}
   .navbar-brand:hover, .navbar-brand:focus {
     text-decoration: none; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003325}}
     .navbar > .container .navbar-brand {
       margin-left: -10px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003337}}
 .navbar-toggle {
   position: relative;
   float: right;
@@ -2682,30 +2688,30 @@ textarea.input-large, .input-group-large > textarea.form-control,
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003406}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003348}}
   .navbar-toggle .icon-bar {
     display: block;
     width: 22px;
     height: 2px;
     border-radius: 1px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003412}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003354}}
   .navbar-toggle .icon-bar + .icon-bar {
     margin-top: 4px; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003337}}
     .navbar-toggle {
       display: none; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003427}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003369}}
 .navbar-nav {
   margin: -2.5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003430}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003372}}
   .navbar-nav > li > a {
     padding-top: 10px;
     padding-bottom: 10px;
     line-height: 20px; }
   @media (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003438}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003380}}
     .navbar-nav .open .dropdown-menu {
       position: static;
       float: none;
@@ -2714,40 +2720,40 @@ textarea.input-large, .input-group-large > textarea.form-control,
       background-color: transparent;
       border: 0;
       box-shadow: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003447}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003389}}
       .navbar-nav .open .dropdown-menu > li > a,
       .navbar-nav .open .dropdown-menu .dropdown-header {
         padding: 5px 15px 5px 25px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003450}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003392}}
       .navbar-nav .open .dropdown-menu > li > a {
         line-height: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003453}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003395}}
         .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-nav .open .dropdown-menu > li > a:focus {
           background-image: none; } }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003427}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003369}}
     .navbar-nav {
       float: left;
       margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003465}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003407}}
       .navbar-nav > li {
         float: left; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003467}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003409}}
         .navbar-nav > li > a {
           padding-top: 15px;
           padding-bottom: 15px; } }
 
 @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003484}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003426}}
   .navbar-left {
     float: left;
     display: inline; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003485}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003427}}
   .navbar-right {
     float: right;
     display: inline; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003494}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003436}}
 .navbar-form {
   margin-left: -10px;
   margin-right: -10px;
@@ -2759,32 +2765,32 @@ textarea.input-large, .input-group-large > textarea.form-control,
   margin-top: 8px;
   margin-bottom: 8px; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003287}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/_mixins\.scss}line{font-family:\0000395}}
     .navbar-form .form-group {
       display: inline-block;
       margin-bottom: 0;
       vertical-align: middle; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003294}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/_mixins\.scss}line{font-family:\00003102}}
     .navbar-form .form-control {
       display: inline-block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003302}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/_mixins\.scss}line{font-family:\00003110}}
     .navbar-form .radio,
     .navbar-form .checkbox {
       display: inline-block;
       margin-top: 0;
       margin-bottom: 0;
       padding-left: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/form\.scss}line{font-family:\00003309}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/_mixins\.scss}line{font-family:\00003117}}
     .navbar-form .radio input[type="radio"],
     .navbar-form .checkbox input[type="checkbox"] {
       float: none;
       margin-left: 0; } }
   @media (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003506}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003448}}
     .navbar-form .form-group {
       margin-bottom: 5px; } }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003494}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003436}}
     .navbar-form {
       width: auto;
       border: 0;
@@ -2795,127 +2801,127 @@ textarea.input-large, .input-group-large > textarea.form-control,
       -webkit-box-shadow: none;
       box-shadow: none; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003531}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003473}}
 .navbar-nav > li > .dropdown-menu {
   margin-top: 0;
   border-top-right-radius: 0;
   border-top-left-radius: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003536}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003478}}
 .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003542}}
-.navbar-nav.pull-right > li > .dropdown-menu,
-.navbar-nav > li > .dropdown-menu.pull-right {
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003484}}
+.navbar-nav.fl-ri > li > .dropdown-menu,
+.navbar-nav > li > .dropdown-menu.fl-ri {
   left: auto;
   right: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003552}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003494}}
 .navbar-btn {
   margin-top: 8px;
   margin-bottom: 8px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003561}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003503}}
 .navbar-text {
   float: left;
   margin-top: 15px;
   margin-bottom: 15px; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003561}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003503}}
     .navbar-text {
       margin-left: 10px;
       margin-right: 10px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003575}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003517}}
 .navbar-default {
   background-color: #f8f8f8;
   border-color: #e7e7e7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003579}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003521}}
   .navbar-default .navbar-brand {
     color: #777777; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003582}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003524}}
     .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
       color: #5e5e5e;
       background-color: transparent; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003588}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003530}}
   .navbar-default .navbar-text {
     color: #777777; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003593}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003535}}
   .navbar-default .navbar-nav > li > a {
     color: #777777; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003597}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003539}}
     .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
       color: #333333;
       background-color: transparent; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003605}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003547}}
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
     color: #555555;
     background-color: #e7e7e7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003613}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003555}}
   .navbar-default .navbar-nav > .disabled > a, .navbar-default .navbar-nav > .disabled > a:hover, .navbar-default .navbar-nav > .disabled > a:focus {
     color: #cccccc;
     background-color: transparent; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003620}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003562}}
   .navbar-default .navbar-toggle {
     border-color: #dddddd; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003623}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003565}}
     .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
       background-color: #dddddd; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003626}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003568}}
     .navbar-default .navbar-toggle .icon-bar {
       background-color: #cccccc; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003632}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003574}}
   .navbar-default .navbar-collapse,
   .navbar-default .navbar-form {
     border-color: #e6e6e6; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003640}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003582}}
   .navbar-default .navbar-nav > .dropdown > a:hover .caret,
   .navbar-default .navbar-nav > .dropdown > a:focus .caret {
     border-top-color: #333333;
     border-bottom-color: #333333; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003649}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003591}}
   .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
     background-color: #e7e7e7;
     color: #555555; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003652}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003594}}
     .navbar-default .navbar-nav > .open > a .caret, .navbar-default .navbar-nav > .open > a:hover .caret, .navbar-default .navbar-nav > .open > a:focus .caret {
       border-top-color: #555555;
       border-bottom-color: #555555; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003658}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003600}}
   .navbar-default .navbar-nav > .dropdown > a .caret {
     border-top-color: #777777;
     border-bottom-color: #777777; }
   @media (max-width: 767px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003667}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003609}}
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
       color: #777777; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003670}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003612}}
       .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
         color: #333333;
         background-color: transparent; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003678}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003620}}
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
       color: #555555;
       background-color: #e7e7e7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003686}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003628}}
     .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
       color: #cccccc;
       background-color: transparent; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003700}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003642}}
   .navbar-default .navbar-link {
     color: #777777; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003702}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003644}}
     .navbar-default .navbar-link:hover {
       color: #333333; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003712}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003654}}
 .nav-list {
   margin-bottom: 20px;
   padding-left: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003718}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003660}}
 .nav-list-item {
   position: relative;
   display: block;
@@ -2923,127 +2929,111 @@ textarea.input-large, .input-group-large > textarea.form-control,
   margin-bottom: -1px;
   background-color: white;
   border: 1px solid #dddddd; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003727}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003669}}
   .nav-list-item:first-child {
     border-top-right-radius: 4px;
     border-top-left-radius: 4px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003730}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003672}}
   .nav-list-item:last-child {
     margin-bottom: 0;
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003736}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003678}}
   .nav-list-item > .badge {
     float: right; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003739}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003681}}
   .nav-list-item > .badge + .badge {
     margin-right: 5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003745}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003687}}
   .nav-list-item.active, .nav-list-item.active:hover, .nav-list-item.active:focus {
     z-index: 2;
     color: white;
     background-color: #428bca;
     border-color: #428bca; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003752}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003694}}
     .nav-list-item.active .nav-list-item-heading, .nav-list-item.active:hover .nav-list-item-heading, .nav-list-item.active:focus .nav-list-item-heading {
       color: inherit; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003755}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003697}}
     .nav-list-item.active .nav-list-item-text, .nav-list-item.active:hover .nav-list-item-text, .nav-list-item.active:focus .nav-list-item-text {
       color: #e1edf7; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003762}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003704}}
 a.nav-list-item {
   color: #555555; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003765}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003707}}
   a.nav-list-item .nav-list-item-heading {
     color: #333333; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003768}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003710}}
   a.nav-list-item .nav-list-item-text {
     color: #555555; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003773}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003715}}
   a.nav-list-item:hover, a.nav-list-item:focus {
     text-decoration: none;
     background-color: whitesmoke; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003781}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003723}}
 .nav-list-item-heading {
   margin-top: 0;
   margin-bottom: 5px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003785}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003727}}
 .nav-list-item-text {
   margin-bottom: 0;
   line-height: 1.3; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003792}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003734}}
 .nav-breadcrumb {
   padding: 8px 15px;
   margin-bottom: 20px;
   list-style: none;
   background-color: whitesmoke;
   border-radius: 4px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003798}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003740}}
   .nav-breadcrumb > li {
-    display: inline-block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003800}}
+    display: inline-block;
+    *display: inline;
+    *zoom: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003742}}
     .nav-breadcrumb > li + li:before {
       content: "/\00a0";
       padding: 0 5px;
       color: #cccccc; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003806}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/nav\.scss}line{font-family:\00003748}}
   .nav-breadcrumb > .active {
     color: #999999; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/theme\.scss}line{font-family:\000036}}
 .navbar-default {
-  background-image: -webkit-gradient(linear, left 0%, left 100%, from(white), to(#f8f8f8));
-  background-image: -webkit-linear-gradient(top, white, 0%, #f8f8f8, 100%);
-  background-image: -moz-linear-gradient(top, white 0%, #f8f8f8 100%);
-  background-image: linear-gradient(to bottom, white 0%, #f8f8f8 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF8F8F8', GradientType=0);
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 5px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 5px rgba(0, 0, 0, 0.075); }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/theme\.scss}line{font-family:\0000312}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/theme\.scss}line{font-family:\0000311}}
   .navbar-default .navbar-nav > .active > a {
-    background-image: -webkit-gradient(linear, left 0%, left 100%, from(#ebebeb), to(#f3f3f3));
-    background-image: -webkit-linear-gradient(top, #ebebeb, 0%, #f3f3f3, 100%);
-    background-image: -moz-linear-gradient(top, #ebebeb 0%, #f3f3f3 100%);
-    background-image: linear-gradient(to bottom, #ebebeb 0%, #f3f3f3 100%);
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEBEBEB', endColorstr='#FFF3F3F3', GradientType=0);
     -webkit-box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.075);
     box-shadow: inset 0 3px 9px rgba(0, 0, 0, 0.075); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/theme\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/theme\.scss}line{font-family:\0000315}}
 .navbar-brand,
 .navbar-nav > li > a {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/theme\.scss}line{font-family:\0000324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/theme\.scss}line{font-family:\0000322}}
 .navbar-static-top,
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   border-radius: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/theme\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/theme\.scss}line{font-family:\0000326}}
 .nav-list {
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/theme\.scss}line{font-family:\0000334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/theme\.scss}line{font-family:\0000332}}
 .nav-list-item.active,
 .nav-list-item.active:hover,
 .nav-list-item.active:focus {
   text-shadow: 0 -1px 0 #3071a9;
-  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#428bca), to(#3278b3));
-  background-image: -webkit-linear-gradient(top, #428bca, 0%, #3278b3, 100%);
-  background-image: -moz-linear-gradient(top, #428bca 0%, #3278b3 100%);
-  background-image: linear-gradient(to bottom, #428bca 0%, #3278b3 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF428BCA', endColorstr='#FF3278B3', GradientType=0);
   border-color: #3278b3; }
 
 /* END Navs */
@@ -3150,7 +3140,7 @@ body.modal-open,
   padding: 19px 20px 20px;
   text-align: right;
   border-top: 1px solid #e5e5e5;
-  *zoom: 1; }
+  zoom: 1; }
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubalusglobal\/_mixins\.scss}line{font-family:\0000320}}
   .modal-footer:before {
     content: "";
@@ -3289,7 +3279,7 @@ body.modal-open,
   margin: 20px 0;
   list-style: none;
   text-align: center;
-  *zoom: 1; }
+  zoom: 1; }
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubalusglobal\/_mixins\.scss}line{font-family:\0000320}}
   .pager:before {
     content: "";
@@ -3353,7 +3343,7 @@ body.modal-open,
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/panel\/panel\.scss}line{font-family:\0000326}}
 .panel-body {
   padding: 15px;
-  *zoom: 1; }
+  zoom: 1; }
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubalusglobal\/_mixins\.scss}line{font-family:\0000320}}
   .panel-body:before {
     content: "";
@@ -4508,14 +4498,14 @@ blockquote {
 /* END Typography */
 /* 載入項目樣式
 ----------------------------------*/
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\000036}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\000037}}
 body {
   position: relative;
   background-color: #172b36; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000314}}
 header {
-  *zoom: 1;
+  zoom: 1;
   border-top: 5px solid #172b36;
   background-image: url("project/images/head_back.png"); }
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubalusglobal\/_mixins\.scss}line{font-family:\0000320}}
@@ -4532,7 +4522,7 @@ header {
     height: 0;
     line-height: 0;
     visibility: hidden; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000319}}
   header .jumbotron {
     color: #172b36;
     background-color: transparent;
@@ -4541,25 +4531,25 @@ header {
     padding: 20px;
     margin-bottom: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000328}}
 #logo {
   float: left;
   margin: 10px 60px;
   text-align: center; }
 
 @media (max-width: 1280px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000336}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000337}}
   header .jumbotron h1 {
     text-align: center; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000342}}
   #logo {
     float: none;
     margin: 10px;
     text-align: center; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000350}}
 .docs-nav {
-  *zoom: 1;
+  zoom: 1;
   border-bottom: 1px solid #38596b;
   background-image: url("project/images/nav_back.png");
   background-repeat: repeat-x;
@@ -4579,114 +4569,108 @@ header {
     height: 0;
     line-height: 0;
     visibility: hidden; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000358}}
   .docs-nav .navbar-nav > li {
-    border-top: 7px solid transparent; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000360}}
+    margin-top: 7px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000361}}
     .docs-nav .navbar-nav > li > a {
       line-height: 43px;
       padding: 0 40px;
-      color: #76a4bd; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000366}}
+      color: #76a4bd;
+      background-color: transparent; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000368}}
       .docs-nav .navbar-nav > li > a:hover, .docs-nav .navbar-nav > li > a:focus {
-        color: #fff;
-        background-color: transparent; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000371}}
+        color: #fff; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000372}}
     .docs-nav .navbar-nav > li.active {
-      border-top: 7px solid #5b912f; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000377}}
-    .docs-nav .navbar-nav > li.active > a, .docs-nav .navbar-nav > li.active > a:hover, .docs-nav .navbar-nav > li.active > a:focus {
-      color: #fff;
+      margin-top: 0;
+      border-top: 7px solid #5b912f;
       background-color: #112028; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000380}}
+    .docs-nav .navbar-nav > li.active > a, .docs-nav .navbar-nav > li.active > a:hover, .docs-nav .navbar-nav > li.active > a:focus {
+      color: #fff; }
 
 @media (max-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000386}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000388}}
   .docs-nav {
     padding: 10px 0 5px 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000392}}
     .docs-nav .navbar-nav > li,
     .docs-nav .navbar-nav > li.active {
       border-top: none; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000397}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\0000399}}
 #main {
   padding: 20px;
   color: #76a4bd; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003101}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003103}}
 .docs-page-header {
   color: #82be51;
   border-bottom: 1px solid #38596b;
   margin-bottom: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003105}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003107}}
   .docs-page-header small {
     color: #76a4bd; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003108}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003110}}
   .docs-page-header p {
     color: #999999; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003112}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003114}}
 .docs-row {
   border-bottom: 1px solid #38596b; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003114}}
-  .docs-row .col-box {
-    padding: 20px 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003117}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003116}}
   .docs-row .docs-side {
     border-right: 1px solid #38596b; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003119}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003118}}
     .docs-row .docs-side h3 {
       margin-bottom: 10px;
       color: #82be51; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003123}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003122}}
     .docs-row .docs-side ul {
       margin: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003125}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003124}}
       .docs-row .docs-side ul li {
         margin: 10px 0;
         color: #999999; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003128}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003127}}
         .docs-row .docs-side ul li strong {
           color: #76a4bd;
           text-decoration: underline; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003134}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003133}}
     .docs-row .docs-side hr {
       border-top: 1px dashed #38596b; }
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003139}}
-  .docs-row .docs-article {
-    padding-left: 15px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003141}}
-    .docs-row .docs-article pre {
-      color: #999999;
-      margin: 10px 0;
-      background-color: #101e26;
-      border: 1px solid rgba(0, 0, 0, 0.15); }
+  .docs-row .docs-article pre {
+    color: #999999;
+    background-color: #101e26;
+    border: 1px solid rgba(0, 0, 0, 0.15); }
 
 @media (max-width: 1024px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003150}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003147}}
   .row .docs-side {
     border: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003152}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003149}}
     .row .docs-side .col-box {
       padding-bottom: 10px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003157}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003154}}
   .row .docs-article .col-box {
     padding-top: 10px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003162}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003159}}
 code {
   color: #ff6600;
   background-color: #101e26; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003172}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003169}}
 #layout .header, #layout .footer, #layout .nav, #layout .main {
   padding: 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003175}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003172}}
 #layout .container {
   padding: 5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003179}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003176}}
 #layout .screen-2 .row {
   margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003183}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003180}}
 #layout .dummyscreen {
   margin: 10px;
   padding: 10px;
@@ -4696,37 +4680,37 @@ code {
   line-height: 1.42857;
   text-align: center;
   zoom: 1; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003193}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003190}}
   #layout .dummyscreen .container {
     width: 70%;
     margin: 0 auto;
     border: 1px dashed #38596b; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003198}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003195}}
   #layout .dummyscreen .header, #layout .dummyscreen .footer {
     background: #76a4bd;
     color: #fff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003202}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003199}}
   #layout .dummyscreen .nav {
     background: #5d91ae;
     color: #fff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003206}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003203}}
   #layout .dummyscreen .main {
     background: #93b6ca;
     color: #fff;
     line-height: 2em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003211}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003208}}
     #layout .dummyscreen .main .row {
       border: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003214}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003211}}
     #layout .dummyscreen .main section {
       color: #3a6075;
       background: #b0cddc; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003225}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003222}}
 #grid .docs-article .demo-row {
   margin: 5px 0;
   border: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003229}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003226}}
   #grid .docs-article .demo-row [class*="col-"] {
     line-height: 2;
     background-color: rgba(147, 182, 202, 0.15);
@@ -4734,7 +4718,7 @@ code {
 
 /* Responsive tests
 ------------------------- */
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003240}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003237}}
 .responsive-utilities-test {
   margin-bottom: 15px;
   margin-left: 0;
@@ -4744,13 +4728,13 @@ code {
   border: 1px solid #38596b;
   border-radius: 4px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003248}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003245}}
 .responsive-utilities-test li {
   position: relative;
   float: left;
   width: 33%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003253}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003250}}
 .responsive-utilities-test span {
   padding: 15px 10px;
   font-size: 14px;
@@ -4758,36 +4742,36 @@ code {
   line-height: 1.1;
   text-align: center; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003260}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003257}}
 .responsive-utilities-test [class*="hidden"] {
   color: #466271;
   text-decoration: line-through; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003264}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003261}}
 .responsive-utilities-test [class*="visible"] {
   color: #76a4bd;
   background-color: rgba(147, 182, 202, 0.15); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003271}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003268}}
 #dropdown .dropdown-demo .dropdown-menu {
   position: static;
   display: block;
   margin-bottom: 5px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003281}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003278}}
 #forms .form-inline .inline-input-text {
   width: 150px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003287}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003284}}
 #images .img-rounded,
 #images .img-circle {
   background-color: #172b36;
   border: 1px solid #38596b; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003294}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003291}}
 #tables .table-bordered {
   border: 1px solid #38596b; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003301}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003298}}
   #tables .table-bordered > thead > tr > th,
   #tables .table-bordered > thead > tr > td,
   #tables .table-bordered > tbody > tr > th,
@@ -4795,25 +4779,25 @@ code {
   #tables .table-bordered > tfoot > tr > th,
   #tables .table-bordered > tfoot > tr > td {
     border: 1px solid #38596b; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003308}}
 #tables .table-striped > tbody > tr:nth-child(odd) > td,
 #tables .table-striped > tbody > tr:nth-child(odd) > th {
   background-color: #243e4d; }
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003318}}
 #tables .table-hover > tbody > tr:hover > td,
 #tables .table-hover > tbody > tr:hover > th {
   background-color: #2b4858; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003329}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003326}}
 #alertTip-BR,
 #alertTip-BL {
   position: fixed;
   bottom: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003330}}
 #alertTip-BR {
   right: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/docs\.scss}line{font-family:\00003331}}
 #alertTip-BL {
   left: 0; }

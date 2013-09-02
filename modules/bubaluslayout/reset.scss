@@ -206,6 +206,7 @@ img {
 	vertical-align:middle;
   @if $ie6-7-support {
     -ms-interpolation-mode: bicubic; // IE下防止图像縮放失真
+    zoom: 1;
   }
 }
 img, figure {

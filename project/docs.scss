@@ -1,7 +1,8 @@
-$docs-border-color:#38596b;
-$docs-font-color-green:#82be51;
-$docs-font-color-blue:#76a4bd;
-$docs-well-back:#101e26;
+// -------------------------
+// 引入配置
+// -------------------------
+@import "variables";
+@import "mixins";
 
 body {
   position: relative;
@@ -55,28 +56,29 @@ header {
   padding-left:40px;
 
   .navbar-nav > li {
-    border-top:7px solid transparent;
+    margin-top: 7px;
 
     > a {
       line-height: 43px;
       padding:0 40px;
       color: #76a4bd;
+      background-color: transparent;
 
       &:hover,
       &:focus {
         color: #fff;
-        background-color: transparent;
       }
     }
     &.active{
+      margin-top: 0;
       border-top:7px solid #5b912f;
+      background-color: #112028;
     }
     &.active > a {
       &,
       &:hover,
       &:focus {
         color: #fff;
-        background-color: #112028;
       }
     }
   }
@@ -111,9 +113,6 @@ header {
 }
 .docs-row {
   border-bottom:1px solid $docs-border-color;
-  .col-box {
-    padding:20px 0;
-  }
   .docs-side {
     border-right:1px solid $docs-border-color;
     h3 {
@@ -137,10 +136,8 @@ header {
   }
 
   .docs-article {
-    padding-left:15px;
     pre {
       color: $gray-light;
-      margin: 10px 0;
       background-color:#101e26;
       border: 1px solid rgba(0,0,0,0.15);
     }

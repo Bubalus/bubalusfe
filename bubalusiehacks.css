@@ -5,128 +5,513 @@
 /* Mixins - 全局混入方法 */
 /* END Mixins */
 /* END Config */
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000313}}
+/* 載入 BubalusLayout 核心
+----------------------------------*/
+/* BubalusLayout Variables */
+/* BubalusLayout Mixins */
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\000039}}
 body {
   o\verflow: visible; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000316}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\0000312}}
 html {
-  margin-right: 1px; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000317}}
-* html {
   margin-right: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\0000316}}
 article, aside, details, figcaption, figure,
 footer, header, hgroup, nav, section {
   zoom: 1; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\0000319}}
 audio, canvas, video {
-  *display: inline;
-  *zoom: 1; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000330}}
-img {
-  -ms-interpolation-mode: bicubic;
+  display: inline;
   zoom: 1; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000334}}
-* html .flexible {
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\0000325}}
+.flexible {
   zoom: 1;
   width: 98%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000341}}
-* html iframe,
-* html frame {
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\0000332}}
+iframe,
+frame {
   overflow: auto; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000343}}
-* html input,
-* html frameset {
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\0000334}}
+input,
+frameset {
   overflow: hidden; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000344}}
-* html textarea {
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\0000335}}
+textarea {
   overflow: scroll;
   overflow-x: hidden; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\0000338}}
 body, #main {
   position: relative; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000348}}
-* html body {
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\0000339}}
+body {
   position: static; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\0000342}}
 .clear {
   zoom: 1; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000355}}
-body, .g-box {
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\0000346}}
+body, .col-box {
   height: 1%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000356}}
-.container, .c-box, #header, #nav, #main, #footer {
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\0000347}}
+.container, .col-box, header, nav, #main, footer {
   zoom: 1; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000357}}
-* html .container, * html .c-box {
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\0000348}}
+.container, .col-box {
   height: 1%;
   hei\ght: auto; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000358}}
-* html #header, * html #nav, * html #main, * html #footer {
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\0000349}}
+header, nav, #main, footer {
   width: 100%;
   wid\th: auto; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000361}}
-* html ul, * html ol, * html dl {
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\0000352}}
+ul, ol, dl {
   position: relative; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000364}}
-body ol li {
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\0000355}}
+ol li {
   display: list-item; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000367}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\0000358}}
 button, input {
   *overflow: visible !important; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\0000359}}
 table button, table input {
   *overflow: auto; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\0000360}}
 fieldset, legend {
   position: relative; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000378}}
-.equalize .fl-le {
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\00003112}}
+.equalize .col-1,
+.equalize .col-2,
+.equalize .col-3,
+.equalize .col-4,
+.equalize .col-5,
+.equalize .col-6,
+.equalize .col-7,
+.equalize .col-8,
+.equalize .col-9,
+.equalize .col-10,
+.equalize .col-11,
+.equalize .col-table-1,
+.equalize .col-table-2,
+.equalize .col-table-3,
+.equalize .col-table-4,
+.equalize .col-table-5,
+.equalize .col-table-6,
+.equalize .col-table-7,
+.equalize .col-table-8,
+.equalize .col-table-9,
+.equalize .col-table-10,
+.equalize .col-table-11,
+.equalize .col-desktop-1,
+.equalize .col-desktop-2,
+.equalize .col-desktop-3,
+.equalize .col-desktop-4,
+.equalize .col-desktop-5,
+.equalize .col-desktop-6,
+.equalize .col-desktop-7,
+.equalize .col-desktop-8,
+.equalize .col-desktop-9,
+.equalize .col-desktop-10,
+.equalize .col-desktop-11,
+.equalize .col-notebook-1,
+.equalize .col-notebook-2,
+.equalize .col-notebook-3,
+.equalize .col-notebook-4,
+.equalize .col-notebook-5,
+.equalize .col-notebook-6,
+.equalize .col-notebook-7,
+.equalize .col-notebook-8,
+.equalize .col-notebook-9,
+.equalize .col-notebook-10,
+.equalize .col-notebook-11 {
   padding-bottom: 32767px;
   margin-bottom: -32767px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000383}}
-.equalize .fl-ri {
-  padding-bottom: 32767px;
-  margin-bottom: -32767px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\00003118}}
+.col-desktop-1 {
+  width: 8.3% !important; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/bubalusiehacks\.scss}line{font-family:\0000388}}
-* html .g-box {
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\00003119}}
+.col-desktop-2 {
+  width: 16.6% !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\00003120}}
+.col-desktop-3 {
+  width: 25% !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\00003121}}
+.col-desktop-4 {
+  width: 33.3% !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\00003122}}
+.col-desktop-5 {
+  width: 41.6% !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\00003123}}
+.col-desktop-6 {
+  width: 50% !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\00003124}}
+.col-desktop-7 {
+  width: 58.3% !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\00003125}}
+.col-desktop-8 {
+  width: 66.6% !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\00003126}}
+.col-desktop-9 {
+  width: 75% !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\00003127}}
+.col-desktop-10 {
+  width: 83.3% !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\00003128}}
+.col-desktop-11 {
+  width: 91.6% !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubaluslayout\/_iehack\.scss}line{font-family:\00003130}}
+.col-box {
   word-wrap: break-word;
   o\verflow: hidden; }
 
-/* BubalusLayout Variables */
-/* BubalusLayout Mixins */
+/* 擴展 CSS 組件
+----------------------------------*/
+/* 表單 */
+/* Forms - 變量 */
+/* Forms - 方法 */
+/* 導航 */
 /* Navs - 變量 */
-/* Navs - 方法 */
-@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\000037}}
-.navbar-nav {
-  float: left !important;
-  margin: 0; }
+/* Navs -  */
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\000038}}
+.nav li {
+  position: relative;
+  display: block; }
 @media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\0000312}}
-  .navbar-nav li a {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    line-height: 20px; }
+  .nav li a {
+    border-radius: 5px;
+    position: relative;
+    display: block;
+    padding: 10px 15px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\0000318}}
+    .nav li a:hover, .nav li a:focus {
+      text-decoration: none;
+      background-color: #eeeeee; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\0000327}}
+  .nav li.active a, .nav li.active a:hover, .nav li.active a:focus {
+    color: white;
+    background-color: #428bca; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\0000334}}
+  .nav li.disabled a {
+    color: #999999; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\0000338}}
+    .nav li.disabled a:hover, .nav li.disabled a:focus {
+      color: #999999;
+      text-decoration: none;
+      background-color: transparent;
+      cursor: not-allowed; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\0000352}}
+.nav .open a, .nav .open a:hover, .nav .open a:focus {
+  background-color: #eeeeee;
+  border-color: #428bca; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\0000358}}
+.nav .nav-divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\0000363}}
+.nav-tabs {
+  border-bottom: 1px solid #dddddd; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\0000365}}
+  .nav-tabs li {
+    float: left;
+    margin-bottom: -1px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\0000370}}
+    .nav-tabs li a {
+      margin-right: 2px;
+      line-height: 1.42857;
+      border: 1px solid transparent;
+      border-radius: 4px 4px 0 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\0000375}}
+      .nav-tabs li a:hover {
+        border-color: #eeeeee #eeeeee #dddddd; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\0000384}}
+    .nav-tabs li.active a, .nav-tabs li.active a:hover, .nav-tabs li.active a:focus {
+      color: #555555;
+      background-color: white;
+      border: 1px solid #dddddd;
+      border-bottom-color: transparent;
+      cursor: default; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\0000394}}
+  .nav-tabs.nav-justified {
+    border-bottom: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_mixins\.scss}line{font-family:\0000371}}
+    .nav-tabs.nav-justified li a {
+      margin-right: 0;
+      border-bottom: 1px solid #dddddd;
+      border-radius: 4px 4px 0 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_mixins\.scss}line{font-family:\0000379}}
+    .nav-tabs.nav-justified .active a,
+    .nav-tabs.nav-justified .active a:hover,
+    .nav-tabs.nav-justified .active a:focus {
+      border: 1px solid #dddddd;
+      border-bottom-color: white; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003100}}
+.nav-horizontal li {
+  float: left;
+  margin-left: 2px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003105}}
+.nav-justified {
+  width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_mixins\.scss}line{font-family:\0000331}}
+  .nav-justified li {
+    float: none;
+    display: table-cell;
+    width: 1%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_mixins\.scss}line{font-family:\0000335}}
+    .nav-justified li a {
+      text-align: center;
+      margin-bottom: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003111}}
+.tab-content .tab-pane,
+.pill-content .pill-pane {
+  display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003116}}
+.tab-content .active,
+.pill-content .active {
+  display: block; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003121}}
+.navbar-header {
+  zoom: 1;
+  float: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubalusglobal\/_mixins\.scss}line{font-family:\0000320}}
+  .navbar-header:before {
+    content: "";
+    display: table;
+    line-height: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/bubalusglobal\/_mixins\.scss}line{font-family:\0000325}}
+  .navbar-header:after {
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003127}}
+.navbar-collapse {
+  width: auto;
+  border-top: 0;
+  box-shadow: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003132}}
+  .navbar-collapse.collapse {
+    display: block !important;
+    height: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003139}}
+  .navbar-collapse.in {
+    overflow-y: visible; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003144}}
+  .navbar-collapse .navbar-nav.navbar-left:first-child {
+    margin-left: -10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003147}}
+  .navbar-collapse .navbar-nav.navbar-right:last-child {
+    margin-right: -10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003150}}
+  .navbar-collapse .navbar-text:last-child {
+    margin-right: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003161}}
+.container .navbar-header,
+.container .navbar-collapse {
+  margin-right: 0;
+  margin-left: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003167}}
+.navbar .container .navbar-brand {
+  margin-left: -10px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003177}}
+.navbar-toggle {
+  display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003180}}
+  .navbar-toggle .icon-bar {
+    margin-top: 4px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003190}}
+.navbar-nav {
+  float: left;
+  margin: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003194}}
+  .navbar-nav li {
+    float: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003196}}
+    .navbar-nav li a {
+      line-height: 20px;
+      padding-top: 15px;
+      padding-bottom: 15px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003211}}
+.navbar-left {
+  float: left;
+  display: inline; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003212}}
+.navbar-right {
+  float: right;
+  display: inline; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003219}}
+.navbar-form {
+  width: auto;
+  border: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 0;
+  padding-bottom: 0; }
+  @media (min-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/_mixins\.scss}line{font-family:\0000395}}
+    .navbar-form .form-group {
+      display: inline-block;
+      margin-bottom: 0;
+      vertical-align: middle; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/_mixins\.scss}line{font-family:\00003102}}
+    .navbar-form .form-control {
+      display: inline-block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/_mixins\.scss}line{font-family:\00003110}}
+    .navbar-form .radio,
+    .navbar-form .checkbox {
+      display: inline-block;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-left: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/form\/_mixins\.scss}line{font-family:\00003117}}
+    .navbar-form .radio input[type="radio"],
+    .navbar-form .checkbox input[type="checkbox"] {
+      float: none;
+      margin-left: 0; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003236}}
+.navbar-nav li .dropdown-menu {
+  margin-top: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003242}}
+.navbar-nav.fl-ri li .dropdown-menu,
+.navbar-nav li .dropdown-menu.fl-le {
+  left: auto;
+  right: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003251}}
+.navbar-text {
+  margin-left: 10px;
+  margin-right: 10px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003262}}
+.navbar-default .navbar-nav li a {
+  color: #777777; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003266}}
+  .navbar-default .navbar-nav li a:hover, .navbar-default .navbar-nav li a:focus {
+    color: #333333;
+    background-color: transparent; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003274}}
+.navbar-default .navbar-nav .active a, .navbar-default .navbar-nav .active a:hover, .navbar-default .navbar-nav .active a:focus {
+  color: #555555;
+  background-color: #e7e7e7; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003282}}
+.navbar-default .navbar-nav .disabled a, .navbar-default .navbar-nav .disabled a:hover, .navbar-default .navbar-nav .disabled a:focus {
+  color: #cccccc;
+  background-color: transparent; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003293}}
+.navbar-default .navbar-nav .dropdown a:hover .caret,
+.navbar-default .navbar-nav .dropdown a:focus .caret {
+  border-top-color: #333333;
+  border-bottom-color: #333333; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003302}}
+.navbar-default .navbar-nav .open a, .navbar-default .navbar-nav .open a:hover, .navbar-default .navbar-nav .open a:focus {
+  background-color: #e7e7e7;
+  color: #555555; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003305}}
+  .navbar-default .navbar-nav .open a .caret, .navbar-default .navbar-nav .open a:hover .caret, .navbar-default .navbar-nav .open a:focus .caret {
+    border-top-color: #555555;
+    border-bottom-color: #555555; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003311}}
+.navbar-default .navbar-nav .dropdown a .caret {
+  border-top-color: #777777;
+  border-bottom-color: #777777; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003323}}
+.nav-list-item .badge {
+  float: right;
+  margin-right: 5px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/modules\/nav\/_iehack\.scss}line{font-family:\00003332}}
+.nav-breadcrumb li {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  content: "/\00a0";
+  padding: 0 5px;
+  color: #cccccc; }
+
+/* 載入項目樣式
+----------------------------------*/
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/_iehack\.scss}line{font-family:\000039}}
+.docs-nav .navbar-nav li {
+  margin-top: 7px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/_iehack\.scss}line{font-family:\0000312}}
+  .docs-nav .navbar-nav li a {
+    line-height: 43px;
+    padding: 0 40px;
+    color: #76a4bd;
+    background-color: transparent; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/_iehack\.scss}line{font-family:\0000319}}
+    .docs-nav .navbar-nav li a:hover, .docs-nav .navbar-nav li a:focus {
+      color: #fff; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/_iehack\.scss}line{font-family:\0000323}}
+  .docs-nav .navbar-nav li.active {
+    margin-top: 0;
+    border-top: 7px solid #5b912f;
+    background-color: #112028; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/_iehack\.scss}line{font-family:\0000330}}
+    .docs-nav .navbar-nav li.active a, .docs-nav .navbar-nav li.active a:hover, .docs-nav .navbar-nav li.active a:focus {
+      color: #fff; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/_iehack\.scss}line{font-family:\0000340}}
+#tables .table-bordered {
+  border: 1px solid #38596b; }
+@media -sass-debug-info{filename{font-family:file\:\/\/H\:\/code\/css\/BubalusFE\/project\/_iehack\.scss}line{font-family:\0000347}}
+  #tables .table-bordered thead tr th,
+  #tables .table-bordered thead tr td,
+  #tables .table-bordered tbody tr th,
+  #tables .table-bordered tbody tr td,
+  #tables .table-bordered tfoot tr th,
+  #tables .table-bordered tfoot tr td {
+    border: 1px solid #38596b; }

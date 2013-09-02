@@ -28,12 +28,10 @@ header, footer, nav, #main {
 }
 
 .column {
-  float: left;
+  @include float();
   position: relative;
   min-height: 1px; // 防止没有内容时列塌陷而造成错位
   // 通过设置填充来产生列与列之间的间距，内容不会紧挨在一起
-  padding-left:  ($grid-gutter-width / 2);
-  padding-right: ($grid-gutter-width / 2);
 }
 
 // Extra small grid
@@ -135,6 +133,10 @@ header, footer, nav, #main {
   .col-notebook-11 { width: percentage((11/ $grid-columns)); }
   .col-notebook-12 { width: 100%; float: none; }
   
+}
+
+.col-box {
+  padding:  ($grid-gutter-width / 2);
 }
 
 // 平衡柵格高度

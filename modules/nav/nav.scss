@@ -71,65 +71,7 @@
 
   // 導航中的分隔綫
   .nav-divider {
-    @include nav-divider();
-  }
-}
-
-
-
-// 導航變量
-// --------------------------------------------------
-
-// 兩端對齊的導航
-// -------------------------
-
-@mixin nav-justified {
-  width: 100%;
-
-  > li {
-    float: none;
-     > a {
-      text-align: center;
-      margin-bottom: 5px;
-    }
-  }
-
-  @media (min-width: $screen-table) {
-    > li {
-      display: table-cell;
-      width: 1%;
-      > a {
-        margin-bottom: 0;
-      }
-    }
-  }
-}
-
-// 兩段對齊的tabs導航
-@mixin nav-tabs-justified () {
-  border-bottom: 0;
-
-  > li > a {
-    margin-right: 0;
-    border-radius: $border-radius-base;
-  }
-
-  > .active > a,
-  > .active > a:hover,
-  > .active > a:focus {
-    border: 1px solid $nav-tabs-justified-link-border-color;
-  }
-
-  @media (min-width: $screen-table) {
-    > li > a {
-      border-bottom: 1px solid $nav-tabs-justified-link-border-color;
-      border-radius: $border-radius-base $border-radius-base 0 0;
-    }
-    > .active > a,
-    > .active > a:hover,
-    > .active > a:focus {
-      border-bottom-color: $nav-tabs-justified-active-link-border-color;
-    }
+    @include divider();
   }
 }
 
@@ -538,8 +480,8 @@
 }
 
 // Right aligned menus need alt position
-.navbar-nav.pull-right > li > .dropdown-menu,
-.navbar-nav > li > .dropdown-menu.pull-right {
+.navbar-nav.fl-ri > li > .dropdown-menu,
+.navbar-nav > li > .dropdown-menu.fl-ri {
   left: auto;
   right: 0;
 }
@@ -796,7 +738,7 @@ a.nav-list-item {
   background-color: $breadcrumb-bg;
   border-radius: $border-radius-base;
   > li {
-    display: inline-block;
+    @include inline-block();
     &+li:before {
       content: "/\00a0"; // Unicode space added since inline-block means non-collapsing white-space
       padding: 0 5px;

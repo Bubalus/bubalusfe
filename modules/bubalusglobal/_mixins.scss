@@ -32,7 +32,7 @@
     visibility:hidden;
   }
   @if $ie6-7-support {
-    *zoom: 1;
+    zoom:1;
   }
 }
 
@@ -441,7 +441,7 @@
 
 // 水平分割綫，可用於下拉菜單或導航
 // ----------------------
-@mixin nav-divider($color: #e5e5e5) {
+@mixin divider($color: #e5e5e5) {
   height: 1px;
   margin: (($line-height-computed / 2) - 1) 0;
   overflow: hidden;

@@ -4,15 +4,335 @@
 @import "variables";
 @import "mixins";
 
+.nav {
+	li {
+    position: relative;
+    display: block;
+
+    a {
+      border-radius: 5px;
+      position: relative;
+      display: block;
+      padding: $nav-link-padding;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        background-color: $nav-link-hover-bg;
+      }
+    }
+
+    &.active a {
+      &,
+      &:hover,
+      &:focus {
+        color: $nav-pills-active-link-hover-color;
+        background-color: $nav-pills-active-link-hover-bg;
+      }
+    }
+
+    // 禁用狀態設置
+    &.disabled a {
+      color: $nav-disabled-link-color;
+
+      &:hover,
+      &:focus {
+        color: $nav-disabled-link-hover-color;
+        text-decoration: none;
+        background-color: transparent;
+        cursor: not-allowed;
+      }
+    }
+
+	}
+
+  // 展開下拉菜單
+  .open a {
+    &,
+    &:hover,
+    &:focus {
+      background-color: $nav-link-hover-bg;
+      border-color: $link-color;
+    }
+  }
+
+  .nav-divider {
+    @include divider();
+  }
+}
+
+.nav-tabs {
+  border-bottom: 1px solid $nav-tabs-border-color;
+  li {
+    float: left;
+    margin-bottom: -1px;
+
+    // 標簽
+    a {
+      margin-right: 2px;
+      line-height: $line-height-base;
+      border: 1px solid transparent;
+      border-radius: $border-radius-base $border-radius-base 0 0;
+      &:hover {
+        border-color: $nav-tabs-link-hover-border-color $nav-tabs-link-hover-border-color $nav-tabs-border-color;
+      }
+    }
+
+    // 覆蓋懸停效果
+    &.active a {
+      &,
+      &:hover,
+      &:focus {
+        color: $nav-tabs-active-link-hover-color;
+        background-color: $nav-tabs-active-link-hover-bg;
+        border: 1px solid $nav-tabs-active-link-hover-border-color;
+        border-bottom-color: transparent;
+        cursor: default;
+      }
+    }
+  }
+  // pulling this in mainly for less shorthand
+  &.nav-justified {
+    @include nav-tabs-justified-ie();
+  }
+}
+
+// 堆疊的按鈕式導航
+.nav-horizontal li {
+  float: left;
+  margin-left: 2px;
+}
+
+.nav-justified {
+  @include nav-justified-ie();
+}
+
+// Show/hide tabbable areas
+.tab-content .tab-pane,
+.pill-content .pill-pane {
+  display: none;
+}
+.tab-content,
+.pill-content {
+  .active {
+    display: block;
+  }
+}
+
+.navbar-header {
+  @include clear();
+
+  float: left;
+}
+
+.navbar-collapse {
+  width: auto;
+  border-top: 0;
+  box-shadow: none;
+
+  &.collapse {
+    display: block !important;
+    height: auto !important;
+    padding-bottom: 0; // Override default setting
+    overflow: visible !important;
+  }
+
+  &.in {
+    overflow-y: visible;
+  }
+
+  // Account for first and last children spacing
+  .navbar-nav.navbar-left:first-child {
+    margin-left: -$navbar-padding-horizontal;
+  }
+  .navbar-nav.navbar-right:last-child {
+    margin-right: -$navbar-padding-horizontal;
+  }
+  .navbar-text:last-child {
+    margin-right: 0;
+  }
+}
+
+
+// Both navbar header and collapse
+//
+// When a container is present, change the behavior of the header and collapse.
+
+.container .navbar-header,
+.container .navbar-collapse {
+  margin-right: 0;
+  margin-left:  0;
+}
+
+.navbar-brand {
+  .navbar .container & {
+    margin-left: -$navbar-padding-horizontal;
+  }
+}
+
+// Navbar toggle
+//
+// Custom button for toggling the `.navbar-collapse`, powered by the collapse
+// JavaScript plugin.
+
+.navbar-toggle {
+  display: none;
+
+  .icon-bar {
+    margin-top: 4px;
+  }
+}
+
+// Navbar nav links
+//
+// Builds on top of the `.nav` components with it's own modifier class to make
+// the nav the full height of the horizontal nav (above 768px).
+
 .navbar-nav {
-  float: left !important;
+  float: left;
   margin: 0;
 
-  li{ 
-  	a {
-	  padding-top:    10px;
-	  padding-bottom: 10px;
-	  line-height: $line-height-computed;
+  li {
+    float: left;
+    a {
+      line-height: $line-height-computed;
+      padding-top: (($navbar-height - $line-height-computed) / 2);
+      padding-bottom: (($navbar-height - $line-height-computed) / 2);
     }
+  }
+
+}
+
+// Component alignment
+//
+// Repurpose the pull utilities as their own navbar utilities to avoid specifity
+// issues with parents and chaining. Only do this when the navbar is uncollapsed
+// though so that navbar contents properly stack and align in mobile.
+
+.navbar-left  { @include float(); }
+.navbar-right { @include float(right); }
+
+// Navbar form
+//
+// Extension of the `.form-inline` with some extra flavor for optimum display in
+// our navbars.
+
+.navbar-form {
+  // Mixin behavior for optimum display
+  @include form-inline();
+
+  width: auto;
+  border: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+
+
+// Dropdown menus
+
+// Menu position and menu carets
+.navbar-nav li .dropdown-menu {
+  margin-top: 0;
+}
+
+// Right aligned menus need alt position
+.navbar-nav.fl-ri li .dropdown-menu,
+.navbar-nav li .dropdown-menu.fl-le {
+  left: auto;
+  right: 0;
+}
+
+// Text in navbars
+//
+// Add a class to make any element properly align itself vertically within the navbars.
+
+.navbar-text {
+  margin-left: $navbar-padding-horizontal;
+  margin-right: $navbar-padding-horizontal;
+}
+
+// Alternate navbars
+// --------------------------------------------------
+
+// Default navbar
+.navbar-default {
+  .navbar-nav {
+    li a {
+      color: $navbar-default-link-color;
+
+      &:hover,
+      &:focus {
+        color: $navbar-default-link-hover-color;
+        background-color: $navbar-default-link-hover-bg;
+      }
+    }
+    .active a {
+      &,
+      &:hover,
+      &:focus {
+        color: $navbar-default-link-active-color;
+        background-color: $navbar-default-link-active-bg;
+      }
+    }
+    .disabled a {
+      &,
+      &:hover,
+      &:focus {
+        color: $navbar-default-link-disabled-color;
+        background-color: $navbar-default-link-disabled-bg;
+      }
+    }
+  }
+
+  // Dropdown menu items and carets
+  .navbar-nav {
+    // Caret should match text color on hover
+    .dropdown a:hover .caret,
+    .dropdown a:focus .caret {
+      border-top-color: $navbar-default-link-hover-color;
+      border-bottom-color: $navbar-default-link-hover-color;
+    }
+
+    // Remove background color from open dropdown
+    .open a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: $navbar-default-link-active-bg;
+        color: $navbar-default-link-active-color;
+        .caret {
+          border-top-color: $navbar-default-link-active-color;
+          border-bottom-color: $navbar-default-link-active-color;
+        }
+      }
+    }
+    .dropdown a .caret {
+      border-top-color: $navbar-default-link-color;
+      border-bottom-color: $navbar-default-link-color;
+    }
+
+  }
+
+}
+
+// 列式導航樣式
+// -------------------------
+.nav-list-item {
+  .badge {
+    float: right;
+    margin-right: 5px;
+  }
+}
+
+
+// 麵包屑
+.nav-breadcrumb {
+  li {
+    @include inline-block();
+    content: "/\00a0"; // Unicode space added since inline-block means non-collapsing white-space
+    padding: 0 5px;
+    color: $breadcrumb-color;
   }
 }
